@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
     
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away.css" />
+    
     <style>    
         :root {    
             --primary-blue: #3b82f6;    
@@ -36,7 +39,7 @@
             color: var(--text-muted);       
             scroll-behavior: smooth;   
             line-height: 1.6;   
-            overflow-x: hidden; /* Ngăn chặn cuộn ngang trên mobile */
+            overflow-x: hidden;
         }    
 
         /* --- Custom Scrollbar --- */   
@@ -125,7 +128,8 @@
         /* --- Metrics --- */
         .quick-metrics { padding: 60px 5%; background: var(--dark-section-bg); }
         .metrics-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .metric-item { text-align: center; padding: 25px 15px; background: rgba(255, 255, 255, 0.03); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .metric-item { text-align: center; padding: 25px 15px; background: rgba(255, 255, 255, 0.03); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05); cursor: help; transition: 0.3s; }
+        .metric-item:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-5px); }
         .metric-value { display: block; font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--white); margin-bottom: 5px; }
         .metric-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--dark-text-muted); }
         .metric-icon { font-size: 1.5rem; margin-bottom: 15px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -149,7 +153,8 @@
         .highlight-tag { display: inline-block; background: rgba(16, 185, 129, 0.1); color: var(--primary-green); padding: 4px 12px; border-radius: 100px; font-size: 0.65rem; font-weight: 800; margin-bottom: 12px; }       
 
         .impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }       
-        .impact-stat-card { background: #f8fafc; padding: 1.5rem 10px; border-radius: 16px; text-align: center; border: 1px solid rgba(0,0,0,0.03); }       
+        .impact-stat-card { background: #f8fafc; padding: 1.5rem 10px; border-radius: 16px; text-align: center; border: 1px solid rgba(0,0,0,0.03); cursor: help; transition: 0.3s; }       
+        .impact-stat-card:hover { transform: scale(1.05); background: #f1f5f9; }
         .impact-stat-card h4 { font-size: 1.6rem; font-weight: 800; color: var(--text-main); font-family: 'Montserrat'; margin-bottom: 4px; }       
         .impact-stat-card p { font-size: 0.6rem; font-weight: 700; color: var(--slate); text-transform: uppercase; }       
 
@@ -174,8 +179,10 @@
         .large { background: var(--gradient-primary); color: white; grid-column: span 2; }       
         .large h3, .large p, .large i { color: white; }       
         .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; } 
-        .skill-tag { background: rgba(59, 130, 246, 0.08); color: var(--primary-blue); padding: 4px 10px; border-radius: 6px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; } 
+        .skill-tag { background: rgba(59, 130, 246, 0.08); color: var(--primary-blue); padding: 4px 10px; border-radius: 6px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; cursor: help; transition: 0.2s; } 
+        .skill-tag:hover { background: var(--primary-blue); color: white; }
         .large .skill-tag { background: rgba(255, 255, 255, 0.2); color: white; }
+        .large .skill-tag:hover { background: white; color: var(--primary-blue); }
 
         /* --- Footer --- */   
         footer { background: #f1f5f9; padding: 60px 5% 30px; text-align: center; }       
@@ -186,33 +193,39 @@
         .btn-primary { background: var(--gradient-primary); color: var(--white) !important; padding: 1rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }   
         .btn-secondary { border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 0.9rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }   
 
-        /* --- MOBILE OPTIMIZATION (CRITICAL) --- */   
+        /* Tippy Custom Theme */
+        .tippy-box[data-theme~='cv-blue'] {
+            background-color: var(--text-main);
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */   
         @media (max-width: 968px) {
             nav { padding: 0.8rem 5%; }
             .mobile-menu-btn { display: block; }
-            
             .nav-links {
                 position: absolute; top: 100%; left: 0; width: 100%; background: white;
                 flex-direction: column; padding: 2rem; gap: 1.5rem;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                display: none; /* Toggle này sẽ điều khiển bằng JS */
+                display: none;
             }
             .nav-links.active { display: flex; }
-
             .hero { padding-top: 100px; text-align: center; }
             .hero-content { grid-template-columns: 1fr; gap: 2.5rem; }
-            .hero-image-container { order: -1; } /* Ảnh hiện lên trên text trên mobile */
+            .hero-image-container { order: -1; }
             .profile-blob { max-width: 260px; }
             .hero-text h1 { font-size: 2.5rem; }
             .hero-text p { margin: 0 auto 2rem; }
             .hero-text div { justify-content: center !important; }
             .title-divider { margin: 1.5rem auto; }
-
             .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .impact-stats { grid-template-columns: repeat(2, 1fr); }
             .bento-grid { grid-template-columns: 1fr; }
             .large { grid-column: span 1; }
-            
             .section-title { font-size: 1.8rem; }
             .impact-block { padding: 1.5rem; }
             .impact-header { flex-direction: column; text-align: center; }
@@ -262,7 +275,7 @@
                 <p>Transitioning from a <strong>Software Engineering</strong> background, I bridge the gap between technical logic and growth marketing. I don’t just run ads — I engineer <strong>Data-Driven Funnels</strong> and leverage <strong>AI-Automation</strong> to scale performance with surgical precision.</p>       
                 <div style="display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap;">       
                     <a href="mailto:khaitri15@gmail.com" class="btn-primary">Let's Talk</a>       
-                    <a href="https://htmlpreview.github.io/?https://github.com/trinkse61538/CV/blob/817e319670619a927dbb24f336c7947712f2a76c/View_CV.html" 
+                    <a href="View_CV.html" 
                        class="btn-primary" 
                        target="_blank" 
                        rel="noopener noreferrer">
@@ -281,22 +294,22 @@
 
     <div class="quick-metrics">
         <div class="metrics-grid">
-            <div class="metric-item" data-aos="fade-up">
+            <div class="metric-item" data-aos="fade-up" data-tippy-content="Total professional career including AI development (1Y) and Digital Marketing (7+Y).">
                 <i class="fa-solid fa-chart-line metric-icon"></i>
                 <span class="metric-value">8+</span>
                 <span class="metric-label">Years Experience</span>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="100" data-tippy-content="Total ad spend managed across Google, Facebook, and LinkedIn.">
                 <i class="fa-solid fa-coins metric-icon"></i>
                 <span class="metric-value">$1M+</span>
                 <span class="metric-label">Managed Budget</span>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="200" data-tippy-content="Consistently maintained high ROI across global and local campaigns.">
                 <i class="fa-solid fa-fingerprint metric-icon"></i>
                 <span class="metric-value">3.85</span>
                 <span class="metric-label">Average ROAS</span>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="300" data-tippy-content="All workflows leverage AI for automation, crawling, or content gen.">
                 <i class="fa-solid fa-microchip metric-icon"></i>
                 <span class="metric-value">100%</span>
                 <span class="metric-label">AI Integrated</span>
@@ -317,22 +330,22 @@
                 <div>       
                     <h3 style="color: var(--text-main); font-size: 1.5rem; font-family: 'Montserrat';">Anfin (Commodities FinTech)</h3>       
                     <p class="role-subtitle">Paid Ads & Growth Funnel Specialist</p>       
-                </div>       
+                </div>      
             </div>       
             <div class="impact-stats">       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Year-Over-Year growth in verified Mercantile Exchange of Vietnam accounts.">       
                     <h4 style="color: var(--primary-blue);">275.3%</h4>       
                     <p>YOY MXV Account Growth</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Conversion rate from successful identity verification to actual trading activity.">       
                     <h4 style="color: var(--primary-blue);">34.0%</h4>       
                     <p>eKYC-to-MXV Conversion</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Improvement in user activation through streamlined digital onboarding journeys.">       
                     <h4>42.6%</h4>       
                     <p>Onboarding Success Lift</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Lead handling efficiency using open-source marketing automation (Mautic).">       
                     <h4>3.3x</h4>       
                     <p>Mautic Funnel Efficiency</p>       
                 </div>       
@@ -349,19 +362,19 @@
                 </div>       
             </div>       
             <div class="impact-stats">       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Return on Ad Spend across VN and SEA markets.">       
                     <h4 style="color: var(--primary-blue);">3.85</h4>       
                     <p>Avg. ROAS (Global UA)</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Consistently over-performed monthly revenue targets by 70%.">       
                     <h4 style="color: var(--primary-blue);">170%</h4>       
                     <p>Revenue KPI Achieved</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Growth of B2B/Enterprise leads through LinkedIn and Cold Email automation.">       
                     <h4>70%</h4>       
                     <p>New B2B Clientele Share</p>       
                 </div>       
-                <div class="impact-stat-card">       
+                <div class="impact-stat-card" data-tippy-content="Highly targeted email nurturing campaigns with exceptional engagement.">       
                     <h4>60%</h4>       
                     <p>Email Open Rate</p>       
                 </div>       
@@ -425,7 +438,7 @@
                             Core: Scaling <strong>Google Search/App Campaigns</strong>, <strong>FB Conversion Ads</strong> & <strong>LinkedIn Ads</strong>.       
                         </div>       
                         <ul class="achievement-list">       
-                            <li><i class="fa-solid fa-circle-check"></i> Optimized App Install campaigns to drive a <strong>275.3% increase</strong> in YOY MXV account openings.</li>       
+                            <li><i class="fa-solid fa-circle-check"></i> Optimized Paid Ads (Google ads - Facebook ads) - App Install campaigns to drive a <strong>275.3% increase</strong> in YOY MXV account openings.</li>       
                             <li><i class="fa-solid fa-circle-check"></i> Boosted conversion from eKYC to trading from 12.9% to <strong>34.0%</strong> through optimized Google Ads, FB Ads & LinkedIn.</li>       
                             <li><i class="fa-solid fa-circle-check"></i> Deployed <strong>Automated Content Generation</strong> using OpenClaw to automate ad creative production.</li>       
                         </ul>       
@@ -507,7 +520,9 @@
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Performance Mastery</h3>       
                     <p style="font-size: 0.9rem; opacity: 0.9;">Full-funnel expert scaling Global UA & B2B campaigns with surgical precision.</p>       
                     <div class="skill-tags"> 
-                        <span class="skill-tag">Google Ads</span> <span class="skill-tag">Facebook Ads</span> <span class="skill-tag">LinkedIn Ads</span> 
+                        <span class="skill-tag" data-tippy-content="SEM, GDN, App Install (UAC), & YouTube Ads.">Google Ads</span> 
+                        <span class="skill-tag" data-tippy-content="Conversion Ads, Click to web, Messenger, Install apps & Lead Forms.">Facebook Ads</span> 
+                        <span class="skill-tag" data-tippy-content="B2B Targeting, InMail, & Thought Leadership Ads.">LinkedIn Ads</span> 
                     </div> 
                 </div>       
             </div>       
@@ -516,7 +531,9 @@
                 <i class="fa-solid fa-layer-group"></i>       
                 <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">The Growth Stack</h3>       
                 <div class="skill-tags"> 
-                    <span class="skill-tag">HubSpot</span> <span class="skill-tag">Mautic</span> <span class="skill-tag">Branch.io</span> 
+                    <span class="skill-tag" data-tippy-content="CRM automation & B2B lead management.">HubSpot</span> 
+                    <span class="skill-tag" data-tippy-content="Open-source marketing automation & lead nurturing.">Mautic</span> 
+                    <span class="skill-tag" data-tippy-content="Deep linking & cross-platform attribution tracking.">Branch.io</span> 
                 </div> 
             </div>       
 
@@ -524,7 +541,9 @@
                 <i class="fa-solid fa-code"></i>       
                 <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Data & AI</h3>       
                 <div class="skill-tags"> 
-                    <span class="skill-tag">SQL</span> <span class="skill-tag">Python</span> <span class="skill-tag">Prompt Eng</span> 
+                    <span class="skill-tag" data-tippy-content="Data extraction and advanced performance reporting.">SQL</span> 
+                    <span class="skill-tag" data-tippy-content="Scripting for automation and data analysis.">Python</span> 
+                    <span class="skill-tag" data-tippy-content="AI content generation & LLM workflow optimization.">Prompt Eng</span> 
                 </div> 
             </div>       
         </div>       
@@ -542,8 +561,19 @@
     </footer>       
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>       
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
     <script>       
         AOS.init({ duration: 800, once: true, offset: 50 });       
+
+        // Initialize Tippy.js Tooltips
+        tippy('[data-tippy-content]', {
+            theme: 'cv-blue',
+            animation: 'shift-away',
+            arrow: true,
+            interactive: true,
+        });
 
         // Mobile Menu Toggle Logic
         const menuToggle = document.getElementById('menuToggle');
