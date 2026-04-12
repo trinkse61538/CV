@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyen Khai Tri | Senior Performance Marketer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<style>
+:root{
+--primary:#0f172a;
+--blue:#3b82f6;
+--text:#475569;
+--white:#fff;
+--bg:#f1f5f9;
+--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Open Sans',sans-serif;
+background:var(--bg);
+color:var(--primary);
+line-height:1.45;
+overflow-x:hidden;
+}
+
+p,li{
+text-align:justify;
+}
+
+.cv-wrapper{
+max-width:210mm;
+margin:20px auto;
+background:#fff;
+display:flex;
+min-height:297mm;
+box-shadow:0 25px 50px -12px rgba(0,0,0,.15);
+position: relative;
+}
+
+/* SIDEBAR */
+.sidebar{
+width:26%;
+background:linear-gradient(180deg,#0f172a,#1e293b);
+color:#fff;
+padding:35px 20px;
+z-index: 10;
+}
+
+/* MAIN */
+.main{
+width:74%;
+padding:35px 40px 35px 35px
+}
+
+/* --- ANIMATED AVATAR --- */
+.profile-img-container {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    border: 4px solid var(--blue);
+    display: block;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+    animation: profileFloat 4s ease-in-out infinite;
+}
+
+.profile-img-container::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    background: var(--blue);
+    opacity: 0.3;
+    filter: blur(15px);
+    z-index: 1;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.15); opacity: 0.5; }
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    border-color: #fff;
+    cursor: pointer;
+}
+
+/* SIDEBAR ELEMENTS */
+.sidebar-title{
+font-family:'Montserrat';
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:var(--blue);
+margin:20px 0 12px;
+display:flex;
+align-items:center
+}
+
+.sidebar-title:after{
+content:"";
+flex:1;
+height:1px;
+background:rgba(59,130,246,.3);
+margin-left:10px
+}
+
+.contact-item{
+font-size:12px;
+color:#cbd5e1;
+display:block;
+margin-bottom:12px;
+text-decoration:none;
+transition: var(--transition);
+padding: 5px;
+border-radius: 8px;
+}
+
+.contact-item:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--blue);
+    transform: translateX(5px);
+}
+
+/* --- SKILL TOOLTIPS --- */
+.skill-tag{
+display:inline-block;
+padding:4px 9px;
+margin:2px;
+border-radius:6px;
+font-size:10px;
+font-weight:700;
+border:1px solid rgba(59,130,246,.2);
+color:var(--blue);
+background:rgba(59,130,246,.08);
+position: relative;
+cursor: help;
+transition: var(--transition);
+}
+
+.skill-tag:hover {
+    background: var(--blue);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Tooltip text */
+.skill-tag .tooltip {
+    visibility: hidden;
+    width: 140px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 100;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.3;
+    border: 1px solid var(--blue);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+}
+
+.skill-tag:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.skill-tag.featured{
+background:var(--blue);
+color:#fff;
+font-size:11px
+}
+
+/* MAIN CONTENT */
+.name{
+font-family:'Montserrat';
+font-size:32px;
+font-weight:700
+}
+
+.job-title{
+color:var(--blue);
+font-weight:600;
+font-size:14px;
+letter-spacing:.6px;
+text-transform:uppercase;
+margin-top:4px;
+line-height:1.4;
+}
+
+.summary{
+margin:18px 0;
+font-size:14px;
+color:var(--text);
+padding:18px;
+background:#f8fafc;
+border-left:4px solid var(--blue);
+border-radius:10px;
+transition: var(--transition);
+}
+
+.summary:hover {
+    background: #f1f5f9;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+}
+
+.section-header{
+font-family:'Montserrat';
+font-size:20px;
+margin:28px 0 16px;
+position:relative;
+display:inline-block
+}
+
+.section-header:after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:35px;
+height:3px;
+background:var(--blue)
+}
+
+/* EXPERIENCE */
+.exp{
+margin-bottom:26px;
+padding-left:18px;
+border-left:2px solid #e2e8f0;
+transition: var(--transition);
+}
+
+.exp:hover {
+    border-left-color: var(--blue);
+    background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+}
+
+.job-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:4px
+}
+
+.company{
+font-weight:700;
+font-size:17px
+}
+
+.date{
+font-size:11px;
+font-weight:700;
+color:var(--blue);
+background:#eff6ff;
+padding:3px 10px;
+border-radius:15px
+}
+
+.role{
+display:block;
+margin:5px 0;
+font-style:italic;
+font-size:14px;
+color:var(--text)
+}
+
+ul{
+padding-left:0;
+margin-left:0
+}
+
+.achievement li{
+list-style:none;
+font-size:13px;
+margin-bottom:6px;
+padding-left:14px;
+position:relative;
+color:var(--text);
+transition: var(--transition);
+}
+
+.achievement li:hover {
+    transform: translateX(5px);
+    color: var(--primary);
+}
+
+.achievement li:before{
+content:"→";
+position:absolute;
+left:0;
+color:var(--blue);
+font-weight:bold
+}
+
+/* KPI DASHBOARD */
+.growth-dashboard{
+display:flex;
+gap:18px;
+margin-top:18px;
+}
+
+.growth-card{
+flex:1;
+background:linear-gradient(135deg,#f8fafc,#eff6ff);
+border:1px solid #dbeafe;
+padding:18px;
+border-radius:12px;
+transition:0.25s;
+text-align:left;
+}
+
+.growth-card:hover{
+transform:translateY(-8px);
+box-shadow: 0 15px 30px rgba(59,130,246,0.15);
+border-color: var(--blue);
+}
+
+.growth-number{
+font-size:26px;
+font-weight:800;
+color:#3b82f6;
+margin-bottom:6px;
+}
+
+.growth-title{
+font-size:11px;
+font-weight:700;
+letter-spacing:.8px;
+text-transform:uppercase;
+color:#0f172a;
+margin-bottom:6px;
+}
+
+.growth-desc{
+font-size:11px;
+color:#64748b;
+line-height:1.4;
+text-align:left;
+}
+
+/* PRINT RULES */
+@media print{
+body{background:none}
+.cv-wrapper{margin:0;box-shadow:none;width:100%;}
+.sidebar{-webkit-print-color-adjust:exact}
+.skill-tag .tooltip { display: none; }
+@page{margin:12mm}
+.break-page{page-break-before:always;}
+}
+
+/* MOBILE */
+@media(max-width:850px){
+.cv-wrapper{flex-direction:column}
+.sidebar,.main{width:100%}
+.sidebar{text-align:center}
+.contact-item:hover { transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cv-wrapper">
+
+<aside class="sidebar">
+
+<div class="profile-img-container">
+    <img src="https://raw.githubusercontent.com/trinkse61538/Test/main/Gemini_Generated_Image_90yolh90yolh90yo.png" class="profile-img">
+</div>
+
+<h3 class="sidebar-title">Contact</h3>
+<a class="contact-item">📍 Tan Binh Dist, Ho Chi Minh City</a>
+<a href="tel:+84367676119" class="contact-item">📞 (+84) 367676119</a>
+<a href="mailto:khaitri15@gmail.com" class="contact-item">✉️ khaitri15@gmail.com</a>
+
+<h3 class="sidebar-title">Expertise</h3>
+
+<span class="skill-tag featured">Facebook Ads<span class="tooltip">Expert in Meta Business Suite & conversion API.</span></span>
+<span class="skill-tag featured">Google Ads<span class="tooltip">Search, Display, UAC, Performance Max & Youtube ads management.</span></span>
+<span class="skill-tag featured">TikTok Ads<span class="tooltip">Plan, content strategy & TikTok ads.</span></span>
+<span class="skill-tag featured">LinkedIn Ads<span class="tooltip">B2B targeting & lead generation expert.</span></span>
+
+<br><br>
+
+<span class="skill-tag">GA4<span class="tooltip">Advanced event tracking & user behavior analysis.</span></span>
+<span class="skill-tag">GTM<span class="tooltip">Tag management & custom script deployment.</span></span>
+<span class="skill-tag">Branch.io<span class="tooltip">Deep linking & attribution orchestration.</span></span>
+<span class="skill-tag">Metabase<span class="tooltip">SQL visualization & data dashboarding.</span></span>
+
+<br><br>
+
+<span class="skill-tag">Python<span class="tooltip">Automation scripts & data cleaning.</span></span>
+<span class="skill-tag">Mautic<span class="tooltip">Open-source marketing automation.</span></span>
+<span class="skill-tag">OpenClaw<span class="tooltip">AI-powered terminal for automated workflows.</span></span>
+<span class="skill-tag">AI Content Gen<span class="tooltip">LLM prompt engineering for creative assets.</span></span>
+
+<h3 class="sidebar-title">Education</h3>
+<p style="color:var(--blue);font-weight:700;font-size:11px">2014 - 2017</p>
+<p style="font-weight:600;font-size:13px">FPT University</p>
+<p style="font-size:11px;color:#94a3b8">Embedded Systems</p>
+
+</aside>
+
+<main class="main">
+
+<h1 class="name">Nguyen Khai Tri</h1>
+<p class="job-title">Senior Performance Marketing Specialist</p>
+
+<div class="summary">
+Leveraging an <strong>Embedded Systems</strong> background, I bring <strong>logical methodology and precision</strong> to Performance Marketing. Expert in engineering <strong>AI-driven automated growth engines</strong>, managing large-scale budgets (<strong>$8,000+/month</strong>), and transforming complex data into <strong>breakthrough business results</strong>.
+</div>
+
+<h2 class="section-header">Professional Experience</h2>
+
+<div class="exp">
+<div class="job-header">
+<span class="company">ANFIN (Commodities Derivative)</span>
+<span class="date">Aug 2024 - Present</span>
+</div>
+<span class="role">Senior Performance Digital Marketer</span>
+<ul class="achievement">
+<li>Architected full-funnel strategy across Facebook, Google, LinkedIn achieving <strong>+275.3% YoY growth</strong>.</li>
+<li>Improved funnel conversion <strong>3.1% → 10.8%</strong>.</li>
+<li>Raised eKYC success rate <strong>+42.6%</strong> and MXV conversion to <strong>34%</strong>.</li>
+<li>Managed lifecycle email campaigns with <strong>40% read rates</strong>.</li>
+<li>Implemented AI creative automation and ROI tracking.</li>
+<li>Reached peak performance with <strong>67 new MXV accounts</strong> in Dec 2025.</li>
+</ul>
+
+<div class="growth-dashboard">
+<div class="growth-card">
+<div class="growth-number">+275.3%</div>
+<div class="growth-title">MXV Account Growth</div>
+<p class="growth-desc">Year-over-year increase in verified trading accounts driven by full-funnel acquisition strategy.</p>
+</div>
+<div class="growth-card">
+<div class="growth-number">31.9%</div>
+<div class="growth-title">eKYC Completion Rate</div>
+<p class="growth-desc">Percentage of registered users successfully completing identity verification.</p>
+</div>
+<div class="growth-card">
+<div class="growth-number">~40%</div>
+<div class="growth-title">Email Engagement Peak</div>
+<p class="growth-desc">Maximum email read rate achieved through lifecycle automation and segmentation.</p>
+</div>
+</div>
+</div>
+
+<div class="exp break-page">
+<div class="job-header">
+<span class="company">ELSA SPEAK</span>
+<span class="date">Feb 2022 - Dec 2023</span>
+</div>
+<span class="role">Senior Performance Marketing Specialist</span>
+<ul class="achievement">
+<li>Executed performance campaigns across Google & Facebook Ads.</li>
+<li>Led SEO coordination with agency partners.</li>
+<li>Built lead nurturing funnels to increase conversion.</li>
+<li>Managed HubSpot CRM workflows.</li>
+<li>Collaborated with BD team on campaign timing.</li>
+</ul>
+</div>
+
+<div class="exp">
+<div class="job-header">
+<span class="company">RECRUITERY</span>
+<span class="date">Jan 2020 - Dec 2021</span>
+</div>
+<span class="role">Digital Marketing Specialist</span>
+<ul class="achievement">
+<li>Built open-source CRM achieving 60% email open rates.</li>
+<li>Ranked 20+ keywords Top 1 Google.</li>
+<li>Created SQL dashboards with Metabase.</li>
+</ul>
+</div>
+
+</main>
+</div>
+
+<script>
+ScrollReveal().reveal('.exp,.summary,.name',{distance:'30px',duration:800,interval:150,origin:'bottom'});
+</script>
+
+</body>
+</html>
