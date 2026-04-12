@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mautic Marketing Automation Showcase | Nguyen Khai Tri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1300px; margin: 0 auto; padding: 60px 20px; }
+
+        /* Header */
+        .header { text-align: center; margin-bottom: 80px; }
+        .header h1 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header p { color: #64748b; font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
+
+        /* Mautic Showcase - Full Width Layout */
+        .showcase-section { display: flex; flex-direction: column; gap: 100px; margin-bottom: 100px; }
+
+        .image-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .image-container { width: 100%; background: #eee; line-height: 0; }
+        .image-container img { 
+            width: 100%; 
+            height: auto; 
+            display: block;
+        }
+
+        .content-container { padding: 40px; }
+        .content-container h2 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; color: var(--dark); display: flex; align-items: center; gap: 15px; }
+        .content-container h2 i { color: var(--primary); }
+        .content-container p { font-size: 1.1rem; color: #475569; margin-bottom: 0; }
+
+        /* Email Live Preview Area */
+        .email-section-title { margin-bottom: 40px; }
+        .email-display-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .browser-mockup {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .browser-header {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+
+        /* IFRAME FULL CONTENT */
+        .email-iframe-container { height: 900px; width: 100%; }
+        #emailFrame { width: 100%; height: 100%; border: none; }
+
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            margin-bottom: 15px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary);
+        }
+        .feature-list h4 { margin: 0 0 5px 0; font-weight: 700; color: var(--dark); }
+        .feature-list p { margin: 0; font-size: 0.9rem; color: #64748b; }
+
+        @media (max-width: 1024px) {
+            .email-display-wrapper { grid-template-columns: 1fr; }
+            .header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header" data-aos="fade-up">
+            <h1>Mautic - Automation Email Marketing</h1>
+            <p>Systematizing data management and automating end-to-end customer journeys</p>
+        </div>
+
+        <div class="showcase-section">
+            
+            <div class="image-card" data-aos="fade-up">
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/ef80af7dd4dc7d745c41e6135004cbe21c99488e/Manage_Contact_Blur.png" alt="Contact Management">
+                </div>
+                <div class="content-container">
+                    <h2><i class="fas fa-users"></i> Centralized Contact Management</h2>
+                    <p>This is the hub for storing and managing all customer identity information. The system allows me to track detailed data from Emails and Phone Numbers to <strong>Points (Lead Scoring)</strong> and Last Active history. Centralized management enables high-level personalization for all subsequent marketing campaigns.</p>
+                </div>
+            </div>
+
+            <div class="image-card" data-aos="fade-up">
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/ee428057fc88cbe84a399ca4a57aeff13fcd903d/Automation%20Email%20Flow.png" alt="Automation Workflow">
+                </div>
+                <div class="content-container">
+                    <h2><i class="fas fa-project-diagram"></i> Multi-path Automation Flow</h2>
+                    <p>Automated workflows allow me to nurture leads in real-time. Based on logical conditions (Email Opened, Link Clicked, Wait 3 days...), the system automatically categorizes and delivers relevant content tailored to the customer's specific psychological stage, increasing conversion rates without manual intervention.</p>
+                </div>
+            </div>
+
+            <div class="image-card" data-aos="fade-up">
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/ee428057fc88cbe84a399ca4a57aeff13fcd903d/Manage%20Segment.png" alt="Dynamic Segmentation">
+                </div>
+                <div class="content-container">
+                    <h2><i class="fas fa-layer-group"></i> Dynamic Audience Segmentation</h2>
+                    <p>I utilize Segments to micro-target the database based on behavior and intent. Dynamic grouping ensures that every message sent is highly relevant to the recipient, preventing spam flags and maintaining the highest possible Open Rates.</p>
+                </div>
+            </div>
+
+            <div class="image-card" data-aos="fade-up">
+                <div class="image-container">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/9aef239f5e99c031eb97da27156101f412392384/Email_Analyst.png" alt="Engagement Analysis">
+                </div>
+                <div class="content-container">
+                    <h2><i class="fas fa-chart-bar"></i> Email Engagement Analysis</h2>
+                    <p>A deep-dive measurement tool for campaign effectiveness. I analyze metrics such as <strong>Click Heatmaps</strong>, Click-through Rates (CTR), and read time to evaluate content quality. These insights form the basis for A/B testing, allowing for continuous optimization of email performance.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="email-section-title" data-aos="fade-right">
+            <h2 style="font-size: 2.5rem; font-weight: 800;">Email Template Showcase</h2>
+            <p style="color: #64748b;">Live preview of a high-converting Market Recap newsletter with a professional layout.</p>
+        </div>
+
+        <div class="email-display-wrapper">
+            <div class="browser-mockup" data-aos="zoom-in">
+                <div class="browser-header">
+                    <div class="dot" style="background: #ff5f56;"></div>
+                    <div class="dot" style="background: #ffbd2e;"></div>
+                    <div class="dot" style="background: #27c93f;"></div>
+                </div>
+                <div class="email-iframe-container">
+                    <iframe id="emailFrame" srcdoc='
+                        <!DOCTYPE html>
+                            <html lang="vi" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+                            <head>
+                              <meta charset="utf-8" />
+                              <meta http-equiv="x-ua-compatible" content="ie=edge" />
+                              <meta name="viewport" content="width=device-width, initial-scale=1" />
+                              <meta name="x-apple-disable-message-reformatting" />
+                              <title>Dự báo hàng hóa: Phân tích kỹ thuật và kịch bản dòng tiền tuần tới</title>
+
+                              <style type="text/css">
+                                html, body { margin:0; padding:0; height:100% !important; width:100% !important; }
+                                table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
+                                table { border-collapse:collapse !important; }
+                                img { display:block; border:0; outline:none; text-decoration:none; height:auto; -ms-interpolation-mode:bicubic; }
+                                a { text-decoration:none; }
+                                .preheader { display:none !important; font-size:1px; line-height:1px; color:#ffffff; max-height:0; max-width:0; opacity:0; overflow:hidden; }
+
+                                @media only screen and (max-width:600px) {
+                                  .wrapper { width:100% !important; }
+                                  .stack-column, .stack-column td { display:block !important; width:100% !important; text-align:left !important; }
+                                  .img-fluid { width:100% !important; height:auto !important; max-width:100% !important; }
+                                }
+                              </style>
+                            </head>
+
+                            <body style="margin:0; padding:0; background:#f5f7fb;">
+                              <div class="preheader">Dự báo kịch bản tuần tới: Lúa mì dò đáy 5.65 USD, Cà phê hướng tới mốc 300 cent. Cập nhật chiến thuật ngay!</div>
+
+                              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5f7fb;">
+                                <tr>
+                                  <td align="center">
+
+                                    <table role="presentation" class="wrapper" width="100%" style="max-width:600px;">
+                                      <tr>
+                                        <td style="padding:24px; background:#ffffff; font-family:Arial, sans-serif; color:#111827; line-height: 1.6;">
+
+                                          <table width="100%" style="margin-bottom:16px;">
+                                            <tr>
+                                              <td>
+                                                <a href="https://tradex.anfin.vn/iwgzTIkzLKb" target="_blank">
+                                                  <img src="https://storage.googleapis.com/hanghoa.anfin.vn/public/cms/banner_email_mkt_ban_tin_hang_hoa_b42a082cdc/banner_email_mkt_ban_tin_hang_hoa_b42a082cdc.png" 
+                                                       alt="Bản tin hàng hóa Anfin" width="600" style="width:100%; max-width:600px; border-radius: 8px;" />
+                                                </a>
+                                              </td>
+                                            </tr>
+                                          </table>
+
+                                          <p style="font-size:16px; margin-bottom:20px;">Kính gửi Quý khách,</p>
+                                          
+                                          <p style="font-size:15px; margin-bottom:20px;">
+                                            Thị trường tuần qua không chỉ biến động vì cảm xúc, mà được dẫn dắt bởi những báo cáo chiến lược từ USDA và sàn ICE. Dưới đây là <strong>Dẫn chứng - Số liệu - Dự báo</strong> giúp bạn định hình chiến thuật cho tuần tới:
+                                          </p>
+
+                                          <h3 style="color:#e11d48; font-size:18px; margin-top:30px; border-left: 4px solid #e11d48; padding-left: 10px; margin-bottom: 10px;">1. Lúa mì: Áp lực nguồn cung từ báo cáo WASDE</h3>
+                                          <p style="font-size:14px; margin-bottom: 15px;">
+                                            <strong>Dẫn chứng:</strong> Báo cáo <strong>WASDE</strong> tháng này cho thấy tồn kho lúa mì cuối kỳ của Mỹ được điều chỉnh tăng do cạnh tranh xuất khẩu từ Nga.<br>
+                                            <strong>Số liệu:</strong> Báo cáo <strong>Crop Progress</strong> xác nhận 56% diện tích lúa mì vụ Đông đạt trạng thái "Tốt - Rất tốt", cao hơn mức 50% cùng kỳ năm ngoái.<br>
+                                            <strong>Kết nối:</strong> Cú rơi <strong>-17.75 cent</strong> tuần qua phản ứng trực tiếp với dữ liệu mùa màng tốt hơn mong đợi này, xác nhận nguồn cung không hề khan hiếm.
+                                          </p>
+                                          
+                                          <img src="https://images.unsplash.com/photo-1473081556163-2a17de81fc97?auto=format&fit=crop&w=600&h=338&q=80" alt="Wheat Outlook" width="552" style="width:100%; border-radius:8px; margin-bottom: 15px;">
+                                          
+                                          <div style="background-color: #fff1f2; padding: 15px; border-radius: 8px; border: 1px solid #fecdd3; margin-bottom: 30px;">
+                                            <p style="font-size:14px; margin: 0; color: #9f1239;"><strong>🔭 Dự báo tuần tới:</strong> Áp lực bán vẫn duy trì. Giá dự kiến sẽ kiểm tra lại vùng hỗ trợ sâu tại <strong>5.65 - 5.70 USD</strong>. Ưu tiên vị thế Bán (Short) khi có nhịp hồi kỹ thuật.</p>
+                                          </div>
+
+                                          <h3 style="color:#10b981; font-size:18px; margin-top:30px; border-left: 4px solid #10b981; padding-left: 10px; margin-bottom: 10px;">2. Cà phê Arabica: Khan hiếm tồn kho đẩy giá lập đỉnh</h3>
+                                          <p style="font-size:14px; margin-bottom: 15px;">
+                                            <strong>Dẫn chứng:</strong> Dữ liệu từ <strong>Sàn ICE</strong> báo cáo lượng tồn kho đạt chuẩn sụt giảm ngày thứ 5 liên tiếp.<br>
+                                            <strong>Số liệu:</strong> Tổng tồn kho hiện chỉ còn dưới <strong>600.000 bao</strong> - mức thấp kỷ lục trong nhiều thập kỷ.<br>
+                                            <strong>Kết nối:</strong> Việc tăng <strong>+2.65 cent</strong> phản ánh tình trạng "đói hàng" của các nhà rang xay, lấn át hoàn toàn áp lực từ đồng USD mạnh.
+                                          </p>
+                                          
+                                          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&h=338&q=80" alt="Coffee Outlook" width="552" style="width:100%; border-radius:8px; margin-bottom: 15px;">
+                                          
+                                          <div style="background-color: #ecfdf5; padding: 15px; border-radius: 8px; border: 1px solid #d1fae5; margin-bottom: 30px;">
+                                            <p style="font-size:14px; margin: 0; color: #065f46;"><strong>🔭 Dự báo tuần tới:</strong> Xu hướng tăng bền vững. Arabica có khả năng cao sẽ chinh phục mốc <strong>300.00 US cent</strong>. Ưu tiên các chiến thuật Mua (Long) khi giá điều chỉnh về vùng 285 cent.</p>
+                                          </div>
+
+                                          <h3 style="color:#3b82f6; font-size:18px; margin-top:30px; border-left: 4px solid #3b82f6; padding-left: 10px; margin-bottom: 10px;">3. Bạc: Giằng co giữa vĩ mô và giá trị nội tại</h3>
+                                          <p style="font-size:14px; margin-bottom: 15px;">
+                                            <strong>Dẫn chứng:</strong> Báo cáo từ <strong>Silver Institute</strong> chỉ ra thâm hụt cung - cầu cấu trúc năm thứ 5 liên tiếp.<br>
+                                            <strong>Số liệu:</strong> Chỉ số <strong>DXY vượt 104</strong> gây áp lực, nhưng nhu cầu bạc cho năng lượng mặt trời dự kiến tăng 15% trong năm 2026.<br>
+                                            <strong>Kết nối:</strong> Giá rung lắc quanh mốc <strong>72.07 USD</strong> là kết quả của cuộc chiến giữa dòng vốn đầu cơ (USD) và nhu cầu tiêu thụ thực tế.
+                                          </p>
+                                          
+                                          <img src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=600&h=338&q=80" alt="Silver Outlook" width="552" style="width:100%; border-radius:8px; margin-bottom: 15px;">
+                                          
+                                          <div style="background-color: #eff6ff; padding: 15px; border-radius: 8px; border: 1px solid #dbeafe; margin-bottom: 30px;">
+                                            <p style="font-size:14px; margin: 0; color: #1e40af;"><strong>🔭 Dự báo tuần tới:</strong> Tích lũy biên độ rộng. Giá cần nhịp điều chỉnh về <strong>70.50 USD</strong> để tạo nền tảng cho đợt tăng mới hướng tới 74.00 USD.</p>
+                                          </div>
+
+                                          <table width="100%" style="margin-top:20px; margin-bottom: 40px;">
+                                            <tr>
+                                              <td align="center">
+                                                <p style="font-size:15px; margin-bottom:15px; font-weight: bold;">Cần kịch bản vào lệnh chi tiết cho từng mã?</p>
+                                                <a href="https://tradex.anfin.vn/iwgzTIkzLKb" style="background-color:#111827; color:#ffffff; padding:16px 30px; border-radius:8px; font-weight:bold; display:inline-block; font-size:16px;">LIÊN HỆ CHUYÊN GIA ĐỂ NHẬN TƯ VẤN</a>
+                                              </td>
+                                            </tr>
+                                          </table>
+
+                                          <div style="background-color: #f9fafb; padding: 15px; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                            <p style="font-size:12px; color: #6b7280; margin: 0; line-height: 1.5;">
+                                              <strong>Lưu ý:</strong> Mọi thông tin trong email này chỉ mang tính chất tham khảo, không được coi là lời khuyên đầu tư chính thức. Thị trường hàng hóa phái sinh có rủi ro biến động cao. <br><br>
+                                              Để được tư vấn điểm vào lệnh (Entry) và cắt lỗ (Stop-loss) chính xác nhất, vui lòng liên hệ đội ngũ chuyên gia của chúng tôi tại: <a href="tel:xxxx" style="color:#3b82f6; font-weight: bold;">[xxxx]</a> hoặc phản hồi trực tiếp email này.
+                                            </p>
+                                          </div>
+
+                                          <p style="font-size:14px; margin-top:40px;">Thân mến,<br><strong>Đội ngũ Anfin</strong></p>
+
+                                          <table width="100%">
+                                            <tr>
+                                              <td align="center">
+                                                <a href="https://tradex.anfin.vn/iwgzTIkzLKb">
+                                                  <img src="https://storage.googleapis.com/hanghoa.anfin.vn/public/cms/CHU_KY_EMAIL_edit_lor_3_8e6fc885e8/CHU_KY_EMAIL_edit_lor_3_8e6fc885e8.png" 
+                                                       width="600" style="width:100%; max-width:600px; margin-top:10px;">
+                                                </a>
+                                              </td>
+                                            </tr>
+                                          </table>
+
+                                        </td>
+                                      </tr>
+                                    </table>
+
+                                  </td>
+                                </tr>
+                              </table>
+
+                            </body>
+                            </html>
+                    '></iframe>
+                </div>
+            </div>
+
+            <div class="email-tech-details" data-aos="fade-left">
+                <ul class="feature-list">
+                    <li>
+                        <h4>Responsive Design</h4>
+                        <p>Perfectly rendered across all mobile devices and desktop clients.</p>
+                    </li>
+                    <li>
+                        <h4>Personalization</h4>
+                        <p>Dynamic tags automatically pull lead data from the Mautic database.</p>
+                    </li>
+                    <li>
+                        <h4>Tracking & UTM</h4>
+                        <p>Detailed click-stream tracking for every individual campaign.</p>
+                    </li>
+                    <li>
+                        <h4>Anti-Spam Optimization</h4>
+                        <p>Clean HTML structure and image optimization to ensure Inbox placement.</p>
+                    </li>
+                </ul>
+                <a href="portfolio.html" style="display:inline-block; margin-top:20px; color: var(--primary); font-weight: 700; text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
