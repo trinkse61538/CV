@@ -1,0 +1,855 @@
+<!DOCTYPE html>    
+<html lang="en">    
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Nguyen Khai Tri | Senior Performance Marketing Specialist</title>    
+        
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    
+    
+    <style>    
+        :root {    
+            --primary-blue: #3b82f6;    
+            --primary-green: #10b981;    
+            --cyan-glow: rgba(6, 182, 212, 0.3);    
+            --bg-light: #ffffff;    
+            --section-bg: #f8fafc;    
+            --card-bg: #ffffff;    
+            --text-main: #0f172a;    
+            --text-muted: #475569;    
+            --slate: #64748b;    
+            --white: #ffffff;    
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);    
+            --gradient-hover: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            /* Dark Mode Vars for specific sections */
+            --dark-section-bg: #0f172a;
+            --dark-card-bg: #1e293b;
+            --dark-text-main: #f8fafc;
+            --dark-text-muted: #94a3b8;
+        }    
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }    
+        body {       
+            font-family: 'Open Sans', sans-serif;       
+            background-color: var(--bg-light);       
+            color: var(--text-muted);       
+            scroll-behavior: smooth;   
+            line-height: 1.6;   
+        }    
+
+        /* --- Custom Scrollbar --- */   
+        ::-webkit-scrollbar { width: 8px; }   
+        ::-webkit-scrollbar-track { background: var(--bg-light); }   
+        ::-webkit-scrollbar-thumb {    
+            background: #cbd5e1;    
+            border-radius: 10px;    
+        }   
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-blue); }   
+
+        /* --- Navigation & Scroll Progress --- */       
+        nav {       
+            position: fixed; top: 0; width: 100%;       
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px);       
+            padding: 1.2rem 5%; display: flex; justify-content: space-between; align-items: center;       
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);       
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);   
+            z-index: 9999;
+        }   
+
+        .progress-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-primary);
+            transition: width 0.1s ease;
+        }
+
+        .scroll-percent {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin-left: 15px;
+            min-width: 45px;
+            text-align: center;
+        }
+           
+        .logo-area { display: flex; align-items: center; }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--text-main); font-size: 1.5rem; letter-spacing: -1px; }       
+        .logo span { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }       
+          
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }       
+        .nav-links a {    
+            text-decoration: none;    
+            color: var(--slate);    
+            font-size: 0.8rem;    
+            font-weight: 700;    
+            transition: 0.3s;    
+            text-transform: uppercase;    
+            letter-spacing: 1px;    
+            position: relative; 
+        }    
+        .nav-links a::after { 
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; 
+            background: var(--gradient-primary); transition: 0.3s; 
+        } 
+        .nav-links a:hover { color: var(--text-main); }       
+        .nav-links a:hover::after { width: 100%; } 
+
+        /* Style đặc biệt cho mục Technical Solutions trên Menu */
+        .nav-links a.nav-special {
+            color: var(--primary-blue);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 8px 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a.nav-special i {
+            font-size: 0.9rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a.nav-special:hover {
+            background: var(--gradient-primary);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav-links a.nav-special:hover i {
+            -webkit-text-fill-color: white;
+            animation: rotateSparkle 0.7s ease-in-out;
+        }
+
+        /* Hiệu ứng hào quang (Glow) nhẹ xung quanh mục menu */
+        .nav-links a.nav-special::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .nav-links a.nav-special:hover::before {
+            left: 100%;
+        }
+
+        @keyframes rotateSparkle {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.3); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Ẩn thanh gạch chân mặc định của menu cho mục đặc biệt này */
+        .nav-links a.nav-special::after {
+            display: none;
+        }
+
+        /* --- Hero Section --- */       
+        .hero {       
+            height: 100vh; display: flex; align-items: center; justify-content: center;       
+            background: var(--bg-light); position: relative; overflow: hidden; padding: 0 5%;       
+        }       
+        .hero-bg {       
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;       
+            background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),       
+                        radial-gradient(circle at 85% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);       
+        }       
+        .hero-content { position: relative; z-index: 10; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; max-width: 1200px; }       
+           
+        .title-divider { 
+            height: 4px; width: 60px; 
+            background: var(--gradient-primary); 
+            margin: 1.5rem 0; 
+            border-radius: 10px; 
+            transition: 0.8s ease; 
+        } 
+        [data-aos="fade-right"].aos-animate .title-divider { width: 120px; } 
+
+        .hero-text h2 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 0.5rem; font-weight: 800; }       
+        .hero-text h1 { color: var(--text-main); font-family: 'Montserrat'; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.5rem; }       
+        .hero-text p { color: var(--text-muted); font-size: 1.15rem; margin-bottom: 3rem; max-width: 550px; line-height: 1.8; }       
+        .hero-text strong { color: var(--text-main); font-weight: 600; }   
+               
+        .profile-blob {       
+            width: 100%; max-width: 420px; aspect-ratio: 1/1; background: var(--gradient-primary);       
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;       
+            animation: morph 8s ease-in-out infinite; overflow: hidden;       
+            border: 8px solid rgba(255, 255, 255, 0.5);       
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);       
+            transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);   
+        }       
+        .profile-blob:hover { transform: scale(1.05) rotate(2deg); box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2); }   
+        .profile-blob img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }       
+
+        @keyframes morph {       
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }       
+            50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }       
+        }       
+
+        /* --- DARK MODE: Transition Stats Section --- */
+        .quick-metrics {
+            padding: 80px 5%;
+            background: var(--dark-section-bg);
+            position: relative;
+            z-index: 5;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .metrics-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .metric-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .metric-item:hover { 
+            transform: translateY(-10px); 
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--primary-blue);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .metric-value {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dark-text-muted);
+        }
+        .metric-icon {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- DARK MODE: Marquee Text Effect --- */
+        .marquee-container {
+            background: #0a0f1d;
+            padding: 40px 0;
+            overflow: hidden;
+            display: flex;
+            white-space: nowrap;
+            position: relative;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scrollText 40s linear infinite;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: rgba(255,255,255,0.07);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+            color: var(--primary-green);
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+            transition: 0.5s;
+        }
+
+        /* --- Section Styling --- */       
+        .section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }       
+        .section-title { color: var(--text-main); font-family: 'Montserrat'; font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; }       
+        .section-title-wrapper { position: relative; margin-bottom: 4rem; }   
+        .section-title-wrapper::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 80px; height: 4px; background: var(--gradient-primary); border-radius: 2px; }   
+        .section-intro { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin-top: 1.5rem; }       
+
+        /* --- Impact Cards --- */       
+        .impact-block {       
+            background: var(--card-bg); padding: 3rem; border-radius: 30px;       
+            border: 1px solid rgba(0,0,0,0.03);       
+            margin-bottom: 3.5rem; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);       
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);   
+            position: relative; overflow: hidden; 
+        }       
+        .impact-block::before { 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.02), rgba(16, 185, 129, 0.02)); 
+            opacity: 0; transition: 0.5s; 
+        } 
+        .impact-block:hover {       
+            transform: translateY(-12px) scale(1.01);       
+            border-color: rgba(59, 130, 246, 0.3);       
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.12), 0 0 20px rgba(59, 130, 246, 0.05);   
+        }       
+        .impact-block:hover::before { opacity: 1; } 
+        .impact-header { display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2.5rem; position: relative; z-index: 1; }       
+        .impact-icon { font-size: 2.8rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: 0.5s; }       
+        .impact-block:hover .impact-icon { transform: rotate(10deg) scale(1.1); } 
+        .role-subtitle { font-size: 0.85rem; color: var(--primary-green); font-weight: 800; text-transform: uppercase; margin-top: 6px; letter-spacing: 1.5px; }       
+               
+        .highlight-tag {       
+            display: inline-block; background: rgba(16, 185, 129, 0.1); color: var(--primary-green);       
+            padding: 6px 16px; border-radius: 100px; font-size: 0.7rem;           
+            font-weight: 800; margin-bottom: 15px; border: 1px solid rgba(16, 185, 129, 0.1);       
+        }       
+
+        .impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative; z-index: 1; }       
+        .impact-stat-card {       
+            background: #f8fafc; padding: 2rem 15px; border-radius: 20px; text-align: center; border: 1px solid rgba(0,0,0,0.03); transition: 0.4s;       
+        }       
+        .impact-stat-card:hover { background: #ffffff; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary-blue); }   
+        .impact-stat-card h4 { font-size: 2.2rem; font-weight: 800; color: var(--text-main); font-family: 'Montserrat'; margin-bottom: 8px; letter-spacing: -1px; }       
+        .impact-stat-card p { font-size: 0.7rem; font-weight: 700; color: var(--slate); text-transform: uppercase; letter-spacing: 0.5px; }       
+        .special-stat { background: rgba(59, 130, 246, 0.03); border-color: rgba(59, 130, 246, 0.08); }       
+        .special-stat h4 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }       
+
+        /* --- Experience Timeline --- */       
+        .timeline { position: relative; padding-left: 3rem; }       
+        .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; height: 100%; width: 2px; background: linear-gradient(to bottom, var(--primary-blue), #e2e8f0); }       
+        .timeline-item { position: relative; margin-bottom: 4rem; }       
+        .timeline-dot {    
+            position: absolute; left: -3.05rem; top: 5px; width: 16px; height: 16px;    
+            background: var(--primary-green); border: 4px solid var(--bg-light); border-radius: 50%;    
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);    
+            transition: 0.3s; 
+        }       
+        .timeline-item:hover .timeline-dot { transform: scale(1.5); background: var(--primary-blue); box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); } 
+        .exp-card { background: var(--card-bg); padding: 3rem; border-radius: 24px; border: 1px solid rgba(0,0,0,0.04); transition: 0.4s; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }       
+        .exp-card:hover { border-color: rgba(59, 130, 246, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.06); transform: translateX(10px); }   
+        .company-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }       
+        .company { color: var(--text-main); font-size: 1.4rem; font-weight: 800; font-family: 'Montserrat'; }       
+        .date { font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); padding: 6px 16px; border-radius: 100px; font-weight: 800; color: var(--primary-blue); }       
+        .achievement-list { list-style: none; color: var(--text-muted); font-size: 1rem; }       
+        .achievement-list li { margin-bottom: 15px; position: relative; padding-left: 30px; line-height: 1.6; transition: 0.3s; }       
+        .achievement-list li:hover { transform: translateX(5px); color: var(--text-main); } 
+        .achievement-list li i { position: absolute; left: 0; top: 6px; color: var(--primary-green); font-size: 0.9rem; }       
+        .performance-highlight {    
+            color: var(--text-main); font-weight: 600; border-left: 4px solid var(--primary-blue);    
+            padding: 15px 20px; margin: 25px 0; background: rgba(59, 130, 246, 0.05); border-radius: 0 12px 12px 0;    
+            transition: 0.3s; 
+        }       
+        .exp-card:hover .performance-highlight { background: rgba(59, 130, 246, 0.1); transform: scale(1.02); } 
+
+        /* --- Optimized Bento Skills Grid --- */       
+        .bento-grid {  
+            display: grid;  
+            grid-template-columns: repeat(2, 1fr);  
+            grid-auto-rows: minmax(180px, auto);  
+            gap: 1.5rem;  
+        }       
+        .bento-item {    
+            background: var(--card-bg); border-radius: 28px; padding: 2.5rem;    
+            display: flex; flex-direction: column; justify-content: center;    
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(0,0,0,0.05);    
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);   
+        }       
+        .bento-item:hover {    
+            transform: translateY(-10px);    
+            border-color: var(--primary-blue);    
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);   
+        }       
+        .bento-item i { font-size: 2.2rem; color: var(--primary-blue); margin-bottom: 1.2rem; transition: 0.4s; }       
+        .bento-item:hover i { transform: scale(1.2) rotate(-5deg); color: var(--primary-green); }       
+          
+        .large { background: var(--gradient-primary); border: none; color: white; }       
+        .large i { color: white; font-size: 3rem; }       
+        .large h3, .large p { color: white; }       
+        .large:hover { background: var(--gradient-hover); }       
+
+        .skill-tags { 
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2rem; 
+        } 
+        .skill-tag { 
+            background: rgba(59, 130, 246, 0.08); color: var(--primary-blue); 
+            padding: 5px 14px; border-radius: 8px; font-size: 0.75rem; 
+            font-weight: 700; text-transform: uppercase; border: 1px solid rgba(59, 130, 246, 0.1); 
+            transition: 0.3s; 
+        } 
+        .skill-tag:hover { 
+            background: var(--primary-blue); color: white; transform: translateY(-3px); 
+            box-shadow: 0 5px 10px rgba(59, 130, 246, 0.2); 
+        } 
+        .large .skill-tag { 
+            background: rgba(255, 255, 255, 0.2); color: white; border-color: transparent; 
+        } 
+        .large .skill-tag:hover { background: white; color: var(--primary-blue); } 
+
+        /* --- Footer --- */   
+        footer { background: #f1f5f9; padding: 80px 5% 40px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); }       
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; }       
+        .social-links a {    
+            width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;    
+            background: var(--white); border-radius: 50%; color: var(--text-main); font-size: 1.5rem; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);    
+            border: 1px solid rgba(0,0,0,0.05);    
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);   
+        }       
+        .social-links a:hover {    
+            background: var(--gradient-primary);    
+            transform: translateY(-10px) rotate(360deg);    
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);    
+            border-color: transparent;    
+            color: white;   
+        }       
+
+        /* --- Buttons --- */   
+        .btn-primary {   
+            background: var(--gradient-primary); color: var(--white) !important; padding: 1.2rem 2.5rem;    
+            border-radius: 14px; text-decoration: none; font-weight: 800; transition: 0.4s;    
+            display: inline-block; box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);    
+            text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;   
+        }   
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -5px rgba(16, 185, 129, 0.4); filter: brightness(1.1); }   
+
+        .btn-secondary {   
+            border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 1.1rem 2.5rem;    
+            border-radius: 14px; text-decoration: none; font-weight: 800; transition: 0.4s;   
+            text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;   
+        }   
+        .btn-secondary:hover { background: var(--primary-blue); color: white !important; transform: translateY(-5px); }   
+
+        @media (max-width: 968px) {       
+            .hero-content { grid-template-columns: 1fr; text-align: center; margin-top: 80px; }       
+            .hero-text h1 { font-size: 3.5rem; }       
+            .hero-text p { margin: 0 auto 3rem; }   
+            .title-divider { margin: 1.5rem auto; } 
+            .profile-blob { width: 280px; height: 280px; margin: 0 auto; }       
+            .impact-stats { grid-template-columns: 1fr 1fr; }       
+            .bento-grid { grid-template-columns: 1fr; }       
+            .nav-links { display: none; }       
+            .hero-text div { justify-content: center !important; }   
+            .scroll-percent { margin-left: 10px; font-size: 0.65rem; min-width: 35px; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+        }       
+    </style>       
+</head>       
+<body>       
+
+    <nav id="mainNav">       
+        <div class="logo-area">
+            <div class="logo">KHAI<span>TRI.</span></div>
+            <div class="scroll-percent" id="scrollPercent">0%</div>
+        </div>
+
+        <ul class="nav-links">       
+            <li><a href="#impact">Impact</a></li>       
+            <li><a href="#showcase" class="nav-special">Solutions <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+            <li><a href="#experience">Experience</a></li>       
+            <li><a href="#skills">Skills</a></li>       
+            <li><a href="mailto:khaitri15@gmail.com" style="color: var(--text-main);"><i class="fas fa-paper-plane" style="color: var(--primary-green); margin-right: 5px;"></i> Contact</a></li>       
+        </ul>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </nav>       
+
+    <section class="hero">       
+        <div class="hero-bg"></div>       
+        <div class="hero-content">       
+            <div class="hero-text" data-aos="fade-right">       
+                <h2>Digital Performance Marketing Specialist</h2>       
+                <h1>Nguyen Khai Tri</h1>       
+                <div class="title-divider"></div> 
+                <p>Transitioning from a <strong>Software Engineering</strong> background, I bridge the gap between technical logic and growth marketing. I don’t just run ads — I engineer <strong>Data-Driven Funnels</strong> and leverage <strong>AI-Automation</strong> to scale performance with surgical precision.</p>       
+                <div style="display: flex; gap: 1.5rem; justify-content: flex-start; flex-wrap: wrap;">       
+                    <a href="mailto:khaitri15@gmail.com" class="btn-primary">Let's Talk</a>       
+                    <a href="https://htmlpreview.github.io/?https://github.com/trinkse61538/CV/blob/817e319670619a927dbb24f336c7947712f2a76c/View_CV.html" 
+                       class="btn-primary" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       View my CV
+                    </a>  
+                    <a href="https://raw.githubusercontent.com/trinkse61538/CV/7a1638c354b613986a4c344a0808b270edfad8bd/CV_Nguyen%20Khai%20Tri%20%7C%20Senior%20Performance%20Marketer_3.pdf" class="btn-secondary" download><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download CV</a>
+                </div>       
+            </div>       
+            <div class="hero-image-container" data-aos="zoom-in" data-aos-delay="200">       
+                <div class="profile-blob">       
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/main/Gemini_Generated_Image_90yolh90yolh90yo.png" alt="Nguyen Khai Tri">       
+                </div>       
+            </div>       
+        </div>       
+    </section>
+
+    <div class="quick-metrics">
+        <div class="metrics-grid">
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-chart-line metric-icon"></i>
+                <span class="metric-value">8+</span>
+                <span class="metric-label">Years Experience</span>
+            </div>
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-coins metric-icon"></i>
+                <span class="metric-value">$1M+</span>
+                <span class="metric-label">Managed Budget</span>
+            </div>
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-fingerprint metric-icon"></i>
+                <span class="metric-value">3.85</span>
+                <span class="metric-label">Average ROAS</span>
+            </div>
+            <div class="metric-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fa-solid fa-microchip metric-icon"></i>
+                <span class="metric-value">100%</span>
+                <span class="metric-label">AI Integrated</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" id="impact">       
+        <div class="section-title-wrapper" data-aos="fade-up">     
+            <h2 class="section-title">Career Impact Stories</h2>       
+            <p class="section-intro">Precision user acquisition and ROI scaling for industry leaders.</p>       
+        </div>     
+
+        <div class="impact-block" data-aos="fade-up">       
+            <div class="highlight-tag">TOP PERFORMANCE KPI</div>       
+            <div class="impact-header">       
+                <i class="fa-solid fa-rocket impact-icon"></i>       
+                <div>       
+                    <h3 style="color: var(--text-main); font-size: 1.8rem; font-family: 'Montserrat';">Anfin (Commodities FinTech)</h3>       
+                    <p class="role-subtitle">Paid Ads & Growth Funnel Specialist</p>       
+                </div>       
+            </div>       
+            <div class="impact-stats">       
+                <div class="impact-stat-card special-stat">       
+                    <h4>275.3%</h4>       
+                    <p>YOY MXV Account Growth</p>       
+                </div>       
+                <div class="impact-stat-card special-stat">       
+                    <h4>34.0%</h4>       
+                    <p>eKYC-to-MXV Conversion</p>       
+                </div>       
+                <div class="impact-stat-card">       
+                    <h4>42.6%</h4>       
+                    <p>Onboarding Success Lift</p>       
+                </div>       
+                <div class="impact-stat-card">       
+                    <h4>3.3x</h4>       
+                    <p>Mautic Funnel Efficiency</p>       
+                </div>       
+            </div>       
+        </div>       
+
+        <div class="impact-block" data-aos="fade-up" data-aos-delay="100">       
+            <div class="highlight-tag">GLOBAL PERFORMANCE SCALING</div>       
+            <div class="impact-header">       
+                <i class="fa-solid fa-bullseye impact-icon"></i>       
+                <div>       
+                    <h3 style="color: var(--text-main); font-size: 1.8rem; font-family: 'Montserrat';">ELSA Speak (Global EdTech)</h3>       
+                    <p class="role-subtitle">Senior Performance Marketing Specialist</p>       
+                </div>       
+            </div>       
+            <div class="impact-stats">       
+                <div class="impact-stat-card special-stat">       
+                    <h4>3.85</h4>       
+                    <p>Avg. ROAS (Global UA)</p>       
+                </div>       
+                <div class="impact-stat-card special-stat">       
+                    <h4>170%</h4>       
+                    <p>Revenue KPI Achieved</p>       
+                </div>       
+                <div class="impact-stat-card">       
+                    <h4>70%</h4>       
+                    <p>New B2B Clientele Share</p>       
+                </div>       
+                <div class="impact-stat-card">       
+                    <h4>60%</h4>       
+                    <p>Email Open Rate</p>       
+                </div>       
+            </div>       
+        </div>       
+    </section>
+
+    <section class="section" id="showcase" style="padding-top: 0;">
+        <div class="section-title-wrapper" data-aos="fade-up">     
+            <h2 class="section-title">Technical Solutions</h2>       
+            <p class="section-intro">Automating the growth engine with AI and Marketing Technology.</p>       
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-item" data-aos="fade-right" style="border-left: 5px solid var(--primary-blue); min-height: 280px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <i class="fa-solid fa-envelope-open-text" style="color: var(--primary-blue);"></i>
+                    <span class="highlight-tag" style="margin-bottom: 0;">MAUTIC</span>
+                </div>
+                <h3 style="font-size: 1.5rem; margin: 1rem 0 0.5rem; color: var(--text-main); font-family: 'Montserrat';">Email Marketing Automation</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Built automated lead nurturing systems, personalizing content based on user behavior to maximize engagement and Inbox placement rates.
+                </p>
+                <a href="https://htmlpreview.github.io/?https://github.com/trinkse61538/CV/blob/02361a630517470fd8484ef74f3cae9d4e28b4f0/email_showcase.html" class="btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.75rem; width: fit-content; border-width: 1px;">
+                    View Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 8px; font-size: 0.7rem;"></i>
+                </a>
+            </div>
+
+            <div class="bento-item" data-aos="fade-left" style="border-left: 5px solid var(--primary-green); min-height: 280px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <i class="fa-solid fa-robot" style="color: var(--primary-green);"></i>
+                    <span class="highlight-tag" style="background: rgba(59, 130, 246, 0.1); color: var(--primary-blue); border-color: rgba(59, 130, 246, 0.1); margin-bottom: 0;">OpenClaw - Gemini - Telegram</span>
+                </div>
+                <h3 style="font-size: 1.5rem; margin: 1rem 0 0.5rem; color: var(--text-main); font-family: 'Montserrat';">AI Auto Crawl & News Agent</h3>
+                <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    Automated market intelligence system that crawls news, uses AI for summarization, and feeds insights directly into the Ad Creative workflow.
+                </p>
+                <a href="email_showcase.html" class="btn-secondary" style="padding: 0.8rem 1.5rem; font-size: 0.75rem; width: fit-content; border-width: 1px; color: var(--primary-green); border-color: var(--primary-green);">
+                    Explore Logic <i class="fa-solid fa-microchip" style="margin-left: 8px; font-size: 0.7rem;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            GOOGLE ADS &nbsp;•&nbsp; FACEBOOK ADS &nbsp;•&nbsp; LINKEDIN ADS &nbsp;•&nbsp; TIKTOK ADS &nbsp;•&nbsp; EMAIL MARKETING &nbsp;•&nbsp; HUBSPOT &nbsp;•&nbsp; MAUTIC &nbsp;•&nbsp; DATA DRIVEN &nbsp;•&nbsp; GOOGLE ADS &nbsp;•&nbsp; FACEBOOK ADS &nbsp;•&nbsp; LINKEDIN ADS &nbsp;•&nbsp; EMAIL MARKETING &nbsp;•&nbsp; SQL &nbsp;•&nbsp; HUBSPOT &nbsp;•&nbsp; MAUTIC &nbsp;•&nbsp; DATA DRIVEN &nbsp;•&nbsp;
+        </div>
+    </div>
+
+    <section class="section" id="experience" style="background: var(--section-bg); max-width: 100%; border-top: 1px solid rgba(0,0,0,0.03);">       
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">       
+        <div class="section-title-wrapper" data-aos="fade-up">     
+            <h2 class="section-title">Professional Journey</h2>       
+        </div>     
+        <div class="timeline">       
+                   
+            <div class="timeline-item" data-aos="fade-left">       
+                <div class="timeline-dot"></div>       
+                <div class="exp-card">       
+                    <div class="company-row">       
+                        <span class="company">ANFIN (Commodities Derivative)</span>       
+                        <span class="date">Aug 2024 - Present</span>       
+                    </div>       
+                    <h4 style="color: var(--text-main); margin-bottom: 1.5rem; font-size: 1.2rem;">Senior Performance Digital Marketer</h4>       
+                    <div class="performance-highlight">       
+                        <i class="fa-solid fa-bolt" style="margin-right: 10px;"></i> Core: Scaling <strong>Google Search/App Campaigns</strong>, <strong>FB Conversion Ads</strong> & <strong>LinkedIn Ads</strong>.       
+                    </div>       
+                    <ul class="achievement-list">       
+                        <li><i class="fa-solid fa-circle-check"></i> Optimized App Install campaigns to drive a <strong>275.3% increase</strong> in YOY MXV account openings.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> Boosted conversion from eKYC to trading from 12.9% to <strong>34.0%</strong> through optimized Google Ads, FB Ads & LinkedIn.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> Deployed <strong>Automated Content Generation</strong> using OpenClaw to automate ad creative production.</li>       
+                    </ul>       
+                </div>       
+            </div>       
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">       
+                <div class="timeline-dot"></div>       
+                <div class="exp-card">       
+                    <div class="company-row">       
+                        <span class="company">ELSA SPEAK</span>       
+                        <span class="date">Feb 2022 - Dec 2023</span>       
+                    </div>       
+                    <h4 style="color: var(--text-main); margin-bottom: 1.5rem; font-size: 1.2rem;">Senior Performance Marketing Specialist</h4>       
+                    <div class="performance-highlight">       
+                        Managed monthly performance budget of <strong>$8,000</strong> for App UA across Google and Facebook.       
+                    </div>       
+                    <ul class="achievement-list">       
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Paid Media Master:</strong> Consistently achieved a <strong>3.85 ROAS</strong> across global markets.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>Tracking & Data:</strong> Integrated Branch.io and GA4 to accurately attribute performance and reduce drop-off rates.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> <strong>CRM Strategy:</strong> Administered HubSpot CRM to streamline MQL-to-SQL handoff for B2B teams.</li>       
+                    </ul>       
+                </div>       
+            </div>       
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">       
+                <div class="timeline-dot"></div>       
+                <div class="exp-card">       
+                    <div class="company-row">       
+                        <span class="company">RECRUITERY</span>       
+                        <span class="date">Jan 2020 - Dec 2021</span>       
+                    </div>       
+                    <h4 style="color: var(--text-main); margin-bottom: 1.5rem; font-size: 1.2rem;">Digital Marketing Specialist</h4>       
+                    <ul class="achievement-list">       
+                        <li><i class="fa-solid fa-circle-check"></i> Built and scaled a professional Telegram community to 2200+ active members.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> Implemented open-source CRM systems, maintaining a record-high 60% email open rate.</li>       
+                        <li><i class="fa-solid fa-circle-check"></i> SEO Mastery: Ranked 20+ competitive keywords in Top 1 Google Search.</li>       
+                    </ul>       
+                </div>       
+            </div>       
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">       
+                <div class="timeline-dot"></div>       
+                <div class="exp-card">       
+                    <div class="company-row">       
+                        <span class="company">KADI MEDIA</span>       
+                        <span class="date">Dec 2018 - Dec 2019</span>       
+                    </div>       
+                    <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">Digital Marketer - Data Analyst</h4>       
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">
+                        Focused on multi-channel data analysis (Google/FB Ads) and building real-time reporting systems using Google Data Studio.
+                    </p>       
+                </div>       
+            </div>       
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">       
+                <div class="timeline-dot"></div>       
+                <div class="exp-card">       
+                    <div class="company-row">       
+                        <span class="company">FPT SOFTWARE</span>       
+                        <span class="date">Nov 2017 - Nov 2018</span>       
+                    </div>       
+                    <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">AI Developer</h4>       
+                    <p style="font-size: 0.95rem; color: var(--text-muted);">
+                        Researched and developed AI-driven solutions, providing a strong technical foundation for growth automation.
+                    </p>       
+                </div>       
+            </div>       
+
+        </div>       
+    </div>       
+</section>       
+
+    <section class="section" id="skills">       
+        <div class="section-title-wrapper" data-aos="fade-up">     
+            <h2 class="section-title">Core Competencies</h2>       
+        </div>     
+
+        <div class="bento-grid">       
+            <div class="bento-item large" data-aos="zoom-in">       
+                <i class="fa-solid fa-award"></i>       
+                <div>       
+                    <h3 style="font-size: 1.8rem; margin-bottom: 0.6rem;">Performance Mastery</h3>       
+                    <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;">Full-funnel expert scaling Global UA & B2B campaigns with surgical precision.</p>       
+                    <div class="skill-tags"> 
+                        <span class="skill-tag">Google Ads (UAC)</span> 
+                        <span class="skill-tag">Facebook Ads</span> 
+                        <span class="skill-tag">LinkedIn Ads</span> 
+                        <span class="skill-tag">TikTok Ads</span> 
+                    </div> 
+                </div>       
+            </div>       
+
+            <div class="bento-item" style="border-color: rgba(16, 185, 129, 0.2);" data-aos="zoom-in" data-aos-delay="100">       
+                <i class="fa-solid fa-layer-group" style="color: var(--primary-green);"></i>       
+                <div>       
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">The Growth Stack</h3>       
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Marketing automation and CRM architecture.</p>       
+                    <div class="skill-tags"> 
+                        <span class="skill-tag">HubSpot</span> 
+                        <span class="skill-tag">Mautic</span> 
+                        <span class="skill-tag">Branch.io</span> 
+                    </div> 
+                </div>       
+            </div>       
+
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="200">       
+                <i class="fa-solid fa-code" style="font-size: 1.8rem;"></i>       
+                <div> 
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">Data Engineering</h3>       
+                    <div class="skill-tags"> 
+                        <span class="skill-tag">SQL</span> 
+                        <span class="skill-tag">GTM Server-side</span> 
+                        <span class="skill-tag">Python (AI Scripts)</span> 
+                        <span class="skill-tag">Looker Studio</span> 
+                    </div> 
+                </div> 
+            </div>       
+
+            <div class="bento-item" data-aos="fade-up" data-aos-delay="300">       
+                <i class="fa-solid fa-brain" style="font-size: 1.8rem;"></i>       
+                <div> 
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-main);">AI Automation</h3>       
+                    <div class="skill-tags"> 
+                        <span class="skill-tag">AI Agent Deployment</span> 
+                        <span class="skill-tag">Workflow Automation</span> 
+                        <span class="skill-tag">Prompt Engineering</span> 
+                    </div> 
+                </div> 
+            </div>       
+        </div>       
+    </section>       
+
+    <footer>       
+        <div class="logo" style="margin-bottom: 2rem; font-size: 2rem;">KHAI<span>TRI.</span></div>       
+        <div class="social-links">       
+            <a href="tel:0367676119" title="Call me"><i class="fa-solid fa-phone"></i></a>       
+            <a href="https://www.facebook.com/trinkse61538/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>       
+            <a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>       
+            <a href="mailto:khaitri15@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>       
+        </div>       
+        <p style="letter-spacing: 1px; font-size: 0.8rem; opacity: 0.6; color: var(--text-muted);">&copy; 2026 NGUYEN KHAI TRI • ENGINEERED GROWTH • BUILT WITH PRECISION</p>       
+    </footer>       
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>       
+    <script>       
+        AOS.init({       
+            duration: 1000,       
+            once: true,       
+            offset: 100,      
+            easing: 'ease-out-cubic'   
+        });       
+
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            // Update Bar
+            const bar = document.getElementById("progressBar");
+            if(bar) bar.style.width = scrolled + "%";
+            
+            // Update Text Percent
+            const percentText = document.getElementById("scrollPercent");
+            if(percentText) percentText.innerText = Math.round(scrolled) + "%";
+
+            // Navbar Background Effect
+            const nav = document.getElementById('mainNav');
+            if (winScroll > 50) {
+                nav.style.padding = "0.8rem 5%";
+                nav.style.background = "rgba(255, 255, 255, 0.95)";
+            } else {
+                nav.style.padding = "1.2rem 5%";
+                nav.style.background = "rgba(255, 255, 255, 0.85)";
+            }
+        });
+    </script>
+</body>
+</html>
