@@ -134,41 +134,46 @@
         .metric-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--dark-text-muted); }
         .metric-icon { font-size: 1.5rem; margin-bottom: 15px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- Marquee Fixed & Enhanced --- */
+        /* --- Marquee Fixed & Per-word Gradient --- */
         .marquee-container { 
             background: #0a0f1d; 
             padding: 25px 0; 
             overflow: hidden; 
-            display: flex; 
+            display: block; /* Đổi thành block để đảm bảo animation chạy chuẩn */
             white-space: nowrap; 
-            border-top: 1px solid rgba(255,255,255,0.05); 
+            border-top: 1px solid rgba(255,255,255,0.05);
+            position: relative;
         }
         
         .marquee-content { 
             display: inline-block; 
-            animation: scrollText 40s linear infinite; 
+            padding-left: 100%; /* Đẩy nội dung ra ngoài để bắt đầu chạy */
+            animation: scrollText 30s linear infinite; /* Chỉnh tốc độ nhanh hơn chút */
             font-family: 'Montserrat', sans-serif; 
             font-weight: 800; 
             font-size: 1.2rem; 
-            color: rgba(255, 255, 255, 0.1); /* Màu mờ mặc định */
+            color: rgba(255, 255, 255, 0.1); 
             text-transform: uppercase; 
             letter-spacing: 3px; 
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: color 0.3s ease;
         }
         
-        /* Hiệu ứng khi hover: Chữ sáng màu Gradient Xanh và KHÔNG dừng lại */
+        /* Hiệu ứng khi hover: Chữ sáng và Gradient trên từng chữ */
         .marquee-container:hover .marquee-content {
-            color: #3b82f6; /* Màu xanh primary làm nền */
-            /* Tạo hiệu ứng Gradient giống button */
-            background: var(--gradient-primary);
+            /* Tạo Gradient lặp lại theo kích thước chữ thay vì toàn thanh */
+            background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+            background-size: 400px 100%; /* Giới hạn độ dài gradient để nó chuyển màu trong phạm vi ngắn */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* Đổ bóng Glow xanh nhẹ */
-            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
-            
-            /* Đảm bảo animation vẫn chạy */
-            animation-play-state: running !important; 
+            filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+            animation-play-state: running !important; /* Ép buộc luôn chạy */
+        }
+        
+        /* Quan trọng: Fix lại Keyframes để đảm bảo nó chạy mượt */
+        @keyframes scrollText { 
+            0% { transform: translateX(0); } 
+            100% { transform: translateX(-100%); } 
         }
 
         /* --- Sections --- */       
