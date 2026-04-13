@@ -134,7 +134,7 @@
         .metric-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--dark-text-muted); }
         .metric-icon { font-size: 1.5rem; margin-bottom: 15px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- Marquee Update --- */
+        /* --- Marquee Fixed & Enhanced --- */
         .marquee-container { 
             background: #0a0f1d; 
             padding: 25px 0; 
@@ -142,7 +142,6 @@
             display: flex; 
             white-space: nowrap; 
             border-top: 1px solid rgba(255,255,255,0.05); 
-            cursor: default; /* Tạo cảm giác tương tác */
         }
         
         .marquee-content { 
@@ -151,19 +150,25 @@
             font-family: 'Montserrat', sans-serif; 
             font-weight: 800; 
             font-size: 1.2rem; 
-            /* Thay đổi màu mặc định sáng hơn một chút để không quá tối */
-            color: rgba(255, 255, 255, 0.15); 
+            color: rgba(255, 255, 255, 0.1); /* Màu mờ mặc định */
             text-transform: uppercase; 
             letter-spacing: 3px; 
-            transition: all 0.4s ease; /* Tạo hiệu ứng chuyển mượt mà */
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Hiệu ứng khi hover vào Container hoặc trực tiếp vào chữ */
+        /* Hiệu ứng khi hover: Chữ sáng màu Gradient Xanh và KHÔNG dừng lại */
         .marquee-container:hover .marquee-content {
-            color: #ffffff; /* Chữ chuyển sang trắng tinh */
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 
-                         0 0 20px rgba(16, 185, 129, 0.5); /* Đổ bóng tạo hiệu ứng Neon xanh lá - xanh dương */
-            animation-play-state: paused; /* Tùy chọn: Dừng chạy khi hover để dễ đọc */
+            color: #3b82f6; /* Màu xanh primary làm nền */
+            /* Tạo hiệu ứng Gradient giống button */
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Đổ bóng Glow xanh nhẹ */
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+            
+            /* Đảm bảo animation vẫn chạy */
+            animation-play-state: running !important; 
         }
 
         /* --- Sections --- */       
