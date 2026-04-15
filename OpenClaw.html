@@ -13,14 +13,10 @@
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
             --border-color: #262626;
-            --neon-glow: 0 10px 30px rgba(255, 77, 77, 0.15);
+            --neon-glow: 0 10px 30px rgba(255, 77, 77, 0.2);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
@@ -30,7 +26,7 @@
             overflow-x: hidden;
         }
 
-        /* Back Button */
+        /* Navigation */
         .back-home {
             position: fixed;
             top: 30px;
@@ -39,13 +35,14 @@
             text-decoration: none;
             color: var(--text-muted);
             font-family: 'JetBrains+Mono', monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s;
+            padding: 10px 20px;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
             border-radius: 100px;
             border: 1px solid var(--border-color);
         }
@@ -53,7 +50,6 @@
         .back-home:hover {
             color: var(--accent-color);
             border-color: var(--accent-color);
-            background: rgba(255, 77, 77, 0.05);
             transform: translateX(-5px);
         }
 
@@ -65,240 +61,251 @@
 
         header {
             text-align: center;
-            margin-bottom: 100px;
-            animation: fadeIn 1.2s ease-out;
+            margin-bottom: 120px;
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
-            letter-spacing: -2px;
+            letter-spacing: -3px;
             margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff 30%, #555 100%);
+            background: linear-gradient(180deg, #fff 40%, #444 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Showcase Grid */
         .showcase-grid {
             display: flex;
             flex-direction: column;
-            gap: 100px;
+            gap: 150px;
         }
 
         .feature-item {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr; /* Desktop default: Text wider than Image */
-            gap: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             align-items: center;
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: all 0.8s ease-out;
         }
 
-        .feature-item.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .feature-item.visible { opacity: 1; transform: translateY(0); }
+
+        .feature-item:nth-child(even) { direction: rtl; }
+        .feature-item:nth-child(even) .content { direction: ltr; }
+
+        /* Content Info */
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--accent-color);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-family: 'JetBrains+Mono', monospace;
+            border-left: 3px solid var(--accent-color);
         }
 
-        /* Alternating layout */
-        .feature-item:nth-child(even) {
-            direction: rtl;
-        }
-        .feature-item:nth-child(even) .content {
-            direction: ltr;
-        }
+        .content h3 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 700; }
+        .content p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
 
-        /* Image Wrapper optimized for vertical shots */
+        .tech-list { list-style: none; font-family: 'JetBrains+Mono', monospace; font-size: 0.9rem; }
+        .tech-list li { margin-bottom: 10px; color: #888; display: flex; align-items: center; gap: 10px; }
+        .tech-list li::before { content: "::"; color: var(--accent-color); font-weight: bold; }
+
+        /* Image Wrapper & Zoom Logic */
         .image-wrapper {
-            background: linear-gradient(145deg, #1a1a1a, #000);
-            border-radius: 24px;
-            padding: 15px;
+            position: relative;
+            cursor: zoom-in;
+            border-radius: 20px;
+            overflow: hidden;
             border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
             display: flex;
             justify-content: center;
-            overflow: hidden;
-            transition: all 0.4s;
         }
 
-        .feature-item:hover .image-wrapper {
+        .image-wrapper::after {
+            content: "CLICK TO ENLARGE";
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 12px;
+            font-size: 0.65rem;
+            font-family: 'JetBrains+Mono', monospace;
+            border-radius: 4px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .image-wrapper:hover::after { opacity: 1; }
+
+        .image-wrapper:hover {
             border-color: var(--accent-color);
             box-shadow: var(--neon-glow);
+            transform: scale(1.02);
         }
 
         .image-wrapper img {
             max-width: 100%;
             height: auto;
-            max-height: 550px; /* Limits tall mobile screenshots */
-            object-fit: contain;
-            border-radius: 12px;
-            filter: grayscale(30%);
+            display: block;
             transition: 0.4s;
+            max-height: 500px; /* Limits tall images on main layout */
+            object-fit: contain;
         }
 
         .feature-item:hover img {
             filter: grayscale(0%);
         }
 
-        /* Content Styling */
-        .tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(255, 77, 77, 0.1);
-            color: var(--accent-color);
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            font-family: 'JetBrains+Mono', monospace;
-            border: 1px solid rgba(255, 77, 77, 0.2);
-        }
-
-        .content h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .content p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-        }
-
-        .tech-specs {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            font-family: 'JetBrains+Mono', monospace;
-            font-size: 0.85rem;
-        }
-
-        .spec-item {
-            display: flex;
+        /* Fullscreen Modal */
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.97);
+            display: none;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
-            color: var(--text-muted);
+            z-index: 1000;
+            cursor: zoom-out;
+            padding: 40px;
         }
 
-        .spec-item::before {
-            content: "→";
-            color: var(--accent-color);
-            font-weight: bold;
+        .modal img {
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            animation: zoomIn 0.3s ease;
+            
+            /* Enhanced portrait constraint */
+            max-width: 90%;
+            max-height: 85vh; /* Fits portrait inside view */
+            object-fit: contain;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
-        /* Mobile Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 968px) {
-            .feature-item, .feature-item:nth-child(even) {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                direction: ltr;
-            }
-            .back-home {
-                top: 15px;
-                left: 15px;
-                font-size: 0.8rem;
-            }
-            .image-wrapper img {
-                max-height: 450px;
-            }
+            .feature-item, .feature-item:nth-child(even) { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
+            .container { padding: 80px 20px; }
+            .modal { padding: 10px; }
+            .modal img { max-height: 95vh; max-width: 95%; }
         }
     </style>
 </head>
 <body>
 
-    <a href="https://khaitringuyen.com/" class="back-home">
-        <span>←</span> BACK TO PROFILE
-    </a>
+    <a href="https://khaitringuyen.com/" class="back-home">← HOME PROFILE</a>
 
     <div class="container">
         <header>
-            <div class="tag">AI Showcase 2026</div>
+            <div class="tag">AI INFRASTRUCTURE</div>
             <h1>OpenClaw Intelligence</h1>
-            <p>Mastering automated trading and marketing data pipelines.</p>
+            <p>High-performance AI agents for market analysis & automation.</p>
         </header>
 
         <div class="showcase-grid">
             
             <section class="feature-item">
                 <div class="content">
-                    <span class="tag">01. INFRASTRUCTURE</span>
-                    <h3>On-Premise Server Control</h3>
-                    <p>Building a robust foundation with a dedicated Mac Mini environment. This allows for persistent processing, high security, and absolute ownership of the AI workflow without third-party dependencies.</p>
-                    <div class="tech-specs">
-                        <div class="spec-item">Private Cloud Infrastructure</div>
-                        <div class="spec-item">Always-on Execution Cycle</div>
-                    </div>
+                    <span class="tag">MODULE_01</span>
+                    <h3>Private Server Core</h3>
+                    <p>Dedicated self-hosted infrastructure on Mac Mini environment. Optimized for 24/7 uptime, private data processing, and rapid execution of Python-based AI agents.</p>
+                    <ul class="tech-list">
+                        <li>High-availability local hosting</li>
+                        <li>Isolated security environment</li>
+                    </ul>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/OpenClaw_Server.png" alt="Server Shell">
-                </div>
-            </section>
-
-            <section class="feature-item">
-                <div class="content">
-                    <span class="tag">02. AUTOMATION</span>
-                    <h3>Gold Sentinel: Market Monitor</h3>
-                    <p>An automated data crawler targeting premium financial sources. Using CronJobs to trigger multi-layered technical analysis, the system predicts market movements with calculated SL/TP levels.</p>
-                    <div class="tech-specs">
-                        <div class="spec-item">Advanced Technical Indicators (EMA/RSI/MACD)</div>
-                        <div class="spec-item">15-Minute Polling Frequency</div>
-                    </div>
-                </div>
-                <div class="image-wrapper">
-                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/OpenClaw_CronJob.png" alt="Monitor Dashboard">
+                <div class="image-wrapper" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/3cc6b37faf862dd381f9d2570835f27e1fd9111c/Sever_OpenClaw.png" alt="Server Setup">
                 </div>
             </section>
 
             <section class="feature-item">
                 <div class="content">
-                    <span class="tag">03. INTEGRATIONS</span>
-                    <h3>Marketing Data Pipelines</h3>
-                    <p>Real-time connectivity with Facebook and Google Ads APIs. OpenClaw consolidates cross-platform spending and conversion data into a unified, readable daily report.</p>
-                    <div class="tech-specs">
-                        <div class="spec-item">Automated API Fetching</div>
-                        <div class="spec-item">Telegram Daily Push Notifications</div>
-                    </div>
+                    <span class="tag">MODULE_02</span>
+                    <h3>Gold Sentinel Monitor</h3>
+                    <p>Autonomous market crawling system. It scrapes real-time data from global financial hubs, applies technical indicators, and delivers precise trading alerts.</p>
+                    <ul class="tech-list">
+                        <li>CronJob-triggered scraping</li>
+                        <li>EMA / RSI / MACD Analysis</li>
+                    </ul>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/AutoReport_Facebook_Google_Telegram.jpg" alt="Marketing API Mobile">
+                <div class="image-wrapper" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/OpenClaw_CronJob.png" alt="CronJob Dashboard">
                 </div>
             </section>
 
             <section class="feature-item">
                 <div class="content">
-                    <span class="tag">04. COMMAND CENTER</span>
-                    <h3>Mobile Control via Telegram</h3>
-                    <p>A conversational bridge between the owner and the AI. Access real-time insights, manage server states, and receive critical alerts anywhere in the world via a secure bot interface.</p>
-                    <div class="tech-specs">
-                        <div class="spec-item">On-the-go Market Updates</div>
-                        <div class="spec-item">Secure Remote Commands</div>
-                    </div>
+                    <span class="tag">MODULE_03</span>
+                    <h3>Ads Performance API</h3>
+                    <p>Seamless data pipeline connecting Facebook and Google Ads. It aggregates spend, reach, and conversion metrics into automated daily summaries.</p>
+                    <ul class="tech-list">
+                        <li>Multi-platform API Sync</li>
+                        <li>Daily Automated Reporting</li>
+                    </ul>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/AutoCrawl_News_Gold.jpg" alt="Telegram UI Mobile">
+                <div class="image-wrapper" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/AutoReport_Facebook_Google_Telegram.jpg" alt="Ads Report">
+                </div>
+            </section>
+
+            <section class="feature-item">
+                <div class="content">
+                    <span class="tag">MODULE_04</span>
+                    <h3>Telegram Interaction</h3>
+                    <p>Conversational UI for full system control. Check market status, receive urgent notifications, or query specific news via a secure Telegram Bot API.</p>
+                    <ul class="tech-list">
+                        <li>Real-time Webhook Push</li>
+                        <li>On-the-go Command Access</li>
+                    </ul>
+                </div>
+                <div class="image-wrapper" onclick="openModal(this)">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/aae29192eff5ab956573e3649a86ac01a1363489/AutoCrawl_News_Gold.jpg" alt="Telegram UI">
                 </div>
             </section>
 
         </div>
     </div>
 
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img id="modalImg" src="" alt="Enlarged View">
+    </div>
+
     <script>
+        // Intersection Observer for scroll animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.feature-item').forEach(item => {
-            observer.observe(item);
+        document.querySelectorAll('.feature-item').forEach(item => observer.observe(item));
+
+        // Modal Zoom Function - Enhanced for Portrait constraint
+        function openModal(wrapper) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const clickedImg = wrapper.querySelector('img');
+            
+            modal.style.display = "flex";
+            modalImg.src = clickedImg.src;
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") document.getElementById('imageModal').style.display = 'none';
         });
     </script>
 
