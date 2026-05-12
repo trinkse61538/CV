@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Guest Guide | 3BDR Historic Waterside Enclave</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -10,7 +10,7 @@
     
     <style>
         :root {
-            --primary: #FF385C; /* Airbnb Red */
+            --primary: #FF385C;
             --secondary: #008489;
             --dark: #222222;
             --gray: #717171;
@@ -18,38 +18,35 @@
             --white: #FFFFFF;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Circular', -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
             margin: 0; padding: 0;
             background-color: var(--light-bg);
             color: var(--dark);
             line-height: 1.6;
         }
 
-        /* Fixed Header & Nav */
+        /* Fixed Header & Horizontal Nav */
         .header-nav-container {
             position: fixed; top: 0; width: 100%;
             background: var(--white);
             z-index: 1000;
             border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
-        header {
-            padding: 15px 20px;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 1.2rem; font-weight: 800; color: var(--primary); }
+        header { padding: 12px 20px 8px; text-align: center; }
+        header h1 { margin: 0; font-size: 1.1rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
 
         nav {
             display: flex;
             overflow-x: auto;
             white-space: nowrap;
-            padding: 10px 15px;
-            gap: 10px;
-            background: var(--white);
+            padding: 8px 15px 12px;
+            gap: 8px;
             scrollbar-width: none;
         }
         nav::-webkit-scrollbar { display: none; }
@@ -57,146 +54,109 @@
         nav a {
             text-decoration: none;
             color: var(--dark);
-            background: #eee;
-            padding: 8px 16px;
+            background: #f0f0f0;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            transition: 0.3s;
+            border: 1px solid transparent;
         }
         nav a:active { background: var(--primary); color: white; }
 
-        /* Main Content */
+        /* Content Container */
         .container {
             max-width: 600px;
-            margin: 120px auto 40px; /* Offset for fixed nav */
+            margin: 115px auto 40px;
             padding: 0 15px;
         }
 
-        /* Carousel Section */
+        /* Swiper / Gallery */
         .swiper {
-            width: 100%; height: 350px;
+            width: 100%; height: 280px;
             border-radius: 12px;
-            margin-bottom: 25px;
-            scroll-margin-top: 130px;
+            margin-bottom: 20px;
         }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Card Style */
+        /* Card System */
         .card {
             background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 16px;
+            padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            scroll-margin-top: 130px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            scroll-margin-top: 125px;
         }
 
         h2 {
-            margin-top: 0;
-            font-size: 1.25rem;
+            margin: 0 0 15px 0;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 1px solid #f0f0f0;
-            padding-bottom: 12px;
         }
-        h2 i { color: var(--primary); }
+        h2 i { color: var(--primary); font-size: 1.1rem; }
 
-        /* Step by Step Styling */
-        .step {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+        h3 { font-size: 1rem; margin-bottom: 10px; }
+
+        /* Steps */
+        .step { display: flex; gap: 12px; margin-bottom: 18px; }
         .step-num {
-            background: var(--dark);
-            color: white;
-            width: 28px; height: 28px;
+            background: var(--dark); color: white;
+            width: 24px; height: 24px;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; font-weight: bold; font-size: 0.9rem;
+            flex-shrink: 0; font-weight: bold; font-size: 0.8rem;
         }
-        .step-content { flex-grow: 1; }
-        .step-content p { margin: 0 0 8px 0; }
+        .step-content { flex: 1; font-size: 0.95rem; }
         .step-img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-top: 5px;
+            width: 100%; border-radius: 10px;
+            border: 1px solid #eee; margin-top: 8px;
         }
 
-        /* Alert Boxes */
+        /* Buttons */
+        .btn {
+            display: flex; align-items: center; justify-content: center;
+            gap: 8px; background: var(--dark); color: white;
+            padding: 14px; border-radius: 10px;
+            text-decoration: none; font-weight: 700;
+            width: 100%; margin-top: 10px;
+            font-size: 0.95rem;
+        }
+        .btn-parking { background: #005AEE; }
+        .btn:active { opacity: 0.8; transform: scale(0.98); }
+
+        /* Alert */
         .alert-red {
-            background: #FFF8F6;
-            border: 1px solid var(--primary);
-            color: #C13515;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-bottom: 15px;
+            background: #FFF8F6; border: 1px solid #FF385C;
+            color: #C13515; padding: 12px;
+            border-radius: 10px; font-weight: 600;
+            margin-bottom: 15px; font-size: 0.9rem;
         }
 
-        /* Information Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .info-item { font-size: 0.9rem; }
-        .info-label { display: block; color: var(--gray); font-size: 0.75rem; text-transform: uppercase; }
-
+        /* Wifi Box */
         .wifi-box {
-            background: #F7F7F7;
-            border: 1px dashed var(--gray);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 10px 0;
-            position: relative;
+            background: #f9f9f9; border: 2px dashed #ddd;
+            padding: 15px; border-radius: 12px;
+            text-align: center; margin: 10px 0;
         }
+        .label { color: var(--gray); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .val { display: block; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--dark); }
 
         .copy-btn {
-            background: var(--dark);
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            margin-top: 10px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: 0.2s;
-        }
-        .copy-btn:active { transform: scale(0.95); background: var(--primary); }
-
-        .btn {
-            display: block;
-            background: var(--dark);
-            color: var(--white);
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            background: var(--dark); color: white; border: none;
+            padding: 8px 16px; border-radius: 8px;
+            font-weight: 600; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 6px;
         }
 
-        .btn-parking {
-            background: #004f6d; /* Custom color for parking */
-        }
+        footer { text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.8rem; }
 
-        footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.85rem; }
-
-        @media (max-width: 480px) {
-            .swiper { height: 250px; }
-            .info-grid { grid-template-columns: 1fr; }
+        /* Desktop */
+        @media (min-width: 601px) {
+            .container { margin-top: 130px; }
+            .swiper { height: 400px; }
+            nav { justify-content: center; }
         }
     </style>
 </head>
@@ -209,10 +169,10 @@
     <nav>
         <a href="#welcome">Photos</a>
         <a href="#location">Location</a>
-        <a href="#checkin">Check-in</a>
+        <a href="#checkin">Entry</a>
         <a href="#parking">Parking</a>
-        <a href="#wifi">WiFi & Info</a>
-        <a href="#checkout">Check-out</a>
+        <a href="#wifi">WiFi</a>
+        <a href="#checkout">Exit</a>
     </nav>
 </div>
 
@@ -220,138 +180,158 @@
 
     <div id="welcome" class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_1.avif" alt="Living Room"></div>
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_2.avif" alt="Kitchen"></div>
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_3.avif" alt="Bedroom 1"></div>
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_4.avif" alt="Bedroom 2"></div>
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_5.avif" alt="Bedroom 3"></div>
-            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_6.avif" alt="Patio"></div>
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_1.avif"></div>
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_2.avif"></div>
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_3.avif"></div>
+            <div class="swiper-slide"><img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/48HighSt_6.avif"></div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
 
     <div class="card" id="location">
-        <h2><i class="fa-solid fa-location-dot"></i> Property Location</h2>
-        <p><strong>48 High St, Millers Point NSW 2000</strong></p>
-        <div class="info-grid">
-            <div class="info-item">
-                <span class="info-label">Proximity</span>
-                100m to Crown Tower
-            </div>
-            <div class="info-item">
-                <span class="info-label">Transport</span>
-                120m to Metro Station
-            </div>
-        </div>
-        <a href="https://maps.app.goo.gl/F6HwKkEAnP6GisA49" class="btn" target="_blank">
-            <i class="fa-solid fa-map-location-dot"></i> Open Google Maps
+        <h2><i class="fa-solid fa-map-pin"></i> Location</h2>
+        <p style="margin:0"><strong>48 High St, Millers Point NSW 2000</strong></p>
+        <p style="font-size: 0.85rem; color: var(--gray); margin: 5px 0 15px;">Near Crown Tower & Metro Station</p>
+        
+        <a href="https://www.google.com/maps/search/?api=1&query=48+High+St+Millers+Point+NSW+2000" class="btn" target="_blank">
+            <i class="fa-solid fa-location-arrow"></i> Open in Google Maps
         </a>
     </div>
 
     <div class="card" id="checkin">
-        <h2><i class="fa-solid fa-key"></i> Step-by-Step Entry</h2>
+        <h2><i class="fa-solid fa-door-open"></i> How to Enter</h2>
         <div class="step">
             <div class="step-num">1</div>
-            <div class="step-content"><p>Locate the lockbox on the <strong>bottom level</strong> of door "48".</p></div>
+            <div class="step-content">Locate the lockbox on the <strong>bottom level</strong> of door "48".</div>
         </div>
         <div class="step">
             <div class="step-num">2</div>
-            <div class="step-content"><p>Enter code: <strong style="font-size: 1.2rem; color: var(--primary);">0812</strong></p></div>
+            <div class="step-content">Enter code: <strong style="color: var(--primary); font-size: 1.1rem;">0812</strong></div>
         </div>
         <div class="step">
             <div class="step-num">3</div>
-            <div class="step-content"><p>The entrance is the first door on the right, marked as <strong>"48"</strong>.</p></div>
+            <div class="step-content">Access the main entrance door marked <strong>"48"</strong>.</div>
         </div>
     </div>
 
     <div class="card" id="parking">
-        <h2><i class="fa-solid fa-car"></i> Parking Guide (Free)</h2>
+        <h2><i class="fa-solid fa-car"></i> Parking (Free)</h2>
         <div class="alert-red">
-            🚨 WARNING: Use ONLY <strong>"Barangaroo Point"</strong> car park. Do NOT tap at "Bond One".
+            🚨 <strong>IMPORTANT:</strong> Use ONLY the <strong>"Barangaroo Point"</strong> car park. DO NOT enter "Bond One".
         </div>
         
         <div class="step">
             <div class="step-num">1</div>
             <div class="step-content">
-                <p>Navigate to: <strong>25 Hickson Rd, Baragaroo</strong></p>
-                <a href="https://maps.app.goo.gl/9GvX3YV9T3E6U7S68" class="btn btn-parking" target="_blank">
+                Navigate to: <strong>25 Hickson Rd (Barangaroo Point)</strong>
+                <a href="https://www.google.com/maps/search/?api=1&query=25+Hickson+Rd+Millers+Point+NSW+2000" class="btn btn-parking" target="_blank">
                     <i class="fa-solid fa-route"></i> Directions to Car Park
                 </a>
-                <img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/Parking_48HighSt_1.jpg" class="step-img" alt="Parking Entrance">
+                <img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/Parking_48HighSt_1.jpg" class="step-img">
             </div>
         </div>
-
+        
         <div class="step">
             <div class="step-num">2</div>
             <div class="step-content">
-                <p>Hold the Wilson card against the <strong>green light</strong> for 5+ seconds.</p>
-                <img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/Parking_48HighSt_2.jpg" class="step-img" alt="Wilson Card">
-                <img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/Parking_48HighSt_3.jpg" class="step-img" alt="Tap Here">
+                Hold the parking card against the <strong>green light</strong> for 5+ seconds.
+                <img src="https://raw.githubusercontent.com/trinkse61538/CV/923fd84bab947e9844d0176123b2d9d9a8db8d11/check-in/3BDR_Historic_Waterside_Enclave/Parking_48HighSt_2.jpg" class="step-img">
             </div>
-        </div>
-
-        <div style="font-size: 0.85rem; color: var(--gray); background: #eee; padding: 10px; border-radius: 5px;">
-            • Lost card fee: $300. Return to lockbox safely!<br>
-            • Free street parking: 10 PM – 8 AM.
         </div>
     </div>
 
     <div class="card" id="wifi">
-        <h2><i class="fa-solid fa-wifi"></i> WiFi & Amenities</h2>
+        <h2><i class="fa-solid fa-wifi"></i> WiFi Details</h2>
         <div class="wifi-box">
-            <span class="info-label">Network Name</span>
-            <strong id="wifi-name">WIFI-AVW7AKF</strong><br><br>
-            <span class="info-label">Password</span>
-            <strong id="wifi-pass">bt?K9D@Gz6#P9bN3</strong><br>
-            <button class="copy-btn" onclick="copyWifi()">
+            <span class="label">Network</span>
+            <span class="val" id="wifi-name">WIFI-AVW7AKF</span>
+            
+            <span class="label">Password</span>
+            <span class="val" id="wifi-pass">bt?K9D@Gz6#P9bN3</span>
+            
+            <button class="copy-btn" id="copyBtn" onclick="copyPassword()">
                 <i class="fa-solid fa-copy"></i> Copy Password
             </button>
         </div>
         
-        <h3>Amenities</h3>
-        <ul style="padding-left: 20px; font-size: 0.9rem;">
-            <li>Private outdoor dining area</li>
-            <li>Nespresso coffee machine & Wine bottle</li>
-            <li>Fully equipped kitchen & Oven</li>
-            <li>Iron & Baby high chair</li>
+        <h3 style="margin-top:20px;"><i class="fa-solid fa-utensils"></i> Amenities</h3>
+        <ul style="padding-left: 20px; font-size: 0.9rem; margin: 0;">
+            <li>Nespresso Machine & Wine</li>
+            <li>Outdoor Dining Enclave</li>
+            <li>Fully equipped kitchen</li>
+            <li>Baby high chair & Iron</li>
         </ul>
     </div>
 
     <div class="card" id="checkout">
-        <h2><i class="fa-solid fa-person-walking-luggage"></i> Check-out Instructions</h2>
-        <p>1. Return the keys to the lockbox by <strong>10:00 AM</strong>.</p>
-        <p>2. Use code: <strong>0812</strong>.</p>
-        <p>3. Ensure the parking card is back in the lockbox.</p>
+        <h2><i class="fa-solid fa-clock"></i> Check-out: 10:00 AM</h2>
+        <p>1. Return keys & parking card to the lockbox.</p>
+        <p>2. Lockbox code: <strong>0812</strong>.</p>
+        <p>3. Please turn off lights and AC before leaving.</p>
     </div>
 
 </div>
 
 <footer>
-    <p>Enjoy your stay at Barangaroo!<br>
-    Historic Waterside Enclave © 2026</p>
+    <p>3BDR Historic Waterside Enclave<br>Barangaroo, Sydney © 2026</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <script>
+    // Initialize Slider
     const swiper = new Swiper('.mySwiper', {
         loop: true,
         pagination: { el: '.swiper-pagination', clickable: true },
-        autoplay: { delay: 3500, disableOnInteraction: false },
+        autoplay: { delay: 4000, disableOnInteraction: false },
     });
 
-    function copyWifi() {
-        const pass = document.getElementById('wifi-pass').innerText;
-        navigator.clipboard.writeText(pass).then(() => {
-            const btn = document.querySelector('.copy-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-            btn.style.background = '#008489';
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '#222222';
-            }, 2000);
-        });
+    // Hàm Copy Password - Tối ưu cho Điện thoại
+    function copyPassword() {
+        const password = document.getElementById('wifi-pass').innerText;
+        const btn = document.getElementById('copyBtn');
+
+        // Phương án 1: Clipboard API hiện đại
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(password).then(() => {
+                showSuccess(btn);
+            }).catch(err => {
+                fallbackCopy(password, btn);
+            });
+        } else {
+            // Phương án 2: Fallback cho trình duyệt cũ/không hỗ trợ
+            fallbackCopy(password, btn);
+        }
+    }
+
+    function fallbackCopy(text, btn) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        // Đảm bảo textarea không hiển thị nhưng vẫn có thể select
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        textArea.style.top = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        textArea.setSelectionRange(0, 99999); // Cho iOS
+
+        try {
+            document.execCommand('copy');
+            showSuccess(btn);
+        } catch (err) {
+            alert('Please copy manually: ' + text);
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function showSuccess(btn) {
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+        btn.style.background = '#008489';
+        setTimeout(() => {
+            btn.innerHTML = originalContent;
+            btn.style.background = '#222222';
+        }, 2000);
     }
 </script>
 
