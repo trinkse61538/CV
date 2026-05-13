@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Loại bỏ các thư mục code không cần SEO (nếu bạn có dùng các folder này)
+Disallow: /assets/js/
+Disallow: /assets/vendor/
+
+# Khai báo sitemap để Google tìm thấy các trang CV và OpenClaw nhanh hơn
+Sitemap: https://khaitringuyen.com/sitemap.xml
