@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 1. Trang chủ: Nguyễn Khai Trí Portfolio -->
+  <url>
+    <loc>https://khaitringuyen.com/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png</image:loc>
+      <image:title>Nguyễn Khai Trí - Senior Performance Marketing Specialist</image:title>
+      <image:caption>Chân dung Nguyễn Khai Trí (Tri Nguyen) - Technical-Driven Performance Marketer</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Trang CV: Chi tiết kinh nghiệm tại Anfin, ELSA, FPT -->
+  <url>
+    <loc>https://khaitringuyen.com/View_CV.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 3. Email Showcase: Chứng minh năng lực về Email Marketing -->
+  <url>
+    <loc>https://khaitringuyen.com/email_showcase.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 4. OpenClaw: Dự án kỹ thuật về AI Agent & Automation -->
+  <url>
+    <loc>https://khaitringuyen.com/OpenClaw.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
