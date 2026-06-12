@@ -80,6 +80,7 @@
 
         .nav-container {
             display: flex;
+            justify-open: space-between;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
@@ -186,7 +187,7 @@
         }
 
         /* =========================================================
-           3. CẬP NHẬT: SECTION CAROUSEL SẢN PHẨM (BỐ CỤC ẢNH NẰM NGANG TO) 
+           3. SECTION CAROUSEL SẢN PHẨM (ĐÃ FIX LỖI CO RÚT CHIỀU CAO) 
            ========================================================= */
         .product-section {
             background: #fff;
@@ -204,38 +205,41 @@
             gap: 25px;
             transition: transform 0.5s ease-in-out;
             width: max-content;
+            align-items: stretch; /* THAY ĐỔI: Ép các phần tử con có chiều cao bằng nhau */
         }
 
         .product-card {
             display: flex;
-            flex-direction: column; /* Chuyển thành hàng dọc để ảnh nằm ngang chiếm trọn bề ngang */
+            flex-direction: column;
             background: var(--bg-light);
             border-radius: 14px;
             overflow: hidden;
-            width: 620px; /* Tăng nhẹ độ rộng để ảnh hiển thị lớn hơn */
+            width: 620px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.07);
             border: 1px solid #e2f0d9;
+            height: 100%; /* THAY ĐỔI: Đảm bảo chiều cao chiếm trọn track */
         }
 
         .product-img-box {
-            width: 100%; /* Chiếm toàn bộ bề rộng thẻ */
-            height: 320px; /* Định kích thước chiều cao hiển thị cố định cho ảnh nằm ngang */
+            width: 100%;
+            height: 320px;
             background: #eaf4e5;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            flex-shrink: 0; /* THAY ĐỔI: Giữ nguyên cố định chiều cao của box ảnh */
         }
 
         .product-img-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Đảm bảo ảnh lấp đầy khung hình mà không bị méo tỉ lệ */
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
         .product-card:hover .product-img-box img {
-            transform: scale(1.04); /* Hiệu ứng zoom nhẹ khi di chuột vào sản phẩm */
+            transform: scale(1.04);
         }
 
         .product-info {
@@ -246,6 +250,7 @@
             justify-content: flex-start;
             background: #fff;
             border-top: 1px solid #edf5e8;
+            flex-grow: 1; /* THAY ĐỔI: Tự động kéo giãn phần thông tin để lấp đầy card */
         }
 
         .product-tag {
@@ -471,7 +476,21 @@
             .mission-cards { grid-template-columns: 1fr; }
             .section-title { font-size: 1.8rem; }
             .floating-buttons { right: 15px; bottom: 15px; }
-            .product-img-box { height: 220px; } /* Hạ bớt chiều cao ảnh trên màn hình điện thoại nhỏ */
+            
+            /* SỬA LỖI TRÀN KHUNG VÀ CO GIÃN HÌNH ẢNH TRÊN MOBILE */
+            .product-card {
+                width: calc(100vw - 40px); /* Đảm bảo thẻ sản phẩm luôn vừa màn hình điện thoại */
+            }
+            
+            .product-img-box { 
+                height: 250px; /* Tăng nhẹ độ cao trên mobile để dễ nhìn chữ */
+                background: #fff; /* Chuyển nền trắng để hài hòa khi bao trọn hình gốc */
+            } 
+            
+            .product-img-box img {
+                object-fit: contain; /* THAY ĐỔI QUAN TRỌNG: Bao trọn 100% nội dung ảnh, thấy rõ chữ không mất góc */
+                padding: 10px; /* Tạo khoảng trống nhỏ để thông tin trên nhãn chai không sát mép */
+            }
         }
     </style>
 </head>
@@ -493,7 +512,7 @@
         <div class="banner-container">
             <img src="https://raw.githubusercontent.com/trinkse61538/AGVN/84c690c620b71a121ecd1894cfb55859f12af02b/AGVN%20Banner.jpg" alt="Banner AGVN Group" class="banner-img">
         </div>
-    </div>
+    </div >
 
     <section id="about" class="about-section">
         <div class="container">
@@ -501,7 +520,7 @@
                 <div class="about-content" data-aos="fade-right">
                     <h2 style="color: var(--primary-color); margin-bottom: 10px;">VỀ TẬP ĐOÀN AGVN GROUP</h2>
                     <h3 style="font-weight: 400; color: #555;">Người bạn đồng hành của nhà nông Việt</h3>
-                    <p style="margin-top: 15px;">Tập Đoàn Nông Nghiệp AGVN Group tự hại là đơn vị tiên phong cung cấp các giải pháp vật tư nông nghiệp công nghệ cao. Với bộ sản phẩm tiên tiến, chúng tôi cam kết đồng hành cùng bà con từ lúc làm đất, bón phân cho tới ngày gặt hái quả ngọt thắng lợi.</p>
+                    <p style="margin-top: 15px;">Tập Đoàn Nông Nghiệp AGVN Group tự hào là đơn vị tiên phong cung cấp các giải pháp vật tư nông nghiệp công nghệ cao. Với bộ sản phẩm tiên tiến, chúng tôi cam kết đồng hành cùng bà con từ lúc làm đất, bón phân cho tới ngày gặt hái quả ngọt thắng lợi.</p>
                     <p>Chúng tôi luôn nỗ lực không ngừng để nghiên cứu các dòng sản phẩm an toàn, bảo vệ hệ sinh thái đất và mang đến giá trị kinh tế bền vững nhất cho nông sản Việt Nam vươn tầm quốc tế.</p>
                 </div>
                 <div class="mission-cards" data-aos="fade-left">
@@ -639,11 +658,11 @@
                 <h4>Thông Tin Liên Hệ</h4>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>Khu Công Nghệ Cao, Thành phố Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam</span>
+                    <span>Số 12 Đường Dự Định, Khóm Đông Thịnh 9, Phường Long Xuyên, Long Xuyên, Vietnam</span>
                 </div>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-phone-volume"></i>
-                    <span><strong>0969 882 442<br>0969 882 442</strong></span>
+                    <span><strong>0869 980 098</strong></span>
                 </div>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-envelope"></i>
@@ -679,7 +698,7 @@
         const track = document.getElementById('carouselTrack');
         
         function moveSlide(direction) {
-            const cardWidth = document.querySelector('.product-card').offsetWidth + 25; // Cập nhật khoảng cách gap mới là 25px
+            const cardWidth = document.querySelector('.product-card').offsetWidth + 25; 
             const maxScroll = track.offsetWidth - track.parentElement.offsetWidth;
             
             currentPosition += direction * -cardWidth;
