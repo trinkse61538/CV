@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tập Đoàn Nông Nghiệp AGVN Group</title>
     
-    <link rel="icon" type="image/x-icon" href="https://github.com/trinkse61538/AGVN/blob/30296636a7ee0c0bfabb7c6d8c4da9a8182d45c2/AGVN_Logo.jpg">
-    <link rel="shortcut icon" type="image/x-icon" href="https://github.com/trinkse61538/AGVN/blob/30296636a7ee0c0bfabb7c6d8c4da9a8182d45c2/AGVN_Logo.jpg">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/trinkse61538/AGVN/30296636a7ee0c0bfabb7c6d8c4da9a8182d45c2/AGVN_Logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="https://raw.githubusercontent.com/trinkse61538/AGVN/30296636a7ee0c0bfabb7c6d8c4da9a8182d45c2/AGVN_Logo.jpg">
     
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -80,7 +80,6 @@
 
         .nav-container {
             display: flex;
-            justify-open: space-between;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
@@ -187,7 +186,7 @@
         }
 
         /* =========================================================
-           3. SECTION CAROUSEL SẢN PHẨM (ĐÃ FIX LỖI CO RÚT CHIỀU CAO) 
+           3. SECTION CAROUSEL SẢN PHẨM (ĐÃ FIX LỖI CAO THẤP KHÔNG ĐỀU) 
            ========================================================= */
         .product-section {
             background: #fff;
@@ -205,7 +204,7 @@
             gap: 25px;
             transition: transform 0.5s ease-in-out;
             width: max-content;
-            align-items: stretch; /* THAY ĐỔI: Ép các phần tử con có chiều cao bằng nhau */
+            align-items: stretch; /* Ép các card có chiều cao bằng nhau tuyệt đối theo phần tử cao nhất */
         }
 
         .product-card {
@@ -217,7 +216,6 @@
             width: 620px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.07);
             border: 1px solid #e2f0d9;
-            height: 100%; /* THAY ĐỔI: Đảm bảo chiều cao chiếm trọn track */
         }
 
         .product-img-box {
@@ -228,7 +226,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            flex-shrink: 0; /* THAY ĐỔI: Giữ nguyên cố định chiều cao của box ảnh */
+            flex-shrink: 0; /* Giữ cố định chiều cao khu vực ảnh, không bị bóp méo */
         }
 
         .product-img-box img {
@@ -250,7 +248,7 @@
             justify-content: flex-start;
             background: #fff;
             border-top: 1px solid #edf5e8;
-            flex-grow: 1; /* THAY ĐỔI: Tự động kéo giãn phần thông tin để lấp đầy card */
+            flex-grow: 1; /* Tự động kéo giãn phần thân trắng để các card ngắn nội dung vẫn bằng card dài */
         }
 
         .product-tag {
@@ -392,6 +390,16 @@
             margin-top: 5px;
         }
 
+        .footer-contact-item a {
+            color: #e0f2e5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--accent-color);
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -483,13 +491,13 @@
             }
             
             .product-img-box { 
-                height: 250px; /* Tăng nhẹ độ cao trên mobile để dễ nhìn chữ */
+                height: 250px; 
                 background: #fff; /* Chuyển nền trắng để hài hòa khi bao trọn hình gốc */
             } 
             
             .product-img-box img {
-                object-fit: contain; /* THAY ĐỔI QUAN TRỌNG: Bao trọn 100% nội dung ảnh, thấy rõ chữ không mất góc */
-                padding: 10px; /* Tạo khoảng trống nhỏ để thông tin trên nhãn chai không sát mép */
+                object-fit: contain; /* Bao trọn 100% nội dung ảnh, thấy rõ chữ không mất góc */
+                padding: 10px; 
             }
         }
     </style>
@@ -658,15 +666,17 @@
                 <h4>Thông Tin Liên Hệ</h4>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>Số 12 Đường Dự Định, Khóm Đông Thịnh 9, Phường Long Xuyên, Long Xuyên, Vietnam</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Số+12+Đường+Dự+Định+Khóm+Đông+Thịnh+9+Phường+Long+Xuyên+Long+Xuyên+Việt+Nam" target="_blank" title="Xem trên Google Maps">
+                        <span>Số 12 Đường Dự Định, Khóm Đông Thịnh 9, Phường Long Xuyên, Long Xuyên, Vietnam</span>
+                    </a>
                 </div>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-phone-volume"></i>
-                    <span><strong>0869 980 098</strong></span>
+                    <span><a href="tel:0869980098"><strong>0869 980 098</strong></a></span>
                 </div>
                 <div class="footer-contact-item">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>lienhe@agvngroup.vn</span>
+                    <span><a href="mailto:lienhe@agvngroup.vn">lienhe@agvngroup.vn</a></span>
                 </div>
             </div>
         </div>
