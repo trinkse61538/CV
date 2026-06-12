@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saigon Root Music | Premium Audio Mastering</title>
+    
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/6faaeb9e4185fe34faf0e205231b6b2aad2c62ec/SGRM.jpg">
+
+    <style>
+        :root {
+            --bg-deep: #050505;
+            --bg-card: #111111;
+            --accent: #00ff66; /* Neon Technical Green */
+            --text-main: #ffffff;
+            --text-muted: #777777;
+            --font-serif: 'Times New Roman', Times, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            cursor: none; /* Custom designer cursor */
+        }
+
+        /* CUSTOM CURSOR ART */
+        #customCursor {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s;
+        }
+        #customCursorBlur {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: transform 0.08s ease-out;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.98) 0%, rgba(5, 5, 5, 0.85) 75%, rgba(5, 5, 5, 0) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        .logo span { color: var(--accent); }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-left: 35px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        nav a:hover { color: var(--accent); }
+
+        /* STUDIO BANNER ART SECTION */
+        .studio-banner-section {
+            position: relative;
+            width: 100%;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--bg-deep);
+            border-bottom: 1px solid #111;
+        }
+
+        .banner-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/745ba2dcc140f8807308008e9b59db5c996351f9/468886452_1093208192292194_7750617963370969375_n.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.75) contrast(1.1);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
+        }
+
+        .studio-banner-section:hover .banner-bg-image {
+            transform: scale(1.04);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.6) 0%, rgba(5,5,5,0.1) 50%, rgba(5,5,5,0.6) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .banner-text-holder {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .banner-text-holder h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive font size */
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9);
+            letter-spacing: -1px;
+        }
+
+        .banner-text-holder h2 span { color: var(--accent); }
+        .banner-text-holder p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #eee;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+
+        /* SECTION SHOWCASE HOVER VERTICAL SCROLL */
+        .showcase-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 50px;
+            background-color: #080808;
+            position: relative;
+            border-bottom: 1px solid #111;
+        }
+
+        .showcase-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            max-width: 1200px;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .showcase-info h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .showcase-info p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 45px;
+            max-width: 420px;
+            font-size: 0.95rem;
+        }
+
+        .scroll-instruction {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* THE HOVER ALBUM FIXED CONTAINER WRAPPER */
+        .scroll-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 430px;
+            height: 650px;
+            margin: 0 auto;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        .scroll-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            overflow-y: auto;
+            padding: 60px 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+            scroll-behavior: auto !important; 
+        }
+        .scroll-container::-webkit-scrollbar { display: none; }
+
+        /* BIG ALBUM CARD */
+        .album-card {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            padding: 24px;
+            box-sizing: border-box;
+            user-select: none;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            border: 1px solid #1a1a1a;
+            will-change: transform, opacity;
+        }
+
+        .album-cover {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #222;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 24px;
+            filter: grayscale(25%);
+            transition: filter 0.3s;
+        }
+        
+        .album-card:hover .album-cover { filter: grayscale(0%); }
+
+        .album-info { text-align: left; }
+        .album-info h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .album-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .album-embed {
+            margin-top: 18px;
+            width: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            background: transparent;
+            border: none;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .album-card:hover .album-embed {
+            opacity: 1;
+        }
+
+        /* --- OPTIMIZED TEAM MEMBERS SECTION --- */
+        .team-section {
+            padding: 140px 0; 
+            width: 100%;
+            border-bottom: 1px solid #111;
+            overflow: hidden;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .team-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .team-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        .team-slider-wrapper {
+            width: 100%;
+            padding: 20px 0;
+            overflow-x: auto;
+            scrollbar-width: none; 
+            cursor: grab; 
+            -webkit-overflow-scrolling: touch;
+        }
+        .team-slider-wrapper::-webkit-scrollbar {
+            display: none; 
+        }
+        .team-slider-wrapper:active {
+            cursor: grabbing; 
+        }
+
+        .team-grid {
+            display: flex; 
+            gap: 40px;
+            width: max-content; 
+            padding-right: 50px; 
+        }
+
+        @media (min-width: 1200px) {
+            .team-grid {
+                margin: 0 auto;
+                padding-right: 0;
+            }
+        }
+
+        .team-card {
+            background-color: var(--bg-card);
+            border: 1px solid #161616;
+            padding: 40px 30px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            text-align: center;
+            width: 320px; 
+            flex-shrink: 0; 
+            user-select: none; 
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .team-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .team-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #222;
+            margin: 0 auto 25px auto;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #222;
+        }
+
+        .team-card h3 {
+            font-size: clamp(1.1rem, 3vw, 1.3rem); 
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+            width: 100%; 
+        }
+
+        .team-card role {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .team-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 260px;
+        }
+
+        /* FOOTER SECTION */
+        footer {
+            background-color: #030303;
+            padding: 80px 50px 40px 50px;
+            border-top: 1px solid #111;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .footer-brand h3 span { color: var(--accent); }
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #aaa;
+        }
+
+        .footer-links ul { list-style: none; }
+        .footer-links ul li { margin-bottom: 12px; }
+        .footer-links ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-links ul li a:hover { color: var(--accent); }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #111;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE MEDIA QUERIES (Tối ưu cho Mobile & Tablet)
+           ========================================================================== */
+        
+        @media (max-width: 991px) {
+            /* Showcase layout chuyển sang 1 cột trên tablet/điện thoại nhỏ */
+            .showcase-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .showcase-info {
+                text-align: center;
+            }
+            .showcase-info p {
+                margin: 0 auto 30px auto;
+            }
+            .scroll-instruction {
+                justify-content: center;
+            }
+            /* Thay đổi mask-image cho cấu trúc đứng trên mobile */
+            .scroll-wrapper {
+                height: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Tối ưu hóa Custom Cursor ẩn đi trên các thiết bị cảm ứng */
+            body { cursor: default; }
+            #customCursor, #customCursorBlur { display: none !important; }
+
+            /* Header tối ưu không gian */
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+                background: rgba(5, 5, 5, 0.95);
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.75rem;
+                letter-spacing: 1px;
+            }
+
+            /* Điều chỉnh khoảng cách các Section */
+            .showcase-section, .team-section {
+                padding: 80px 20px;
+            }
+            .team-container {
+                padding: 0;
+            }
+
+            /* Team Card thu hẹp nhẹ kích thước bề ngang để hiển thị tốt trên màn hình nhỏ */
+            .team-card {
+                width: 280px;
+                padding: 30px 20px;
+            }
+
+            /* Footer từ Grid chuyển thành cột đứng */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+            .footer-brand p {
+                max-width: 100%;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                padding-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Tối ưu giao diện cho màn hình điện thoại siêu nhỏ */
+            .scroll-wrapper {
+                height: 480px;
+            }
+            .album-card {
+                padding: 16px;
+            }
+            .team-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="customCursor"></div>
+    <div id="customCursorBlur"></div>
+
+    <header>
+        <div class="logo">Saigon Root Music<span>.</span></div>
+        <nav>
+            <a href="#about-banner">Identity</a>
+            <a href="#showcase">Showcase</a>
+            <a href="#team">Engineers</a>
+        </nav>
+    </header>
+
+    <section class="studio-banner-section" id="about-banner">
+        <div class="banner-bg-image"></div>
+        <div class="banner-overlay"></div>
+        <div class="banner-text-holder">
+            <p>Acoustic Identity & Heritage</p>
+            <h2>Saigon Root Music<span>.</span></h2>
+        </div>
+    </section>
+
+    <section class="showcase-section" id="showcase">
+        <div class="showcase-layout">
+            
+            <div class="showcase-info">
+                <h2>Project Records</h2>
+                <p>An exclusive index of audio properties and sonic event sets meticulously mastered by Saigon Root. Tailored for absolute maximum structural impact across high-output sound systems.</p>
+                <div class="scroll-instruction">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M9 13l3 3 3-3"/></svg>
+                    <span>Place cursor here & scroll vertically</span>
+                </div>
+            </div>
+
+            <div class="scroll-wrapper">
+                <div class="scroll-container" id="scrollContainer">
+                    
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Burning%20Blue%20-%20My%20My.jpg')"></div>
+                        <div class="album-info"><h4>Burning Blue</h4><p>Mỹ Mỹ</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/album/7hS4OPT1ms6pJ9X7uHuBGb?utm_source=generator&si=47e5974aa958437e" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/6faaeb9e4185fe34faf0e205231b6b2aad2c62ec/La%20Ban%20-%20Hoang%20Dung.jpg')"></div>
+                        <div class="album-info"><h4>La Bàn</h4><p>Hoàng Dũng</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/5G8D7sPL8mUhrNOm5jC3Sm?utm_source=generator&si=188c4d69f0984be7" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Mot%20Ngay%20Nao%20Do%20-%20Hoang%20Dung%20-%20Den.jpg')"></div>
+                        <div class="album-info"><h4>Một Ngày Nào Đó</h4><p>Hoàng Dũng & Đen</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/0y9syFsnSuYnf0RUqxE1Ah?utm_source=generator&si=7d969e04f35449b9" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Step%20by%20Step%20-%20Minh%20Toc.jpg')"></div>
+                        <div class="album-info"><h4>Step by Step</h4><p>Minh Tốc & Lam</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/4dIYJqmaJrJV7fZKlUmJPO?utm_source=generator&si=36015a423f844789" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Suboi_Concert.jpg')"></div>
+                        <div class="album-info"><h4>Suboi full performance Genfest</h4><p>Suboi</p></div>
+                        <iframe class="album-embed" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://open.spotify.com/embed/album/2isvxa5ybA5NsVyEkXQpyY?utm_source=generator&si=ab636358f6784862"></iframe>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/VuTran%20-%20Tan%20Cho%20Ve%20Nha.jpg')"></div>
+                        <div class="album-info"><h4>Tan Cho Ve Nha</h4><p>Vu Tran</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/10fvYFKG5osRI2cb0EH0NP?utm_source=generator&si=8b251f2d7cf54d3e" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <div class="team-container">
+            <div class="team-header">
+                <h2>The Audio Alchemists</h2>
+                <p>The specialized minds behind the acoustic reinforcement and technical precision.</p>
+            </div>
+            
+            <div class="team-slider-wrapper" id="teamSliderWrapper">
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/970e27f621d5be7eead65d0da27e0fed5f1a3819/BuiNgocQuocLinh.jpg')"></div>
+                        <h3>Bùi Ngọc Quốc Linh</h3>
+                        <role>Chief Mastering Engineer</role>
+                        <p>Specializing in structural transients and sub-frequency distribution for high-SPL arena soundstages.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/970e27f621d5be7eead65d0da27e0fed5f1a3819/TrinhMinhNguyen.jpg')"></div>
+                        <h3>Trịnh Minh Nguyên</h3>
+                        <role>Acoustic Consultant</role>
+                        <p>Expert in phase-alignment modeling and dynamic spatial mapping for outdoor performance venues.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/970e27f621d5be7eead65d0da27e0fed5f1a3819/NguyenDangMinhPhuong.jpg')"></div>
+                        <h3>Nguyễn Đăng Minh Phương</h3>
+                        <role>Signal Flow Director</role>
+                        <p>Managing state-of-the-art analog gear routing and ultra-low noise digital rendering pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Saigon Root Music<span>.</span></h3>
+                <p>Premium architectural audio post-production and mastering services for major musical events and stadium showcases.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#about-banner">Identity</a></li>
+                    <li><a href="#showcase">Project Showcase</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Inquiries</h4>
+                <p>Email: contact@saigonrootmusic.com</p>
+                <p>Studio: Ho Chi Minh City, Vietnam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 SAIGON ROOT MUSIC. ALL RIGHTS RESERVED.</p>
+            <p>ENGINEERED BY SRM ARCHITECTS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. CURSOR INTERACTIVE LOADER ---
+        const cursor = document.getElementById('customCursor');
+        const cursorBlur = document.getElementById('customCursorBlur');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            cursorBlur.style.left = e.clientX + 'px';
+            cursorBlur.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, .album-card, .team-card, .team-slider-wrapper').forEach(item => {
+            item.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%, -50%) scale(2.5)');
+            item.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%, -50%) scale(1)');
+        });
+
+
+        // --- 2. LOCAL HOVER SCROLL + SMOOTH INTERPRETATION ENGINE ---
+        const container = document.getElementById('scrollContainer');
+        const wrapper = container.parentElement;
+        let isHovered = false;
+
+        const originalCards = Array.from(container.children);
+        originalCards.forEach(card => {
+            const cloneBefore = card.cloneNode(true);
+            const cloneAfter = card.cloneNode(true);
+            container.appendChild(cloneAfter);
+            container.insertBefore(cloneBefore, container.firstChild);
+        });
+
+        let cardHeightWithGap = originalCards[0].offsetHeight + 50;
+        let originalHeight = cardHeightWithGap * originalCards.length;
+        
+        window.addEventListener('load', () => {
+            cardHeightWithGap = container.querySelector('.album-card').offsetHeight + 50;
+            originalHeight = cardHeightWithGap * originalCards.length;
+            container.scrollTop = originalHeight;
+            targetScrollTop = originalHeight;
+            currentScrollTop = originalHeight;
+        });
+
+        container.scrollTop = originalHeight;
+
+        let targetScrollTop = originalHeight;
+        let currentScrollTop = originalHeight;
+        const easeAmount = 0.08; 
+
+        wrapper.addEventListener('mouseenter', () => isHovered = true);
+        wrapper.addEventListener('mouseleave', () => isHovered = false);
+
+        window.addEventListener('wheel', (e) => {
+            if (!isHovered) return;
+            e.preventDefault(); 
+            targetScrollTop += e.deltaY * 0.6; 
+        }, { passive: false });
+
+        function renderLoop() {
+            currentScrollTop += (targetScrollTop - currentScrollTop) * easeAmount;
+            container.scrollTop = currentScrollTop;
+
+            if (currentScrollTop >= originalHeight * 2) {
+                targetScrollTop -= originalHeight;
+                currentScrollTop -= originalHeight;
+                container.scrollTop = currentScrollTop;
+            } else if (currentScrollTop <= originalHeight * 0.5) {
+                targetScrollTop += originalHeight;
+                currentScrollTop += originalHeight;
+                container.scrollTop = currentScrollTop;
+            }
+            
+            updateCardsVisuals();
+            requestAnimationFrame(renderLoop);
+        }
+
+        requestAnimationFrame(renderLoop);
+
+        function updateCardsVisuals() {
+            const containerRect = container.getBoundingClientRect();
+            const containerCenter = containerRect.top + (containerRect.height / 2);
+            const cards = container.querySelectorAll('.album-card');
+            
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.top + (cardRect.height / 2);
+                const distanceFromCenter = Math.abs(containerCenter - cardCenter);
+                
+                const threshold = 180; 
+                
+                if (distanceFromCenter > threshold) {
+                    const opacityValue = Math.max(1 - (distanceFromCenter - threshold) / 250, 0.15);
+                    const scaleValue = Math.max(1 - (distanceFromCenter - threshold) / 1500, 0.85);
+                    
+                    card.style.opacity = opacityValue;
+                    card.style.transform = `scale(${scaleValue})`;
+                } else {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }
+            });
+        }
+
+        // --- 3. CLICK AND DRAG ENGINE FOR THE AUDIO ALCHEMISTS ---
+        const slider = document.getElementById('teamSliderWrapper');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault(); 
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; 
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
