@@ -147,7 +147,7 @@
 
         .banner-text-holder h2 {
             font-family: var(--font-serif);
-            font-size: clamp(3rem, 8vw, 5.5rem); /* Responsive font size */
+            font-size: clamp(3rem, 8vw, 5.5rem); 
             font-weight: 400;
             font-style: italic;
             color: var(--text-main);
@@ -223,6 +223,7 @@
             margin: 0 auto;
             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
             mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+            touch-action: none; /* Khóa cuộn mặc định của trình duyệt tại vùng này để xử lý custom touch */
         }
 
         .scroll-container {
@@ -231,13 +232,10 @@
             display: flex;
             flex-direction: column;
             gap: 50px;
-            overflow-y: auto;
+            overflow: hidden; /* Chuyển sang ẩn thanh cuộn thô trên thiết bị di động */
             padding: 60px 0;
             box-sizing: border-box;
-            scrollbar-width: none;
-            scroll-behavior: auto !important; 
         }
-        .scroll-container::-webkit-scrollbar { display: none; }
 
         /* BIG ALBUM CARD */
         .album-card {
@@ -284,14 +282,15 @@
             text-transform: uppercase;
         }
 
+        /* OPTIMIZED EMBED PLAYER FOR MOBILE */
         .album-embed {
             margin-top: 18px;
             width: 100%;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
             background: transparent;
             border: none;
-            opacity: 0.4;
+            opacity: 0.8; /* Tăng độ hiển thị mặc định trên mobile để dễ tương tác */
             transition: opacity 0.3s ease;
         }
 
@@ -299,7 +298,7 @@
             opacity: 1;
         }
 
-        /* --- OPTIMIZED TEAM MEMBERS SECTION --- */
+        /* --- TEAM MEMBERS SECTION --- */
         .team-section {
             padding: 140px 0; 
             width: 100%;
@@ -341,9 +340,6 @@
         }
         .team-slider-wrapper::-webkit-scrollbar {
             display: none; 
-        }
-        .team-slider-wrapper:active {
-            cursor: grabbing; 
         }
 
         .team-grid {
@@ -493,7 +489,6 @@
            ========================================================================== */
         
         @media (max-width: 991px) {
-            /* Showcase layout chuyển sang 1 cột trên tablet/điện thoại nhỏ */
             .showcase-layout {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -507,18 +502,15 @@
             .scroll-instruction {
                 justify-content: center;
             }
-            /* Thay đổi mask-image cho cấu trúc đứng trên mobile */
             .scroll-wrapper {
-                height: 550px;
+                height: 580px; /* Tăng nhẹ không gian chứa khung nhạc */
             }
         }
 
         @media (max-width: 768px) {
-            /* Tối ưu hóa Custom Cursor ẩn đi trên các thiết bị cảm ứng */
             body { cursor: default; }
             #customCursor, #customCursorBlur { display: none !important; }
 
-            /* Header tối ưu không gian */
             header {
                 padding: 15px 20px;
                 flex-direction: column;
@@ -531,7 +523,6 @@
                 letter-spacing: 1px;
             }
 
-            /* Điều chỉnh khoảng cách các Section */
             .showcase-section, .team-section {
                 padding: 80px 20px;
             }
@@ -539,13 +530,11 @@
                 padding: 0;
             }
 
-            /* Team Card thu hẹp nhẹ kích thước bề ngang để hiển thị tốt trên màn hình nhỏ */
             .team-card {
                 width: 280px;
                 padding: 30px 20px;
             }
 
-            /* Footer từ Grid chuyển thành cột đứng */
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -564,12 +553,14 @@
         }
 
         @media (max-width: 480px) {
-            /* Tối ưu giao diện cho màn hình điện thoại siêu nhỏ */
             .scroll-wrapper {
-                height: 480px;
+                height: 520px;
             }
             .album-card {
                 padding: 16px;
+            }
+            .album-embed {
+                height: 152px; /* Chiều cao tiêu chuẩn hiển thị Compact Player mượt mà trên Mobile */
             }
             .team-grid {
                 gap: 20px;
@@ -608,47 +599,47 @@
                 <p>An exclusive index of audio properties and sonic event sets meticulously mastered by Saigon Root. Tailored for absolute maximum structural impact across high-output sound systems.</p>
                 <div class="scroll-instruction">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M9 13l3 3 3-3"/></svg>
-                    <span>Place cursor here & scroll vertically</span>
+                    <span>Scroll or drag vertically to explore</span>
                 </div>
             </div>
 
-            <div class="scroll-wrapper">
+            <div class="scroll-wrapper" id="scrollWrapper">
                 <div class="scroll-container" id="scrollContainer">
                     
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Burning%20Blue%20-%20My%20My.jpg')"></div>
                         <div class="album-info"><h4>Burning Blue</h4><p>Mỹ Mỹ</p></div>
-                        <iframe class="album-embed" src="https://open.spotify.com/embed/album/7hS4OPT1ms6pJ9X7uHuBGb?utm_source=generator&si=47e5974aa958437e" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/album/7hS4OPT1ms6pJ9X7uHuBGb?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/6faaeb9e4185fe34faf0e205231b6b2aad2c62ec/La%20Ban%20-%20Hoang%20Dung.jpg')"></div>
                         <div class="album-info"><h4>La Bàn</h4><p>Hoàng Dũng</p></div>
-                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/5G8D7sPL8mUhrNOm5jC3Sm?utm_source=generator&si=188c4d69f0984be7" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/5G8D7sPL8mUhrNOm5jC3Sm?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Mot%20Ngay%20Nao%20Do%20-%20Hoang%20Dung%20-%20Den.jpg')"></div>
                         <div class="album-info"><h4>Một Ngày Nào Đó</h4><p>Hoàng Dũng & Đen</p></div>
-                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/0y9syFsnSuYnf0RUqxE1Ah?utm_source=generator&si=7d969e04f35449b9" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/0y9syFsnSuYnf0RUqxE1Ah?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Step%20by%20Step%20-%20Minh%20Toc.jpg')"></div>
                         <div class="album-info"><h4>Step by Step</h4><p>Minh Tốc & Lam</p></div>
-                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/4dIYJqmaJrJV7fZKlUmJPO?utm_source=generator&si=36015a423f844789" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/4dIYJqmaJrJV7fZKlUmJPO?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/Suboi_Concert.jpg')"></div>
-                        <div class="album-info"><h4>Suboi full performance Genfest</h4><p>Suboi</p></div>
-                        <iframe class="album-embed" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://open.spotify.com/embed/album/2isvxa5ybA5NsVyEkXQpyY?utm_source=generator&si=ab636358f6784862"></iframe>
+                        <div class="album-info"><h4>Suboi Live Genfest</h4><p>Suboi</p></div>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/album/2isvxa5ybA5NsVyEkXQpyY?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                     <div class="album-card">
                         <div class="album-cover" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/ca9667d43b6c605e3c8dc5aba38ddee4acdee4a9/VuTran%20-%20Tan%20Cho%20Ve%20Nha.jpg')"></div>
                         <div class="album-info"><h4>Tan Cho Ve Nha</h4><p>Vu Tran</p></div>
-                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/10fvYFKG5osRI2cb0EH0NP?utm_source=generator&si=8b251f2d7cf54d3e" height="80" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        <iframe class="album-embed" src="https://open.spotify.com/embed/track/10fvYFKG5osRI2cb0EH0NP?utm_source=generator" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
 
                 </div>
@@ -674,7 +665,7 @@
                     </div>
                     <div class="team-card">
                         <div class="team-avatar" style="background-image: url('https://raw.githubusercontent.com/trinkse61538/saigonrootmusic/970e27f621d5be7eead65d0da27e0fed5f1a3819/TrinhMinhNguyen.jpg')"></div>
-                        <h3>Trịnh Minh Nguyên</h3>
+                        <h3>Trịnh Minh Nguyen</h3>
                         <role>Acoustic Consultant</role>
                         <p>Expert in phase-alignment modeling and dynamic spatial mapping for outdoor performance venues.</p>
                     </div>
@@ -734,9 +725,9 @@
         });
 
 
-        // --- 2. LOCAL HOVER SCROLL + SMOOTH INTERPRETATION ENGINE ---
+        // --- 2. LOCAL HOVER & TOUCH SCROLL INTERPRETATION ENGINE ---
         const container = document.getElementById('scrollContainer');
-        const wrapper = container.parentElement;
+        const wrapper = document.getElementById('scrollWrapper');
         let isHovered = false;
 
         const originalCards = Array.from(container.children);
@@ -762,17 +753,42 @@
 
         let targetScrollTop = originalHeight;
         let currentScrollTop = originalHeight;
-        const easeAmount = 0.08; 
+        const easeAmount = 0.09; 
 
         wrapper.addEventListener('mouseenter', () => isHovered = true);
         wrapper.addEventListener('mouseleave', () => isHovered = false);
 
+        // MOUSE WHEEL INTERACTION
         window.addEventListener('wheel', (e) => {
             if (!isHovered) return;
             e.preventDefault(); 
-            targetScrollTop += e.deltaY * 0.6; 
+            targetScrollTop += e.deltaY * 0.65; 
         }, { passive: false });
 
+        // MOBILE TOUCH SCROLL INTERACTION ENGINE
+        let startY = 0;
+        wrapper.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].pageY;
+            isHovered = true; // Kích hoạt trạng thái xử lý di chuyển khi chạm vào vùng album
+        }, { passive: true });
+
+        wrapper.addEventListener('touchmove', (e) => {
+            if (!isHovered) return;
+            const currentY = e.touches[0].pageY;
+            const diffY = startY - currentY; // Tính toán delta vuốt ngón tay
+            
+            // Tránh việc giật màn hình ngoài khi người dùng đang tập trung tương tác Album
+            if (e.cancelable) e.preventDefault(); 
+
+            targetScrollTop += diffY * 1.2; // Đẩy dữ liệu vào vòng lặp mượt Lerp
+            startY = currentY;
+        }, { passive: false });
+
+        wrapper.addEventListener('touchend', () => {
+            isHovered = false;
+        });
+
+        // SMOOTH RENDERING LOOP (LERP ENGINE)
         function renderLoop() {
             currentScrollTop += (targetScrollTop - currentScrollTop) * easeAmount;
             container.scrollTop = currentScrollTop;
@@ -806,8 +822,8 @@
                 const threshold = 180; 
                 
                 if (distanceFromCenter > threshold) {
-                    const opacityValue = Math.max(1 - (distanceFromCenter - threshold) / 250, 0.15);
-                    const scaleValue = Math.max(1 - (distanceFromCenter - threshold) / 1500, 0.85);
+                    const opacityValue = Math.max(1 - (distanceFromCenter - threshold) / 250, 0.25);
+                    const scaleValue = Math.max(1 - (distanceFromCenter - threshold) / 1500, 0.88);
                     
                     card.style.opacity = opacityValue;
                     card.style.transform = `scale(${scaleValue})`;
@@ -821,28 +837,23 @@
         // --- 3. CLICK AND DRAG ENGINE FOR THE AUDIO ALCHEMISTS ---
         const slider = document.getElementById('teamSliderWrapper');
         let isDown = false;
-        let startX;
+        let sliderStartX;
         let scrollLeft;
 
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
-            startX = e.pageX - slider.offsetLeft;
+            sliderStartX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
 
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
-
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-        });
+        slider.addEventListener('mouseleave', () => { isDown = false; });
+        slider.addEventListener('mouseup', () => { isDown = false; });
 
         slider.addEventListener('mousemove', (e) => {
             if(!isDown) return;
             e.preventDefault(); 
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.5; 
+            const walk = (x - sliderStartX) * 1.5; 
             slider.scrollLeft = scrollLeft - walk;
         });
     </script>
