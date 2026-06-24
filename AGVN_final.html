@@ -273,9 +273,11 @@
         }
         .cw { position: relative; display: flex; align-items: center; gap: 16px; }
         .cv { flex: 1; overflow: hidden; border-radius: 12px; padding: 10px 5px; }
-        .ct { display: flex; gap: 25px; transition: transform 0.5s ease-in-out; }
         
-        /* Box sản phẩm sử dụng Flex-column để kéo giãn đồng bộ */
+        /* Tối ưu hóa trên Desktop: Đặt align-items thành flex-start để các ô không bị cưỡng ép kéo dài bằng nhau */
+        .ct { display: flex; gap: 25px; transition: transform 0.5s ease-in-out; align-items: flex-start; }
+        
+        /* Box sản phẩm sử dụng Flex-column */
         .ci { 
             flex: 0 0 calc((100% - 25px) / 2); 
             background: #fff; 
@@ -307,17 +309,25 @@
             flex-direction: column;
             flex-grow: 1; 
         }
+        
+        /* Giới hạn tiêu đề sản phẩm trên Desktop để không làm lệch form */
         .ci-title { 
             font-size: 1.3rem; 
             font-weight: 700; 
             color: var(--primary-color); 
             margin: 8px 0 12px 0; 
+            min-height: 32px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
         /* CSS cho danh sách đặc điểm sản phẩm giống ảnh mẫu */
         .ci-features {
             list-style: none;
             margin-top: 5px;
+            min-height: 60px; /* Đặt chiều cao cơ sở cố định ban đầu cho danh sách trên desktop */
         }
         .ci-features li {
             font-size: 0.95rem;
@@ -376,9 +386,11 @@
             color: #fff;
         }
 
-        /* Nút xem thêm riêng cho từng sản phẩm trên ĐẢ CẢ DESKTOP VÀ MOBILE */
+        /* Nút xem thêm riêng cho từng sản phẩm trên CẢ DESKTOP VÀ MOBILE */
         .product-detail-more-btn {
-            display: block; /* Hiện ở cả hai phiên bản */
+            display: flex; 
+            align-items: center;
+            justify-content: center;
             width: 100%;
             margin-top: auto; /* Đẩy xuống sát đáy box info */
             padding: 6px 0;
@@ -390,6 +402,8 @@
             font-weight: 600;
             cursor: pointer;
             text-align: center;
+            min-height: 38px; /* Đảm bảo tất cả các nút đều cao bằng nhau tuyệt đối trên Desktop */
+            box-sizing: border-box;
         }
 
         /* MẶC ĐỊNH TRÊN DESKTOP: Ẩn bớt các dòng nội dung dài quá 3 dòng */
@@ -404,6 +418,23 @@
         .ci-features li:nth-child(n+2) {
             display: none;
         }
+        
+        /* TỐI ƯU HÓA TRÊN DESKTOP: Tạo khung cuộn nội bộ mượt mà khi mở rộng nội dung quá dài */
+        .ci.expanded .ci-features {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 5px;
+            margin-bottom: 10px;
+        }
+        /* Tùy biến thanh cuộn nhỏ gọn tinh tế trên Desktop */
+        .ci.expanded .ci-features::-webkit-scrollbar {
+            width: 4px;
+        }
+        .ci.expanded .ci-features::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
         /* Class kích hoạt xem đầy đủ trên cả hai bản */
         .ci.expanded .ci-features li {
             display: flex !important;
@@ -581,6 +612,9 @@
             /* TÁI CẤU TRÚC LAYOUT TRÊN MOBILE THEO YÊU CẦU */
             .view-more-btn { display: block; }
 
+            /* Khôi phục lại tiêu đề tự do trên mobile */
+            .ci-title { min-height: unset; -webkit-line-clamp: unset; }
+
             /* 1. Mục sản phẩm chủ lực */
             .fg .fc { display: none; flex: 0 0 100%; max-width: 100%; }
             .fg .fc:nth-child(1), .fg .fc:nth-child(2) { display: block; }
@@ -589,7 +623,7 @@
             /* 2. Hai mục carousel tiên tiến: biến thành list đứng gọn gàng, ẩn các ô thứ 3 trở đi */
             .cw .cb { display: none; } /* Ẩn nút mũi tên carousel hẹp */
             .cv { padding: 0; }
-            .ct { flex-direction: column; gap: 20px; transform: none !important; }
+            .ct { flex-direction: column; gap: 20px; transform: none !important; align-items: stretch; } /* Giữ bản mobile kéo dãn tự nhiên */
             .ci { flex: 0 0 100%; max-width: 100%; display: none; }
             
             /* Chỉ hiện 2 sản phẩm tượng trưng */
@@ -601,9 +635,17 @@
 
             .ci-img { height: 280px; }
 
+            /* GIỮ NGUYÊN BẢN MOBILE: Khôi phục thuộc tính ban đầu cho mobile không áp dụng khung cuộn */
+            .ci.expanded .ci-features {
+                max-height: unset !important;
+                overflow-y: visible !important;
+                min-height: unset !important;
+            }
+
             /* LOGIC ẨN BỚT NỘI DUNG CHI TIẾT SẢN PHẨM TRÊN MOBILE - KHÔNG THAY ĐỔI CỦA BẢN GỐC */
             .product-detail-more-btn {
                 display: block; 
+                min-height: unset;
             }
             .ci-features li {
                 white-space: nowrap;
@@ -706,12 +748,12 @@
                     <div class="card">
                         <i class="fa-solid fa-eye"></i>
                         <h3>Tầm Nhìn</h3>
-                        <p>Trở thành biểu tượng niềm tin hàng đầu trong ngành nông nghiệp sạch và bền vững tại Việt Nam.</p>
+                        <p>Trở thành biểu tượng niềm tin hàng đầu trong ngành nông nghiệp sạch và bền vũg tại Việt Nam.</p>
                     </div>
                     <div class="card">
                         <i class="fa-solid fa-shield-halved"></i>
                         <h3>An Toàn</h3>
-                        <p>Sản phẩm đạt chuẩn, thân thiện with môi trường, con người và đảm bảo nông sản sạch.</p>
+                        <p>Sản phẩm đạt chuẩn, thân thiện với môi trường, con người và đảm bảo nông sản sạch.</p>
                     </div>
                     <div class="card">
                         <i class="fa-solid fa-wheat-awn"></i>
@@ -754,7 +796,7 @@
                                 <div class="ci-title">DƯỠNG ĐÒNG VÀNG</div>
                                 <ul class="ci-features">
                                     <li><span>✅</span> Bổ sung toàn diện: Cung cấp đầy đủ chất hữu cơ, đa lượng NPK và các trung vi lượng thiết yếu, giúp lúa khỏe mạnh, cứng cáp và tăng sức đề kháng.</li>
-                                    <li><span>✅</span> Cải tạo đất, chắc hạt: Thành phần hữu cơ giúp cải tạo đất, kích thích rễ phát triển mạnh, từ đó hấp thụ dinh dưỡng tốt hơn, giúp cây đứng lá và hạt chắc.</li>
+                                    <li><span>✅</span> Cải tạo đất, chắc hạt: Thành phần hữu cơ giúp cải tạo đất, kích thích rễ phát triển mạnh, từ đó hấp thụ dinh dưỡng tốt hơn, giúp cây đứng lá and hạt chắc.</li>
                                     <li><span>✅</span> Kích thích đòng to, bông dài, hạt nhiều, lúa trổ thoát nhanh và đồng loạt.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
@@ -779,7 +821,7 @@
                                 <span class="pt-grn">Phân bón hữu cơ</span>
                                 <div class="ci-title">SIÊU RỄ NỞ BỤI</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Axit Humic, P₂O₅ & K₂O: Tăng khả năng hấp thụ, giúp cây lúa khỏe thân, cứng cây và lá xanh bền vững.</li>
+                                    <li><span>✅</span> Axit Humic, P₂O₅ & K₂O: Tăng khả năng hấp thụ, giúp cây lúa khỏe thân, cứng cây và lá xanh bền vũg.</li>
                                     <li><span>✅</span> Hormone thực vật NAA & Cytokinin: Kích thích cây đẻ nhánh mạnh, nở bụi to đồng đều, tăng số bông.</li>
                                     <li><span>✅</span> Chất hữu cơ 35%: Là nền tảng giúp cải tạo đất, cung cấp dinh dưỡng, làm rễ mập và cắm sâu.</li>
                                 </ul>
@@ -979,7 +1021,7 @@
                                 <span class="pt-ylw">Thuốc Trừ Sâu</span>
                                 <div class="ci-title">XÔNG HƠI B52</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Xông hơi cực mạnh: Lan tỏa khắp tán lá và thân cây, diệt cả côn trùng ẩn sâu bên trong.</li>
+                                    <li><span>✅</span> Xông hơi cực mạnh: Lan tỏa khắp tán lá and thân cây, diệt cả côn trùng ẩn sâu bên trong.</li>
                                     <li><span>✅</span> Tiếp xúc nhanh: Hiệu quả nhanh, kéo dài nhiều ngày giúp giảm số lần phun, tiết kiệm chi phí.</li>
                                     <li><span>✅</span> Nội hấp: Nội hấp vượt trội, thấm sâu vào mô cây diệt tức thì côn trùng và ổ trứng gây hại.</li>
                                 </ul>
