@@ -376,11 +376,11 @@
             color: #fff;
         }
 
-        /* Nút xem thêm riêng cho từng sản phẩm trên mobile */
+        /* Nút xem thêm riêng cho từng sản phẩm trên ĐẢ CẢ DESKTOP VÀ MOBILE */
         .product-detail-more-btn {
-            display: none;
+            display: block; /* Hiện ở cả hai phiên bản */
             width: 100%;
-            margin-top: 12px;
+            margin-top: auto; /* Đẩy xuống sát đáy box info */
             padding: 6px 0;
             background: #f4fdf4;
             color: var(--primary-color);
@@ -390,6 +390,29 @@
             font-weight: 600;
             cursor: pointer;
             text-align: center;
+        }
+
+        /* MẶC ĐỊNH TRÊN DESKTOP: Ẩn bớt các dòng nội dung dài quá 3 dòng */
+        .ci-features li {
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Giới hạn tối đa 2 dòng cho mỗi thẻ li trên desktop để tổng thể gọn 2-3 dòng */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /* Giấu từ dòng li thứ 2 trở đi trên desktop để khung đều tăm tắp */
+        .ci-features li:nth-child(n+2) {
+            display: none;
+        }
+        /* Class kích hoạt xem đầy đủ trên cả hai bản */
+        .ci.expanded .ci-features li {
+            display: flex !important;
+            -webkit-line-clamp: unset !important;
+            overflow: visible !important;
+            text-overflow: clip !important;
+        }
+        .ci.expanded .ci-features li:nth-child(n+2) {
+            display: flex !important;
         }
 
         /* VIDEO TESTIMONIAL */
@@ -578,9 +601,9 @@
 
             .ci-img { height: 280px; }
 
-            /* LOGIC ẨN BỚT NỘI DUNG CHI TIẾT SẢN PHẨM TRÊN MOBILE */
+            /* LOGIC ẨN BỚT NỘI DUNG CHI TIẾT SẢN PHẨM TRÊN MOBILE - KHÔNG THAY ĐỔI CỦA BẢN GỐC */
             .product-detail-more-btn {
-                display: block; /* Chỉ hiện trên mobile */
+                display: block; 
             }
             .ci-features li {
                 white-space: nowrap;
@@ -707,7 +730,7 @@
             <div class="fg" id="fgContainer">
                 <div class="fc"><div class="fc-img"><img src="https://raw.githubusercontent.com/trinkse61538/AGVN/f639ce776a2754456b5032a12dc2e2bb5fc3fa5d/images/BoHucVang.jpg" alt="BÒ HÚC VÀNG" loading="lazy"></div><div class="fc-name">BÒ HÚC VÀNG</div></div>
                 <div class="fc"><div class="fc-img"><img src="https://raw.githubusercontent.com/trinkse61538/AGVN/f639ce776a2754456b5032a12dc2e2bb5fc3fa5d/images/DaoOnPromax.jpg" alt="ĐẠO ÔN PROMAX" loading="lazy"></div><div class="fc-name">ĐẠO ÔN PROMAX</div></div>
-                <div class="fc"><div class="fc-img"><img src="https://raw.githubusercontent.com/trinkse61538/AGVN/f639ce776a2754456b5032a12dc2e2bb5fc3fa5d/images/KuminX6.jpg" alt="KUMIN X6" loading="lazy"></div><div class="fc-name">KUMIN X6</div></div>
+                <div class="fc"><div class="fc-img"><img src="https://www.google.com/url?sa=E&source=gmail&q=https://raw.githubusercontent.com/trinkse61538/AGVN/91e8d2d9a67080acdf3a06029b587a5210f452e8/images/KuminX6.jpg" alt="KUMIN X6" loading="lazy"></div><div class="fc-name">KUMIN X6</div></div>
                 <div class="fc"><div class="fc-img"><img src="https://raw.githubusercontent.com/trinkse61538/AGVN/f639ce776a2754456b5032a12dc2e2bb5fc3fa5d/images/LunLuc.jpg" alt="LÙN LỰC" loading="lazy"></div><div class="fc-name">LÙN LỰC</div></div>
                 <div class="fc"><div class="fc-img"><img src="https://raw.githubusercontent.com/trinkse61538/AGVN/f639ce776a2754456b5032a12dc2e2bb5fc3fa5d/images/PicoPlus300.jpg" alt="PICO PLUS 300" loading="lazy"></div><div class="fc-name">PICO PLUS 300</div></div>
             </div>
@@ -784,8 +807,8 @@
                                 <span class="pt-grn">Phân bón vi lượng</span>
                                 <div class="ci-title">BOSIMAX</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> </li>
-                                    <li><span>✅</span> </li>
+                                    <li><span>✅</span> Cứng cây, ngắn lóng, đứng lá: Nhờ kiểm soát chiều cao cây lúa giúp cây cứng cáp, làm ngắn thân rạ, lá thẳng đứng, làm giảm nguy cơ đổ ngã do gió hoặc mưa lớn ở giai đoạn đòng và trổ bông.</li>
+                                    <li><span>✅</span> Tăng cường hệ rễ: Không gây ức chế sự phát triển của bộ rễ, đồng thời có thể kích thích sự phát triển của rễ giúp lúa tập trung dinh dưỡng đẻ nhánh mạnh, nuôi đòng to, bông lớn, tăng khả năng chống chịu thời tiết bất lợi.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -861,8 +884,10 @@
                                 <span class="pt-ylw">Thuốc Trừ Bệnh</span>
                                 <div class="ci-title">ĐẶC TRỊ ĐẠO ÔN 822WP</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> </li>
-                                    <li><span>✅</span> </li>
+                                    <li><span>✅</span> Hết sạch đạo ôn: Đặc trị hiệu quả đạo ôn lá (cháy lá), đạo ôn cổ bông và đạo ôn cổ gié, giúp cây lúa hồi phục nhanh chóng.</li>
+                                    <li><span>✅</span> Cứng cây, đứng lá: Thuốc giúp cây lúa khỏe mạnh, xanh lá, tăng khả năng quang hợp và chống chịu sâu bệnh hiệu quả.</li>
+                                    <li><span>✅</span> Năng suất vượt trội: Bảo vệ bông lúa khỏi nấm bệnh, giúp hạt chắc mẩy, gia tăng sản lượng.</li>
+                                    <li><span>✅</span> Rất an toàn cho lúa: Công thức đặc biệt không gây nóng cho cây, an toàn khi phun ở giai đoạn lúa trổ bông nhạy cảm.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -873,8 +898,11 @@
                                 <span class="pt-ylw">Thuốc Trừ Sâu</span>
                                 <div class="ci-title">DIỆT CHÍCH HÚT</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Thuốc trừ sâu thế hệ mới, hạ gục nhanh các loại sâu cuốn lá, sâu đục thân đã kháng thuốc.</li>
-                                    <li><span>✅</span> An toàn cho lá đòng, không gây nóng lúa hay cháy chóp lá khi phun quá liều.</li>
+                                    <li><span>✅</span> Diệt nhanh, diệt sạch: Hiệu quả cực mạnh với nhiều loại côn trùng chích hút như: rầy nâu, rầy cánh trắng, bọ trĩ, rệp sáp, rầy xanh...</li>
+                                    <li><span>✅</span> Không gây nóng bông, diệt sạch và ung trứng, cắt lứa nhanh chóng.</li>
+                                    <li><span>✅</span> Tính lưu dẫn cao, giúp thuốc di chuyển đến các bộ phận khác của cây.</li>
+                                    <li><span>✅</span> Hiệu lực kéo dài, hấp thu nhanh trong vòng 2-3 giờ, không bị rửa trôi khi gặp mưa.</li>
+                                    <li><span>✅</span> Pha trộn dễ dàng, hoà tan tốt, sử dụng tốt mọi giai đoạn cây trồng.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -885,8 +913,9 @@
                                 <span class="pt-ylw">Thuốc Trừ Bệnh</span>
                                 <div class="ci-title">KHUẨN LẠNH KING</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Thuốc trừ sâu thế hệ mới, hạ gục nhanh các loại sâu cuốn lá, sâu đục thân đã kháng thuốc.</li>
-                                    <li><span>✅</span> An toàn cho lá đòng, không gây nóng lúa hay cháy chóp lá khi phun quá liều.</li>
+                                    <li><span>✅</span> Đặc trị các bệnh vi khuẩn như bạc lá, sương mai, thối quả...</li>
+                                    <li><span>✅</span> Thuốc trừ bệnh gốc kháng sinh mới, có phổ tác động rộng.</li>
+                                    <li><span>✅</span> Kích thích tăng trưởng, giúp cây mát khỏe, lá xanh bóng.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -897,8 +926,9 @@
                                 <span class="pt-ylw">Thuốc Trừ Bệnh</span>
                                 <div class="ci-title">LEM LÉP HẠT 400SC</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Thuốc trừ sâu thế hệ mới, hạ gục nhanh các loại sâu cuốn lá, sâu đục thân đã kháng thuốc.</li>
-                                    <li><span>✅</span> An toàn cho lá đòng, không gây nóng lúa hay cháy chóp lá khi phun quá liều.</li>
+                                    <li><span>✅</span> Thuốc trừ bệnh với 2 cơ chế tác động: chuyên vị và lưu dẫn mạnh.</li>
+                                    <li><span>✅</span> Thấm sâu, hạn chế mưa rửa trôi, hiệu lực kéo dài.</li>
+                                    <li><span>✅</span> Bảo vệ bộ lá đòng xanh khỏe, giúp cây phát triển bền vững.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -909,8 +939,11 @@
                                 <span class="pt-ylw">Thuốc Điều Hoà Sinh Trưởng</span>
                                 <div class="ci-title">NUMBER ONE</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> Thuốc trừ sâu thế hệ mới, hạ gục nhanh các loại sâu cuốn lá, sâu đục thân đã kháng thuốc.</li>
-                                    <li><span>✅</span> An toàn cho lá đòng, không gây nóng lúa hay cháy chóp lá khi phun quá liều.</li>
+                                    <li><span>✅</span> Ưu điểm vượt trội của Pyraclostrobin kiểm soát hiệu quả nhiều loại nấm là các tác nhân gây ra các loại bệnh phổ biến.</li>
+                                    <li><span>✅</span> Kích thích hoạt động quang hợp: Hoạt chất này làm tăng hàm lượng diệp lục tố, giúp lá cây xanh lâu hơn, nâng cao hiệu quả hấp thụ ánh sáng.</li>
+                                    <li><span>✅</span> Cải thiện khả năng hấp thụ dinh dưỡng và nước: Đặc biệt với Nitơ, cây trồng có thể sử dụng nguồn dinh dưỡng một cách tối ưu hơn, từ đó phát triển mạnh mẽ và đồng đều.</li>
+                                    <li><span>✅</span> Tăng cường sức đề kháng: với khả năng kích hoạt gen PR (Gen PR phòng thủ sinh học) cây trồng có khả năng chống chịu tốt hơn trước stress môi trường, bao gồm nhiệt độ cao, hạn hán hoặc độ ẩm cao.</li>
+                                    <li><span>✅</span> Kéo dài tuổi thọ lá: thuốc cũng có thể làm giảm tác dụng sinh học của ethylene tổng hợp, trì hoãn sự già đi của cây trồng, cải thiện hệ miễn dịch và khả năng chống lại các yếu tố tăng trưởng bất lợi, từ đó cải thiện năng suất và chất lượng nông sản.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -946,8 +979,9 @@
                                 <span class="pt-ylw">Thuốc Trừ Sâu</span>
                                 <div class="ci-title">XÔNG HƠI B52</div>
                                 <ul class="ci-features">
-                                    <li><span>✅</span> </li>
-                                    <li><span>✅</span> </li>
+                                    <li><span>✅</span> Xông hơi cực mạnh: Lan tỏa khắp tán lá và thân cây, diệt cả côn trùng ẩn sâu bên trong.</li>
+                                    <li><span>✅</span> Tiếp xúc nhanh: Hiệu quả nhanh, kéo dài nhiều ngày giúp giảm số lần phun, tiết kiệm chi phí.</li>
+                                    <li><span>✅</span> Nội hấp: Nội hấp vượt trội, thấm sâu vào mô cây diệt tức thì côn trùng và ổ trứng gây hại.</li>
                                 </ul>
                                 <button class="product-detail-more-btn" onclick="toggleProductDetail(this)">Xem thêm <i class="fa-solid fa-chevron-down"></i></button>
                             </div>
@@ -1077,13 +1111,16 @@
             runCar('Thuoc', true);
         });
 
-        // LOGIC NUT XEM THEM CHO MOBILE
+        // LOGIC NUT XEM THEM CHO MOBILE (Đã chỉnh sửa thêm tự động scroll khi thu gọn)
         function toggleFlagshipMobile() {
             var container = document.getElementById('fgContainer');
             var btn = document.getElementById('btnMoreFlagship');
             if(container.classList.contains('show-all')) {
                 container.classList.remove('show-all');
                 btn.innerHTML = 'Xem thêm <i class="fa-solid fa-chevron-down"></i>';
+                if (window.innerWidth <= 768) {
+                    document.getElementById('flagship').scrollIntoView({ behavior: 'smooth' });
+                }
             } else {
                 container.classList.add('show-all');
                 btn.innerHTML = 'Thu gọn <i class="fa-solid fa-chevron-up"></i>';
@@ -1096,18 +1133,25 @@
             if(track.classList.contains('show-all')) {
                 track.classList.remove('show-all');
                 btn.innerHTML = 'Xem thêm <i class="fa-solid fa-chevron-down"></i>';
+                if (window.innerWidth <= 768) {
+                    var heading = track.closest('.cw').previousElementSibling;
+                    if (heading) {
+                        heading.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             } else {
                 track.classList.add('show-all');
                 btn.innerHTML = 'Thu gọn <i class="fa-solid fa-chevron-up"></i>';
             }
         }
 
-        // LOGIC XEM THÊM CHI TIẾT TỪNG SẢN PHẨM TRÊN MOBILE
+        // LOGIC XEM THÊM CHI TIẾT TỪNG SẢN PHẨM TRÊN CẢ DESKTOP VÀ MOBILE
         function toggleProductDetail(btn) {
             var productBox = btn.closest('.ci');
             if(productBox.classList.contains('expanded')) {
                 productBox.classList.remove('expanded');
                 btn.innerHTML = 'Xem thêm <i class="fa-solid fa-chevron-down"></i>';
+                productBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
                 productBox.classList.add('expanded');
                 btn.innerHTML = 'Thu gọn <i class="fa-solid fa-chevron-up"></i>';
