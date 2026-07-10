@@ -10,134 +10,99 @@
     <link rel="canonical" href="https://khaitringuyen.com/" />
     <meta http-equiv="content-language" content="en" />
     <meta name="image" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
-    <!-- Schema JSON-LD: Person profile for Google understanding -->
+    <!-- Schema JSON-LD: Person + WebSite + WebPage -->
     <script type="application/ld+json">
-    {
+{
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Nguyen Khai Tri",
-      "alternateName": ["Nguyễn Khai Trí", "Tri Nguyen"],
-      "image": "https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png",
-      "jobTitle": "Senior Performance Marketing Specialist",
-      "url": "https://khaitringuyen.com/",
-      "email": "mailto:khaitri15@gmail.com",
-      "telephone": "+84367676119",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ho Chi Minh City",
-        "addressCountry": "VN"
-      },
-      "worksFor": [
-        { "@type": "Organization", "name": "Anfin" },
-        { "@type": "Organization", "name": "ELSA Speak" },
-        { "@type": "Organization", "name": "Recruitery" },
-        { "@type": "Organization", "name": "FPT Software" }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/trinkse61538/",
-        "https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/",
-        "https://github.com/trinkse61538",
-        "https://www.topcv.vn/p/httpskhaitringuyencom/"
-      ],
-      "knowsAbout": [
-        "Performance Marketing",
-        "Google Ads",
-        "Meta Ads",
-        "LinkedIn Ads",
-        "GA4",
-        "GTM",
-        "Mautic",
-        "HubSpot CRM",
-        "Marketing Automation",
-        "AI Automation",
-        "Data Visualization",
-        "Growth Funnels"
-      ],
-      "description": "Senior Performance Marketing Specialist who connects paid acquisition, tracking, CRM automation, data visualization, and AI-powered reporting into scalable growth systems."
-    }
-
-
-        // Scroll reveal, counter animation, active navigation, and lightweight parallax
-        const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
-        revealTargets.forEach((el, index) => {
-            el.classList.add('scroll-reveal');
-            el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
-        });
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.16 });
-        revealTargets.forEach(el => revealObserver.observe(el));
-
-        const counters = document.querySelectorAll('[data-count]');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const el = entry.target;
-                const target = parseFloat(el.dataset.count || '0');
-                const decimals = parseInt(el.dataset.decimals || '0', 10);
-                const prefix = el.dataset.prefix || '';
-                const suffix = el.dataset.suffix || '';
-                const duration = 1200;
-                const start = performance.now();
-                const tick = (now) => {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    const value = target * eased;
-                    el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
-                    if (progress < 1) requestAnimationFrame(tick);
-                };
-                requestAnimationFrame(tick);
-                counterObserver.unobserve(el);
-            });
-        }, { threshold: 0.55 });
-        counters.forEach(el => counterObserver.observe(el));
-
-        const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-        const sections = sectionLinks
-            .map(link => document.querySelector(link.getAttribute('href')))
-            .filter(Boolean);
-
-        const setActiveSection = () => {
-            let current = '';
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
-            });
-            sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
-        };
-
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        }
-
-        let ticking = false;
-        const onScrollFX = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(() => {
-                const y = window.scrollY || document.documentElement.scrollTop;
-                document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
-                document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
-                document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
-                    const speed = [0.035, -0.025, 0.05][index] || 0.03;
-                    orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-                });
-                if (backToTop) backToTop.classList.toggle('show', y > 650);
-                setActiveSection();
-                ticking = false;
-            });
-        };
-        window.addEventListener('scroll', onScrollFX, { passive: true });
-        setActiveSection();
-        onScrollFX();
-
+      "@graph": [
+            {
+                  "@type": "Person",
+                  "@id": "https://khaitringuyen.com/#person",
+                  "name": "Nguyen Khai Tri",
+                  "alternateName": [
+                        "Nguyễn Khai Trí",
+                        "Tri Nguyen"
+                  ],
+                  "image": "https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png",
+                  "jobTitle": "Senior Performance Marketing Specialist",
+                  "url": "https://khaitringuyen.com/",
+                  "email": "mailto:khaitri15@gmail.com",
+                  "telephone": "+84367676119",
+                  "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Ho Chi Minh City",
+                        "addressCountry": "VN"
+                  },
+                  "worksFor": [
+                        {
+                              "@type": "Organization",
+                              "name": "Anfin"
+                        },
+                        {
+                              "@type": "Organization",
+                              "name": "ELSA Speak"
+                        },
+                        {
+                              "@type": "Organization",
+                              "name": "Recruitery"
+                        },
+                        {
+                              "@type": "Organization",
+                              "name": "FPT Software"
+                        }
+                  ],
+                  "sameAs": [
+                        "https://www.facebook.com/trinkse61538/",
+                        "https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/",
+                        "https://github.com/trinkse61538",
+                        "https://www.topcv.vn/p/httpskhaitringuyencom/"
+                  ],
+                  "knowsAbout": [
+                        "Performance Marketing",
+                        "Google Ads",
+                        "Meta Ads",
+                        "LinkedIn Ads",
+                        "GA4",
+                        "GTM",
+                        "Mautic",
+                        "HubSpot CRM",
+                        "Marketing Automation",
+                        "AI Automation",
+                        "Data Visualization",
+                        "Growth Funnels"
+                  ],
+                  "description": "Senior Performance Marketing Specialist who connects paid acquisition, tracking, CRM automation, data visualization, and AI-powered reporting into scalable growth systems."
+            },
+            {
+                  "@type": "WebSite",
+                  "@id": "https://khaitringuyen.com/#website",
+                  "url": "https://khaitringuyen.com/",
+                  "name": "Nguyen Khai Tri Portfolio",
+                  "publisher": {
+                        "@id": "https://khaitringuyen.com/#person"
+                  },
+                  "inLanguage": "en"
+            },
+            {
+                  "@type": "WebPage",
+                  "@id": "https://khaitringuyen.com/#webpage",
+                  "url": "https://khaitringuyen.com/",
+                  "name": "Nguyen Khai Tri | Performance Marketing, Data & AI Automation",
+                  "isPartOf": {
+                        "@id": "https://khaitringuyen.com/#website"
+                  },
+                  "about": {
+                        "@id": "https://khaitringuyen.com/#person"
+                  },
+                  "primaryImageOfPage": {
+                        "@type": "ImageObject",
+                        "url": "https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png"
+                  },
+                  "description": "Portfolio of a Senior Performance Marketing Specialist combining paid media, data tracking, CRM automation, dashboards, and AI-powered growth systems.",
+                  "inLanguage": "en"
+            }
+      ]
+}
     </script>
 
     <!-- Open Graph (Facebook / LinkedIn) -->
@@ -146,6 +111,10 @@
     <meta property="og:title" content="Nguyen Khai Tri | Performance Marketing × Data × AI Automation">
     <meta property="og:description" content="Senior Performance Marketing Specialist building data-driven acquisition funnels, CRM automation, dashboards, and AI-powered growth systems.">
     <meta property="og:image" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
+    <meta property="og:image:secure_url" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -159,14 +128,29 @@
     <meta name="geo.position" content="10.7769;106.7009" />
     <meta name="ICBM" content="10.7769, 106.7009" />
 
-    <!-- Resources -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Browser / PWA Color -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="color-scheme" content="light">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Resource Hints & Non-blocking Assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//raw.githubusercontent.com">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/trinkse61538/CV/072d7749ded870ee41cba4eab2e418dd5e51953b/favico.png">
     <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/trinkse61538/CV/072d7749ded870ee41cba4eab2e418dd5e51953b/favico.png">
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away.css" />
 
     <style>
         :root {
@@ -275,6 +259,7 @@
         /* Mobile Menu Toggle */
         .mobile-menu-btn {
             display: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer;
+            background: transparent; border: 0; padding: 6px; line-height: 1;
         }
 
         .nav-links a.nav-special {
@@ -863,14 +848,55 @@
         .floating-top.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
         .floating-top:hover { transform: translateY(-4px) scale(1.03); }
 
-        /* Tippy Custom Theme */
-        .tippy-box[data-theme~='cv-blue'] {
-            background-color: var(--text-main);
-            color: white;
-            font-weight: 600;
-            font-size: 0.75rem;
-            border-radius: 8px;
-            padding: 5px;
+        /* Lightweight CSS tooltip: replaces Tippy.js + Popper */
+        [data-tippy-content] {
+            position: relative;
+        }
+        [data-tippy-content]::before,
+        [data-tippy-content]::after {
+            position: absolute;
+            left: 50%;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, 8px);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            z-index: 30;
+        }
+        [data-tippy-content]::before {
+            content: attr(data-tippy-content);
+            bottom: calc(100% + 10px);
+            width: max-content;
+            max-width: min(260px, 78vw);
+            padding: 8px 10px;
+            border-radius: 10px;
+            background: var(--text-main);
+            color: #fff;
+            box-shadow: 0 14px 36px rgba(15, 23, 42, 0.24);
+            font-size: 0.72rem;
+            line-height: 1.45;
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: 0;
+            text-align: center;
+        }
+        [data-tippy-content]::after {
+            content: '';
+            bottom: calc(100% + 4px);
+            width: 10px;
+            height: 10px;
+            background: var(--text-main);
+            transform: translate(-50%, 8px) rotate(45deg);
+        }
+        [data-tippy-content]:hover::before,
+        [data-tippy-content]:hover::after,
+        [data-tippy-content]:focus-visible::before,
+        [data-tippy-content]:focus-visible::after {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        [data-tippy-content]:hover::after,
+        [data-tippy-content]:focus-visible::after {
+            transform: translate(-50%, 0) rotate(45deg);
         }
 
         /* --- MOBILE OPTIMIZATION --- */
@@ -938,9 +964,9 @@
             <div class="scroll-percent" id="scrollPercent">0%</div>
         </div>
 
-        <div class="mobile-menu-btn" id="menuToggle">
+        <button class="mobile-menu-btn" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
-        </div>
+        </button>
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#impact">Impact</a></li>
@@ -962,12 +988,12 @@
         <div class="ambient-orb orb-two" aria-hidden="true"></div>
         <div class="ambient-orb orb-three" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-text" data-aos="fade-up">
+            <div class="hero-text">
                 <h2>Digital Performance Marketing Specialist</h2>
                 <h1>Nguyen Khai Tri</h1>
                 <div class="title-divider"></div>
                 <p>I combine <strong>performance marketing</strong>, <strong>data tracking</strong>, and <strong>automation</strong> to build scalable acquisition funnels — from paid ads and CRM workflows to AI-powered reporting systems.</p>
-                <div class="hero-actions" data-aos="fade-up" data-aos-delay="160">
+                <div class="hero-actions">
                     <a href="mailto:khaitri15@gmail.com" class="hero-main-action">
                         <span class="action-eyebrow">Open to roles & projects</span>
                         <strong>Let's Talk</strong>
@@ -991,9 +1017,9 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image-container" data-aos="zoom-in">
+            <div class="hero-image-container">
                 <div class="profile-blob">
-                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/main/Gemini_Generated_Image_90yolh90yolh90yo.png" alt="Nguyen Khai Tri">
+                    <img src="https://raw.githubusercontent.com/trinkse61538/Test/main/Gemini_Generated_Image_90yolh90yolh90yo.png" alt="Nguyen Khai Tri" width="760" height="760" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -1001,25 +1027,25 @@
 
     <div class="quick-metrics">
         <div class="metrics-grid">
-            <div class="metric-item" data-aos="fade-up" data-tippy-content="Total professional career including AI development (1Y) and Digital Marketing (7+Y).">
+            <div class="metric-item" data-tippy-content="Total professional career including AI development (1Y) and Digital Marketing (7+Y).">
                 <i class="fa-solid fa-chart-line metric-icon"></i>
                 <span class="metric-value" data-count="8" data-suffix="+">8+</span>
                 <span class="metric-label">Years Experience</span>
                 <small class="metric-note">Across performance marketing, AI development, tracking, automation, and growth operations.</small>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="100" data-tippy-content="Total ad spend managed across Google, Facebook, and LinkedIn.">
+            <div class="metric-item" data-tippy-content="Total ad spend managed across Google, Facebook, and LinkedIn.">
                 <i class="fa-solid fa-coins metric-icon"></i>
                 <span class="metric-value" data-count="1" data-prefix="$" data-suffix="M+">$1M+</span>
                 <span class="metric-label">Managed Budget</span>
                 <small class="metric-note">Total paid media budget managed across Google, Meta, LinkedIn, and app acquisition campaigns.</small>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="200" data-tippy-content="Consistently maintained high ROI across global and local campaigns.">
+            <div class="metric-item" data-tippy-content="Consistently maintained high ROI across global and local campaigns.">
                 <i class="fa-solid fa-fingerprint metric-icon"></i>
                 <span class="metric-value" data-count="3.85" data-decimals="2">3.85</span>
                 <span class="metric-label">Average ROAS</span>
                 <small class="metric-note">Average return on ad spend achieved in app user acquisition and paid media campaigns.</small>
             </div>
-            <div class="metric-item" data-aos="fade-up" data-aos-delay="300" data-tippy-content="All workflows leverage AI for automation, crawling, or content gen.">
+            <div class="metric-item" data-tippy-content="All workflows leverage AI for automation, crawling, or content gen.">
                 <i class="fa-solid fa-microchip metric-icon"></i>
                 <span class="metric-value" data-count="100" data-suffix="%">100%</span>
                 <span class="metric-label">AI Integrated</span>
@@ -1029,12 +1055,12 @@
     </div>
 
     <section class="section" id="impact">
-        <div class="section-title-wrapper" data-aos="fade-up">
+        <div class="section-title-wrapper">
             <h2 class="section-title">Career Impact Stories</h2>
             <p class="section-intro">Precision user acquisition and ROI scaling for industry leaders.</p>
         </div>
 
-        <div class="impact-block" data-aos="fade-up">
+        <div class="impact-block">
             <div class="highlight-tag">TOP PERFORMANCE KPI</div>
             <div class="impact-header">
                 <i class="fa-solid fa-rocket impact-icon"></i>
@@ -1068,7 +1094,7 @@
             <div class="proof-note"><strong>Context:</strong> These KPIs connect paid acquisition with downstream funnel outcomes, not only vanity media metrics. Each metric should be read together with targeting quality, onboarding flow, CRM follow-up, and product activation.</div>
         </div>
 
-        <div class="impact-block" data-aos="fade-up">
+        <div class="impact-block">
             <div class="highlight-tag">GLOBAL PERFORMANCE SCALING</div>
             <div class="impact-header">
                 <i class="fa-solid fa-bullseye impact-icon"></i>
@@ -1104,13 +1130,13 @@
     </section>
 
     <section class="section" id="showcase">
-        <div class="section-title-wrapper" data-aos="fade-up">
+        <div class="section-title-wrapper">
             <h2 class="section-title">Selected Growth Systems</h2>
             <p class="section-intro">A sharper view of my work: not only tools, but the problem each system solves, how it was built, and what business outcome it supports.</p>
         </div>
 
         <div class="case-grid">
-            <article class="case-card accent-blue" data-aos="fade-up">
+            <article class="case-card accent-blue">
                 <span class="case-kicker"><i class="fa-solid fa-envelope-open-text"></i> CRM Automation</span>
                 <h3>Mautic Lifecycle Automation</h3>
                 <div class="case-structure">
@@ -1125,7 +1151,7 @@
                 <a href="email_showcase.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn">View Case Study</a>
             </article>
 
-            <article class="case-card accent-green" data-aos="fade-up" data-aos-delay="100">
+            <article class="case-card accent-green">
                 <span class="case-kicker"><i class="fa-solid fa-robot"></i> AI Intelligence</span>
                 <h3>OpenClaw AI News & Market Agent</h3>
                 <div class="case-structure">
@@ -1140,7 +1166,7 @@
                 <a href="OpenClaw.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn">Explore Logic</a>
             </article>
 
-            <article class="case-card accent-amber" data-aos="fade-up">
+            <article class="case-card accent-amber">
                 <span class="case-kicker"><i class="fa-solid fa-chart-pie"></i> Data Visualization</span>
                 <h3>Interactive Research Dashboard</h3>
                 <div class="case-structure">
@@ -1155,7 +1181,7 @@
                 <a href="https://khaitringuyen.com/data_analyze_visualize.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn"><i class="fa-solid fa-chart-simple"></i> View Dashboard</a>
             </article>
 
-            <article class="case-card accent-purple" data-aos="fade-up" data-aos-delay="100">
+            <article class="case-card accent-purple">
                 <span class="case-kicker"><i class="fa-solid fa-bullhorn"></i> Acquisition Funnel</span>
                 <h3>Paid Media × Tracking × CRM Funnel</h3>
                 <div class="case-structure">
@@ -1181,12 +1207,12 @@
 
     <section class="section" id="experience" style="background: var(--section-bg); max-width: 100%;">
         <div style="max-width: 1200px; margin: 0 auto;">
-            <div class="section-title-wrapper" data-aos="fade-up">
+            <div class="section-title-wrapper">
                 <h2 class="section-title">Professional Journey</h2>
             </div>
             <div class="timeline">
 
-                <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card">
                         <div class="company-row">
@@ -1206,7 +1232,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card">
                         <div class="company-row">
@@ -1226,7 +1252,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card">
                         <div class="company-row">
@@ -1243,7 +1269,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card">
                         <div class="company-row">
@@ -1256,7 +1282,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="exp-card">
                         <div class="company-row">
@@ -1275,32 +1301,32 @@
 
 
     <section class="section" id="work">
-        <div class="section-title-wrapper" data-aos="fade-up">
+        <div class="section-title-wrapper">
             <h2 class="section-title">How I Work</h2>
             <p class="section-intro">My approach is to diagnose the funnel first, then connect media, tracking, CRM, data, and automation into one measurable growth system.</p>
         </div>
         <div class="work-grid">
-            <div class="work-step" data-step="01" data-aos="fade-up">
+            <div class="work-step" data-step="01">
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
                 <h3>Diagnose the Funnel</h3>
                 <p>Map the user journey from impression to activation, then identify where spend, traffic, or users are leaking.</p>
             </div>
-            <div class="work-step" data-step="02" data-aos="fade-up" data-aos-delay="80">
+            <div class="work-step" data-step="02">
                 <i class="fa-solid fa-bullseye"></i>
                 <h3>Match Intent to Channel</h3>
                 <p>Choose Google, Meta, LinkedIn, email, or CRM workflows based on user intent, product stage, and business KPI.</p>
             </div>
-            <div class="work-step" data-step="03" data-aos="fade-up" data-aos-delay="160">
+            <div class="work-step" data-step="03">
                 <i class="fa-solid fa-route"></i>
                 <h3>Track What Matters</h3>
                 <p>Connect GA4, GTM, CRM and campaign data so decisions are based on activation and revenue signals, not only clicks.</p>
             </div>
-            <div class="work-step" data-step="04" data-aos="fade-up" data-aos-delay="240">
+            <div class="work-step" data-step="04">
                 <i class="fa-solid fa-flask"></i>
                 <h3>Test Creatives & Offers</h3>
                 <p>Build creative hypotheses from user pain points, market context, and funnel stage, then test with clean learning loops.</p>
             </div>
-            <div class="work-step" data-step="05" data-aos="fade-up" data-aos-delay="320">
+            <div class="work-step" data-step="05">
                 <i class="fa-solid fa-gears"></i>
                 <h3>Automate Repetition</h3>
                 <p>Use automation and AI to reduce manual reporting, speed up insight generation, and keep optimization cycles consistent.</p>
@@ -1309,12 +1335,12 @@
     </section>
 
     <section class="section" id="skills">
-        <div class="section-title-wrapper" data-aos="fade-up">
+        <div class="section-title-wrapper">
             <h2 class="section-title">Core Competencies</h2>
         </div>
 
         <div class="bento-grid">
-            <div class="bento-item large" data-aos="zoom-in">
+            <div class="bento-item large">
                 <i class="fa-solid fa-award"></i>
                 <div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Performance Mastery</h3>
@@ -1327,7 +1353,7 @@
                 </div>
             </div>
 
-            <div class="bento-item" data-aos="fade-up">
+            <div class="bento-item">
                 <i class="fa-solid fa-layer-group"></i>
                 <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">The Growth Stack</h3>
                 <div class="skill-tags">
@@ -1337,7 +1363,7 @@
                 </div>
             </div>
 
-            <div class="bento-item" data-aos="fade-up">
+            <div class="bento-item">
                 <i class="fa-solid fa-code"></i>
                 <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main);">Data & AI</h3>
                 <div class="skill-tags">
@@ -1371,143 +1397,155 @@
     </footer>
 
     <button class="floating-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-
     <script>
-        AOS.init({ duration: 850, once: false, offset: 70, easing: 'ease-out-cubic' });
+        (() => {
+            const initPortfolio = () => {
+                const menuToggle = document.getElementById('menuToggle');
+                const navLinks = document.getElementById('navLinks');
+                const nav = document.getElementById('mainNav');
+                const progressBar = document.getElementById('progressBar');
+                const scrollPercent = document.getElementById('scrollPercent');
+                const backToTop = document.getElementById('backToTop');
 
-        // Initialize Tippy.js Tooltips
-        tippy('[data-tippy-content]', {
-            theme: 'cv-blue',
-            animation: 'shift-away',
-            arrow: true,
-            interactive: true,
-        });
+                if (menuToggle && navLinks) {
+                    menuToggle.addEventListener('click', () => {
+                        const isOpen = navLinks.classList.toggle('active');
+                        menuToggle.setAttribute('aria-expanded', String(isOpen));
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.toggle('fa-bars', !isOpen);
+                            icon.classList.toggle('fa-times', isOpen);
+                        }
+                    });
 
-        // Mobile Menu Toggle Logic
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                document.querySelector('#menuToggle i').classList.add('fa-bars');
-                document.querySelector('#menuToggle i').classList.remove('fa-times');
-            });
-        });
-
-        // Scroll Progress & Navbar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-
-            document.getElementById("progressBar").style.width = scrolled + "%";
-            document.getElementById("scrollPercent").innerText = Math.round(scrolled) + "%";
-
-            const nav = document.getElementById('mainNav');
-            if (winScroll > 50) {
-                nav.style.padding = "0.6rem 5%";
-                nav.style.background = "rgba(255, 255, 255, 0.98)";
-            } else {
-                nav.style.padding = "1rem 5%";
-                nav.style.background = "rgba(255, 255, 255, 0.9)";
-            }
-        });
-
-
-        // Scroll reveal, counter animation, active navigation, and lightweight parallax
-        const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
-        revealTargets.forEach((el, index) => {
-            el.classList.add('scroll-reveal');
-            el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
-        });
-
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    revealObserver.unobserve(entry.target);
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.addEventListener('click', () => {
+                            navLinks.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            const icon = menuToggle.querySelector('i');
+                            if (icon) {
+                                icon.classList.add('fa-bars');
+                                icon.classList.remove('fa-times');
+                            }
+                        });
+                    });
                 }
-            });
-        }, { threshold: 0.16 });
-        revealTargets.forEach(el => revealObserver.observe(el));
 
-        const counters = document.querySelectorAll('[data-count]');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const el = entry.target;
-                const target = parseFloat(el.dataset.count || '0');
-                const decimals = parseInt(el.dataset.decimals || '0', 10);
-                const prefix = el.dataset.prefix || '';
-                const suffix = el.dataset.suffix || '';
-                const duration = 1200;
-                const start = performance.now();
-                const tick = (now) => {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    const value = target * eased;
-                    el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
-                    if (progress < 1) requestAnimationFrame(tick);
-                };
-                requestAnimationFrame(tick);
-                counterObserver.unobserve(el);
-            });
-        }, { threshold: 0.55 });
-        counters.forEach(el => counterObserver.observe(el));
+                const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-        const sections = sectionLinks
-            .map(link => document.querySelector(link.getAttribute('href')))
-            .filter(Boolean);
-
-        const setActiveSection = () => {
-            let current = '';
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
-            });
-            sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
-        };
-
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        }
-
-        let ticking = false;
-        const onScrollFX = () => {
-            if (ticking) return;
-            ticking = true;
-            requestAnimationFrame(() => {
-                const y = window.scrollY || document.documentElement.scrollTop;
-                document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
-                document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
-                document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
-                    const speed = [0.035, -0.025, 0.05][index] || 0.03;
-                    orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+                revealTargets.forEach((el, index) => {
+                    el.classList.add('scroll-reveal');
+                    el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
                 });
-                if (backToTop) backToTop.classList.toggle('show', y > 650);
-                setActiveSection();
-                ticking = false;
-            });
-        };
-        window.addEventListener('scroll', onScrollFX, { passive: true });
-        setActiveSection();
-        onScrollFX();
 
+                if ('IntersectionObserver' in window && !prefersReducedMotion) {
+                    const revealObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                revealObserver.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.16 });
+                    revealTargets.forEach(el => revealObserver.observe(el));
+                } else {
+                    revealTargets.forEach(el => el.classList.add('is-visible'));
+                }
+
+                const counters = document.querySelectorAll('[data-count]');
+                const animateCounter = (el) => {
+                    const target = parseFloat(el.dataset.count || '0');
+                    const decimals = parseInt(el.dataset.decimals || '0', 10);
+                    const prefix = el.dataset.prefix || '';
+                    const suffix = el.dataset.suffix || '';
+                    const duration = prefersReducedMotion ? 1 : 1100;
+                    const start = performance.now();
+                    const tick = (now) => {
+                        const progress = Math.min((now - start) / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const value = target * eased;
+                        el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+                        if (progress < 1) requestAnimationFrame(tick);
+                    };
+                    requestAnimationFrame(tick);
+                };
+
+                if ('IntersectionObserver' in window) {
+                    const counterObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (!entry.isIntersecting) return;
+                            animateCounter(entry.target);
+                            counterObserver.unobserve(entry.target);
+                        });
+                    }, { threshold: 0.55 });
+                    counters.forEach(el => counterObserver.observe(el));
+                } else {
+                    counters.forEach(animateCounter);
+                }
+
+                const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+                const sections = sectionLinks
+                    .map(link => document.querySelector(link.getAttribute('href')))
+                    .filter(Boolean);
+
+                const setActiveSection = () => {
+                    let current = '';
+                    sections.forEach(section => {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
+                    });
+                    sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
+                };
+
+                if (backToTop) {
+                    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
+                }
+
+                let ticking = false;
+                const onScrollFX = () => {
+                    if (ticking) return;
+                    ticking = true;
+                    requestAnimationFrame(() => {
+                        const y = window.scrollY || document.documentElement.scrollTop;
+                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                        const scrolled = height > 0 ? (y / height) * 100 : 0;
+
+                        if (progressBar) progressBar.style.width = `${scrolled}%`;
+                        if (scrollPercent) scrollPercent.textContent = `${Math.round(scrolled)}%`;
+
+                        if (nav) {
+                            nav.style.padding = y > 50 ? '0.6rem 5%' : '1rem 5%';
+                            nav.style.background = y > 50 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.9)';
+                        }
+
+                        if (!prefersReducedMotion) {
+                            document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
+                            document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
+                            document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
+                                const speed = [0.035, -0.025, 0.05][index] || 0.03;
+                                orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+                            });
+                        }
+
+                        if (backToTop) backToTop.classList.toggle('show', y > 650);
+                        setActiveSection();
+                        ticking = false;
+                    });
+                };
+
+                window.addEventListener('scroll', onScrollFX, { passive: true });
+                window.addEventListener('resize', onScrollFX, { passive: true });
+                setActiveSection();
+                onScrollFX();
+            };
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initPortfolio, { once: true });
+            } else {
+                initPortfolio();
+            }
+        })();
     </script>
 </body>
 </html>
