@@ -1,63 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Tiêu chuẩn -->
-    <title>Nguyễn Khai Trí | Senior Performance Marketing Specialist in Ho Chi Minh City</title>
-    <meta name="description" content="Senior Performance Marketing Specialist based in Ho Chi Minh City. 8+ years experience scaling Google/FB/LinkedIn Ads, AI automation, and full-funnel growth for FinTech (Anfin) & EdTech (ELSA)">
+    <title>Nguyen Khai Tri | Performance Marketing, Data & AI Automation</title>
+    <meta name="description" content="Senior Performance Marketing Specialist in Ho Chi Minh City with 8+ years of experience in paid acquisition, GA4/GTM tracking, CRM automation, data visualization, and AI-powered growth systems for FinTech and EdTech.">
     <link rel="canonical" href="https://khaitringuyen.com/" />
-    <meta http-equiv="content-language" content="vi" />
+    <meta http-equiv="content-language" content="en" />
     <meta name="image" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
-
-    <!-- Schema JSON-LD (Đã thêm Image) -->
+    <!-- Schema JSON-LD: Person profile for Google understanding -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Nguyễn Khai Trí",
-      "alternateName": "Tri Nguyen",
+      "name": "Nguyen Khai Tri",
+      "alternateName": ["Nguyễn Khai Trí", "Tri Nguyen"],
       "image": "https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png",
       "jobTitle": "Senior Performance Marketing Specialist",
+      "url": "https://khaitringuyen.com/",
+      "email": "mailto:khaitri15@gmail.com",
+      "telephone": "+84367676119",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Ho Chi Minh City",
-        "addressCountry": "Vietnam"
+        "addressCountry": "VN"
       },
       "worksFor": [
         { "@type": "Organization", "name": "Anfin" },
-        { "@type": "Organization", "name": "ELSA" },
+        { "@type": "Organization", "name": "ELSA Speak" },
         { "@type": "Organization", "name": "Recruitery" },
         { "@type": "Organization", "name": "FPT Software" }
       ],
-      "url": "https://khaitringuyen.com/",
       "sameAs": [
         "https://www.facebook.com/trinkse61538/",
         "https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/",
+        "https://github.com/trinkse61538",
         "https://www.topcv.vn/p/httpskhaitringuyencom/"
       ],
-      "description": "Technical-Driven Performance Marketer với kinh nghiệm tại Anfin, ELSA, và FPT.",
       "knowsAbout": [
         "Performance Marketing",
-        "Embedded Systems",
         "Google Ads",
-        "Facebook Ads",
-        "Data Analysis"
-      ]
+        "Meta Ads",
+        "LinkedIn Ads",
+        "GA4",
+        "GTM",
+        "Mautic",
+        "HubSpot CRM",
+        "Marketing Automation",
+        "AI Automation",
+        "Data Visualization",
+        "Growth Funnels"
+      ],
+      "description": "Senior Performance Marketing Specialist who connects paid acquisition, tracking, CRM automation, data visualization, and AI-powered reporting into scalable growth systems."
     }
+
+
+        // Scroll reveal, counter animation, active navigation, and lightweight parallax
+        const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
+        revealTargets.forEach((el, index) => {
+            el.classList.add('scroll-reveal');
+            el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.16 });
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseFloat(el.dataset.count || '0');
+                const decimals = parseInt(el.dataset.decimals || '0', 10);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                const duration = 1200;
+                const start = performance.now();
+                const tick = (now) => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const value = target * eased;
+                    el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+                    if (progress < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.55 });
+        counters.forEach(el => counterObserver.observe(el));
+
+        const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+        const sections = sectionLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const setActiveSection = () => {
+            let current = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
+            });
+            sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
+        };
+
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        let ticking = false;
+        const onScrollFX = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const y = window.scrollY || document.documentElement.scrollTop;
+                document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
+                document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
+                document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
+                    const speed = [0.035, -0.025, 0.05][index] || 0.03;
+                    orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+                });
+                if (backToTop) backToTop.classList.toggle('show', y > 650);
+                setActiveSection();
+                ticking = false;
+            });
+        };
+        window.addEventListener('scroll', onScrollFX, { passive: true });
+        setActiveSection();
+        onScrollFX();
+
     </script>
 
     <!-- Open Graph (Facebook / LinkedIn) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://khaitringuyen.com/">
-    <meta property="og:title" content="Nguyễn Khai Trí | Technical-Driven Performance Marketer">
-    <meta property="og:description" content="Performance Marketing Specialist với nền tảng Embedded Engineer. Khám phá portfolio của Nguyễn Khai Trí.">
+    <meta property="og:title" content="Nguyen Khai Tri | Performance Marketing × Data × AI Automation">
+    <meta property="og:description" content="Senior Performance Marketing Specialist building data-driven acquisition funnels, CRM automation, dashboards, and AI-powered growth systems.">
     <meta property="og:image" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nguyễn Khai Trí | Performance Marketing Specialist">
-    <meta name="twitter:description" content="Portfolio và các giải pháp Performance Marketing của Nguyễn Khai Trí.">
+    <meta name="twitter:title" content="Nguyen Khai Tri | Performance Marketing × Data × AI Automation">
+    <meta name="twitter:description" content="Portfolio of a Senior Performance Marketing Specialist combining paid media, data tracking, automation, and AI workflow systems.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png">
 
     <!-- Geo Tags -->
@@ -93,6 +186,9 @@
             --dark-card-bg: #1e293b;
             --dark-text-main: #f8fafc;
             --dark-text-muted: #94a3b8;
+            --accent-amber: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.10);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -104,6 +200,21 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.55;
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+            background-size: 64px 64px;
+            transform: translate3d(0, var(--grid-shift, 0px), 0);
+            transition: transform 0.15s linear;
+        }
+        ::selection { background: rgba(59, 130, 246, 0.18); color: var(--text-main); }
 
         /* --- Custom Scrollbar --- */
         ::-webkit-scrollbar { width: 8px; }
@@ -147,6 +258,19 @@
             transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; position: relative;
         }
         .nav-links a:hover { color: var(--text-main); }
+        .nav-links a.active-section {
+            color: var(--primary-blue);
+        }
+        .nav-links a.active-section::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--gradient-primary);
+        }
 
         /* Mobile Menu Toggle */
         .mobile-menu-btn {
@@ -168,18 +292,161 @@
             background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
                         radial-gradient(circle at 85% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
         }
+        .ambient-orb {
+            position: absolute;
+            border-radius: 999px;
+            pointer-events: none;
+            filter: blur(6px);
+            opacity: 0.55;
+            mix-blend-mode: multiply;
+            animation: orbFloat 10s ease-in-out infinite alternate;
+        }
+        .orb-one { width: 170px; height: 170px; left: 7%; top: 18%; background: rgba(59, 130, 246, 0.16); }
+        .orb-two { width: 210px; height: 210px; right: 10%; bottom: 12%; background: rgba(16, 185, 129, 0.14); animation-delay: -3s; }
+        .orb-three { width: 90px; height: 90px; right: 36%; top: 20%; background: rgba(139, 92, 246, 0.12); animation-delay: -5s; }
+        @keyframes orbFloat {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(24px, -26px, 0) scale(1.08); }
+        }
         .hero-content { position: relative; z-index: 10; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; max-width: 1200px; width: 100%; }
 
         .title-divider { height: 4px; width: 60px; background: var(--gradient-primary); margin: 1.5rem 0; border-radius: 10px; }
 
         .hero-text h2 { background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: 800; }
         .hero-text h1 { color: var(--text-main); font-family: 'Montserrat'; font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
-        .hero-text p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 550px; }
+        .hero-text p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem; max-width: 550px; }
+        .hero-actions {
+            display: grid;
+            grid-template-columns: minmax(230px, 0.95fr) minmax(300px, 1.25fr);
+            gap: 1rem;
+            align-items: stretch;
+            max-width: 720px;
+        }
+        .hero-main-action, .action-card {
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            border-radius: 22px;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+        }
+        .hero-main-action {
+            min-height: 178px;
+            padding: 1.45rem;
+            color: var(--white);
+            background: linear-gradient(135deg, #2563eb 0%, #10b981 55%, #06b6d4 100%);
+            box-shadow: 0 22px 50px rgba(37, 99, 235, 0.22);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .hero-main-action::before, .action-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.42) 45%, transparent 70%);
+            transform: translateX(-120%);
+            transition: transform 0.65s ease;
+        }
+        .hero-main-action:hover::before, .action-card:hover::before { transform: translateX(120%); }
+        .hero-main-action:hover, .action-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+        .action-eyebrow {
+            position: relative;
+            z-index: 1;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            font-weight: 800;
+            opacity: 0.82;
+        }
+        .hero-main-action strong {
+            position: relative;
+            z-index: 1;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .hero-main-action small {
+            position: relative;
+            z-index: 1;
+            display: block;
+            max-width: 220px;
+            color: rgba(255,255,255,0.82);
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+        .hero-main-action i {
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 999px;
+            color: var(--white);
+            background: rgba(255,255,255,0.18);
+            z-index: 1;
+            transition: transform 0.28s ease;
+        }
+        .hero-main-action:hover i { transform: translate(4px, -4px); }
+        .hero-secondary-actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+        .action-card {
+            min-height: 82px;
+            padding: 1rem;
+            background: rgba(255,255,255,0.78);
+            border: 1px solid rgba(15,23,42,0.08);
+            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            color: var(--text-main);
+            backdrop-filter: blur(14px);
+        }
+        .action-card.download-card { grid-column: span 2; }
+        .action-card .action-icon {
+            position: relative;
+            z-index: 1;
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(59,130,246,0.1);
+            color: var(--primary-blue);
+            flex: 0 0 auto;
+            transition: 0.28s ease;
+        }
+        .action-card:nth-child(2) .action-icon { background: rgba(16,185,129,0.1); color: var(--primary-green); }
+        .action-card:nth-child(3) .action-icon { background: rgba(139,92,246,0.1); color: var(--accent-purple); }
+        .action-card strong {
+            position: relative;
+            z-index: 1;
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.65px;
+            margin-bottom: 2px;
+        }
+        .action-card small {
+            position: relative;
+            z-index: 1;
+            color: var(--slate);
+            font-size: 0.72rem;
+            line-height: 1.3;
+        }
+        .action-card:hover { border-color: rgba(59,130,246,0.22); background: #fff; }
+        .action-card:hover .action-icon { background: var(--gradient-primary); color: #fff; transform: rotate(-8deg) scale(1.06); }
 
         .profile-blob {
             width: 100%; max-width: 380px; aspect-ratio: 1/1; background: var(--gradient-primary);
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation: morph 8s ease-in-out infinite; overflow: hidden;
-            border: 8px solid rgba(255, 255, 255, 0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.1); margin: 0 auto;
+            border: 8px solid rgba(255, 255, 255, 0.5); box-shadow: 0 20px 50px rgba(0,0,0,0.1), 0 0 0 1px rgba(59,130,246,0.08); margin: 0 auto;
+            transform: translate3d(0, var(--hero-photo-y, 0px), 0);
         }
         .profile-blob img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -282,7 +549,8 @@
 
         /* --- Bento Grid --- */
         .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-        .bento-item { background: var(--card-bg); border-radius: 24px; padding: 2rem; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .bento-item { background: var(--card-bg); border-radius: 24px; padding: 2rem; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease; }
+        .bento-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); border-color: rgba(59, 130, 246, 0.14); }
         .bento-item i { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 1rem; }
         .large { background: var(--gradient-primary); color: white; grid-column: span 2; }
         .large h3, .large p, .large i { color: white; }
@@ -292,14 +560,308 @@
         .large .skill-tag { background: rgba(255, 255, 255, 0.2); color: white; }
         .large .skill-tag:hover { background: white; color: var(--primary-blue); }
 
+
+        .section-intro {
+            max-width: 760px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        .metric-note {
+            display: block;
+            max-width: 210px;
+            margin: 10px auto 0;
+            color: rgba(248, 250, 252, 0.72);
+            font-size: 0.68rem;
+            line-height: 1.45;
+        }
+        .stat-context {
+            display: block;
+            margin-top: 10px;
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            line-height: 1.45;
+            text-transform: none;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+        .proof-note {
+            margin-top: 1.6rem;
+            padding: 1rem 1.2rem;
+            border-left: 4px solid var(--primary-green);
+            background: rgba(16, 185, 129, 0.08);
+            border-radius: 0 12px 12px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .scope-line {
+            margin: -0.2rem 0 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+        .case-card {
+            --case-accent: var(--primary-blue);
+            --case-accent-soft: rgba(59, 130, 246, 0.10);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 28px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+            transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease;
+        }
+        .case-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 0%, var(--case-accent-soft), transparent 45%);
+            opacity: 0;
+            transition: opacity 0.32s ease;
+            z-index: -1;
+        }
+        .case-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--case-accent), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.32s ease;
+        }
+        .case-card:hover {
+            transform: translateY(-8px);
+            border-color: color-mix(in srgb, var(--case-accent) 38%, transparent);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+        }
+        .case-card:hover::before { opacity: 1; }
+        .case-card:hover::after { transform: scaleX(1); }
+        .case-card.accent-green { --case-accent: var(--primary-green); --case-accent-soft: rgba(16,185,129,0.12); }
+        .case-card.accent-amber { --case-accent: var(--accent-amber); --case-accent-soft: rgba(245,158,11,0.14); }
+        .case-card.accent-purple { --case-accent: var(--accent-purple); --case-accent-soft: rgba(139,92,246,0.12); }
+        .case-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+            color: var(--case-accent);
+            background: var(--case-accent-soft);
+            border: 1px solid color-mix(in srgb, var(--case-accent) 25%, transparent);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .case-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            font-size: 1.35rem;
+            line-height: 1.25;
+        }
+        .case-structure {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .case-structure div {
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            padding: 0.85rem 1rem;
+            border-radius: 14px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .case-structure strong {
+            display: block;
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 4px;
+        }
+        .case-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+        }
+        .mini-tag {
+            background: var(--case-accent-soft);
+            color: var(--case-accent);
+            padding: 4px 9px;
+            border-radius: 8px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .case-btn {
+            width: fit-content;
+            padding: 0.68rem 1.15rem !important;
+            font-size: 0.7rem !important;
+            border-color: var(--case-accent) !important;
+            color: var(--case-accent) !important;
+            background: transparent;
+            box-shadow: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .case-btn::after {
+            content: '↗';
+            font-size: 0.85rem;
+            transition: transform 0.25s ease;
+        }
+        .case-card:hover .case-btn, .case-btn:hover {
+            color: #fff !important;
+            border-color: transparent !important;
+            background: linear-gradient(135deg, var(--case-accent) 0%, #0f172a 100%);
+            box-shadow: 0 12px 28px color-mix(in srgb, var(--case-accent) 22%, transparent);
+            transform: translateY(-2px);
+        }
+        .case-card:hover .case-btn::after, .case-btn:hover::after { transform: translate(3px, -3px); }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .metric-item.scroll-reveal.is-visible:hover { transform: translateY(-5px); }
+        .impact-stat-card.scroll-reveal.is-visible:hover { transform: scale(1.05); }
+        .case-card.scroll-reveal.is-visible:hover { transform: translateY(-8px); }
+        .bento-item.scroll-reveal.is-visible:hover, .work-step.scroll-reveal.is-visible:hover, .impact-block.scroll-reveal.is-visible:hover { transform: translateY(-6px); }
+        .timeline-item.scroll-reveal { transform: translateX(-24px); }
+        .timeline-item.scroll-reveal.is-visible { transform: translateX(0); }
+        .work-step, .impact-block, .exp-card { transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease; }
+        .work-step:hover, .impact-block:hover, .exp-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); border-color: rgba(59, 130, 246, 0.14); }
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+        .work-step {
+            background: var(--card-bg);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            border-radius: 20px;
+            padding: 1.5rem;
+            min-height: 210px;
+            position: relative;
+            overflow: hidden;
+        }
+        .work-step::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.28s ease;
+        }
+        .work-step:hover::after { transform: scaleX(1); }
+        .work-step::before {
+            content: attr(data-step);
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: rgba(59, 130, 246, 0.08);
+        }
+        .work-step i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        .work-step h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+        .work-step p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+        .footer-cta {
+            max-width: 850px;
+            margin: 0 auto 2rem;
+        }
+        .footer-cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+        .footer-cta p {
+            max-width: 680px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-muted);
+        }
+        .footer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .social-links a:hover {
+            color: var(--white);
+            background: var(--gradient-primary);
+            transform: translateY(-3px);
+        }
+
         /* --- Footer --- */
         footer { background: #f1f5f9; padding: 60px 5% 30px; text-align: center; }
         .social-links { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2rem; }
         .social-links a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; background: var(--white); border-radius: 50%; color: var(--text-main); font-size: 1.2rem; border: 1px solid rgba(0,0,0,0.05); }
 
         /* --- Buttons --- */
-        .btn-primary { background: var(--gradient-primary); color: var(--white) !important; padding: 1rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
-        .btn-secondary { border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 0.9rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; }
+        .btn-primary { background: var(--gradient-primary); color: var(--white) !important; padding: 1rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease; }
+        .btn-primary:hover { background: var(--gradient-hover); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(59, 130, 246, 0.24); }
+        .btn-secondary { border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 0.9rem 1.8rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; display: inline-block; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease; }
+        .btn-secondary:hover { color: #fff; background: var(--gradient-primary); border-color: transparent; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(59, 130, 246, 0.18); }
+        .floating-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 46px;
+            height: 46px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--gradient-primary);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: 0 14px 34px rgba(15, 23, 42, 0.22);
+            opacity: 0;
+            transform: translateY(16px) scale(0.96);
+            pointer-events: none;
+            transition: 0.25s ease;
+            z-index: 9998;
+        }
+        .floating-top.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+        .floating-top:hover { transform: translateY(-4px) scale(1.03); }
 
         /* Tippy Custom Theme */
         .tippy-box[data-theme~='cv-blue'] {
@@ -328,7 +890,9 @@
             .profile-blob { max-width: 260px; }
             .hero-text h1 { font-size: 2.5rem; }
             .hero-text p { margin: 0 auto 2rem; }
-            .hero-text div { justify-content: center !important; }
+            .hero-actions { margin: 0 auto; grid-template-columns: 1fr; text-align: left; }
+            .hero-secondary-actions { grid-template-columns: 1fr; }
+            .action-card.download-card { grid-column: span 1; }
             .title-divider { margin: 1.5rem auto; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .impact-stats { grid-template-columns: repeat(2, 1fr); }
@@ -345,6 +909,24 @@
             .metrics-grid { grid-template-columns: 1fr; }
             .company-row { flex-direction: column; align-items: flex-start; }
             .btn-primary, .btn-secondary { width: 100%; text-align: center; margin-bottom: 10px; }
+            .hero-main-action, .action-card { width: 100%; }
+            .hero-main-action { min-height: 150px; }
+            .case-btn { width: fit-content !important; }
+        }
+
+        @media (max-width: 968px) {
+            .case-grid { grid-template-columns: 1fr; }
+            .work-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .work-grid { grid-template-columns: 1fr; }
+            .case-card { padding: 1.5rem; }
+            .footer-actions { flex-direction: column; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
+            .scroll-reveal { opacity: 1 !important; transform: none !important; }
         }
     </style>
 </head>
@@ -362,8 +944,9 @@
 
         <ul class="nav-links" id="navLinks">
             <li><a href="#impact">Impact</a></li>
-            <li><a href="#showcase" class="nav-special">Solutions <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
+            <li><a href="#showcase" class="nav-special">Projects <i class="fa-solid fa-wand-magic-sparkles"></i></a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#work">How I Work</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="mailto:khaitri15@gmail.com" style="color: var(--text-main);"><i class="fas fa-paper-plane" style="color: var(--primary-green); margin-right: 5px;"></i> Contact</a></li>
         </ul>
@@ -375,21 +958,37 @@
 
     <section class="hero">
         <div class="hero-bg"></div>
+        <div class="ambient-orb orb-one" aria-hidden="true"></div>
+        <div class="ambient-orb orb-two" aria-hidden="true"></div>
+        <div class="ambient-orb orb-three" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-text" data-aos="fade-up">
                 <h2>Digital Performance Marketing Specialist</h2>
                 <h1>Nguyen Khai Tri</h1>
                 <div class="title-divider"></div>
-                <p>Transitioning from a <strong>Software Engineering</strong> background, I bridge the gap between technical logic and growth marketing. I don't just run ads - I engineer <strong>Data-Driven Funnels</strong> and leverage <strong>AI-Automation</strong> to scale performance with surgical precision.</p>
-                <div style="display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap;">
-                    <a href="mailto:khaitri15@gmail.com" class="btn-primary">Let's Talk</a>
-                    <a href="View_CV.html"
-                       class="btn-primary"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                       View my CV
+                <p>I combine <strong>performance marketing</strong>, <strong>data tracking</strong>, and <strong>automation</strong> to build scalable acquisition funnels — from paid ads and CRM workflows to AI-powered reporting systems.</p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="160">
+                    <a href="mailto:khaitri15@gmail.com" class="hero-main-action">
+                        <span class="action-eyebrow">Open to roles & projects</span>
+                        <strong>Let's Talk</strong>
+                        <small>Discuss performance marketing, automation, or growth systems.</small>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </a>
-                    <a href="https://raw.githubusercontent.com/trinkse61538/CV/7a1638c354b613986a4c344a0808b270edfad8bd/CV_Nguyen%20Khai%20Tri%20%7C%20Senior%20Performance%20Marketer_3.pdf" class="btn-secondary" download><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download CV</a>
+
+                    <div class="hero-secondary-actions">
+                        <a href="#showcase" class="action-card">
+                            <span class="action-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                            <span><strong>View Projects</strong><small>Growth systems & case studies</small></span>
+                        </a>
+                        <a href="View_CV.html" target="_blank" rel="noopener noreferrer" class="action-card">
+                            <span class="action-icon"><i class="fa-solid fa-id-card"></i></span>
+                            <span><strong>View CV</strong><small>Experience, scope & KPI details</small></span>
+                        </a>
+                        <a href="https://raw.githubusercontent.com/trinkse61538/CV/7a1638c354b613986a4c344a0808b270edfad8bd/CV_Nguyen%20Khai%20Tri%20%7C%20Senior%20Performance%20Marketer_3.pdf" class="action-card download-card" download>
+                            <span class="action-icon"><i class="fa-solid fa-download"></i></span>
+                            <span><strong>Download CV</strong><small>Save the PDF version for later review</small></span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="hero-image-container" data-aos="zoom-in">
@@ -404,23 +1003,27 @@
         <div class="metrics-grid">
             <div class="metric-item" data-aos="fade-up" data-tippy-content="Total professional career including AI development (1Y) and Digital Marketing (7+Y).">
                 <i class="fa-solid fa-chart-line metric-icon"></i>
-                <span class="metric-value">8+</span>
+                <span class="metric-value" data-count="8" data-suffix="+">8+</span>
                 <span class="metric-label">Years Experience</span>
+                <small class="metric-note">Across performance marketing, AI development, tracking, automation, and growth operations.</small>
             </div>
             <div class="metric-item" data-aos="fade-up" data-aos-delay="100" data-tippy-content="Total ad spend managed across Google, Facebook, and LinkedIn.">
                 <i class="fa-solid fa-coins metric-icon"></i>
-                <span class="metric-value">$1M+</span>
+                <span class="metric-value" data-count="1" data-prefix="$" data-suffix="M+">$1M+</span>
                 <span class="metric-label">Managed Budget</span>
+                <small class="metric-note">Total paid media budget managed across Google, Meta, LinkedIn, and app acquisition campaigns.</small>
             </div>
             <div class="metric-item" data-aos="fade-up" data-aos-delay="200" data-tippy-content="Consistently maintained high ROI across global and local campaigns.">
                 <i class="fa-solid fa-fingerprint metric-icon"></i>
-                <span class="metric-value">3.85</span>
+                <span class="metric-value" data-count="3.85" data-decimals="2">3.85</span>
                 <span class="metric-label">Average ROAS</span>
+                <small class="metric-note">Average return on ad spend achieved in app user acquisition and paid media campaigns.</small>
             </div>
             <div class="metric-item" data-aos="fade-up" data-aos-delay="300" data-tippy-content="All workflows leverage AI for automation, crawling, or content gen.">
                 <i class="fa-solid fa-microchip metric-icon"></i>
-                <span class="metric-value">100%</span>
+                <span class="metric-value" data-count="100" data-suffix="%">100%</span>
                 <span class="metric-label">AI Integrated</span>
+                <small class="metric-note">AI used for reporting, content generation, news crawling, insight summarization, and workflow automation.</small>
             </div>
         </div>
     </div>
@@ -442,22 +1045,27 @@
             </div>
             <div class="impact-stats">
                 <div class="impact-stat-card" data-tippy-content="Year-Over-Year growth in verified Mercantile Exchange of Vietnam accounts.">
-                    <h4 style="color: var(--primary-blue);">275.3%</h4>
+                    <h4 style="color: var(--primary-blue);" data-count="275.3" data-decimals="1" data-suffix="%">275.3%</h4>
                     <p>YOY MXV Account Growth</p>
+                    <span class="stat-context">Verified commodity trading account growth driven by acquisition campaigns and funnel optimization.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Conversion rate from successful identity verification to actual trading activity.">
-                    <h4 style="color: var(--primary-blue);">34.0%</h4>
+                    <h4 style="color: var(--primary-blue);" data-count="34.0" data-decimals="1" data-suffix="%">34.0%</h4>
                     <p>eKYC-to-MXV Conversion</p>
+                    <span class="stat-context">Conversion from identity verification success to MXV account activation and trading readiness.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Improvement in user activation through streamlined digital onboarding journeys.">
-                    <h4>42.6%</h4>
+                    <h4 data-count="42.6" data-decimals="1" data-suffix="%">42.6%</h4>
                     <p>Onboarding Success Lift</p>
+                    <span class="stat-context">Improvement in activation after streamlining onboarding messaging and paid media intent.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Lead handling efficiency using open-source marketing automation (Mautic).">
-                    <h4>3.3x</h4>
+                    <h4 data-count="3.3" data-decimals="1" data-suffix="x">3.3x</h4>
                     <p>Mautic Funnel Efficiency</p>
+                    <span class="stat-context">Lead handling and nurture efficiency supported by open-source marketing automation.</span>
                 </div>
             </div>
+            <div class="proof-note"><strong>Context:</strong> These KPIs connect paid acquisition with downstream funnel outcomes, not only vanity media metrics. Each metric should be read together with targeting quality, onboarding flow, CRM follow-up, and product activation.</div>
         </div>
 
         <div class="impact-block" data-aos="fade-up">
@@ -471,64 +1079,96 @@
             </div>
             <div class="impact-stats">
                 <div class="impact-stat-card" data-tippy-content="Return on Ad Spend across VN and SEA markets.">
-                    <h4 style="color: var(--primary-blue);">3.85</h4>
+                    <h4 style="color: var(--primary-blue);" data-count="3.85" data-decimals="2">3.85</h4>
                     <p>Avg. ROAS (Global UA)</p>
+                    <span class="stat-context">Paid app acquisition performance across Vietnam and regional/global campaigns.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Consistently over-performed monthly revenue targets by 70%.">
-                    <h4 style="color: var(--primary-blue);">170%</h4>
+                    <h4 style="color: var(--primary-blue);" data-count="170" data-suffix="%">170%</h4>
                     <p>Revenue KPI Achieved</p>
+                    <span class="stat-context">Monthly revenue target over-achievement from paid media optimization and campaign scaling.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Growth of B2B/Enterprise leads through LinkedIn and Cold Email automation.">
-                    <h4>70%</h4>
+                    <h4 data-count="70" data-suffix="%">70%</h4>
                     <p>New B2B Clientele Share</p>
+                    <span class="stat-context">Growth contribution from LinkedIn, cold email, CRM workflows, and sales handoff improvements.</span>
                 </div>
                 <div class="impact-stat-card" data-tippy-content="Highly targeted email nurturing campaigns with exceptional engagement.">
-                    <h4>60%</h4>
+                    <h4 data-count="60" data-suffix="%">60%</h4>
                     <p>Email Open Rate</p>
+                    <span class="stat-context">Best-performing segmented nurturing campaigns with highly targeted audience messaging.</span>
                 </div>
             </div>
+            <div class="proof-note"><strong>Context:</strong> Performance work included user acquisition, attribution tracking, CRM coordination, and engagement optimization across both B2C app users and B2B lead generation.</div>
         </div>
     </section>
 
     <section class="section" id="showcase">
         <div class="section-title-wrapper" data-aos="fade-up">
-            <h2 class="section-title">Technical Solutions</h2>
-            <p class="section-intro">Automating the growth engine with AI, Marketing Technology &amp; Data-Driven Visualizations.</p>
+            <h2 class="section-title">Selected Growth Systems</h2>
+            <p class="section-intro">A sharper view of my work: not only tools, but the problem each system solves, how it was built, and what business outcome it supports.</p>
         </div>
 
-        <div class="bento-grid">
-            <div class="bento-item" data-aos="fade-up">
-                <i class="fa-solid fa-envelope-open-text"></i>
-                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main); font-family: 'Montserrat';">Email Marketing Automation</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Built automated lead nurturing systems, personalizing content based on user behavior to maximize engagement and Inbox placement rates.
-                </p>
-                <a href="email_showcase.html" target="_blank" class="btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem; width: fit-content;">
-                    View Case Study
-                </a>
-            </div>
+        <div class="case-grid">
+            <article class="case-card accent-blue" data-aos="fade-up">
+                <span class="case-kicker"><i class="fa-solid fa-envelope-open-text"></i> CRM Automation</span>
+                <h3>Mautic Lifecycle Automation</h3>
+                <div class="case-structure">
+                    <div><strong>Problem</strong> Leads often dropped after registration or after the first product interaction, creating wasted paid media spend.</div>
+                    <div><strong>Solution</strong> Built segmented nurturing flows based on user behavior, intent level, and funnel stage.</div>
+                    <div><strong>Execution</strong> Used Mautic segments, scoring, email triggers, audience logic, and UTM-based reporting to improve follow-up quality.</div>
+                    <div><strong>Outcome</strong> Supported better lead handling efficiency and stronger downstream conversion from acquisition to activation.</div>
+                </div>
+                <div class="case-tools">
+                    <span class="mini-tag">Mautic</span><span class="mini-tag">Email CRM</span><span class="mini-tag">Segmentation</span><span class="mini-tag">Lead Scoring</span>
+                </div>
+                <a href="email_showcase.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn">View Case Study</a>
+            </article>
 
-            <div class="bento-item" data-aos="fade-up">
-                <i class="fa-solid fa-robot" style="color: var(--primary-green);"></i>
-                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main); font-family: 'Montserrat';">AI Auto Crawl & News Agent</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Automated market intelligence system that crawls news, uses AI for summarization, and feeds insights directly into the Ad Creative workflow.
-                </p>
-                <a href="OpenClaw.html" target="_blank" class="btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem; width: fit-content; color: var(--primary-green); border-color: var(--primary-green);">
-                    Explore Logic
-                </a>
-            </div>
+            <article class="case-card accent-green" data-aos="fade-up" data-aos-delay="100">
+                <span class="case-kicker"><i class="fa-solid fa-robot"></i> AI Intelligence</span>
+                <h3>OpenClaw AI News & Market Agent</h3>
+                <div class="case-structure">
+                    <div><strong>Problem</strong> Market and ad creative signals were scattered across news, market data, and daily reporting sources.</div>
+                    <div><strong>Solution</strong> Created an AI-assisted intelligence workflow that collects, summarizes, and routes insights into content and ads planning.</div>
+                    <div><strong>Execution</strong> Combined crawling, prompt workflows, Telegram alerts, and automated creative/reporting logic.</div>
+                    <div><strong>Outcome</strong> Reduced repetitive research work and created a faster loop between market context, messaging, and campaign execution.</div>
+                </div>
+                <div class="case-tools">
+                    <span class="mini-tag">OpenClaw</span><span class="mini-tag">AI Summary</span><span class="mini-tag">Telegram Bot</span><span class="mini-tag">Automation</span>
+                </div>
+                <a href="OpenClaw.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn">Explore Logic</a>
+            </article>
 
-            <div class="bento-item" data-aos="fade-up">
-                <i class="fa-solid fa-chart-pie" style="color: #f59e0b;"></i>
-                <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text-main); font-family: 'Montserrat';">Data Analysis &amp; Visualization</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                    Transforming raw survey data into interactive, actionable dashboards. Built a fully functional market research dashboard using Chart.js with dynamic filters, cross-analysis, and live data slicing - demonstrating end-to-end data pipeline skills from survey design to visual storytelling.
-                </p>
-                <a href="https://khaitringuyen.com/data_analyze_visualize.html" target="_blank" class="btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem; width: fit-content; color: #f59e0b; border-color: #f59e0b;">
-                    <i class="fa-solid fa-chart-simple"></i> View Dashboard
-                </a>
-            </div>
+            <article class="case-card accent-amber" data-aos="fade-up">
+                <span class="case-kicker"><i class="fa-solid fa-chart-pie"></i> Data Visualization</span>
+                <h3>Interactive Research Dashboard</h3>
+                <div class="case-structure">
+                    <div><strong>Problem</strong> Raw survey and performance data were difficult to interpret quickly for business decisions.</div>
+                    <div><strong>Solution</strong> Converted raw data into an interactive dashboard with dynamic filters, cross-analysis, and visual storytelling.</div>
+                    <div><strong>Execution</strong> Built with Chart.js and structured logic for slicing, comparing, and surfacing key findings.</div>
+                    <div><strong>Outcome</strong> Helped turn data from static reporting into a decision-support layer for audience, product, and campaign planning.</div>
+                </div>
+                <div class="case-tools">
+                    <span class="mini-tag">Chart.js</span><span class="mini-tag">Data Viz</span><span class="mini-tag">Dashboard</span><span class="mini-tag">Insight</span>
+                </div>
+                <a href="https://khaitringuyen.com/data_analyze_visualize.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn"><i class="fa-solid fa-chart-simple"></i> View Dashboard</a>
+            </article>
+
+            <article class="case-card accent-purple" data-aos="fade-up" data-aos-delay="100">
+                <span class="case-kicker"><i class="fa-solid fa-bullhorn"></i> Acquisition Funnel</span>
+                <h3>Paid Media × Tracking × CRM Funnel</h3>
+                <div class="case-structure">
+                    <div><strong>Problem</strong> Campaign performance could not be judged by clicks or installs alone; business outcomes depended on eKYC, account activation, and trading readiness.</div>
+                    <div><strong>Solution</strong> Connected paid media strategy with funnel events, tracking, CRM follow-up, and business KPI monitoring.</div>
+                    <div><strong>Execution</strong> Optimized Google, Meta, LinkedIn, GA4/GTM events, audience intent, landing flows, and automated performance checks.</div>
+                    <div><strong>Outcome</strong> Improved the quality of acquisition decisions by linking media spend to downstream conversion and activation metrics.</div>
+                </div>
+                <div class="case-tools">
+                    <span class="mini-tag">Google Ads</span><span class="mini-tag">Meta Ads</span><span class="mini-tag">GA4/GTM</span><span class="mini-tag">Funnel</span>
+                </div>
+                <a href="View_CV.html" target="_blank" rel="noopener noreferrer" class="btn-secondary case-btn">View CV Details</a>
+            </article>
         </div>
     </section>
 
@@ -554,6 +1194,7 @@
                             <span class="date">Aug 2024 - Present</span>
                         </div>
                         <h4 style="color: var(--text-main); margin-bottom: 1rem;">Senior Performance Digital Marketer</h4>
+                        <p class="scope-line"><strong>Scope:</strong> Paid acquisition, conversion funnel, lifecycle CRM, tracking and reporting for commodities trading products.</p>
                         <div class="performance-highlight">
                             Core: Scaling <strong>Google Search/App Campaigns</strong>, <strong>FB Conversion Ads</strong> & <strong>LinkedIn Ads</strong>.
                         </div>
@@ -573,6 +1214,7 @@
                             <span class="date">Feb 2022 - Dec 2023</span>
                         </div>
                         <h4 style="color: var(--text-main); margin-bottom: 1rem;">Senior Performance Marketing Specialist</h4>
+                        <p class="scope-line"><strong>Scope:</strong> App user acquisition, paid media optimization, attribution tracking, CRM coordination, and B2B lead handoff.</p>
                         <div class="performance-highlight">
                             Managed monthly performance budget of <strong>$8,000</strong> for App UA across Google and Facebook.
                         </div>
@@ -592,6 +1234,7 @@
                             <span class="date">Jan 2020 - Dec 2021</span>
                         </div>
                         <h4 style="color: var(--text-main); margin-bottom: 1rem;">Digital Marketing Specialist</h4>
+                        <p class="scope-line"><strong>Scope:</strong> Community growth, CRM/email automation, SEO, and lead generation operations.</p>
                         <ul class="achievement-list">
                             <li><i class="fa-solid fa-circle-check"></i> Built and scaled a professional Telegram community to 2200+ active members.</li>
                             <li><i class="fa-solid fa-circle-check"></i> Implemented open-source CRM systems, maintaining a record-high 60% email open rate.</li>
@@ -608,6 +1251,7 @@
                             <span class="date">Dec 2018 - Dec 2019</span>
                         </div>
                         <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">Digital Marketer - Data Analyst</h4>
+                        <p class="scope-line"><strong>Scope:</strong> Multi-channel campaign analytics, reporting automation, and performance dashboard setup.</p>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Focused on multi-channel data analysis (Google/FB Ads) and building real-time reporting systems using Google Data Studio.</p>
                     </div>
                 </div>
@@ -620,10 +1264,46 @@
                             <span class="date">Nov 2017 - Nov 2018</span>
                         </div>
                         <h4 style="color: var(--text-main); margin-bottom: 0.5rem; font-size: 1.1rem;">AI Developer</h4>
+                        <p class="scope-line"><strong>Scope:</strong> AI solution research and software logic foundation that later supported marketing automation work.</p>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Researched and developed AI-driven solutions, providing a strong technical foundation for growth automation.</p>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="work">
+        <div class="section-title-wrapper" data-aos="fade-up">
+            <h2 class="section-title">How I Work</h2>
+            <p class="section-intro">My approach is to diagnose the funnel first, then connect media, tracking, CRM, data, and automation into one measurable growth system.</p>
+        </div>
+        <div class="work-grid">
+            <div class="work-step" data-step="01" data-aos="fade-up">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <h3>Diagnose the Funnel</h3>
+                <p>Map the user journey from impression to activation, then identify where spend, traffic, or users are leaking.</p>
+            </div>
+            <div class="work-step" data-step="02" data-aos="fade-up" data-aos-delay="80">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Match Intent to Channel</h3>
+                <p>Choose Google, Meta, LinkedIn, email, or CRM workflows based on user intent, product stage, and business KPI.</p>
+            </div>
+            <div class="work-step" data-step="03" data-aos="fade-up" data-aos-delay="160">
+                <i class="fa-solid fa-route"></i>
+                <h3>Track What Matters</h3>
+                <p>Connect GA4, GTM, CRM and campaign data so decisions are based on activation and revenue signals, not only clicks.</p>
+            </div>
+            <div class="work-step" data-step="04" data-aos="fade-up" data-aos-delay="240">
+                <i class="fa-solid fa-flask"></i>
+                <h3>Test Creatives & Offers</h3>
+                <p>Build creative hypotheses from user pain points, market context, and funnel stage, then test with clean learning loops.</p>
+            </div>
+            <div class="work-step" data-step="05" data-aos="fade-up" data-aos-delay="320">
+                <i class="fa-solid fa-gears"></i>
+                <h3>Automate Repetition</h3>
+                <p>Use automation and AI to reduce manual reporting, speed up insight generation, and keep optimization cycles consistent.</p>
             </div>
         </div>
     </section>
@@ -638,7 +1318,7 @@
                 <i class="fa-solid fa-award"></i>
                 <div>
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Performance Mastery</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.9;">Full-funnel expert scaling Global UA & B2B campaigns with surgical precision.</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">Full-funnel performance marketing across app user acquisition, lead generation, conversion tracking, and CRM-supported growth.</p>
                     <div class="skill-tags">
                         <span class="skill-tag" data-tippy-content="SEM, GDN, App Install (UAC), & YouTube Ads.">Google Ads</span>
                         <span class="skill-tag" data-tippy-content="Conversion Ads, Click to web, Messenger, Install apps & Lead Forms.">Facebook Ads</span>
@@ -671,21 +1351,33 @@
     </section>
 
     <footer>
+        <div class="footer-cta">
+            <h2>Need a marketer who can connect paid media, data, CRM and automation?</h2>
+            <p>I help teams build measurable growth systems — from acquisition campaigns and tracking setup to lifecycle automation, dashboards, and AI-assisted reporting workflows.</p>
+            <div class="footer-actions">
+                <a href="mailto:khaitri15@gmail.com" class="btn-primary"><i class="fa-solid fa-paper-plane" style="margin-right: 8px;"></i> Contact Me</a>
+                <a href="View_CV.html" target="_blank" rel="noopener noreferrer" class="btn-secondary">View Full CV</a>
+                <a href="https://raw.githubusercontent.com/trinkse61538/CV/7a1638c354b613986a4c344a0808b270edfad8bd/CV_Nguyen%20Khai%20Tri%20%7C%20Senior%20Performance%20Marketer_3.pdf" class="btn-secondary" download><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download PDF</a>
+            </div>
+        </div>
         <div class="logo" style="margin-bottom: 1.5rem; font-size: 1.8rem;">KHAI<span>TRI.</span></div>
         <div class="social-links">
-            <a href="tel:0367676119"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="mailto:khaitri15@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:0367676119" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/trinkse61538" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:khaitri15@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <p style="font-size: 0.7rem; opacity: 0.6; color: var(--text-muted);">&copy; 2026 NGUYEN KHAI TRI • ENGINEERED GROWTH</p>
+        <p style="font-size: 0.7rem; opacity: 0.6; color: var(--text-muted);">&copy; 2026 NGUYEN KHAI TRI • PERFORMANCE MARKETING × DATA × AI AUTOMATION</p>
     </footer>
+
+    <button class="floating-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
 
     <script>
-        AOS.init({ duration: 800, once: true, offset: 50 });
+        AOS.init({ duration: 850, once: false, offset: 70, easing: 'ease-out-cubic' });
 
         // Initialize Tippy.js Tooltips
         tippy('[data-tippy-content]', {
@@ -733,6 +1425,89 @@
                 nav.style.background = "rgba(255, 255, 255, 0.9)";
             }
         });
+
+
+        // Scroll reveal, counter animation, active navigation, and lightweight parallax
+        const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
+        revealTargets.forEach((el, index) => {
+            el.classList.add('scroll-reveal');
+            el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.16 });
+        revealTargets.forEach(el => revealObserver.observe(el));
+
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseFloat(el.dataset.count || '0');
+                const decimals = parseInt(el.dataset.decimals || '0', 10);
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                const duration = 1200;
+                const start = performance.now();
+                const tick = (now) => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const value = target * eased;
+                    el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
+                    if (progress < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.55 });
+        counters.forEach(el => counterObserver.observe(el));
+
+        const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+        const sections = sectionLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const setActiveSection = () => {
+            let current = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
+            });
+            sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
+        };
+
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        }
+
+        let ticking = false;
+        const onScrollFX = () => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const y = window.scrollY || document.documentElement.scrollTop;
+                document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
+                document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
+                document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
+                    const speed = [0.035, -0.025, 0.05][index] || 0.03;
+                    orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+                });
+                if (backToTop) backToTop.classList.toggle('show', y > 650);
+                setActiveSection();
+                ticking = false;
+            });
+        };
+        window.addEventListener('scroll', onScrollFX, { passive: true });
+        setActiveSection();
+        onScrollFX();
+
     </script>
 </body>
 </html>
