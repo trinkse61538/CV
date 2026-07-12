@@ -1317,6 +1317,383 @@
 }
 .ecosystem-section{padding:6rem 5%;background:#eef5fb}.ecosystem-inner{max-width:1200px;margin:auto}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.ecosystem-card{background:#fff;border:1px solid #dce7f1;border-radius:22px;padding:1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-height:230px;transition:.25s}.ecosystem-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(15,23,42,.10)}.ecosystem-card span{color:#3b82f6;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.ecosystem-card h3{margin:.9rem 0 .5rem;color:#0f172a;font-family:Montserrat,sans-serif}.ecosystem-card p{margin:0 0 1rem}.ecosystem-card b{margin-top:auto;color:#10b981}.home-faq{padding:6rem 5%;background:#fff}.home-faq-inner{max-width:900px;margin:auto}.home-faq details{border-bottom:1px solid #e2e8f0;padding:1.1rem 0}.home-faq summary{font-weight:800;color:#0f172a;cursor:pointer}.home-faq p{padding-top:.8rem}.all-projects-link{display:inline-flex;margin-top:1.5rem;font-weight:800;color:#2563eb;text-decoration:none}@media(max-width:900px){.ai-summary-inner{grid-template-columns:1fr 1fr}.ai-summary-intro{grid-column:1/-1}.ecosystem-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.ai-summary-inner,.ecosystem-grid{grid-template-columns:1fr}.ai-summary-intro{grid-column:auto}}
 </style>
+
+<style>
+/* --- Footer navigation hub: richer hierarchy and visual continuity --- */
+footer {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 5% 28px;
+    background:
+        radial-gradient(circle at 8% 18%, rgba(59, 130, 246, 0.08), transparent 28%),
+        radial-gradient(circle at 92% 84%, rgba(16, 185, 129, 0.08), transparent 30%),
+        linear-gradient(180deg, #f4f8fc 0%, #eef4f9 100%);
+}
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.42;
+    background-image:
+        linear-gradient(rgba(59, 130, 246, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, transparent, #000 30%, #000);
+}
+.footer-cta,
+.footer-hub,
+.footer-bottom {
+    position: relative;
+    z-index: 1;
+}
+.footer-cta {
+    margin-bottom: 3rem;
+}
+.footer-hub {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(250px, 0.78fr) minmax(0, 2.22fr);
+    gap: 1rem;
+    padding: 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+    backdrop-filter: blur(18px);
+}
+.footer-brand-panel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 288px;
+    padding: 1.7rem;
+    border-radius: 23px;
+    color: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+        radial-gradient(circle at 15% 5%, rgba(59, 130, 246, 0.34), transparent 34%),
+        radial-gradient(circle at 92% 92%, rgba(16, 185, 129, 0.28), transparent 36%),
+        linear-gradient(145deg, #0b1426 0%, #15253e 58%, #0b3037 100%);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+}
+.footer-brand-panel::after {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: -76px;
+    top: -82px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 0 0 34px rgba(255, 255, 255, 0.035),
+        0 0 0 68px rgba(255, 255, 255, 0.018);
+    z-index: -1;
+}
+.footer-logo {
+    width: fit-content;
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: 1.85rem;
+}
+.footer-brand-panel p {
+    max-width: 270px;
+    color: #b9c8da;
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+.footer-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: fit-content;
+    margin: 1.3rem 0 1rem;
+    padding: 0.48rem 0.72rem;
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 999px;
+    color: #c9f8e5;
+    background: rgba(255, 255, 255, 0.06);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.055em;
+}
+.footer-status span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.12);
+    animation: footerStatusPulse 2.3s ease-in-out infinite;
+}
+@keyframes footerStatusPulse {
+    50% { box-shadow: 0 0 0 9px rgba(52, 211, 153, 0); }
+}
+.footer-socials {
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin: 0;
+}
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.11);
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.footer-socials a:hover {
+    color: #fff;
+    border-color: transparent;
+    background: var(--gradient-primary);
+    transform: translateY(-3px);
+}
+.footer-explore {
+    padding: 1rem 1rem 1rem 0.45rem;
+    text-align: left;
+}
+.footer-explore-heading {
+    min-height: 66px;
+    margin: 0 0 0.9rem;
+    padding: 0.2rem 0.25rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.footer-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--primary-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+}
+.footer-explore-heading h3 {
+    margin-top: 0.35rem;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+.footer-shortcut {
+    flex: 0 0 auto;
+    padding: 0.45rem 0.68rem;
+    border-radius: 999px;
+    color: var(--slate);
+    background: #f8fafc;
+    border: 1px solid rgba(148, 163, 184, 0.20);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.56rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+.footer-site-links {
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.72rem;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+.footer-route {
+    --route-accent: #3b82f6;
+    --route-soft: rgba(59, 130, 246, 0.10);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 92px;
+    padding: 0.9rem;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 18px;
+    gap: 0.72rem;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid rgba(148, 163, 184, 0.20);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.035);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+}
+.footer-route::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    background: radial-gradient(circle at 15% 15%, var(--route-soft), transparent 58%);
+    transition: opacity 0.28s ease;
+}
+.footer-route::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--route-accent), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.32s ease;
+}
+.footer-route:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--route-accent) 30%, transparent);
+    background: #fff;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.10);
+}
+.footer-route:hover::before { opacity: 1; }
+.footer-route:hover::after { transform: scaleX(1); }
+.route-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--route-accent);
+    background: var(--route-soft);
+    transition: color 0.28s ease, background 0.28s ease, transform 0.28s ease;
+}
+.footer-route:hover .route-icon {
+    color: #fff;
+    background: var(--route-accent);
+    transform: rotate(-6deg) scale(1.06);
+}
+.route-copy {
+    min-width: 0;
+}
+.route-copy strong,
+.route-copy small {
+    display: block;
+}
+.route-copy strong {
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+}
+.route-copy small {
+    margin-top: 0.16rem;
+    overflow: hidden;
+    color: var(--slate);
+    font-size: 0.64rem;
+    line-height: 1.35;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.route-arrow {
+    color: #94a3b8;
+    font-size: 0.64rem;
+    transform: translate(-2px, 2px);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+.footer-route:hover .route-arrow {
+    color: var(--route-accent);
+    transform: translate(2px, -2px);
+}
+.route-articles { --route-accent: #8b5cf6; --route-soft: rgba(139, 92, 246, 0.10); }
+.route-about { --route-accent: #06b6d4; --route-soft: rgba(6, 182, 212, 0.10); }
+.route-cv { --route-accent: #f59e0b; --route-soft: rgba(245, 158, 11, 0.12); }
+.route-contact { --route-accent: #10b981; --route-soft: rgba(16, 185, 129, 0.11); }
+.route-scent { --route-accent: #ec4899; --route-soft: rgba(236, 72, 153, 0.10); }
+.footer-bottom {
+    max-width: 1180px;
+    margin: 1.25rem auto 0;
+    padding: 1.15rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.22);
+    color: var(--slate);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.footer-bottom p {
+    color: var(--text-main);
+    font-weight: 800;
+}
+@media (max-width: 980px) {
+    .footer-hub {
+        grid-template-columns: 1fr;
+    }
+    .footer-brand-panel {
+        min-height: 230px;
+    }
+    .footer-brand-panel p {
+        max-width: 540px;
+    }
+    .footer-explore {
+        padding: 0.7rem;
+    }
+}
+@media (max-width: 720px) {
+    footer {
+        padding: 58px 5% 24px;
+    }
+    .footer-site-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .footer-hub {
+        padding: 0.6rem;
+        border-radius: 24px;
+    }
+    .footer-brand-panel {
+        min-height: 250px;
+        padding: 1.4rem;
+        border-radius: 19px;
+    }
+    .footer-explore-heading {
+        min-height: auto;
+        flex-direction: column;
+    }
+    .footer-shortcut {
+        display: none;
+    }
+    .footer-site-links {
+        grid-template-columns: 1fr;
+    }
+    .footer-route {
+        min-height: 82px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .footer-status span {
+        animation: none;
+    }
+}
+</style>
+
 </head>
 <body>
 
@@ -1811,15 +2188,75 @@
                 <a href="CV_Nguyen%20Khai%20Tri%20_%20Senior%20Performance%20Marketer_HCM.pdf" class="btn-secondary" download><i class="fa-solid fa-download" style="margin-right: 8px;"></i> Download PDF</a>
             </div>
         </div>
-        <div class="logo" style="margin-bottom: 1.5rem; font-size: 1.8rem;">KHAI<span>TRI.</span></div>
-        <nav class="footer-site-links" aria-label="Footer navigation" style="position:static;width:auto;background:transparent;border:0;padding:0;margin:0 0 1.5rem;display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap;backdrop-filter:none"><a href="projects/">Projects</a><a href="articles/">Articles</a><a href="about.html">About</a><a href="View_CV.html">CV</a><a href="contact.html">Contact</a><a href="https://perfume.khaitringuyen.com/">Scent OS</a></nav>
-        <div class="social-links">
-            <a href="tel:0367676119" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/trinkse61538" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="mailto:khaitri15@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+
+        <div class="footer-hub">
+            <div class="footer-brand-panel">
+                <div>
+                    <div class="logo footer-logo">KHAI<span>TRI.</span></div>
+                    <p>Growth systems built across paid media, measurement, CRM, data and AI-assisted operations.</p>
+                </div>
+
+                <div class="footer-status">
+                    <span aria-hidden="true"></span>
+                    Open to roles &amp; selected projects
+                </div>
+
+                <div class="social-links footer-socials">
+                    <a href="tel:0367676119" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/trinkse61538" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:khaitri15@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-explore">
+                <div class="footer-explore-heading">
+                    <div>
+                        <span class="footer-kicker"><i class="fa-solid fa-compass"></i> Explore portfolio</span>
+                        <h3>Choose where to go next.</h3>
+                    </div>
+                    <span class="footer-shortcut">06 destinations</span>
+                </div>
+
+                <nav class="footer-site-links" aria-label="Footer navigation">
+                    <a href="projects/" class="footer-route route-projects">
+                        <span class="route-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                        <span class="route-copy"><strong>Projects</strong><small>Systems &amp; case studies</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                    <a href="articles/" class="footer-route route-articles">
+                        <span class="route-icon"><i class="fa-regular fa-newspaper"></i></span>
+                        <span class="route-copy"><strong>Articles</strong><small>Ideas, builds &amp; lessons</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                    <a href="about.html" class="footer-route route-about">
+                        <span class="route-icon"><i class="fa-regular fa-user"></i></span>
+                        <span class="route-copy"><strong>About</strong><small>Profile &amp; working style</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                    <a href="View_CV.html" class="footer-route route-cv">
+                        <span class="route-icon"><i class="fa-regular fa-id-card"></i></span>
+                        <span class="route-copy"><strong>CV</strong><small>Experience &amp; KPI scope</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                    <a href="contact.html" class="footer-route route-contact">
+                        <span class="route-icon"><i class="fa-regular fa-paper-plane"></i></span>
+                        <span class="route-copy"><strong>Contact</strong><small>Start a conversation</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                    <a href="https://perfume.khaitringuyen.com/" class="footer-route route-scent" target="_blank" rel="noopener noreferrer">
+                        <span class="route-icon"><i class="fa-solid fa-spray-can-sparkles"></i></span>
+                        <span class="route-copy"><strong>Scent OS</strong><small>Personal fragrance product</small></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square route-arrow"></i>
+                    </a>
+                </nav>
+            </div>
         </div>
-        <p style="font-size: 0.7rem; opacity: 0.6; color: var(--text-muted);">&copy; 2026 NGUYEN KHAI TRI • PERFORMANCE MARKETING × DATA × AI AUTOMATION</p>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 NGUYEN KHAI TRI</p>
+            <span>PERFORMANCE MARKETING × DATA × AI AUTOMATION</span>
+        </div>
     </footer>
 
     <button class="floating-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
