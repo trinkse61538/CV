@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://khaitringuyen.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/" />
@@ -134,43 +133,127 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://khaitringuyen.com/projects/scent-os.html</loc>
+    <loc>https://khaitringuyen.com/projects/performance-marketing-funnel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/performance-marketing-funnel.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/performance-marketing-funnel.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://khaitringuyen.com/projects/performance-marketing-funnel.html</loc>
+    <loc>https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/performance-marketing-funnel.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/performance-marketing-funnel.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/scent-os.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/scent-os.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/projects/scent-os.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/scent-os.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/projects/airbnb-cohosting.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/airbnb-cohosting.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/airbnb-cohosting.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/airbnb-cohosting.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/projects/airbnb-cohosting.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/airbnb-cohosting.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/airbnb-cohosting.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/airbnb-cohosting.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/projects/web-experiences.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/web-experiences.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/web-experiences.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/web-experiences.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/projects/web-experiences.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/web-experiences.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/web-experiences.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/web-experiences.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/performance-marketing-ai.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/performance-marketing-ai.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/performance-marketing-ai.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/performance-marketing-ai.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://khaitringuyen.com/articles/building-scent-os.html</loc>
+    <loc>https://khaitringuyen.com/vi/articles/performance-marketing-ai.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/performance-marketing-ai.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/performance-marketing-ai.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/performance-marketing-ai.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/articles/marketing-report-automation.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/marketing-report-automation.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/marketing-report-automation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/marketing-report-automation.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://khaitringuyen.com/articles/performance-marketing-ai.html</loc>
+    <loc>https://khaitringuyen.com/vi/articles/marketing-report-automation.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/marketing-report-automation.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/marketing-report-automation.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/marketing-report-automation.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/building-scent-os.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/building-scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/building-scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/building-scent-os.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/articles/building-scent-os.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/building-scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/building-scent-os.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/building-scent-os.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
