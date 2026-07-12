@@ -1,37 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://khaitringuyen.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/projects/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/projects/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/projects/" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/articles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/articles/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/articles/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/articles/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/articles/" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/about.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/about.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/contact.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/contact.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/contact.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://khaitringuyen.com/View_CV.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/View_CV.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/View_CV.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/View_CV.html" />
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/vi/View_CV.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://khaitringuyen.com/View_CV.html" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://khaitringuyen.com/vi/View_CV.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://khaitringuyen.com/View_CV.html" />
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
