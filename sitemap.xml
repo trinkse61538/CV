@@ -1,50 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
- xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
- <!-- 1. Trang chủ: Nguyễn Khai Trí Portfolio -->
- <url>
- <loc>https://khaitringuyen.com/</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>weekly</changefreq>
- <priority>1.0</priority>
- <image:image>
- <image:loc>https://raw.githubusercontent.com/trinkse61538/Test/13cb022659f3a9d82938e4fb77df2a9ff6940172/Gemini_Generated_Image_yeak74yeak74yeak.png</image:loc>
- <image:title>Nguyễn Khai Trí - Senior Performance Marketing Specialist</image:title>
- <image:caption>Chân dung Nguyễn Khai Trí (Tri Nguyen) - Technical-Driven Performance Marketer</image:caption>
- </image:image>
- </url>
-
- <!-- 2. Trang CV: Chi tiết kinh nghiệm -->
- <url>
- <loc>https://khaitringuyen.com/View_CV.html</loc>
- <lastmod>2026-05-13</lastmod>
- <changefreq>monthly</changefreq>
- <priority>0.9</priority>
- </url>
-
- <!-- 3. Email Showcase: Email Marketing năng lực -->
- <url>
- <loc>https://khaitringuyen.com/email_showcase.html</loc>
- <lastmod>2026-05-13</lastmod>
- <changefreq>monthly</changefreq>
- <priority>0.8</priority>
- </url>
-
- <!-- 4. OpenClaw: AI Agent & Automation -->
- <url>
- <loc>https://khaitringuyen.com/OpenClaw.html</loc>
- <lastmod>2026-05-13</lastmod>
- <changefreq>monthly</changefreq>
- <priority>0.8</priority>
- </url>
-
- <!-- 5. Data Analysis & Visualization Dashboard -->
- <url>
- <loc>https://khaitringuyen.com/data_analyze_visualize.html</loc>
- <lastmod>2026-06-24</lastmod>
- <changefreq>monthly</changefreq>
- <priority>0.8</priority>
- </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://khaitringuyen.com/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/about.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/contact.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/View_CV.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/email_showcase.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/OpenClaw.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/data_analyze_visualize.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/saigonrootmusic.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/scent-os.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/performance-marketing-funnel.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/airbnb-cohosting.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/projects/web-experiences.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/building-scent-os.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/marketing-report-automation.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://khaitringuyen.com/articles/performance-marketing-ai.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
