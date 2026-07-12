@@ -4,3 +4,24 @@ body.ktr-page{--ink:#0f172a;--muted:#526173;--line:#dbe5ef;--paper:#f6f9fc;--car
 /* Static cross-site dock for legacy showcase pages */
 .ktr-site-dock{position:fixed;right:18px;bottom:18px;z-index:2147483000;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}.ktr-site-dock details{position:relative}.ktr-site-dock summary{list-style:none;cursor:pointer;background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:11px 16px;font-size:13px;font-weight:850;box-shadow:0 12px 35px rgba(0,0,0,.25)}.ktr-site-dock summary::-webkit-details-marker{display:none}.ktr-site-dock nav{position:absolute;right:0;bottom:52px;width:220px;background:rgba(15,23,42,.97);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.3)}.ktr-site-dock a{display:block;color:#dce8f5;text-decoration:none;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:750}.ktr-site-dock a:hover{background:rgba(255,255,255,.09);color:#fff}
 @media(max-width:850px){.ktr-menu{display:block}.ktr-links{position:absolute;left:18px;right:18px;top:72px;display:none;flex-direction:column;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}.ktr-links.open{display:flex}.ktr-card,.ktr-card.wide,.ktr-maincol,.ktr-aside{grid-column:1/-1}.ktr-facts{grid-template-columns:repeat(2,1fr)}.ktr-footer-grid{grid-template-columns:1fr}.ktr-contact-grid{grid-template-columns:1fr}.ktr-toc{position:static}.ktr-hero{padding-top:70px}}@media(max-width:520px){.ktr-facts{grid-template-columns:1fr}.ktr-hero h1{font-size:2.7rem}.ktr-section{padding:58px 0}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Bilingual navigation and browser-language suggestion */
+.ktr-language-switch{display:inline-flex;align-items:center;justify-content:center;gap:.38rem;width:max-content;white-space:nowrap}
+.ktr-language-switch a{min-width:2rem;text-align:center;text-decoration:none!important;opacity:.56;transition:opacity .2s ease,color .2s ease,background .2s ease}
+.ktr-language-switch a:hover,.ktr-language-switch a.is-active{opacity:1;color:#3578f6!important}
+.ktr-language-switch a.is-active{font-weight:900}
+.ktr-language-divider{opacity:.3;font-size:.8em}
+.ktr-language-switch--cv{gap:.35rem}
+.ktr-language-switch--cv a{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(148,163,184,.35);border-radius:999px;padding:.55rem .72rem;font-weight:800;background:rgba(255,255,255,.08)}
+.ktr-language-switch--cv a.is-active{background:#fff;color:#0f172a!important;border-color:#fff}
+.ktr-language-suggestion{position:fixed;right:20px;bottom:20px;z-index:2147483600;width:min(420px,calc(100vw - 32px));padding:20px;border:1px solid rgba(148,163,184,.28);border-radius:20px;background:rgba(255,255,255,.97);color:#0f172a;box-shadow:0 24px 70px rgba(15,23,42,.24);backdrop-filter:blur(18px);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ktr-language-suggestion__close{position:absolute;right:12px;top:9px;border:0;background:transparent;color:#64748b;font-size:1.45rem;line-height:1;cursor:pointer;padding:6px}
+.ktr-language-suggestion__eyebrow{margin-bottom:6px;color:#13a77a;font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.ktr-language-suggestion strong{display:block;padding-right:24px;font-size:1.02rem}
+.ktr-language-suggestion p{margin:6px 0 15px;color:#64748b;font-size:.88rem;line-height:1.55}
+.ktr-language-suggestion__actions{display:flex;flex-wrap:wrap;gap:9px}
+.ktr-language-suggestion__actions a,.ktr-language-suggestion__actions button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;border-radius:999px;padding:10px 15px;font:inherit;font-size:.82rem;font-weight:850;text-decoration:none;cursor:pointer}
+.ktr-language-suggestion__primary{border:0;background:linear-gradient(135deg,#3578f6,#13a77a);color:#fff!important}
+.ktr-language-suggestion__actions button{border:1px solid #dbe5ef;background:#fff;color:#0f172a}
+@media(max-width:850px){.ktr-language-switch{align-self:flex-start}.ktr-language-switch--cv{align-self:auto}.ktr-language-suggestion{right:16px;bottom:16px}}
+@media(max-width:520px){.ktr-language-suggestion__actions{display:grid}.ktr-language-suggestion__actions a,.ktr-language-suggestion__actions button{width:100%}}
