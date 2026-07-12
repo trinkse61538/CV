@@ -1,32 +1,32 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Automating Marketing Reports with OpenClaw | Nguyen Khai Tri</title>
-<meta name="description" content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment.">
-<meta name="author" content="Nguyen Khai Tri">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://khaitringuyen.com/articles/marketing-report-automation.html">
-<link rel="icon" type="image/png" href="../favico.png">
-<link rel="apple-touch-icon" href="../favico.png">
-<link rel="manifest" href="../manifest.webmanifest">
-<meta name="theme-color" content="#07111f">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
-<meta property="og:url" content="https://khaitringuyen.com/articles/marketing-report-automation.html">
-<meta property="og:title" content="Automating Marketing Reports with OpenClaw | Nguyen Khai Tri">
-<meta property="og:description" content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment.">
-<meta property="og:image" content="https://khaitringuyen.com/assets/og/articles-og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Automating Marketing Reports with OpenClaw | Nguyen Khai Tri">
-<meta name="twitter:description" content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment.">
-<meta name="twitter:image" content="https://khaitringuyen.com/assets/og/articles-og.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site-system.css">
-<script type="application/ld+json">
-{
+<meta content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment." name="description"/>
+<meta content="Nguyen Khai Tri" name="author"/>
+<meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
+
+<link href="../favico.png" rel="icon" type="image/png"/>
+<link href="../favico.png" rel="apple-touch-icon"/>
+<link href="../manifest.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Nguyen Khai Tri Portfolio" property="og:site_name"/>
+<meta content="https://khaitringuyen.com/articles/marketing-report-automation.html" property="og:url"/>
+<meta content="Automating Marketing Reports with OpenClaw | Nguyen Khai Tri" property="og:title"/>
+<meta content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment." property="og:description"/>
+<meta content="https://khaitringuyen.com/assets/og/articles-og.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Automating Marketing Reports with OpenClaw | Nguyen Khai Tri" name="twitter:title"/>
+<meta content="A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment." name="twitter:description"/>
+<meta content="https://khaitringuyen.com/assets/og/articles-og.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/site-system.css" rel="stylesheet"/>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -76,7 +76,11 @@
         "Ads APIs",
         "AI summaries",
         "Telegram"
-      ]
+      ],
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -102,6 +106,5 @@
       ]
     }
   ]
-}
-</script></head><body class="ktr-page"><a class="ktr-skip" href="#main-content">Skip to content</a>
-<header class="ktr-header"><nav class="ktr-nav" aria-label="Primary navigation"><a class="ktr-brand" href="../index.html">KHAI <span>TRI.</span></a><button class="ktr-menu" type="button" aria-expanded="false" aria-controls="site-links">Menu</button><ul class="ktr-links" id="site-links"><li><a href="../index.html">Home</a></li><li><a href="../projects/">Projects</a></li><li><a href="../articles/" aria-current="page">Articles</a></li><li><a href="../about.html">About</a></li><li><a href="../View_CV.html">CV</a></li><li><a href="../contact.html">Contact</a></li></ul></nav></header><main id="main-content"><section class="ktr-hero"><div class="ktr-wrap"><nav class="ktr-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/articles/">Articles</a> <span aria-hidden="true">/</span> <span aria-current="page">Automating Marketing Reports with OpenClaw</span></nav><div class="ktr-eyebrow">Field note · 2026-07-12</div><h1>Automating Marketing Reports with OpenClaw</h1><p class="ktr-lede">A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment.</p><div class="ktr-meta"><span>Marketing automation</span><span>Ads APIs</span><span>AI summaries</span><span>Telegram</span></div></div></section><section class="ktr-section"><div class="ktr-wrap"><div class="ktr-grid"><article class="ktr-maincol ktr-content"><section id="problem"><h2>The reporting problem</h2><p>Performance teams often spend too much time moving numbers between interfaces and too little time interpreting what changed. The repeated work is predictable: fetch platform metrics, compare periods, calculate derived indicators, identify anomalies and write a summary.</p></section><section id="architecture"><h2>A simple architecture</h2><p>OpenClaw separates the workflow into four layers: data collection, normalization, interpretation and delivery. Platform APIs or structured exports provide the inputs. A consistent schema prevents Google and Meta metrics from being compared incorrectly. Rule-based calculations establish the facts before an AI layer summarizes the context.</p></section><section id="guardrails"><h2>Guardrails before generation</h2><p>AI should not invent a cause for a movement that the data cannot explain. The prompt should distinguish observed facts, plausible hypotheses and missing context. Thresholds for spend changes, CPA movements or conversion drops should be calculated explicitly, and the output should preserve the source period.</p></section><section id="delivery"><h2>Delivering the right amount of information</h2><p>A Telegram alert is useful when it is brief enough to scan and specific enough to act on. The daily summary can highlight meaningful movements, while a linked dashboard retains detail for diagnosis. Not every fluctuation deserves a notification.</p></section><section id="human"><h2>Where human judgment remains essential</h2><p>The operator still decides whether a change is strategically important, whether creative fatigue is the likely explanation, and whether an optimization should be applied. Automation improves cadence and visibility; it does not own accountability.</p></section><div class="ktr-callout"><h2>Continue exploring</h2><p>See the live systems and case studies behind this article.</p><a class="ktr-btn primary" href="/projects/">Browse projects</a></div></article><aside class="ktr-aside"><nav class="ktr-toc" aria-label="On this page"><strong>On this page</strong><a href="#problem">The reporting problem</a><a href="#architecture">A simple architecture</a><a href="#guardrails">Guardrails before generation</a><a href="#delivery">Delivering the right amount of information</a><a href="#human">Where human judgment remains essential</a></nav></aside></div></div></section></main><footer class="ktr-footer"><div class="ktr-wrap"><div class="ktr-footer-grid"><div><h2>Performance × Data × Automation</h2><p>Portfolio of Nguyen Khai Tri, a Senior Performance Marketing Specialist building measurable acquisition, lifecycle and AI-assisted growth systems.</p></div><div><h3>Explore</h3><ul><li><a href="../projects/">Projects</a></li><li><a href="../articles/">Articles</a></li><li><a href="../View_CV.html">CV</a></li><li><a href="https://perfume.khaitringuyen.com/">Scent OS</a></li></ul></div><div><h3>Connect</h3><ul><li><a href="mailto:khaitri15@gmail.com">Email</a></li><li><a href="tel:+84367676119">Phone</a></li><li><a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" rel="me">LinkedIn</a></li><li><a href="https://github.com/trinkse61538" rel="me">GitHub</a></li></ul></div></div><div class="ktr-copyright">© <span data-year>2026</span> Nguyen Khai Tri. Built as a connected portfolio system.</div></div></footer><script src="../assets/site-system.js" defer></script></body></html>
+}</script><meta content="en" name="content-language"/><link href="https://khaitringuyen.com/articles/marketing-report-automation.html" rel="canonical"/><link href="https://khaitringuyen.com/articles/marketing-report-automation.html" hreflang="en" rel="alternate"/><link href="https://khaitringuyen.com/vi/articles/marketing-report-automation.html" hreflang="vi" rel="alternate"/><link href="https://khaitringuyen.com/articles/marketing-report-automation.html" hreflang="x-default" rel="alternate"/><meta content="en_US" property="og:locale"/><meta content="vi_VN" property="og:locale:alternate"/></head><body class="ktr-page"><a class="ktr-skip" href="#main-content">Skip to content</a>
+<header class="ktr-header"><nav aria-label="Primary navigation" class="ktr-nav"><a class="ktr-brand" href="../index.html">KHAI <span>TRI.</span></a><button aria-controls="site-links" aria-expanded="false" class="ktr-menu" type="button">Menu</button><ul class="ktr-links" id="site-links"><li><a href="../index.html">Home</a></li><li><a href="../projects/">Projects</a></li><li><a aria-current="page" href="../articles/">Articles</a></li><li><a href="../about.html">About</a></li><li><a href="../View_CV.html">CV</a></li><li><a href="../contact.html">Contact</a></li><li aria-label="Language selection" class="ktr-language-switch"><a aria-current="true" class="is-active" data-language-switch="en" href="https://khaitringuyen.com/articles/marketing-report-automation.html" hreflang="en" lang="en" title="View in English">EN</a><span aria-hidden="true" class="ktr-language-divider">/</span><a data-language-switch="vi" href="https://khaitringuyen.com/vi/articles/marketing-report-automation.html" hreflang="vi" lang="vi" title="Xem bằng tiếng Việt">VI</a></li></ul></nav></header><main id="main-content"><section class="ktr-hero"><div class="ktr-wrap"><nav aria-label="Breadcrumb" class="ktr-breadcrumb"><a href="/">Home</a> <span aria-hidden="true">/</span> <a href="/articles/">Articles</a> <span aria-hidden="true">/</span> <span aria-current="page">Automating Marketing Reports with OpenClaw</span></nav><div class="ktr-eyebrow">Field note · 2026-07-12</div><h1>Automating Marketing Reports with OpenClaw</h1><p class="ktr-lede">A practical architecture for collecting paid media signals, summarizing them and routing useful alerts without removing human judgment.</p><div class="ktr-meta"><span>Marketing automation</span><span>Ads APIs</span><span>AI summaries</span><span>Telegram</span></div></div></section><section class="ktr-section"><div class="ktr-wrap"><div class="ktr-grid"><article class="ktr-maincol ktr-content"><section id="problem"><h2>The reporting problem</h2><p>Performance teams often spend too much time moving numbers between interfaces and too little time interpreting what changed. The repeated work is predictable: fetch platform metrics, compare periods, calculate derived indicators, identify anomalies and write a summary.</p></section><section id="architecture"><h2>A simple architecture</h2><p>OpenClaw separates the workflow into four layers: data collection, normalization, interpretation and delivery. Platform APIs or structured exports provide the inputs. A consistent schema prevents Google and Meta metrics from being compared incorrectly. Rule-based calculations establish the facts before an AI layer summarizes the context.</p></section><section id="guardrails"><h2>Guardrails before generation</h2><p>AI should not invent a cause for a movement that the data cannot explain. The prompt should distinguish observed facts, plausible hypotheses and missing context. Thresholds for spend changes, CPA movements or conversion drops should be calculated explicitly, and the output should preserve the source period.</p></section><section id="delivery"><h2>Delivering the right amount of information</h2><p>A Telegram alert is useful when it is brief enough to scan and specific enough to act on. The daily summary can highlight meaningful movements, while a linked dashboard retains detail for diagnosis. Not every fluctuation deserves a notification.</p></section><section id="human"><h2>Where human judgment remains essential</h2><p>The operator still decides whether a change is strategically important, whether creative fatigue is the likely explanation, and whether an optimization should be applied. Automation improves cadence and visibility; it does not own accountability.</p></section><div class="ktr-callout"><h2>Continue exploring</h2><p>See the live systems and case studies behind this article.</p><a class="ktr-btn primary" href="/projects/">Browse projects</a></div></article><aside class="ktr-aside"><nav aria-label="On this page" class="ktr-toc"><strong>On this page</strong><a href="#problem">The reporting problem</a><a href="#architecture">A simple architecture</a><a href="#guardrails">Guardrails before generation</a><a href="#delivery">Delivering the right amount of information</a><a href="#human">Where human judgment remains essential</a></nav></aside></div></div></section></main><footer class="ktr-footer"><div class="ktr-wrap"><div class="ktr-footer-grid"><div><h2>Performance × Data × Automation</h2><p>Portfolio of Nguyen Khai Tri, a Senior Performance Marketing Specialist building measurable acquisition, lifecycle and AI-assisted growth systems.</p></div><div><h3>Explore</h3><ul><li><a href="../projects/">Projects</a></li><li><a href="../articles/">Articles</a></li><li><a href="../View_CV.html">CV</a></li><li><a href="https://perfume.khaitringuyen.com/">Scent OS</a></li></ul></div><div><h3>Connect</h3><ul><li><a href="mailto:khaitri15@gmail.com">Email</a></li><li><a href="tel:+84367676119">Phone</a></li><li><a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" rel="me">LinkedIn</a></li><li><a href="https://github.com/trinkse61538" rel="me">GitHub</a></li></ul></div></div><div class="ktr-copyright">© <span data-year="">2026</span> Nguyen Khai Tri. Built as a connected portfolio system.</div></div></footer><script defer="" src="../assets/site-system.js"></script><script defer="" src="/assets/language-router.js"></script></body></html>
