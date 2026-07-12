@@ -990,7 +990,332 @@
 }
 </script>
 <style>
-.ai-summary{padding:2rem 5% 4.5rem;background:#fff}.ai-summary-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:1rem}.ai-summary-intro,.ai-summary-card{border:1px solid #e2e8f0;border-radius:22px;padding:1.5rem;background:#fff}.ai-summary-intro{background:linear-gradient(135deg,#0f172a,#16263d);color:#fff}.ai-summary-intro p{color:#b7c6d8}.ai-summary-card small{display:block;color:#10b981;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.ai-summary-card strong{display:block;color:#0f172a;margin-top:.55rem;font-family:Montserrat,sans-serif}.ecosystem-section{padding:6rem 5%;background:#eef5fb}.ecosystem-inner{max-width:1200px;margin:auto}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.ecosystem-card{background:#fff;border:1px solid #dce7f1;border-radius:22px;padding:1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-height:230px;transition:.25s}.ecosystem-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(15,23,42,.10)}.ecosystem-card span{color:#3b82f6;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.ecosystem-card h3{margin:.9rem 0 .5rem;color:#0f172a;font-family:Montserrat,sans-serif}.ecosystem-card p{margin:0 0 1rem}.ecosystem-card b{margin-top:auto;color:#10b981}.home-faq{padding:6rem 5%;background:#fff}.home-faq-inner{max-width:900px;margin:auto}.home-faq details{border-bottom:1px solid #e2e8f0;padding:1.1rem 0}.home-faq summary{font-weight:800;color:#0f172a;cursor:pointer}.home-faq p{padding-top:.8rem}.all-projects-link{display:inline-flex;margin-top:1.5rem;font-weight:800;color:#2563eb;text-decoration:none}@media(max-width:900px){.ai-summary-inner{grid-template-columns:1fr 1fr}.ai-summary-intro{grid-column:1/-1}.ecosystem-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.ai-summary-inner,.ecosystem-grid{grid-template-columns:1fr}.ai-summary-intro{grid-column:auto}}
+.ai-summary{
+    position:relative;
+    overflow:hidden;
+    padding:2.25rem 5% 3rem;
+    background:
+        radial-gradient(circle at 12% 8%,rgba(59,130,246,.10),transparent 28%),
+        radial-gradient(circle at 88% 86%,rgba(16,185,129,.09),transparent 30%),
+        linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+}
+.ai-summary::before{
+    content:'';
+    position:absolute;
+    width:360px;
+    height:360px;
+    right:-190px;
+    top:-220px;
+    border-radius:50%;
+    border:1px solid rgba(59,130,246,.10);
+    box-shadow:0 0 0 48px rgba(59,130,246,.025),0 0 0 96px rgba(16,185,129,.018);
+    pointer-events:none;
+}
+.ai-summary-inner{
+    position:relative;
+    z-index:1;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.15fr .92fr .92fr;
+    grid-template-areas:
+        'intro role role'
+        'intro stack fit';
+    gap:1rem;
+    align-items:stretch;
+}
+.ai-summary-intro,.ai-summary-card{
+    --mx:50%;
+    --my:50%;
+    position:relative;
+    isolation:isolate;
+    overflow:hidden;
+    border-radius:26px;
+    transition:opacity .7s ease,transform .32s ease,box-shadow .32s ease,border-color .32s ease;
+}
+.ai-summary-intro::before,.ai-summary-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    opacity:0;
+    pointer-events:none;
+    background:radial-gradient(circle 180px at var(--mx) var(--my),rgba(255,255,255,.20),transparent 68%);
+    transition:opacity .28s ease;
+}
+.ai-summary-intro:hover::before,.ai-summary-card:hover::before{opacity:1}
+.ai-summary-intro:hover,.ai-summary-card:hover{transform:translateY(-6px)}
+.ai-summary-intro{
+    grid-area:intro;
+    min-height:350px;
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.10);
+    background:
+        linear-gradient(145deg,rgba(59,130,246,.18),transparent 42%),
+        linear-gradient(135deg,#0b1426 0%,#14243c 58%,#0c2f35 100%);
+    box-shadow:0 24px 60px rgba(15,23,42,.18);
+}
+.ai-summary-intro::after{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:180px;
+    right:-62px;
+    bottom:-72px;
+    border-radius:50%;
+    background:linear-gradient(135deg,rgba(59,130,246,.40),rgba(16,185,129,.34));
+    filter:blur(2px);
+    opacity:.55;
+    z-index:-2;
+}
+.summary-topline{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:1.2rem;
+}
+.summary-eyebrow,.summary-availability{
+    display:inline-flex;
+    align-items:center;
+    gap:.48rem;
+    width:fit-content;
+    font-family:'Montserrat',sans-serif;
+    font-size:.66rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+.summary-eyebrow{
+    color:#dbeafe;
+    padding:.42rem .72rem;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+}
+.summary-availability{color:#9ff3d2;white-space:nowrap}
+.summary-availability i{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#34d399;
+    box-shadow:0 0 0 5px rgba(52,211,153,.11);
+    animation:summaryPulse 2.2s ease-in-out infinite;
+}
+@keyframes summaryPulse{50%{box-shadow:0 0 0 9px rgba(52,211,153,0)}}
+.ai-summary-intro h2{
+    max-width:560px;
+    margin:0 0 .9rem;
+    color:#fff;
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(1.8rem,3.2vw,2.75rem);
+    line-height:1.12;
+    letter-spacing:-.035em;
+}
+.ai-summary-intro p{
+    max-width:580px;
+    margin:0;
+    color:#b9c7d9;
+    font-size:.98rem;
+}
+.summary-flow{
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    flex-wrap:wrap;
+    margin-top:1.5rem;
+}
+.summary-flow span{
+    display:inline-flex;
+    align-items:center;
+    min-height:34px;
+    padding:.45rem .72rem;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.11);
+    background:rgba(255,255,255,.07);
+    color:#f8fafc;
+    font-family:'Montserrat',sans-serif;
+    font-size:.65rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    backdrop-filter:blur(8px);
+}
+.summary-flow i{color:#5eead4;font-size:.62rem}
+.ai-summary-card{
+    min-height:165px;
+    padding:1.45rem 1.5rem;
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgba(148,163,184,.26);
+    background:rgba(255,255,255,.86);
+    box-shadow:0 12px 34px rgba(15,23,42,.055);
+    backdrop-filter:blur(16px);
+}
+.ai-summary-card::after{
+    content:'';
+    position:absolute;
+    left:1.5rem;
+    right:1.5rem;
+    bottom:0;
+    height:3px;
+    border-radius:999px 999px 0 0;
+    background:var(--card-gradient,linear-gradient(90deg,#3b82f6,#10b981));
+    transform:scaleX(.28);
+    transform-origin:left;
+    opacity:.72;
+    transition:transform .35s ease,opacity .35s ease;
+}
+.ai-summary-card:hover{
+    border-color:rgba(59,130,246,.22);
+    box-shadow:0 22px 50px rgba(15,23,42,.11);
+}
+.ai-summary-card:hover::after{transform:scaleX(1);opacity:1}
+.summary-role{grid-area:role;--card-gradient:linear-gradient(90deg,#3b82f6,#06b6d4)}
+.summary-stack{grid-area:stack;--card-gradient:linear-gradient(90deg,#8b5cf6,#3b82f6)}
+.summary-fit{grid-area:fit;--card-gradient:linear-gradient(90deg,#10b981,#06b6d4)}
+.summary-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+    margin-bottom:.9rem;
+}
+.summary-index{
+    font-family:'Montserrat',sans-serif;
+    color:#94a3b8;
+    font-size:.65rem;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+.summary-card-icon{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:13px;
+    color:#2563eb;
+    background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(6,182,212,.08));
+    transition:transform .32s ease,background .32s ease,color .32s ease;
+}
+.summary-stack .summary-card-icon{color:#7c3aed;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(59,130,246,.08))}
+.summary-fit .summary-card-icon{color:#059669;background:linear-gradient(135deg,rgba(16,185,129,.12),rgba(6,182,212,.08))}
+.ai-summary-card:hover .summary-card-icon{transform:rotate(-7deg) scale(1.08);color:#fff;background:var(--card-gradient)}
+.ai-summary-card small{
+    display:block;
+    color:#10b981;
+    font-family:'Montserrat',sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-size:.68rem;
+}
+.ai-summary-card strong{
+    display:block;
+    margin-top:.42rem;
+    color:#0f172a;
+    font-family:'Montserrat',sans-serif;
+    font-size:1.06rem;
+    line-height:1.38;
+}
+.ai-summary-card p{
+    margin:.55rem 0 0;
+    color:#64748b;
+    font-size:.79rem;
+    line-height:1.55;
+}
+.summary-role-copy{
+    display:grid;
+    grid-template-columns:minmax(0,1.3fr) minmax(180px,.7fr);
+    gap:1.2rem;
+    align-items:end;
+}
+.summary-signal{
+    display:grid;
+    gap:.42rem;
+    padding:.75rem;
+    border-radius:14px;
+    background:#f8fafc;
+    border:1px solid rgba(148,163,184,.17);
+}
+.summary-signal span{
+    height:5px;
+    border-radius:999px;
+    background:linear-gradient(90deg,#3b82f6,#06b6d4);
+    transform-origin:left;
+    animation:signalGrow 3.4s ease-in-out infinite alternate;
+}
+.summary-signal span:nth-child(1){width:100%}
+.summary-signal span:nth-child(2){width:74%;animation-delay:-.7s}
+.summary-signal span:nth-child(3){width:88%;animation-delay:-1.4s}
+@keyframes signalGrow{from{transform:scaleX(.58);opacity:.55}to{transform:scaleX(1);opacity:1}}
+.summary-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.42rem;
+    margin-top:.8rem;
+}
+.summary-tags span{
+    display:inline-flex;
+    align-items:center;
+    padding:.34rem .54rem;
+    border-radius:8px;
+    color:#4f46e5;
+    background:rgba(99,102,241,.08);
+    border:1px solid rgba(99,102,241,.10);
+    font-family:'Montserrat',sans-serif;
+    font-size:.58rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+}
+.summary-funnel{
+    display:flex;
+    align-items:center;
+    gap:.32rem;
+    margin-top:.85rem;
+}
+.summary-funnel span{
+    flex:1;
+    min-width:0;
+    text-align:center;
+    padding:.38rem .24rem;
+    border-radius:8px;
+    color:#047857;
+    background:rgba(16,185,129,.08);
+    font-family:'Montserrat',sans-serif;
+    font-size:.54rem;
+    font-weight:800;
+    text-transform:uppercase;
+}
+.summary-funnel i{color:#94a3b8;font-size:.55rem}
+@media(max-width:900px){
+    .ai-summary-inner{
+        grid-template-columns:1fr 1fr;
+        grid-template-areas:'intro intro' 'role role' 'stack fit';
+    }
+    .ai-summary-intro{min-height:310px}
+}
+@media(max-width:600px){
+    .ai-summary{padding:1.5rem 5% 2.25rem}
+    .ai-summary-inner{
+        grid-template-columns:1fr;
+        grid-template-areas:'intro' 'role' 'stack' 'fit';
+    }
+    .ai-summary-intro{min-height:auto;padding:1.5rem}
+    .summary-topline{align-items:flex-start;flex-direction:column}
+    .summary-availability{font-size:.6rem}
+    .summary-flow i{transform:rotate(90deg)}
+    .summary-role-copy{grid-template-columns:1fr}
+    .ai-summary-card{min-height:auto;padding:1.3rem}
+}
+.ecosystem-section{padding:6rem 5%;background:#eef5fb}.ecosystem-inner{max-width:1200px;margin:auto}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.ecosystem-card{background:#fff;border:1px solid #dce7f1;border-radius:22px;padding:1.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-height:230px;transition:.25s}.ecosystem-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(15,23,42,.10)}.ecosystem-card span{color:#3b82f6;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}.ecosystem-card h3{margin:.9rem 0 .5rem;color:#0f172a;font-family:Montserrat,sans-serif}.ecosystem-card p{margin:0 0 1rem}.ecosystem-card b{margin-top:auto;color:#10b981}.home-faq{padding:6rem 5%;background:#fff}.home-faq-inner{max-width:900px;margin:auto}.home-faq details{border-bottom:1px solid #e2e8f0;padding:1.1rem 0}.home-faq summary{font-weight:800;color:#0f172a;cursor:pointer}.home-faq p{padding-top:.8rem}.all-projects-link{display:inline-flex;margin-top:1.5rem;font-weight:800;color:#2563eb;text-decoration:none}@media(max-width:900px){.ai-summary-inner{grid-template-columns:1fr 1fr}.ai-summary-intro{grid-column:1/-1}.ecosystem-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.ai-summary-inner,.ecosystem-grid{grid-template-columns:1fr}.ai-summary-intro{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -1091,7 +1416,67 @@
         </div>
     </div>
 
-    <section class="ai-summary" aria-labelledby="one-minute-title"><div class="ai-summary-inner"><div class="ai-summary-intro"><small>Portfolio in one minute</small><h2 id="one-minute-title">A growth operator who connects media, measurement and automation.</h2><p>My core value is not a single advertising channel. It is the ability to connect user intent, tracking, CRM, data and AI-assisted operations into one measurable system.</p></div><div class="ai-summary-card"><small>Role</small><strong>Senior Performance Marketing Specialist</strong></div><div class="ai-summary-card"><small>Core stack</small><strong>Paid Media · GA4/GTM · CRM · Data · AI</strong></div><div class="ai-summary-card"><small>Best fit</small><strong>Growth teams with complex downstream funnels</strong></div></div></section>
+    <section class="ai-summary" aria-labelledby="one-minute-title">
+        <div class="ai-summary-inner">
+            <article class="ai-summary-intro">
+                <div>
+                    <div class="summary-topline">
+                        <span class="summary-eyebrow">Portfolio in one minute</span>
+                        <span class="summary-availability"><i aria-hidden="true"></i> Open to high-impact growth work</span>
+                    </div>
+                    <h2 id="one-minute-title">A growth operator who connects media, measurement and automation.</h2>
+                    <p>My core value is not a single advertising channel. It is the ability to connect user intent, tracking, CRM, data and AI-assisted operations into one measurable system.</p>
+                </div>
+                <div class="summary-flow" aria-label="Integrated growth workflow">
+                    <span>Media</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>Tracking</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>CRM</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>AI Ops</span>
+                </div>
+            </article>
+
+            <article class="ai-summary-card summary-role">
+                <div class="summary-card-head">
+                    <span class="summary-index">01 / ROLE</span>
+                    <span class="summary-card-icon"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+                </div>
+                <div class="summary-role-copy">
+                    <div>
+                        <small>Role</small>
+                        <strong>Senior Performance Marketing Specialist</strong>
+                        <p>Connecting acquisition strategy with measurement, activation and revenue outcomes.</p>
+                    </div>
+                    <div class="summary-signal" aria-hidden="true"><span></span><span></span><span></span></div>
+                </div>
+            </article>
+
+            <article class="ai-summary-card summary-stack">
+                <div class="summary-card-head">
+                    <span class="summary-index">02 / STACK</span>
+                    <span class="summary-card-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+                </div>
+                <small>Core stack</small>
+                <strong>Paid Media · GA4/GTM · CRM · Data · AI</strong>
+                <div class="summary-tags" aria-label="Core capabilities">
+                    <span>Acquisition</span><span>Measurement</span><span>Automation</span>
+                </div>
+            </article>
+
+            <article class="ai-summary-card summary-fit">
+                <div class="summary-card-head">
+                    <span class="summary-index">03 / BEST FIT</span>
+                    <span class="summary-card-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+                </div>
+                <small>Best fit</small>
+                <strong>Growth teams with complex downstream funnels</strong>
+                <div class="summary-funnel" aria-label="Growth funnel">
+                    <span>Acquire</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    <span>Activate</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    <span>Revenue</span>
+                </div>
+            </article>
+        </div>
+    </section>
 <section class="section" id="impact">
         <div class="section-title-wrapper">
             <h2 class="section-title">Career Impact Stories</h2>
@@ -1472,7 +1857,7 @@
                     });
                 }
 
-                const revealTargets = document.querySelectorAll('.metric-item, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
+                const revealTargets = document.querySelectorAll('.metric-item, .ai-summary-intro, .ai-summary-card, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
                 revealTargets.forEach((el, index) => {
@@ -1493,6 +1878,14 @@
                 } else {
                     revealTargets.forEach(el => el.classList.add('is-visible'));
                 }
+
+                document.querySelectorAll('.ai-summary-intro, .ai-summary-card').forEach(card => {
+                    card.addEventListener('pointermove', event => {
+                        const rect = card.getBoundingClientRect();
+                        card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+                        card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+                    }, { passive: true });
+                });
 
                 const counters = document.querySelectorAll('[data-count]');
                 const animateCounter = (el) => {
