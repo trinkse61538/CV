@@ -1,0 +1,26 @@
+# Nguyen Khai Tri Portfolio
+
+> Nguyen Khai Tri is a Senior Performance Marketing Specialist in Ho Chi Minh City. His work connects paid acquisition, GA4/GTM tracking, CRM automation, data visualization and AI-assisted growth operations.
+
+## Core pages
+- [Profile and portfolio](https://khaitringuyen.com/): Career impact, selected systems, work history and skills.
+- [Projects](https://khaitringuyen.com/projects/): Index of public case studies and live systems.
+- [CV](https://khaitringuyen.com/View_CV.html): Detailed experience, capabilities and documented outcomes.
+- [About](https://khaitringuyen.com/about.html): Background, positioning and working principles.
+- [Articles](https://khaitringuyen.com/articles/): Practical notes about performance, data and automation.
+- [Contact](https://khaitringuyen.com/contact.html): Direct contact options.
+
+## Selected projects
+- [Hihie's Scent OS](https://khaitringuyen.com/projects/scent-os.html): Weather-aware fragrance wardrobe and layering system.
+- [OpenClaw Intelligence](https://khaitringuyen.com/OpenClaw.html): Self-hosted market and advertising automation.
+- [Mautic Lifecycle Automation](https://khaitringuyen.com/email_showcase.html): Segmentation, scoring and behavioral email journeys.
+- [Interactive Data & Reports](https://khaitringuyen.com/data_analyze_visualize.html): Market research and sales pipeline dashboards.
+- [Paid Media × Tracking × CRM](https://khaitringuyen.com/projects/performance-marketing-funnel.html): Full-funnel growth architecture.
+
+## External product
+- [Hihie's Scent OS live](https://perfume.khaitringuyen.com/): Personal fragrance wardrobe application.
+
+## Contact
+- Email: khaitri15@gmail.com
+- LinkedIn: https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/
+- GitHub: https://github.com/trinkse61538

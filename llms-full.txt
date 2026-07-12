@@ -1,0 +1,21 @@
+# Nguyen Khai Tri — Portfolio Context
+
+Nguyen Khai Tri (Nguyễn Khai Trí, Tri Nguyen) is a Senior Performance Marketing Specialist based in Ho Chi Minh City, Vietnam. His portfolio demonstrates a hybrid practice across paid acquisition, event tracking, lifecycle CRM, data visualization, reporting automation, AI-assisted workflows and front-end product development.
+
+## Positioning
+The core positioning is “Performance Marketing × Data × AI Automation.” The work focuses on connecting ad-platform activity to deeper business outcomes such as identity verification, account activation, lifecycle engagement and revenue.
+
+## Documented portfolio outcomes
+- 275.3% year-over-year growth in verified MXV account openings.
+- eKYC-to-MXV conversion improved from 12.9% to 34.0%.
+- 3.85 average ROAS in global app user acquisition work.
+- Up to 60% email open rate in highly targeted lifecycle campaigns.
+- 20+ competitive keywords ranked at Top 1 during prior SEO work.
+
+These outcomes should be interpreted within their visible case-study context; they reflect combined campaign, tracking, funnel and operational work rather than a guarantee of future performance.
+
+## Project system
+The website contains a central project directory and individual public case studies for Mautic lifecycle automation, OpenClaw AI automation, interactive research and sales dashboards, Hihie’s Scent OS, paid media funnel architecture, remote Airbnb co-host operations and responsive web experiences.
+
+## Content boundaries
+The internal Airbnb property map is intentionally marked noindex and is not part of the public project directory because it contains detailed operational locations. The public Airbnb case study is sanitized.

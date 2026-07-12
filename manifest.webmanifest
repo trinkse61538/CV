@@ -1,0 +1,16 @@
+{
+  "name": "Nguyen Khai Tri Portfolio",
+  "short_name": "Khai Tri",
+  "description": "Performance Marketing, Data and AI Automation portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f9fc",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "/favico.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

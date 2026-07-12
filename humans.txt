@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: Nguyen Khai Tri
+Role: Senior Performance Marketing Specialist
+Location: Ho Chi Minh City, Vietnam
+Contact: khaitri15@gmail.com
+
+/* SITE */
+Portfolio focus: Performance Marketing, Data, CRM and AI Automation
+Primary language: English
+Last major architecture update: 2026-07-12
+Technology: Static HTML, CSS and JavaScript on GitHub Pages
