@@ -19,3 +19,23 @@ The website contains a central project directory and individual public case stud
 
 ## Content boundaries
 The internal Airbnb property map is intentionally marked noindex and is not part of the public project directory because it contains detailed operational locations. The public Airbnb case study is sanitized.
+
+
+## Knowledge Hub and Topic Clusters
+- English hub: https://khaitringuyen.com/knowledge/
+- Vietnamese hub: https://khaitringuyen.com/vi/knowledge/
+
+### Performance Marketing & Measurement
+Paid media, GA4/GTM, downstream conversion, eKYC, activation and business-outcome measurement.
+
+### CRM & Lifecycle Automation
+Segmentation, lead scoring, nurturing, Mautic workflows and automated reporting.
+
+### AI-Assisted Operations
+OpenClaw, market monitoring, reporting assistance, deterministic guardrails and human judgment.
+
+### Product & Web Systems
+Scent OS, taxonomy, data visualization, information architecture, responsive product and web design.
+
+### Remote Operations
+Airbnb co-host communication, issue tracking, privacy and remote coordination workflows.

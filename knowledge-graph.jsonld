@@ -29,7 +29,22 @@
         "Marketing Analytics",
         "AI Automation",
         "OpenClaw",
-        "Data Visualization"
+        "Data Visualization",
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
       ],
       "sameAs": [
         "https://github.com/trinkse61538",
@@ -79,6 +94,18 @@
         },
         {
           "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/OpenClaw.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/email_showcase.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/data_analyze_visualize.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/saigonrootmusic.html#project"
         }
       ]
     },
@@ -137,6 +164,24 @@
         },
         {
           "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#collection"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/knowledge/#collection"
+        },
+        {
+          "@id": "https://khaitringuyen.com/OpenClaw.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/email_showcase.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/data_analyze_visualize.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/saigonrootmusic.html#project"
         }
       ]
     },
@@ -150,7 +195,21 @@
       },
       "isPartOf": {
         "@id": "https://khaitringuyen.com/#website"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://khaitringuyen.com/OpenClaw.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/email_showcase.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/data_analyze_visualize.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/saigonrootmusic.html#project"
+        }
+      ]
     },
     {
       "@type": "CollectionPage",
@@ -162,7 +221,18 @@
       },
       "isPartOf": {
         "@id": "https://khaitringuyen.com/#website"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -179,7 +249,15 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -196,7 +274,15 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/projects/performance-marketing-funnel.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -213,7 +299,12 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/projects/scent-os.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -230,7 +321,12 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/projects/scent-os.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -247,7 +343,12 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -264,7 +365,12 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/projects/airbnb-cohosting.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -281,7 +387,12 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/projects/web-experiences.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     },
     {
       "@type": "CreativeWork",
@@ -298,7 +409,12 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/projects/web-experiences.html#project"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -318,7 +434,15 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html#article"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -338,7 +462,15 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -358,7 +490,15 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -378,7 +518,15 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -398,7 +546,12 @@
       "inLanguage": "en",
       "workTranslation": {
         "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
-      }
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     },
     {
       "@type": "Article",
@@ -418,7 +571,239 @@
       "inLanguage": "vi",
       "translationOfWork": {
         "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article"
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://khaitringuyen.com/knowledge/#performance-measurement",
+      "name": "Performance Marketing & Measurement",
+      "alternateName": "Performance Marketing và Đo lường",
+      "description": "Paid media, tracking, downstream conversion and business outcome measurement.",
+      "url": "https://khaitringuyen.com/knowledge/#performance-measurement",
+      "inDefinedTermSet": {
+        "@id": "https://khaitringuyen.com/knowledge/#topics"
       }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://khaitringuyen.com/knowledge/#crm-automation",
+      "name": "CRM & Lifecycle Automation",
+      "alternateName": "CRM và Tự động hóa vòng đời",
+      "description": "CRM segmentation, lead scoring, nurturing and reporting automation.",
+      "url": "https://khaitringuyen.com/knowledge/#crm-automation",
+      "inDefinedTermSet": {
+        "@id": "https://khaitringuyen.com/knowledge/#topics"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://khaitringuyen.com/knowledge/#ai-operations",
+      "name": "AI-Assisted Operations",
+      "alternateName": "Vận hành với AI",
+      "description": "AI-assisted research, reporting and operations with deterministic guardrails and human judgment.",
+      "url": "https://khaitringuyen.com/knowledge/#ai-operations",
+      "inDefinedTermSet": {
+        "@id": "https://khaitringuyen.com/knowledge/#topics"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://khaitringuyen.com/knowledge/#product-web-systems",
+      "name": "Product & Web Systems",
+      "alternateName": "Sản phẩm và Hệ thống web",
+      "description": "Product thinking, taxonomy, data visualization, information architecture and responsive web experiences.",
+      "url": "https://khaitringuyen.com/knowledge/#product-web-systems",
+      "inDefinedTermSet": {
+        "@id": "https://khaitringuyen.com/knowledge/#topics"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://khaitringuyen.com/knowledge/#remote-operations",
+      "name": "Remote Operations",
+      "alternateName": "Vận hành từ xa",
+      "description": "Guest communication, issue tracking, privacy and cross-location operating workflows.",
+      "url": "https://khaitringuyen.com/knowledge/#remote-operations",
+      "inDefinedTermSet": {
+        "@id": "https://khaitringuyen.com/knowledge/#topics"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://khaitringuyen.com/knowledge/#collection",
+      "url": "https://khaitringuyen.com/knowledge/",
+      "name": "Knowledge Hub by Nguyen Khai Tri",
+      "description": "Connected topic clusters across performance marketing, CRM, AI automation, product systems and remote operations.",
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      },
+      "about": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "hasPart": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
+      ],
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/knowledge/#collection"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://khaitringuyen.com/vi/knowledge/#collection",
+      "url": "https://khaitringuyen.com/vi/knowledge/",
+      "name": "Trung tâm kiến thức của Nguyễn Khai Trí",
+      "description": "Các cụm chủ đề kết nối Performance Marketing, CRM, AI automation, hệ thống sản phẩm và vận hành từ xa.",
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      },
+      "about": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "hasPart": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
+      ],
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/knowledge/#collection"
+      }
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "https://khaitringuyen.com/knowledge/#topics",
+      "name": "Nguyen Khai Tri Expertise Topics",
+      "url": "https://khaitringuyen.com/knowledge/",
+      "hasDefinedTerm": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#remote-operations"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "SoftwareApplication",
+        "CreativeWork"
+      ],
+      "@id": "https://khaitringuyen.com/OpenClaw.html#project",
+      "url": "https://khaitringuyen.com/OpenClaw.html",
+      "name": "OpenClaw Intelligence",
+      "description": "Self-hosted AI-assisted market monitoring, advertising reporting and Telegram operations.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#ai-operations"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/email_showcase.html#project",
+      "url": "https://khaitringuyen.com/email_showcase.html",
+      "name": "Mautic Lifecycle Automation",
+      "description": "Behavior-based segmentation, lead scoring, triggered journeys and email engagement analysis.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#crm-automation"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/data_analyze_visualize.html#project",
+      "url": "https://khaitringuyen.com/data_analyze_visualize.html",
+      "name": "Interactive Research & Pipeline Dashboards",
+      "description": "Interactive data visualization systems for survey research and sales pipeline analysis.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#performance-measurement"
+        },
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/saigonrootmusic.html#project",
+      "url": "https://khaitringuyen.com/saigonrootmusic.html",
+      "name": "Saigon Root Music",
+      "description": "An immersive premium audio studio website concept with project storytelling and interactive design.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "about": [
+        {
+          "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
+        }
+      ]
     }
   ]
 }
