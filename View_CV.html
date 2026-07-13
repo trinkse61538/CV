@@ -761,7 +761,52 @@ ul{padding:0;margin:0}
 .nav-btn.language-choice{min-width:48px;font-weight:800}
 .nav-btn.language-active{border-color:var(--primary-blue);color:var(--primary-blue);background:rgba(59,130,246,.08)}
 </style>
-<link href="https://khaitringuyen.com/View_CV.html" rel="canonical"/><link href="https://khaitringuyen.com/View_CV.html" hreflang="en" rel="alternate"/><link href="https://khaitringuyen.com/vi/View_CV.html" hreflang="vi" rel="alternate"/><link href="https://khaitringuyen.com/View_CV.html" hreflang="x-default" rel="alternate"/><meta content="en" http-equiv="content-language"/><meta content="en_US" property="og:locale"/><meta content="vi_VN" property="og:locale:alternate"/><link href="/knowledge-graph.jsonld" rel="alternate" title="Website knowledge graph" type="application/ld+json"/><script data-knowledge-graph="step5" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/View_CV.html#webpage","url":"https://khaitringuyen.com/View_CV.html","name":"Nguyen Khai Tri | Senior Performance Marketing CV","description":"CV of Nguyen Khai Tri - Senior Performance Marketing Specialist combining paid acquisition, data tracking, CRM automation and AI-powered growth systems.","inLanguage":"en","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/#person"},"mainEntity":{"@id":"https://khaitringuyen.com/View_CV.html#webpage"}},{"@type":"Person","@id":"https://khaitringuyen.com/#person","url":"https://khaitringuyen.com/","subjectOf":{"@id":"https://khaitringuyen.com/View_CV.html#webpage"}},{"@type":"WebSite","@id":"https://khaitringuyen.com/#website","url":"https://khaitringuyen.com/","publisher":{"@id":"https://khaitringuyen.com/#person"}}]}</script></head>
+<link href="https://khaitringuyen.com/View_CV.html" rel="canonical"/><link href="https://khaitringuyen.com/View_CV.html" hreflang="en" rel="alternate"/><link href="https://khaitringuyen.com/vi/View_CV.html" hreflang="vi" rel="alternate"/><link href="https://khaitringuyen.com/View_CV.html" hreflang="x-default" rel="alternate"/><meta content="en" http-equiv="content-language"/><meta content="en_US" property="og:locale"/><meta content="vi_VN" property="og:locale:alternate"/><link href="/knowledge-graph.jsonld" rel="alternate" title="Website knowledge graph" type="application/ld+json"/><script data-knowledge-graph="step5" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/View_CV.html#webpage","url":"https://khaitringuyen.com/View_CV.html","name":"Nguyen Khai Tri | Senior Performance Marketing CV","description":"CV of Nguyen Khai Tri - Senior Performance Marketing Specialist combining paid acquisition, data tracking, CRM automation and AI-powered growth systems.","inLanguage":"en","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/#person"},"mainEntity":{"@id":"https://khaitringuyen.com/View_CV.html#webpage"}},{"@type":"Person","@id":"https://khaitringuyen.com/#person","url":"https://khaitringuyen.com/","subjectOf":{"@id":"https://khaitringuyen.com/View_CV.html#webpage"}},{"@type":"WebSite","@id":"https://khaitringuyen.com/#website","url":"https://khaitringuyen.com/","publisher":{"@id":"https://khaitringuyen.com/#person"}}]}</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK6YJ4RVTN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+
+  const ktrGaLanguage = document.documentElement.lang &&
+    document.documentElement.lang.toLowerCase().startsWith("vi") ? "vi" : "en";
+  const ktrGaPath = window.location.pathname;
+  let ktrGaSection = "Other";
+
+  if (ktrGaPath === "/" || ktrGaPath === "/index.html" || ktrGaPath === "/vi/" || ktrGaPath === "/vi/index.html") {
+    ktrGaSection = "Home";
+  } else if (/^\/(?:vi\/)?projects\//i.test(ktrGaPath)) {
+    ktrGaSection = "Projects";
+  } else if (/^\/(?:vi\/)?articles\//i.test(ktrGaPath)) {
+    ktrGaSection = "Articles";
+  } else if (/^\/(?:vi\/)?knowledge\//i.test(ktrGaPath)) {
+    ktrGaSection = "Knowledge";
+  } else if (/^\/(?:vi\/)?search\//i.test(ktrGaPath)) {
+    ktrGaSection = "Search";
+  } else if (/\/View_CV\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "CV";
+  } else if (/\/about\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "About";
+  } else if (/\/contact\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Contact";
+  } else if (/\/(?:OpenClaw|email_showcase|data_analyze_visualize|saigonrootmusic)\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Systems";
+  } else if (/\/404\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "404";
+  }
+
+  gtag("set", {
+    site_language: ktrGaLanguage,
+    site_section: ktrGaSection
+  });
+
+  gtag("config", "G-ZK6YJ4RVTN", {
+    send_page_view: true,
+    content_group: ktrGaSection
+  });
+</script>
+</head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
 <nav class="site-nav">
@@ -1054,5 +1099,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 counters.forEach(counter => counterObserver.observe(counter));
 
 </script>
-<script defer="" src="/assets/language-router.js"></script></body>
+<script defer="" src="/assets/language-router.js"></script>
+<script defer src="/assets/analytics.js"></script>
+</body>
 </html>

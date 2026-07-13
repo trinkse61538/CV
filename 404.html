@@ -65,5 +65,52 @@
     }
   ]
 }
-</script></head><body class="ktr-page"><a class="ktr-skip" href="#main-content">Skip to content</a>
-<header class="ktr-header"><nav class="ktr-nav" aria-label="Primary navigation"><a class="ktr-brand" href="index.html">KHAI <span>TRI.</span></a><button class="ktr-menu" type="button" aria-expanded="false" aria-controls="site-links">Menu</button><ul class="ktr-links" id="site-links"><li><a href="index.html">Home</a></li><li><a href="projects/">Projects</a></li><li><a href="articles/">Articles</a></li><li><a href="about.html">About</a></li><li><a href="View_CV.html">CV</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header><main id="main-content"><section class="ktr-hero"><div class="ktr-wrap"><div class="ktr-eyebrow">404</div><h1>This page is not part of the system.</h1><p class="ktr-lede">The link may be outdated, or the page may have moved into the projects or articles directory.</p><div class="ktr-actions"><a class="ktr-btn primary" href="/">Return home</a><a class="ktr-btn" href="/projects/">Browse projects</a></div></div></section></main><footer class="ktr-footer"><div class="ktr-wrap"><div class="ktr-footer-grid"><div><h2>Performance × Data × Automation</h2><p>Portfolio of Nguyen Khai Tri, a Senior Performance Marketing Specialist building measurable acquisition, lifecycle and AI-assisted growth systems.</p></div><div><h3>Explore</h3><ul><li><a href="projects/">Projects</a></li><li><a href="articles/">Articles</a></li><li><a href="View_CV.html">CV</a></li><li><a href="https://perfume.khaitringuyen.com/">Scent OS</a></li></ul></div><div><h3>Connect</h3><ul><li><a href="mailto:khaitri15@gmail.com">Email</a></li><li><a href="tel:+84367676119">Phone</a></li><li><a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" rel="me">LinkedIn</a></li><li><a href="https://github.com/trinkse61538" rel="me">GitHub</a></li></ul></div></div><div class="ktr-copyright">© <span data-year>2026</span> Nguyen Khai Tri. Built as a connected portfolio system.</div></div></footer><script src="assets/site-system.js" defer></script></body></html>
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK6YJ4RVTN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+
+  const ktrGaLanguage = document.documentElement.lang &&
+    document.documentElement.lang.toLowerCase().startsWith("vi") ? "vi" : "en";
+  const ktrGaPath = window.location.pathname;
+  let ktrGaSection = "Other";
+
+  if (ktrGaPath === "/" || ktrGaPath === "/index.html" || ktrGaPath === "/vi/" || ktrGaPath === "/vi/index.html") {
+    ktrGaSection = "Home";
+  } else if (/^\/(?:vi\/)?projects\//i.test(ktrGaPath)) {
+    ktrGaSection = "Projects";
+  } else if (/^\/(?:vi\/)?articles\//i.test(ktrGaPath)) {
+    ktrGaSection = "Articles";
+  } else if (/^\/(?:vi\/)?knowledge\//i.test(ktrGaPath)) {
+    ktrGaSection = "Knowledge";
+  } else if (/^\/(?:vi\/)?search\//i.test(ktrGaPath)) {
+    ktrGaSection = "Search";
+  } else if (/\/View_CV\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "CV";
+  } else if (/\/about\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "About";
+  } else if (/\/contact\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Contact";
+  } else if (/\/(?:OpenClaw|email_showcase|data_analyze_visualize|saigonrootmusic)\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Systems";
+  } else if (/\/404\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "404";
+  }
+
+  gtag("set", {
+    site_language: ktrGaLanguage,
+    site_section: ktrGaSection
+  });
+
+  gtag("config", "G-ZK6YJ4RVTN", {
+    send_page_view: true,
+    content_group: ktrGaSection
+  });
+</script>
+</head><body class="ktr-page"><a class="ktr-skip" href="#main-content">Skip to content</a>
+<header class="ktr-header"><nav class="ktr-nav" aria-label="Primary navigation"><a class="ktr-brand" href="index.html">KHAI <span>TRI.</span></a><button class="ktr-menu" type="button" aria-expanded="false" aria-controls="site-links">Menu</button><ul class="ktr-links" id="site-links"><li><a href="index.html">Home</a></li><li><a href="projects/">Projects</a></li><li><a href="articles/">Articles</a></li><li><a href="about.html">About</a></li><li><a href="View_CV.html">CV</a></li><li><a href="contact.html">Contact</a></li></ul></nav></header><main id="main-content"><section class="ktr-hero"><div class="ktr-wrap"><div class="ktr-eyebrow">404</div><h1>This page is not part of the system.</h1><p class="ktr-lede">The link may be outdated, or the page may have moved into the projects or articles directory.</p><div class="ktr-actions"><a class="ktr-btn primary" href="/">Return home</a><a class="ktr-btn" href="/projects/">Browse projects</a></div></div></section></main><footer class="ktr-footer"><div class="ktr-wrap"><div class="ktr-footer-grid"><div><h2>Performance × Data × Automation</h2><p>Portfolio of Nguyen Khai Tri, a Senior Performance Marketing Specialist building measurable acquisition, lifecycle and AI-assisted growth systems.</p></div><div><h3>Explore</h3><ul><li><a href="projects/">Projects</a></li><li><a href="articles/">Articles</a></li><li><a href="View_CV.html">CV</a></li><li><a href="https://perfume.khaitringuyen.com/">Scent OS</a></li></ul></div><div><h3>Connect</h3><ul><li><a href="mailto:khaitri15@gmail.com">Email</a></li><li><a href="tel:+84367676119">Phone</a></li><li><a href="https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/" rel="me">LinkedIn</a></li><li><a href="https://github.com/trinkse61538" rel="me">GitHub</a></li></ul></div></div><div class="ktr-copyright">© <span data-year>2026</span> Nguyen Khai Tri. Built as a connected portfolio system.</div></div></footer><script src="assets/site-system.js" defer></script>
+<script defer src="/assets/analytics.js"></script>
+</body></html>
