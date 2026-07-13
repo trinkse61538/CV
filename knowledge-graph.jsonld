@@ -1,0 +1,424 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://khaitringuyen.com/#person",
+      "name": "Nguyen Khai Tri",
+      "alternateName": [
+        "Nguyễn Khai Trí",
+        "Tri Nguyen"
+      ],
+      "url": "https://khaitringuyen.com/",
+      "image": "https://khaitringuyen.com/assets/profile-hero.webp",
+      "jobTitle": "Senior Performance Marketing Specialist",
+      "description": "Performance marketing specialist connecting paid media, measurement, CRM, data and AI automation into measurable growth systems.",
+      "knowsLanguage": [
+        "Vietnamese",
+        "English"
+      ],
+      "knowsAbout": [
+        "Performance Marketing",
+        "Paid Media",
+        "Google Ads",
+        "Meta Ads",
+        "GA4",
+        "Google Tag Manager",
+        "CRM",
+        "Lifecycle Automation",
+        "Marketing Analytics",
+        "AI Automation",
+        "OpenClaw",
+        "Data Visualization"
+      ],
+      "sameAs": [
+        "https://github.com/trinkse61538",
+        "https://www.linkedin.com/in/tr%C3%AD-nguy%E1%BB%85n-khai-63364216b/",
+        "https://www.facebook.com/trinkse61538/",
+        "https://perfume.khaitringuyen.com/"
+      ],
+      "subjectOf": [
+        {
+          "@id": "https://khaitringuyen.com/projects/performance-marketing-funnel.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/scent-os.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/scent-os.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/airbnb-cohosting.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/web-experiences.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/web-experiences.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://khaitringuyen.com/#website",
+      "url": "https://khaitringuyen.com/",
+      "name": "Nguyen Khai Tri — Performance Marketing, Data & AI Automation",
+      "alternateName": "Nguyễn Khai Trí — Performance Marketing, Dữ liệu và Tự động hóa AI",
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "inLanguage": [
+        "en",
+        "vi"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://khaitringuyen.com/projects/performance-marketing-funnel.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/scent-os.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/scent-os.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/airbnb-cohosting.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/projects/web-experiences.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/projects/web-experiences.html#project"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article"
+        },
+        {
+          "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://khaitringuyen.com/projects/#collection",
+      "url": "https://khaitringuyen.com/projects/",
+      "name": "Projects by Nguyen Khai Tri",
+      "about": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://khaitringuyen.com/articles/#collection",
+      "url": "https://khaitringuyen.com/articles/",
+      "name": "Articles by Nguyen Khai Tri",
+      "about": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/projects/performance-marketing-funnel.html#project",
+      "url": "https://khaitringuyen.com/projects/performance-marketing-funnel.html",
+      "name": "Paid Media × Tracking × CRM Funnel",
+      "description": "A full-funnel performance marketing case study connecting paid acquisition, tracking, CRM, eKYC and account activation.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html#project",
+      "url": "https://khaitringuyen.com/vi/projects/performance-marketing-funnel.html",
+      "name": "Paid Media × Tracking × CRM Funnel",
+      "description": "A full-funnel performance marketing case study connecting paid acquisition, tracking, CRM, eKYC and account activation.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/projects/performance-marketing-funnel.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/projects/scent-os.html#project",
+      "url": "https://khaitringuyen.com/projects/scent-os.html",
+      "name": "Hihie’s Scent OS",
+      "description": "A weather-aware fragrance discovery, layering and personal knowledge system.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/projects/scent-os.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/vi/projects/scent-os.html#project",
+      "url": "https://khaitringuyen.com/vi/projects/scent-os.html",
+      "name": "Hihie’s Scent OS",
+      "description": "A weather-aware fragrance discovery, layering and personal knowledge system.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/projects/scent-os.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/projects/airbnb-cohosting.html#project",
+      "url": "https://khaitringuyen.com/projects/airbnb-cohosting.html",
+      "name": "Airbnb Co-host Operations",
+      "description": "A remote co-host workflow for guest communication, issue intelligence and property operations.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html#project",
+      "url": "https://khaitringuyen.com/vi/projects/airbnb-cohosting.html",
+      "name": "Airbnb Co-host Operations",
+      "description": "A remote co-host workflow for guest communication, issue intelligence and property operations.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/projects/airbnb-cohosting.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/projects/web-experiences.html#project",
+      "url": "https://khaitringuyen.com/projects/web-experiences.html",
+      "name": "Web Design & Interactive Experiences",
+      "description": "A collection of responsive websites and interactive prototypes built around content, usability and measurable goals.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/projects/web-experiences.html#project"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://khaitringuyen.com/vi/projects/web-experiences.html#project",
+      "url": "https://khaitringuyen.com/vi/projects/web-experiences.html",
+      "name": "Web Design & Interactive Experiences",
+      "description": "A collection of responsive websites and interactive prototypes built around content, usability and measurable goals.",
+      "creator": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/projects/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/projects/web-experiences.html#project"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article",
+      "url": "https://khaitringuyen.com/articles/performance-marketing-ai.html",
+      "headline": "Performance Marketing in the AI Workflow Era",
+      "description": "How AI supports research, reporting and creative operations while human judgment remains accountable.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html#article",
+      "url": "https://khaitringuyen.com/vi/articles/performance-marketing-ai.html",
+      "headline": "Performance Marketing in the AI Workflow Era",
+      "description": "How AI supports research, reporting and creative operations while human judgment remains accountable.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/articles/performance-marketing-ai.html#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article",
+      "url": "https://khaitringuyen.com/articles/marketing-report-automation.html",
+      "headline": "Automating Marketing Reports with OpenClaw",
+      "description": "A practical architecture for collecting paid media signals, summarizing results and routing useful alerts.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html#article",
+      "url": "https://khaitringuyen.com/vi/articles/marketing-report-automation.html",
+      "headline": "Automating Marketing Reports with OpenClaw",
+      "description": "A practical architecture for collecting paid media signals, summarizing results and routing useful alerts.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/articles/marketing-report-automation.html#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article",
+      "url": "https://khaitringuyen.com/articles/building-scent-os.html",
+      "headline": "Building Hihie’s Scent OS",
+      "description": "How a personal fragrance collection became a weather-aware discovery, layering and knowledge system.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "en",
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://khaitringuyen.com/vi/articles/building-scent-os.html#article",
+      "url": "https://khaitringuyen.com/vi/articles/building-scent-os.html",
+      "headline": "Building Hihie’s Scent OS",
+      "description": "How a personal fragrance collection became a weather-aware discovery, layering and knowledge system.",
+      "author": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "publisher": {
+        "@id": "https://khaitringuyen.com/#person"
+      },
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/articles/#collection"
+      },
+      "inLanguage": "vi",
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/articles/building-scent-os.html#article"
+      }
+    }
+  ]
+}
