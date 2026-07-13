@@ -183,7 +183,15 @@
         {
           "@id": "https://khaitringuyen.com/saigonrootmusic.html#project"
         }
-      ]
+      ],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://khaitringuyen.com/search/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "CollectionPage",
@@ -804,6 +812,32 @@
           "@id": "https://khaitringuyen.com/knowledge/#product-web-systems"
         }
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://khaitringuyen.com/search/#page",
+      "url": "https://khaitringuyen.com/search/",
+      "name": "Search Nguyen Khai Tri Portfolio",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      },
+      "workTranslation": {
+        "@id": "https://khaitringuyen.com/vi/search/#page"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://khaitringuyen.com/vi/search/#page",
+      "url": "https://khaitringuyen.com/vi/search/",
+      "name": "Tìm kiếm Portfolio Nguyễn Khai Trí",
+      "inLanguage": "vi",
+      "isPartOf": {
+        "@id": "https://khaitringuyen.com/#website"
+      },
+      "translationOfWork": {
+        "@id": "https://khaitringuyen.com/search/#page"
+      }
     }
   ]
 }

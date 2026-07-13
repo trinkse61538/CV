@@ -39,3 +39,8 @@ Scent OS, taxonomy, data visualization, information architecture, responsive pro
 
 ### Remote Operations
 Airbnb co-host communication, issue tracking, privacy and remote coordination workflows.
+## Search navigation
+- English search: https://khaitringuyen.com/search/
+- Vietnamese search: https://khaitringuyen.com/vi/search/
+- The search tool is a browser-side navigation utility. Canonical project and article pages remain the preferred sources for citation.
+

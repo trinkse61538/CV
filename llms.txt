@@ -11,6 +11,7 @@
 - [Contact](https://khaitringuyen.com/contact.html): Direct contact options.
 
 - [Knowledge Hub](https://khaitringuyen.com/knowledge/): Topic clusters and reading paths connecting performance marketing, CRM, AI automation, product systems and operations.
+- [Portfolio search](https://khaitringuyen.com/search/): Client-side navigation utility for finding projects, articles, skills and systems.
 - [Trung tâm kiến thức tiếng Việt](https://khaitringuyen.com/vi/knowledge/): Cụm chủ đề và lộ trình đọc bằng tiếng Việt.
 
 ## Selected projects
