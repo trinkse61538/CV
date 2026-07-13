@@ -1,14 +1,84 @@
 (() => {
   "use strict";
 
+  const GA_ID = "G-ZK6YJ4RVTN";
   const siteLanguage = document.documentElement.lang
     ?.toLowerCase()
     .startsWith("vi")
     ? "vi"
     : "en";
-
   const currentPath = window.location.pathname;
-  let lastSearchSignature = "";
+
+  function detectSiteSection(pathname) {
+    if (pathname === "/" || pathname === "/index.html" || pathname === "/vi/" || pathname === "/vi/index.html") return "Home";
+    if (/^\/(?:vi\/)?projects\//i.test(pathname)) return "Projects";
+    if (/^\/(?:vi\/)?articles\//i.test(pathname)) return "Articles";
+    if (/^\/(?:vi\/)?knowledge\//i.test(pathname)) return "Knowledge";
+    if (/^\/(?:vi\/)?search\//i.test(pathname)) return "Search";
+    if (/\/View_CV\.html$/i.test(pathname)) return "CV";
+    if (/\/about\.html$/i.test(pathname)) return "About";
+    if (/\/contact\.html$/i.test(pathname)) return "Contact";
+    if (/\/(?:OpenClaw|email_showcase|data_analyze_visualize|saigonrootmusic)\.html$/i.test(pathname)) return "Systems";
+    if (/\/404\.html$/i.test(pathname)) return "404";
+    return "Other";
+  }
+
+  const siteSection = detectSiteSection(currentPath);
+  const existingTag = document.querySelector('script[src*="googletagmanager.com/gtag/js"]');
+
+  // On performance-sensitive pages, queue GA commands immediately but load the
+  // third-party library only after the page has finished its critical render.
+  if (!existingTag) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+    window.gtag("js", new Date());
+    window.gtag("set", {
+      site_language: siteLanguage,
+      site_section: siteSection
+    });
+    window.gtag("config", GA_ID, {
+      send_page_view: true,
+      content_group: siteSection
+    });
+
+    let tagRequested = false;
+    const loadGoogleTag = () => {
+      if (tagRequested || document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+      tagRequested = true;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      document.head.appendChild(script);
+    };
+
+    const scheduleGoogleTag = () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadGoogleTag, { timeout: 1800 });
+      } else {
+        window.setTimeout(loadGoogleTag, 1200);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      scheduleGoogleTag();
+    } else {
+      window.addEventListener("load", scheduleGoogleTag, { once: true });
+    }
+
+    // A real interaction is a stronger signal than the idle timer.
+    ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
+      window.addEventListener(eventName, loadGoogleTag, {
+        once: true,
+        passive: true,
+        capture: true
+      });
+    });
+  }
+
+let lastSearchSignature = "";
 
   function sendEvent(eventName, parameters = {}) {
     if (typeof window.gtag !== "function") return;
@@ -260,4 +330,5 @@
       subtree: true
     });
   }
+
 })();
