@@ -30,6 +30,51 @@
 <link href="/assets/site-system.css" rel="stylesheet"/>
 <link href="/knowledge-graph.jsonld" rel="alternate" title="Website knowledge graph" type="application/ld+json"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/vi/search/#page","url":"https://khaitringuyen.com/vi/search/","name":"Tìm kiếm portfolio Nguyễn Khai Trí","description":"Tìm dự án, bài viết, kỹ năng và hệ thống trong portfolio của Nguyễn Khai Trí.","inLanguage":"vi","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://khaitringuyen.com/vi/search/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://khaitringuyen.com/vi/"},{"@type":"ListItem","position":2,"name":"Tìm kiếm","item":"https://khaitringuyen.com/vi/search/"}]}]}</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK6YJ4RVTN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("js", new Date());
+
+  const ktrGaLanguage = document.documentElement.lang &&
+    document.documentElement.lang.toLowerCase().startsWith("vi") ? "vi" : "en";
+  const ktrGaPath = window.location.pathname;
+  let ktrGaSection = "Other";
+
+  if (ktrGaPath === "/" || ktrGaPath === "/index.html" || ktrGaPath === "/vi/" || ktrGaPath === "/vi/index.html") {
+    ktrGaSection = "Home";
+  } else if (/^\/(?:vi\/)?projects\//i.test(ktrGaPath)) {
+    ktrGaSection = "Projects";
+  } else if (/^\/(?:vi\/)?articles\//i.test(ktrGaPath)) {
+    ktrGaSection = "Articles";
+  } else if (/^\/(?:vi\/)?knowledge\//i.test(ktrGaPath)) {
+    ktrGaSection = "Knowledge";
+  } else if (/^\/(?:vi\/)?search\//i.test(ktrGaPath)) {
+    ktrGaSection = "Search";
+  } else if (/\/View_CV\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "CV";
+  } else if (/\/about\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "About";
+  } else if (/\/contact\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Contact";
+  } else if (/\/(?:OpenClaw|email_showcase|data_analyze_visualize|saigonrootmusic)\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "Systems";
+  } else if (/\/404\.html$/i.test(ktrGaPath)) {
+    ktrGaSection = "404";
+  }
+
+  gtag("set", {
+    site_language: ktrGaLanguage,
+    site_section: ktrGaSection
+  });
+
+  gtag("config", "G-ZK6YJ4RVTN", {
+    send_page_view: true,
+    content_group: ktrGaSection
+  });
+</script>
 </head>
 <body class="ktr-page">
 <a class="ktr-skip" href="#main-content">Bỏ qua đến nội dung</a>
@@ -100,5 +145,7 @@
 <script defer="" src="/assets/site-system.js"></script>
 <script defer="" src="/assets/language-router.js"></script>
 <script defer="" src="/assets/search.js"></script>
+
+<script defer src="/assets/analytics.js"></script>
 </body>
 </html>
