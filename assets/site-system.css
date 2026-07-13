@@ -25,3 +25,13 @@ body.ktr-page{--ink:#0f172a;--muted:#526173;--line:#dbe5ef;--paper:#f6f9fc;--car
 .ktr-language-suggestion__actions button{border:1px solid #dbe5ef;background:#fff;color:#0f172a}
 @media(max-width:850px){.ktr-language-switch{align-self:flex-start}.ktr-language-switch--cv{align-self:auto}.ktr-language-suggestion{right:16px;bottom:16px}}
 @media(max-width:520px){.ktr-language-suggestion__actions{display:grid}.ktr-language-suggestion__actions a,.ktr-language-suggestion__actions button{width:100%}}
+
+/* Step 5: flag-based language switcher */
+.ktr-language-switch{gap:8px}
+.ktr-language-switch .ktr-language-divider{display:none}
+.ktr-language-switch a{display:inline-flex;align-items:center;justify-content:center;padding:3px;border:1px solid transparent;border-radius:7px;line-height:1;opacity:.58;transition:opacity .2s ease,transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.ktr-language-switch a:hover{opacity:1;transform:translateY(-1px)}
+.ktr-language-switch a.is-active,.ktr-language-switch a[aria-current="true"],.ktr-language-switch a[aria-current="page"]{opacity:1;border-color:rgba(59,130,246,.35);box-shadow:0 0 0 3px rgba(59,130,246,.10)}
+.ktr-language-flag{display:block;width:26px;height:auto;aspect-ratio:5/3;border-radius:3px;object-fit:cover}
+.ktr-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media (max-width:760px){.ktr-language-switch{display:flex!important;align-items:center;justify-content:flex-start}.ktr-language-flag{width:29px}}
