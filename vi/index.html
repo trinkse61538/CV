@@ -38,16 +38,16 @@
 <!-- Resource Hints & Non-blocking Assets -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link crossorigin="" href="https://cdnjs.cloudflare.com" rel="preconnect"/>
 <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
 <link href="//fonts.gstatic.com" rel="dns-prefetch"/>
 <link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link fetchpriority="low" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=optional" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link fetchpriority="low" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Open+Sans:wght@400;600&amp;display=optional" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 </noscript>
+<link as="image" fetchpriority="high" href="/assets/profile-hero-480.avif" imagesizes="(max-width: 968px) 260px, 380px" imagesrcset="/assets/profile-hero-320.avif 320w, /assets/profile-hero-480.avif 480w, /assets/profile-hero-640.avif 640w, /assets/profile-hero-760.avif 760w" rel="preload" type="image/avif"/>
 <link href="/favico.png" rel="icon"/>
 <link href="/favico.png" rel="apple-touch-icon"/>
 <style>
@@ -852,7 +852,30 @@
             *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
             .scroll-reveal { opacity: 1 !important; transform: none !important; }
         }
-    </style>
+    .ktr-language-switch{display:inline-flex;align-items:center;gap:8px}.ktr-language-switch .ktr-language-divider{display:none}.ktr-language-switch a{display:inline-flex;align-items:center;justify-content:center;padding:3px;border:1px solid transparent;border-radius:7px;opacity:.58}.ktr-language-switch a.is-active,.ktr-language-switch a[aria-current]{opacity:1;border-color:rgba(59,130,246,.35);box-shadow:0 0 0 3px rgba(59,130,246,.10)}.ktr-language-flag{display:block;width:26px;height:auto;aspect-ratio:5/3;border-radius:3px}.ktr-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* STEP 8D: MOBILE PERFORMANCE & CORE WEB VITALS */
+.progress-bar{width:100%;transform:scaleX(0);transform-origin:left center;will-change:transform;transition:none}
+nav.is-scrolled{padding:.6rem 5%;background:rgba(255,255,255,.98)}
+.profile-blob picture{display:block;width:100%;height:100%}
+.profile-blob picture img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:968px){
+  body::before{display:none}
+  nav{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .hero-bg{background:radial-gradient(circle at 50% 14%,rgba(59,130,246,.09),transparent 42%)}
+  .ambient-orb{animation:none!important;filter:none;mix-blend-mode:normal;opacity:.15;transform:none!important}
+  .profile-blob{animation:none!important;transform:none!important;border-radius:38% 62% 58% 42%/42% 38% 62% 58%}
+  .marquee-content{animation:none!important;transform:none!important}
+  .summary-availability i,.signal,.footer-status span{animation:none!important}
+  .scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}
+  @supports(content-visibility:auto){
+    .quick-metrics,.ai-summary,.section,.marquee-container,.ecosystem-section,.home-faq,footer{content-visibility:auto;contain-intrinsic-size:auto 780px}
+    .quick-metrics{contain-intrinsic-size:auto 520px}
+    footer{contain-intrinsic-size:auto 760px}
+  }
+}
+
+</style>
 <meta content="Nguyen Khai Tri" name="author"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
 <link href="/manifest.webmanifest" rel="manifest"/>
@@ -1688,50 +1711,7 @@ footer::before {
 }
 </style>
 </meta><meta content="vi" name="content-language"/><link href="https://khaitringuyen.com/vi/" rel="canonical"/><link href="https://khaitringuyen.com/" hreflang="en" rel="alternate"/><link href="https://khaitringuyen.com/vi/" hreflang="vi" rel="alternate"/><link href="https://khaitringuyen.com/" hreflang="x-default" rel="alternate"/><meta content="vi_VN" property="og:locale"/><meta content="en_US" property="og:locale:alternate"/><link href="/knowledge-graph.jsonld" rel="alternate" title="Website knowledge graph" type="application/ld+json"/><script data-knowledge-graph="step5" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/vi/#webpage","url":"https://khaitringuyen.com/vi/","name":"Nguyễn Khai Trí | Performance Marketing, Dữ liệu & Tự động hóa AI","description":"Portfolio Nguyễn Khai Trí, Senior Performance Marketing tại TP.HCM chuyên Google Ads, Meta Ads, GA4/GTM, CRM, dữ liệu và tự động hóa AI.","inLanguage":"vi","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/#person"},"mainEntity":{"@id":"https://khaitringuyen.com/vi/#webpage"}},{"@type":"Person","@id":"https://khaitringuyen.com/#person","url":"https://khaitringuyen.com/","subjectOf":{"@id":"https://khaitringuyen.com/vi/#webpage"}},{"@type":"WebSite","@id":"https://khaitringuyen.com/#website","url":"https://khaitringuyen.com/","publisher":{"@id":"https://khaitringuyen.com/#person"}}]}</script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK6YJ4RVTN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag("js", new Date());
-
-  const ktrGaLanguage = document.documentElement.lang &&
-    document.documentElement.lang.toLowerCase().startsWith("vi") ? "vi" : "en";
-  const ktrGaPath = window.location.pathname;
-  let ktrGaSection = "Other";
-
-  if (ktrGaPath === "/" || ktrGaPath === "/index.html" || ktrGaPath === "/vi/" || ktrGaPath === "/vi/index.html") {
-    ktrGaSection = "Home";
-  } else if (/^\/(?:vi\/)?projects\//i.test(ktrGaPath)) {
-    ktrGaSection = "Projects";
-  } else if (/^\/(?:vi\/)?articles\//i.test(ktrGaPath)) {
-    ktrGaSection = "Articles";
-  } else if (/^\/(?:vi\/)?knowledge\//i.test(ktrGaPath)) {
-    ktrGaSection = "Knowledge";
-  } else if (/^\/(?:vi\/)?search\//i.test(ktrGaPath)) {
-    ktrGaSection = "Search";
-  } else if (/\/View_CV\.html$/i.test(ktrGaPath)) {
-    ktrGaSection = "CV";
-  } else if (/\/about\.html$/i.test(ktrGaPath)) {
-    ktrGaSection = "About";
-  } else if (/\/contact\.html$/i.test(ktrGaPath)) {
-    ktrGaSection = "Contact";
-  } else if (/\/(?:OpenClaw|email_showcase|data_analyze_visualize|saigonrootmusic)\.html$/i.test(ktrGaPath)) {
-    ktrGaSection = "Systems";
-  } else if (/\/404\.html$/i.test(ktrGaPath)) {
-    ktrGaSection = "404";
-  }
-
-  gtag("set", {
-    site_language: ktrGaLanguage,
-    site_section: ktrGaSection
-  });
-
-  gtag("config", "G-ZK6YJ4RVTN", {
-    send_page_view: true,
-    content_group: ktrGaSection
-  });
-</script>
+<!-- GA4 is initialized and loaded after the critical render by /assets/analytics.js -->
 </head>
 <body>
 <nav id="mainNav">
@@ -1790,7 +1770,11 @@ footer::before {
 </div>
 <div class="hero-image-container">
 <div class="profile-blob">
-<img alt="Nguyen Khai Tri" decoding="async" fetchpriority="high" height="760" src="/assets/profile-hero.webp" width="760"/>
+<picture>
+<source sizes="(max-width: 968px) 260px, 380px" srcset="/assets/profile-hero-320.avif 320w, /assets/profile-hero-480.avif 480w, /assets/profile-hero-640.avif 640w, /assets/profile-hero-760.avif 760w" type="image/avif"/>
+<source sizes="(max-width: 968px) 260px, 380px" srcset="/assets/profile-hero-320.webp 320w, /assets/profile-hero-480.webp 480w, /assets/profile-hero-640.webp 640w, /assets/profile-hero-760.webp 760w" type="image/webp"/>
+<img alt="Nguyen Khai Tri" decoding="async" fetchpriority="high" height="760" loading="eager" sizes="(max-width: 968px) 260px, 380px" src="/assets/profile-hero-480.webp" srcset="/assets/profile-hero-320.webp 320w, /assets/profile-hero-480.webp 480w, /assets/profile-hero-640.webp 640w, /assets/profile-hero-760.webp 760w" width="760"/>
+</picture>
 </div>
 </div>
 </div>
@@ -2259,163 +2243,189 @@ footer::before {
 </footer>
 <button aria-label="Back to top" class="floating-top" id="backToTop"><i class="fa-solid fa-arrow-up"></i></button>
 <script>
-        (() => {
-            const initPortfolio = () => {
-                const menuToggle = document.getElementById('menuToggle');
-                const navLinks = document.getElementById('navLinks');
-                const nav = document.getElementById('mainNav');
-                const progressBar = document.getElementById('progressBar');
-                const scrollPercent = document.getElementById('scrollPercent');
-                const backToTop = document.getElementById('backToTop');
+(() => {
+  const initPortfolio = () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const nav = document.getElementById("mainNav");
+    const progressBar = document.getElementById("progressBar");
+    const scrollPercent = document.getElementById("scrollPercent");
+    const backToTop = document.getElementById("backToTop");
+    const ambientOrbs = [...document.querySelectorAll(".ambient-orb")];
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const desktopQuery = window.matchMedia("(min-width: 969px) and (hover: hover) and (pointer: fine)");
+    let prefersReducedMotion = motionQuery.matches;
+    let allowDecorativeMotion = desktopQuery.matches && !prefersReducedMotion;
 
-                if (menuToggle && navLinks) {
-                    menuToggle.addEventListener('click', () => {
-                        const isOpen = navLinks.classList.toggle('active');
-                        menuToggle.setAttribute('aria-expanded', String(isOpen));
-                        const icon = menuToggle.querySelector('i');
-                        if (icon) {
-                            icon.classList.toggle('fa-bars', !isOpen);
-                            icon.classList.toggle('fa-times', isOpen);
-                        }
-                    });
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        const icon = menuToggle.querySelector("i");
+        if (icon) {
+          icon.classList.toggle("fa-bars", !isOpen);
+          icon.classList.toggle("fa-times", isOpen);
+        }
+      });
 
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.addEventListener('click', () => {
-                            navLinks.classList.remove('active');
-                            menuToggle.setAttribute('aria-expanded', 'false');
-                            const icon = menuToggle.querySelector('i');
-                            if (icon) {
-                                icon.classList.add('fa-bars');
-                                icon.classList.remove('fa-times');
-                            }
-                        });
-                    });
-                }
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+          const icon = menuToggle.querySelector("i");
+          if (icon) {
+            icon.classList.add("fa-bars");
+            icon.classList.remove("fa-times");
+          }
+        });
+      });
+    }
 
-                const revealTargets = document.querySelectorAll('.metric-item, .ai-summary-intro, .ai-summary-card, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta');
-                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealTargets = document.querySelectorAll(".metric-item, .ai-summary-intro, .ai-summary-card, .impact-block, .case-card, .timeline-item, .work-step, .bento-item, .footer-cta");
+    revealTargets.forEach((element, index) => {
+      element.classList.add("scroll-reveal");
+      if (desktopQuery.matches) element.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
+    });
 
-                revealTargets.forEach((el, index) => {
-                    el.classList.add('scroll-reveal');
-                    el.style.transitionDelay = `${Math.min(index % 5, 4) * 45}ms`;
-                });
+    if ("IntersectionObserver" in window && allowDecorativeMotion) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: .12, rootMargin: "80px 0px" });
+      revealTargets.forEach((element) => revealObserver.observe(element));
+    } else {
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
+    }
 
-                if ('IntersectionObserver' in window && !prefersReducedMotion) {
-                    const revealObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('is-visible');
-                                revealObserver.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.16 });
-                    revealTargets.forEach(el => revealObserver.observe(el));
-                } else {
-                    revealTargets.forEach(el => el.classList.add('is-visible'));
-                }
+    if (desktopQuery.matches) {
+      document.querySelectorAll(".ai-summary-intro, .ai-summary-card").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+          card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+        }, { passive: true });
+      });
+    }
 
-                document.querySelectorAll('.ai-summary-intro, .ai-summary-card').forEach(card => {
-                    card.addEventListener('pointermove', event => {
-                        const rect = card.getBoundingClientRect();
-                        card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
-                        card.style.setProperty('--my', `${event.clientY - rect.top}px`);
-                    }, { passive: true });
-                });
+    const counters = document.querySelectorAll("[data-count]");
+    const animateCounter = (element) => {
+      const target = Number.parseFloat(element.dataset.count || "0");
+      const decimals = Number.parseInt(element.dataset.decimals || "0", 10);
+      const prefix = element.dataset.prefix || "";
+      const suffix = element.dataset.suffix || "";
+      const duration = prefersReducedMotion ? 1 : 900;
+      const start = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        element.textContent = `${prefix}${(target * eased).toFixed(decimals)}${suffix}`;
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
 
-                const counters = document.querySelectorAll('[data-count]');
-                const animateCounter = (el) => {
-                    const target = parseFloat(el.dataset.count || '0');
-                    const decimals = parseInt(el.dataset.decimals || '0', 10);
-                    const prefix = el.dataset.prefix || '';
-                    const suffix = el.dataset.suffix || '';
-                    const duration = prefersReducedMotion ? 1 : 1100;
-                    const start = performance.now();
-                    const tick = (now) => {
-                        const progress = Math.min((now - start) / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        const value = target * eased;
-                        el.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
-                        if (progress < 1) requestAnimationFrame(tick);
-                    };
-                    requestAnimationFrame(tick);
-                };
+    if ("IntersectionObserver" in window) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        });
+      }, { threshold: .45, rootMargin: "80px 0px" });
+      counters.forEach((element) => counterObserver.observe(element));
+    } else {
+      counters.forEach(animateCounter);
+    }
 
-                if ('IntersectionObserver' in window) {
-                    const counterObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (!entry.isIntersecting) return;
-                            animateCounter(entry.target);
-                            counterObserver.unobserve(entry.target);
-                        });
-                    }, { threshold: 0.55 });
-                    counters.forEach(el => counterObserver.observe(el));
-                } else {
-                    counters.forEach(animateCounter);
-                }
+    const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const sectionMap = new Map();
+    sectionLinks.forEach((link) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) sectionMap.set(target, link);
+    });
+    if ("IntersectionObserver" in window && sectionMap.size) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        sectionLinks.forEach((link) => link.classList.remove("active-section"));
+        sectionMap.get(visible.target)?.classList.add("active-section");
+      }, { rootMargin: "-110px 0px -62% 0px", threshold: [0, .1, .35] });
+      sectionMap.forEach((_, section) => sectionObserver.observe(section));
+    }
 
-                const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
-                const sections = sectionLinks
-                    .map(link => document.querySelector(link.getAttribute('href')))
-                    .filter(Boolean);
+    if (backToTop) {
+      backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" }));
+    }
 
-                const setActiveSection = () => {
-                    let current = '';
-                    sections.forEach(section => {
-                        const rect = section.getBoundingClientRect();
-                        if (rect.top <= 160 && rect.bottom >= 160) current = `#${section.id}`;
-                    });
-                    sectionLinks.forEach(link => link.classList.toggle('active-section', link.getAttribute('href') === current));
-                };
+    let ticking = false;
+    let lastPercent = -1;
+    let lastScrolledState = false;
+    let scrollableHeight = Math.max(document.documentElement.scrollHeight - document.documentElement.clientHeight, 1);
 
-                if (backToTop) {
-                    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
-                }
+    const updateMeasurements = () => {
+      prefersReducedMotion = motionQuery.matches;
+      allowDecorativeMotion = desktopQuery.matches && !prefersReducedMotion;
+      scrollableHeight = Math.max(document.documentElement.scrollHeight - document.documentElement.clientHeight, 1);
+    };
 
-                let ticking = false;
-                const onScrollFX = () => {
-                    if (ticking) return;
-                    ticking = true;
-                    requestAnimationFrame(() => {
-                        const y = window.scrollY || document.documentElement.scrollTop;
-                        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                        const scrolled = height > 0 ? (y / height) * 100 : 0;
+    const onScrollFX = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        const ratio = Math.min(Math.max(y / scrollableHeight, 0), 1);
+        const percent = Math.round(ratio * 100);
 
-                        if (progressBar) progressBar.style.width = `${scrolled}%`;
-                        if (scrollPercent) scrollPercent.textContent = `${Math.round(scrolled)}%`;
+        if (progressBar) progressBar.style.transform = `scaleX(${ratio})`;
+        if (scrollPercent && percent !== lastPercent) {
+          scrollPercent.textContent = `${percent}%`;
+          lastPercent = percent;
+        }
 
-                        if (nav) {
-                            nav.style.padding = y > 50 ? '0.6rem 5%' : '1rem 5%';
-                            nav.style.background = y > 50 ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.9)';
-                        }
+        const isScrolled = y > 50;
+        if (nav && isScrolled !== lastScrolledState) {
+          nav.classList.toggle("is-scrolled", isScrolled);
+          lastScrolledState = isScrolled;
+        }
 
-                        if (!prefersReducedMotion) {
-                            document.documentElement.style.setProperty('--grid-shift', `${-(y * 0.04)}px`);
-                            document.documentElement.style.setProperty('--hero-photo-y', `${Math.min(y * 0.045, 26)}px`);
-                            document.querySelectorAll('.ambient-orb').forEach((orb, index) => {
-                                const speed = [0.035, -0.025, 0.05][index] || 0.03;
-                                orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-                            });
-                        }
+        if (allowDecorativeMotion) {
+          document.documentElement.style.setProperty("--grid-shift", `${-(y * .04)}px`);
+          document.documentElement.style.setProperty("--hero-photo-y", `${Math.min(y * .045, 26)}px`);
+          ambientOrbs.forEach((orb, index) => {
+            const speed = [.035, -.025, .05][index] || .03;
+            orb.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+          });
+        }
 
-                        if (backToTop) backToTop.classList.toggle('show', y > 650);
-                        setActiveSection();
-                        ticking = false;
-                    });
-                };
+        backToTop?.classList.toggle("show", y > 650);
+        ticking = false;
+      });
+    };
 
-                window.addEventListener('scroll', onScrollFX, { passive: true });
-                window.addEventListener('resize', onScrollFX, { passive: true });
-                setActiveSection();
-                onScrollFX();
-            };
+    window.addEventListener("scroll", onScrollFX, { passive: true });
+    window.addEventListener("resize", () => {
+      updateMeasurements();
+      onScrollFX();
+    }, { passive: true });
+    window.addEventListener("load", updateMeasurements, { once: true });
+    motionQuery.addEventListener?.("change", updateMeasurements);
+    desktopQuery.addEventListener?.("change", updateMeasurements);
+    updateMeasurements();
+    onScrollFX();
+  };
 
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initPortfolio, { once: true });
-            } else {
-                initPortfolio();
-            }
-        })();
-    </script>
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPortfolio, { once: true });
+  } else {
+    initPortfolio();
+  }
+})();
+</script>
 <script defer="" src="/assets/language-router.js"></script>
 <script defer src="/assets/analytics.js"></script>
 </body>
