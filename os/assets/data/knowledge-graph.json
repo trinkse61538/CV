@@ -1,0 +1,332 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-07-18",
+  "description": "Public-safe KhaiTriOS connections across principles, projects, playbooks, decisions and lessons.",
+  "nodeTypes": [
+    {
+      "id": "principle",
+      "label": "Principle"
+    },
+    {
+      "id": "project",
+      "label": "Project"
+    },
+    {
+      "id": "playbook",
+      "label": "Playbook"
+    },
+    {
+      "id": "decision",
+      "label": "Decision"
+    },
+    {
+      "id": "lesson",
+      "label": "Lesson"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "principles",
+      "type": "principle",
+      "title": "Operating Principles",
+      "shortLabel": "Principles",
+      "url": "/os/principles/",
+      "summary": "Standards for decisions, quality, AI collaboration and public/private boundaries.",
+      "x": 600,
+      "y": 70,
+      "tags": [
+        "quality",
+        "privacy",
+        "decision",
+        "AI"
+      ]
+    },
+    {
+      "id": "project-scent",
+      "type": "project",
+      "title": "Hihie's Scent OS",
+      "shortLabel": "Scent OS",
+      "url": "/os/projects/scent-os/",
+      "summary": "A context-aware fragrance recommendation and discovery system.",
+      "x": 205,
+      "y": 190,
+      "tags": [
+        "recommendation",
+        "website",
+        "context"
+      ]
+    },
+    {
+      "id": "project-agvn",
+      "type": "project",
+      "title": "AGVN Digital Platform",
+      "shortLabel": "AGVN",
+      "url": "/os/projects/agvn/",
+      "summary": "A spreadsheet-powered publishing and static website system.",
+      "x": 205,
+      "y": 330,
+      "tags": [
+        "sheets",
+        "publishing",
+        "automation",
+        "website"
+      ]
+    },
+    {
+      "id": "project-airbnb",
+      "type": "project",
+      "title": "Airbnb Operations Assistant",
+      "shortLabel": "Airbnb Ops",
+      "url": "/os/projects/airbnb-operations/",
+      "summary": "A private bilingual operating tool documented through a public-safe record.",
+      "x": 205,
+      "y": 470,
+      "tags": [
+        "firebase",
+        "operations",
+        "privacy",
+        "bilingual"
+      ]
+    },
+    {
+      "id": "project-ads",
+      "type": "project",
+      "title": "Advertising Intelligence Dashboards",
+      "shortLabel": "Ads Intel",
+      "url": "/os/projects/advertising-intelligence/",
+      "summary": "Reporting pipelines connecting paid media, plans, leads, warnings and decisions.",
+      "x": 205,
+      "y": 610,
+      "tags": [
+        "marketing",
+        "measurement",
+        "dashboard",
+        "automation"
+      ]
+    },
+    {
+      "id": "playbook-web",
+      "type": "playbook",
+      "title": "Website Delivery System",
+      "shortLabel": "Website",
+      "url": "/os/playbooks/website-delivery/",
+      "summary": "A repeatable workflow for static websites, SEO, QA, release and handover.",
+      "x": 560,
+      "y": 190,
+      "tags": [
+        "website",
+        "SEO",
+        "delivery",
+        "QA"
+      ]
+    },
+    {
+      "id": "playbook-growth",
+      "type": "playbook",
+      "title": "Growth & Measurement System",
+      "shortLabel": "Growth",
+      "url": "/os/playbooks/growth-measurement/",
+      "summary": "KPI hierarchy, tracking QA, pacing, anomaly review and optimization decisions.",
+      "x": 560,
+      "y": 330,
+      "tags": [
+        "marketing",
+        "KPI",
+        "tracking",
+        "decision"
+      ]
+    },
+    {
+      "id": "playbook-automation",
+      "type": "playbook",
+      "title": "Automation & AI System",
+      "shortLabel": "Automation",
+      "url": "/os/playbooks/automation-ai/",
+      "summary": "Reliable pipelines, visible failures, structured AI collaboration and human review.",
+      "x": 560,
+      "y": 470,
+      "tags": [
+        "automation",
+        "AI",
+        "validation",
+        "privacy"
+      ]
+    },
+    {
+      "id": "playbook-freelance",
+      "type": "playbook",
+      "title": "Freelance Delivery System",
+      "shortLabel": "Freelance",
+      "url": "/os/playbooks/freelance-delivery/",
+      "summary": "Qualification, scope, pricing, change control, acceptance and handover.",
+      "x": 560,
+      "y": 610,
+      "tags": [
+        "scope",
+        "delivery",
+        "handover",
+        "client"
+      ]
+    },
+    {
+      "id": "decision-boundary",
+      "type": "decision",
+      "title": "DR-001 — Separate Public Knowledge from Private Memory",
+      "shortLabel": "DR-001",
+      "url": "/os/decisions/public-private-boundary/",
+      "summary": "A layered architecture that publishes reusable knowledge while protecting sensitive memory.",
+      "x": 885,
+      "y": 330,
+      "tags": [
+        "privacy",
+        "architecture",
+        "public",
+        "private"
+      ]
+    },
+    {
+      "id": "lesson-boundary",
+      "type": "lesson",
+      "title": "LSN-001 — A Privacy Boundary Must Be Operational",
+      "shortLabel": "LSN-001",
+      "url": "/os/lessons/operational-privacy-boundary/",
+      "summary": "Classification, transformation, validation and ownership make a trust boundary repeatable.",
+      "x": 1030,
+      "y": 520,
+      "tags": [
+        "privacy",
+        "evidence",
+        "publishing",
+        "lesson"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e01",
+      "source": "principles",
+      "target": "playbook-web",
+      "relation": "guides",
+      "label": "guides"
+    },
+    {
+      "id": "e02",
+      "source": "principles",
+      "target": "playbook-automation",
+      "relation": "guides",
+      "label": "guides"
+    },
+    {
+      "id": "e03",
+      "source": "principles",
+      "target": "decision-boundary",
+      "relation": "frames",
+      "label": "frames"
+    },
+    {
+      "id": "e04",
+      "source": "project-scent",
+      "target": "playbook-web",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e05",
+      "source": "project-agvn",
+      "target": "playbook-web",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e06",
+      "source": "project-agvn",
+      "target": "playbook-automation",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e07",
+      "source": "project-airbnb",
+      "target": "playbook-automation",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e08",
+      "source": "project-airbnb",
+      "target": "decision-boundary",
+      "relation": "supports",
+      "label": "supports"
+    },
+    {
+      "id": "e09",
+      "source": "project-airbnb",
+      "target": "lesson-boundary",
+      "relation": "evidence",
+      "label": "evidence"
+    },
+    {
+      "id": "e10",
+      "source": "project-ads",
+      "target": "playbook-growth",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e11",
+      "source": "project-ads",
+      "target": "playbook-automation",
+      "relation": "informed",
+      "label": "informed"
+    },
+    {
+      "id": "e12",
+      "source": "project-ads",
+      "target": "decision-boundary",
+      "relation": "supports",
+      "label": "supports"
+    },
+    {
+      "id": "e13",
+      "source": "project-ads",
+      "target": "lesson-boundary",
+      "relation": "evidence",
+      "label": "evidence"
+    },
+    {
+      "id": "e14",
+      "source": "playbook-web",
+      "target": "playbook-freelance",
+      "relation": "supports",
+      "label": "supports"
+    },
+    {
+      "id": "e15",
+      "source": "playbook-automation",
+      "target": "decision-boundary",
+      "relation": "applies",
+      "label": "applies"
+    },
+    {
+      "id": "e16",
+      "source": "playbook-freelance",
+      "target": "decision-boundary",
+      "relation": "applies",
+      "label": "applies"
+    },
+    {
+      "id": "e17",
+      "source": "decision-boundary",
+      "target": "lesson-boundary",
+      "relation": "produced",
+      "label": "produced"
+    },
+    {
+      "id": "e18",
+      "source": "lesson-boundary",
+      "target": "playbook-automation",
+      "relation": "guides",
+      "label": "guides"
+    }
+  ]
+}
