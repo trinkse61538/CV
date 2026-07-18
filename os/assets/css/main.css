@@ -3060,3 +3060,301 @@ h1 .gradient-text,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Step 09 — Automation & AI Playbook */
+.automation-card-featured {
+  border-color: rgba(34, 211, 238, .34);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(34, 211, 238, .13), transparent 18rem),
+    radial-gradient(circle at 8% 92%, rgba(16, 185, 129, .10), transparent 22rem),
+    var(--surface);
+}
+
+.automation-playbook-record .gradient-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 48%, #10b981 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.automation-side-panel {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(34, 211, 238, .13), transparent 20rem),
+    radial-gradient(circle at 8% 92%, rgba(16, 185, 129, .09), transparent 22rem),
+    var(--surface);
+}
+
+.automation-scorecard,
+.ai-contract-grid,
+.observability-grid,
+.runbook-template {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.automation-scorecard article,
+.ai-contract-grid article,
+.observability-grid article,
+.runbook-template article {
+  min-height: 215px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.automation-scorecard article > span,
+.ai-contract-grid article > span,
+.observability-grid article > span,
+.runbook-template article > span {
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.automation-scorecard h3,
+.ai-contract-grid h3,
+.observability-grid h3,
+.runbook-template h3 {
+  margin: 27px 0 9px;
+  font-size: 16px;
+}
+
+.automation-scorecard p,
+.ai-contract-grid p,
+.observability-grid p,
+.runbook-template p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.automation-scorecard article > strong {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.automation-architecture {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.automation-node {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.automation-node > span {
+  color: var(--cyan);
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.automation-node h3 {
+  margin: 42px 0 10px;
+  font-size: 18px;
+}
+
+.automation-node p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.automation-node > strong {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.automation-data-map {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  overflow-x: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+  scrollbar-width: none;
+}
+
+.automation-data-map::-webkit-scrollbar {
+  display: none;
+}
+
+.automation-data-map span {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.automation-data-map i {
+  flex: 0 0 auto;
+  color: var(--cyan);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.automation-workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.automation-stage {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.automation-stage > span {
+  color: var(--cyan);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.automation-stage h3 {
+  margin: 42px 0 10px;
+  font-size: 18px;
+}
+
+.automation-stage p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.automation-stage > strong {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.review-gate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.review-gate {
+  min-height: 350px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-gate.automatic {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(34, 211, 238, .12), transparent 20rem),
+    var(--surface);
+}
+
+.review-gate.approval {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(16, 185, 129, .12), transparent 20rem),
+    var(--surface);
+}
+
+.review-gate > span {
+  color: var(--cyan);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.review-gate.approval > span {
+  color: var(--green);
+}
+
+.review-gate h3 {
+  margin: 34px 0 14px;
+  font-size: 25px;
+}
+
+.review-gate ul {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.review-gate li {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 1040px) {
+  .automation-scorecard,
+  .ai-contract-grid,
+  .observability-grid,
+  .runbook-template,
+  .automation-workflow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .automation-architecture {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .review-gate-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .automation-scorecard,
+  .ai-contract-grid,
+  .observability-grid,
+  .runbook-template,
+  .automation-workflow,
+  .automation-architecture {
+    grid-template-columns: 1fr;
+  }
+}
