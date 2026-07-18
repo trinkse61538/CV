@@ -1,1 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Operating Principles — KhaiTriOS</title>
+  <meta name="description" content="The operating principles behind Nguyen Khai Tri&#x27;s approach to decisions, system building, AI collaboration, quality and public-private knowledge boundaries.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/principles/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="Operating Principles — KhaiTriOS">
+  <meta property="og:description" content="The operating principles behind Nguyen Khai Tri&#x27;s approach to decisions, system building, AI collaboration, quality and public-private knowledge boundaries.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/principles/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/khaitrios-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KhaiTriOS — personal operating system for projects, decisions and AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Operating Principles — KhaiTriOS">
+  <meta name="twitter:description" content="The operating principles behind Nguyen Khai Tri&#x27;s approach to decisions, system building, AI collaboration, quality and public-private knowledge boundaries.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/khaitrios-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/os/principles/#webpage","url":"https://khaitringuyen.com/os/principles/","name":"Operating Principles — KhaiTriOS","description":"The operating principles behind Nguyen Khai Tri's approach to decisions, system building, AI collaboration, quality and public-private knowledge boundaries.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/#person"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/khaitrios-og.png","width":1200,"height":630}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Principles","item":"https://khaitringuyen.com/os/principles/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/" aria-current="page">Principles</a>
+<a href="/os/projects/">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
 
+  <main id="main-content">
+    
+
+<section class="page-hero">
+  <div class="shell page-hero-grid">
+    <div>
+      <p class="eyebrow">KhaiTriOS · Operating Principles</p>
+      <h1>Clear principles make decisions <span class="gradient-text">faster and more consistent.</span></h1>
+      <p class="hero-lead">These principles define how work is evaluated, how systems are built, how AI should collaborate, and what must remain private.</p>
+    </div>
+    <aside class="page-summary"><strong>8 principles</strong><span>A practical operating standard for marketing, data, websites, automation and AI-assisted work.</span></aside>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">How work is approached</p>
+      <h2 class="section-title">Useful systems beat impressive demonstrations.</h2>
+      <p class="section-copy">The goal is not to create more output. The goal is to solve the real problem with an implementation that remains understandable and useful later.</p>
+    </div>
+    <div class="principles-grid">
+      <article class="principle-detail reveal"><span class="principle-number">01</span><h3>Outcome before activity</h3><p>Start with the business or user outcome. Metrics, features and deliverables are selected because they support that outcome.</p></article>
+      <article class="principle-detail reveal"><span class="principle-number">02</span><h3>Practical before decorative</h3><p>Polish matters, but it must improve clarity, trust or usability. Visual complexity without operational value is avoided.</p></article>
+      <article class="principle-detail reveal"><span class="principle-number">03</span><h3>Maintainable before clever</h3><p>Prefer readable structures, limited dependencies and changes that can be understood and updated without rebuilding everything.</p></article>
+      <article class="principle-detail reveal"><span class="principle-number">04</span><h3>Automate repeated work</h3><p>When a task is stable and repeated, turn it into a workflow, script, template or reliable data pipeline.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">Decision framework</p>
+        <h2 class="section-title">Choose with evidence, not momentum.</h2>
+        <p class="section-copy">Options are compared using impact, evidence, reversibility and long-term operating cost.</p>
+      </div>
+      <span class="status-pill"><i class="status-dot"></i> Applied across projects</span>
+    </div>
+    <div class="decision-grid">
+      <article class="decision-card reveal"><small>Impact</small><strong>Does this materially improve the outcome?</strong><p>Prioritize changes that affect conversion, usability, reliability, learning or future speed.</p></article>
+      <article class="decision-card reveal"><small>Evidence</small><strong>What data or observation supports it?</strong><p>Separate confirmed facts, informed assumptions and personal preference before committing.</p></article>
+      <article class="decision-card reveal"><small>Reversibility</small><strong>Can the choice be changed safely?</strong><p>Use reversible experiments when uncertainty is high; document irreversible decisions more carefully.</p></article>
+      <article class="decision-card reveal"><small>Operating cost</small><strong>What complexity will remain afterward?</strong><p>Account for maintenance, dependencies, data quality, handover and future editing—not only initial build time.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">AI collaboration</p>
+      <h2 class="section-title">AI should act like a context-aware operator.</h2>
+      <p class="section-copy">The preferred AI partner is proactive and practical, but never invents certainty or silently changes unaffected work.</p>
+    </div>
+    <div class="ai-rules">
+      <article class="ai-rule reveal"><span>01</span><div><h3>Use existing context</h3><p>Do not ask again for information that is already known. Preserve project history, preferences and previous decisions.</p></div></article>
+      <article class="ai-rule reveal"><span>02</span><div><h3>Challenge assumptions constructively</h3><p>Identify risks, missing measurement and weak logic early, then provide a stronger alternative with clear trade-offs.</p></div></article>
+      <article class="ai-rule reveal"><span>03</span><div><h3>Deliver usable artifacts</h3><p>Prefer complete files, structured patches, implementation-ready code and explicit deployment notes over abstract advice.</p></div></article>
+      <article class="ai-rule reveal"><span>04</span><div><h3>Preserve unaffected work</h3><p>Change only what is required. Repository updates contain only new or modified files, with hidden files clearly identified.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">Definition of done</p>
+      <h2 class="section-title">A feature is complete only when it works in context.</h2>
+    </div>
+    <div class="done-grid">
+      <article class="done-card reveal"><strong>Functional</strong><p>The requested workflow works, including edge cases and existing behavior that must remain intact.</p></article>
+      <article class="done-card reveal"><strong>Responsive</strong><p>Desktop and mobile layouts remain usable, readable and free of accidental overflow.</p></article>
+      <article class="done-card reveal"><strong>Measurable</strong><p>Tracking, data sources and success criteria are defined when the work affects marketing or product performance.</p></article>
+      <article class="done-card reveal"><strong>Discoverable</strong><p>SEO, metadata, internal links and structured data are addressed when content is public.</p></article>
+      <article class="done-card reveal"><strong>Maintainable</strong><p>Files, naming and dependencies remain clear enough for future updates and handover.</p></article>
+      <article class="done-card reveal"><strong>Deployable</strong><p>The delivery includes the exact files that changed and any special upload or hidden-file instructions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">Publishing boundary</p>
+      <h2 class="section-title">Public proof. Private memory.</h2>
+      <p class="section-copy">KhaiTriOS intentionally separates material that strengthens the portfolio from context that should remain protected.</p>
+    </div>
+    <div class="boundary-grid">
+      <article class="boundary-card public reveal">
+        <span class="boundary-label">Public layer</span>
+        <h3>Safe to publish</h3>
+        <ul><li>Project summaries and case studies</li><li>General playbooks and technical lessons</li><li>Public roadmap and changelog</li><li>Professional principles and quality standards</li></ul>
+      </article>
+      <article class="boundary-card private reveal">
+        <span class="boundary-label">Private vault</span>
+        <h3>Protected by default</h3>
+        <ul><li>Personal memory and detailed identity context</li><li>Client, guest and campaign-level sensitive data</li><li>Credentials, tokens and unpublished business information</li><li>Internal decision records that expose confidential constraints</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout reveal">
+    <div class="callout-grid">
+      <div><p class="section-kicker">Next active phase</p><h2>Apply these principles to the Project Encyclopedia.</h2><p>The next step is turning each existing project into a durable operating record: context, architecture, decisions, outcomes and lessons.</p></div>
+      <a class="button primary" href="/os/projects/">Explore projects <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
