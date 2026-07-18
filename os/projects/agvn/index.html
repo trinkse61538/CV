@@ -1,1 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AGVN Digital Platform — Project Encyclopedia | KhaiTriOS</title>
+  <meta name="description" content="A detailed project record of the AGVN digital platform: Google Sheets content workflow, static page generation, automated image handling, GitHub Actions deployment and performance lessons.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/projects/agvn/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="AGVN Digital Platform — Project Encyclopedia | KhaiTriOS">
+  <meta property="og:description" content="A detailed project record of the AGVN digital platform: Google Sheets content workflow, static page generation, automated image handling, GitHub Actions deployment and performance lessons.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/projects/agvn/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/agvn-project-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AGVN Google Sheets to static website automated publishing architecture">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AGVN Digital Platform — Project Encyclopedia | KhaiTriOS">
+  <meta name="twitter:description" content="A detailed project record of the AGVN digital platform: Google Sheets content workflow, static page generation, automated image handling, GitHub Actions deployment and performance lessons.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/agvn-project-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/os/projects/agvn/#webpage","url":"https://khaitringuyen.com/os/projects/agvn/","name":"AGVN Digital Platform — Project Encyclopedia | KhaiTriOS","description":"A detailed project record of the AGVN digital platform: Google Sheets content workflow, static page generation, automated image handling, GitHub Actions deployment and performance lessons.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/os/projects/agvn/#project"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/agvn-project-og.png","width":1200,"height":630}},{"@type":"CreativeWork","@id":"https://khaitringuyen.com/os/projects/agvn/#project","name":"AGVN Digital Platform","url":"https://agvngroup.com/","description":"A corporate agricultural website and automated publishing system using Google Sheets, Node.js generation, local image normalization and GitHub Actions.","creator":{"@id":"https://khaitringuyen.com/#person"},"keywords":["Static website","Google Sheets CMS","GitHub Actions","Node.js","Agricultural website","Automated publishing"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Projects","item":"https://khaitringuyen.com/os/projects/"},{"@type":"ListItem","position":4,"name":"AGVN","item":"https://khaitringuyen.com/os/projects/agvn/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
 
+  <main id="main-content">
+    
+
+
+<section class="project-record-hero agvn-record">
+  <div class="shell">
+    <nav class="record-breadcrumb" aria-label="Breadcrumb">
+      <a href="/os/">KhaiTriOS</a><span>/</span><a href="/os/projects/">Projects</a><span>/</span><span aria-current="page">AGVN</span>
+    </nav>
+    <div class="record-hero-grid">
+      <div>
+        <div class="record-kicker-row">
+          <span class="tag live">Live platform</span>
+          <span class="mini-label">Project record 02</span>
+          <span class="mini-label">Updated 18 Jul 2026</span>
+        </div>
+        <p class="eyebrow">Corporate website · Content automation &amp; performance</p>
+        <h1>AGVN <span class="gradient-text">Digital Platform</span></h1>
+        <p class="hero-lead">A corporate agricultural website that turns editable spreadsheet content into product pages, news articles and locally managed image assets—without requiring a traditional CMS.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://agvngroup.com/" target="_blank" rel="noopener">Open live website <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="button" href="#architecture">View publishing flow</a>
+          <a class="button" href="#decisions">Read decisions</a>
+        </div>
+      </div>
+      <aside class="record-summary" aria-label="Project summary">
+        <div class="record-summary-head">
+          <span>System snapshot</span>
+          <strong>Automated hourly</strong>
+        </div>
+        <dl class="record-facts">
+          <div><dt>Product type</dt><dd>Corporate website + publishing engine</dd></div>
+          <div><dt>Content sources</dt><dd>Two Google Sheets</dd></div>
+          <div><dt>Generator</dt><dd>Node.js · generate.js</dd></div>
+          <div><dt>Automation</dt><dd>GitHub Actions · hourly + manual</dd></div>
+          <div><dt>Generated outputs</dt><dd>Products, news and local images</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="record-nav-section">
+  <div class="shell">
+    <nav class="record-nav" aria-label="Project record sections">
+      <a href="#overview">Overview</a>
+      <a href="#model">Operating model</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#performance">Performance</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#next">Next</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="shell record-two-column">
+    <div class="record-main-copy">
+      <p class="section-kicker">01 · Overview</p>
+      <h2 class="section-title">A business website that non-technical editors can keep current.</h2>
+      <p class="record-lead">AGVN needed more than a set of static pages. Product and news information had to remain editable without turning every content change into a manual coding task.</p>
+      <p>The resulting platform combines a static corporate website with a lightweight publishing engine. Content is maintained in Google Sheets, validated and transformed by a Node.js generator, then committed back to GitHub as deployable HTML and locally managed images.</p>
+      <p>This architecture keeps the public website fast and inexpensive while giving the business a familiar operational interface for ongoing updates.</p>
+    </div>
+    <aside class="record-side-panel agvn-side-panel">
+      <span class="mini-label">Core delivery objective</span>
+      <blockquote>Keep publishing simple for the business without sacrificing control over performance, URLs or generated output.</blockquote>
+      <div class="record-objectives">
+        <div><strong>Edit</strong><span>content in familiar spreadsheets</span></div>
+        <div><strong>Generate</strong><span>repeatable product and news pages</span></div>
+        <div><strong>Normalize</strong><span>fragile image sources automatically</span></div>
+        <div><strong>Deploy</strong><span>changes without manual page rebuilding</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="model">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">02 · Operating model</p>
+      <h2 class="section-title">Separate editable sources from generated outputs.</h2>
+      <p class="section-copy">The system has a clear ownership model: humans edit structured data and templates; automation manages the repetitive output.</p>
+    </div>
+    <div class="capability-grid agvn-model-grid">
+      <article class="capability-card">
+        <span class="capability-index">SOURCE</span>
+        <h3>Google Sheets</h3>
+        <p>Product and news records are edited in two dedicated spreadsheets using required headers and flexible column aliases.</p>
+        <div class="card-tags"><span class="mini-label">Business editable</span><span class="mini-label">Two datasets</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">TEMPLATE</span>
+        <h3>Reusable HTML templates</h3>
+        <p>Product and news templates define the design, SEO structure and shared layout of generated pages.</p>
+        <div class="card-tags"><span class="mini-label">Consistent UI</span><span class="mini-label">SEO control</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">ENGINE</span>
+        <h3>Node.js generator</h3>
+        <p>The generator fetches rows, validates fields, maps content, resolves slugs and writes output into product and news directories.</p>
+        <div class="card-tags"><span class="mini-label">Validation</span><span class="mini-label">Page generation</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">ASSETS</span>
+        <h3>Image normalization</h3>
+        <p>Google Drive and remote image URLs can be downloaded, verified and stored under <code>assets/generated-images</code>.</p>
+        <div class="card-tags"><span class="mini-label">Drive support</span><span class="mini-label">Manifest</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">AUTOMATION</span>
+        <h3>GitHub Actions</h3>
+        <p>An hourly schedule and manual trigger run the generator, then commit only generated pages and image assets when changes exist.</p>
+        <div class="card-tags"><span class="mini-label">Hourly</span><span class="mini-label">Manual run</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">DELIVERY</span>
+        <h3>Static public website</h3>
+        <p>The deployed result remains standard HTML, CSS, JavaScript and optimized assets—fast to serve and easy to inspect.</p>
+        <div class="card-tags"><span class="mini-label">GitHub Pages</span><span class="mini-label">Low overhead</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="architecture">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">03 · Publishing architecture</p>
+        <h2 class="section-title">Multiple fallbacks protect a simple editing experience.</h2>
+        <p class="section-copy">The system assumes spreadsheet names and image inputs may change, so discovery, validation and retry logic sit between content editing and deployment.</p>
+      </div>
+      <span class="status-pill"><i class="status-dot"></i> Node 20 · GitHub Actions</span>
+    </div>
+    <div class="agvn-pipeline">
+      <article class="pipeline-stage">
+        <span>01</span><h3>Discover sheets</h3>
+        <p>Prefer configured <code>gid</code>, match known tab names, inspect discovered tabs, then fall back to the first tab.</p>
+        <strong>Flexible input</strong>
+      </article>
+      <article class="pipeline-stage">
+        <span>02</span><h3>Fetch with fallback</h3>
+        <p>Try OpenSheet and Google GViz CSV sources with timeout and retry handling.</p>
+        <strong>Resilient access</strong>
+      </article>
+      <article class="pipeline-stage">
+        <span>03</span><h3>Validate headers</h3>
+        <p>Confirm required fields such as product name, slug and news title before generating output.</p>
+        <strong>Safer generation</strong>
+      </article>
+      <article class="pipeline-stage">
+        <span>04</span><h3>Normalize images</h3>
+        <p>Resolve Google Drive IDs, verify image responses, create deterministic filenames and update the manifest.</p>
+        <strong>Stable assets</strong>
+      </article>
+      <article class="pipeline-stage">
+        <span>05</span><h3>Generate pages</h3>
+        <p>Merge row data into reusable product and news templates and write static HTML outputs.</p>
+        <strong>Consistent pages</strong>
+      </article>
+      <article class="pipeline-stage">
+        <span>06</span><h3>Commit changes</h3>
+        <p>Stage generated directories and assets; skip the commit entirely when no output has changed.</p>
+        <strong>Clean history</strong>
+      </article>
+    </div>
+    <div class="agvn-flow-code" aria-label="AGVN publishing flow">
+      <span>Google Sheets</span><i>→</i><span>OpenSheet / GViz</span><i>→</i><span>Header validation</span><i>→</i><span>generate.js</span><i>→</i><span>HTML + images</span><i>→</i><span>GitHub Pages</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="decisions">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">04 · Key decisions</p>
+      <h2 class="section-title">Automation succeeds when the source and output boundaries are explicit.</h2>
+    </div>
+    <div class="decision-record-grid">
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-01</span><strong>Accepted</strong></div>
+        <h3>Use Google Sheets instead of a traditional CMS</h3>
+        <p class="decision-context">The business needed an editor-friendly workflow without introducing backend hosting, CMS maintenance or account management.</p>
+        <dl><div><dt>Why</dt><dd>Familiar editing, fast adoption and low operating overhead.</dd></div><div><dt>Trade-off</dt><dd>Headers and field discipline become part of the system contract.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-02</span><strong>Accepted</strong></div>
+        <h3>Generate static pages instead of rendering spreadsheet data in the browser</h3>
+        <p class="decision-context">Product pages need stable URLs, crawlable content and predictable output even when the data source is temporarily unavailable.</p>
+        <dl><div><dt>Why</dt><dd>Stronger SEO, faster delivery and independence from runtime sheet availability.</dd></div><div><dt>Trade-off</dt><dd>Content changes wait for the next workflow run.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-03</span><strong>Expanded</strong></div>
+        <h3>Auto-detect spreadsheet tabs and validate headers</h3>
+        <p class="decision-context">Hard-coded tab names made the sync fragile when sheets were renamed, reordered or expanded.</p>
+        <dl><div><dt>Why</dt><dd>Support <code>gid</code>, preferred names, discovered tabs and required-field checks.</dd></div><div><dt>Trade-off</dt><dd>The generator becomes more complex, but failures become more diagnosable.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-04</span><strong>Accepted</strong></div>
+        <h3>Download remote images into the repository</h3>
+        <p class="decision-context">Editors may paste Google Drive links or other remote sources that are unsuitable for direct production use.</p>
+        <dl><div><dt>Why</dt><dd>Local assets create stable paths and remove dependency on fragile sharing URLs.</dd></div><div><dt>Trade-off</dt><dd>The repository stores generated binary assets and needs a manifest.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-05</span><strong>Accepted</strong></div>
+        <h3>Convert GitHub raw links to jsDelivr where appropriate</h3>
+        <p class="decision-context">Direct raw asset delivery can create rate limits or inconsistent performance for a public website.</p>
+        <dl><div><dt>Why</dt><dd>CDN delivery improves caching and public asset reliability.</dd></div><div><dt>Trade-off</dt><dd>Cache invalidation and version references need attention.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-06</span><strong>Refined</strong></div>
+        <h3>Optimize mobile without removing core content</h3>
+        <p class="decision-context">The first performance passes revealed heavy video, animation and external asset costs on mobile.</p>
+        <dl><div><dt>Why</dt><dd>Use lighter video behavior, non-blocking assets and desktop-only enhancement where appropriate.</dd></div><div><dt>Lesson</dt><dd>Performance fixes must preserve banners, product images, sheet sync and generated content.</dd></div></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="performance">
+  <div class="shell record-two-column">
+    <div>
+      <p class="section-kicker">05 · Performance and reliability</p>
+      <h2 class="section-title">The fastest page is not useful if automation silently breaks it.</h2>
+      <p class="record-lead">AGVN required two forms of reliability: the public website had to remain responsive, and the publishing workflow had to fail visibly instead of generating incorrect pages.</p>
+      <div class="performance-ledger">
+        <article><span>Delivery</span><h3>Non-blocking external CSS</h3><p>Fonts and icon styles were shifted away from the critical rendering path.</p></article>
+        <article><span>Animation</span><h3>Desktop-only enhancement</h3><p>AOS behavior was limited and paired with a failsafe so content remains visible if scripts fail.</p></article>
+        <article><span>Media</span><h3>Lite video strategy</h3><p>Heavy YouTube behavior was reduced on mobile while preserving the customer-proof section.</p></article>
+        <article><span>Images</span><h3>WebP, CDN and local generation</h3><p>Asset mapping and generated image storage reduce broken or slow external dependencies.</p></article>
+        <article><span>Data</span><h3>Header validation before generation</h3><p>The generator refuses invalid sources instead of overwriting working output with incomplete pages.</p></article>
+        <article><span>Workflow</span><h3>No-change commits are skipped</h3><p>Git history remains cleaner and scheduled runs do not create meaningless revisions.</p></article>
+      </div>
+    </div>
+    <aside class="record-side-panel agvn-side-panel">
+      <span class="mini-label">Failure modes addressed</span>
+      <h3>What previously created risk?</h3>
+      <ul class="record-question-list">
+        <li>Spreadsheet tab names changing unexpectedly.</li>
+        <li>Google Drive links returning HTML instead of image files.</li>
+        <li>Generated pages being edited directly and overwritten later.</li>
+        <li>AOS leaving desktop content invisible when JavaScript timing failed.</li>
+        <li>Raw GitHub assets creating unstable public delivery.</li>
+        <li>Large media and third-party libraries reducing mobile performance.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="lessons">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">06 · Lessons learned</p>
+      <h2 class="section-title">A lightweight CMS still needs contracts, validation and ownership.</h2>
+    </div>
+    <div class="lesson-grid">
+      <article class="lesson-card"><span>01</span><h3>Edit sources, not generated files</h3><p>Templates and spreadsheet rows are durable inputs. Generated product and news pages can be overwritten by design.</p></article>
+      <article class="lesson-card"><span>02</span><h3>Flexible input must end in strict validation</h3><p>Supporting many tab names and aliases is useful only when required fields are verified before output.</p></article>
+      <article class="lesson-card"><span>03</span><h3>Image handling belongs in the publishing pipeline</h3><p>Expecting every editor to provide production-ready URLs creates recurring breakage and support work.</p></article>
+      <article class="lesson-card"><span>04</span><h3>Automation should preserve the last good state</h3><p>Empty or invalid sheet data should not erase working pages during a scheduled run.</p></article>
+      <article class="lesson-card"><span>05</span><h3>Performance changes must respect business content</h3><p>Removing heavy code is useful; accidentally hiding proof, product content or navigation is not.</p></article>
+      <article class="lesson-card"><span>06</span><h3>Static architecture can support real operations</h3><p>With a disciplined generator and workflow, a static site can behave like a maintainable publishing product.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="next">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">07 · Next priorities</p>
+        <h2 class="section-title">Strengthen observability and content governance.</h2>
+        <p class="section-copy">The core publishing engine works. The next improvements should make issues easier to detect and content quality easier to control.</p>
+      </div>
+      <a class="button" href="/os/roadmap/">KhaiTriOS roadmap</a>
+    </div>
+    <div class="priority-board">
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Add a generation summary report</h3><p>Record selected tabs, row counts, generated pages, skipped records, downloaded images and warnings.</p></div><strong>Observability</strong></article>
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Formalize spreadsheet schema documentation</h3><p>Publish required headers, accepted aliases and example rows for products and news.</p></div><strong>Governance</strong></article>
+      <article class="priority-item"><span class="priority-rank">P2</span><div><h3>Add generated-output integrity checks</h3><p>Verify canonical URLs, image paths, required metadata and broken internal links before committing.</p></div><strong>QA</strong></article>
+      <article class="priority-item"><span class="priority-rank">P2</span><div><h3>Improve asset lifecycle management</h3><p>Detect orphaned generated images and apply consistent size or format rules.</p></div><strong>Assets</strong></article>
+      <article class="priority-item"><span class="priority-rank">P3</span><div><h3>Create content freshness indicators</h3><p>Expose last successful sync and last content update where it helps editors and maintainers.</p></div><strong>Operations</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout">
+    <div class="callout-grid">
+      <div>
+        <p class="section-kicker">Project record status</p>
+        <h2>Second encyclopedia record complete.</h2>
+        <p>AGVN now has a durable public record covering its publishing architecture, automation decisions, performance work and operational lessons.</p>
+      </div>
+      <a class="button primary" href="/os/projects/">Back to all projects <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
