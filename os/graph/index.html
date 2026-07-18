@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Knowledge Graph — KhaiTriOS</title>
+  <meta name="description" content="An interactive public knowledge graph connecting KhaiTriOS principles, projects, playbooks, decisions and lessons through typed, inspectable relationships.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/graph/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="Knowledge Graph — KhaiTriOS">
+  <meta property="og:description" content="An interactive public knowledge graph connecting KhaiTriOS principles, projects, playbooks, decisions and lessons through typed, inspectable relationships.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/graph/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/knowledge-graph-connections-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="KhaiTriOS knowledge graph connecting projects, playbooks, decisions and lessons">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Knowledge Graph — KhaiTriOS">
+  <meta name="twitter:description" content="An interactive public knowledge graph connecting KhaiTriOS principles, projects, playbooks, decisions and lessons through typed, inspectable relationships.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/knowledge-graph-connections-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://khaitringuyen.com/os/graph/#webpage","url":"https://khaitringuyen.com/os/graph/","name":"Knowledge Graph — KhaiTriOS","description":"An interactive public knowledge graph connecting KhaiTriOS principles, projects, playbooks, decisions and lessons through typed, inspectable relationships.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/os/graph/#dataset"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/knowledge-graph-connections-og.png","width":1200,"height":630}},{"@type":"Dataset","@id":"https://khaitringuyen.com/os/graph/#dataset","name":"KhaiTriOS Public Knowledge Graph","description":"A public-safe graph of 11 records and 18 typed relationships across KhaiTriOS.","creator":{"@id":"https://khaitringuyen.com/#person"},"temporalCoverage":"2026-07-18/..","distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://khaitringuyen.com/os/assets/data/knowledge-graph.json"}],"keywords":["knowledge graph","projects","playbooks","decisions","lessons","evidence"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Knowledge Graph","item":"https://khaitringuyen.com/os/graph/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/decisions/">Decisions</a>
+<a href="/os/lessons/">Lessons</a>
+<a href="/os/graph/" aria-current="page">Graph</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content">
+    
+
+
+
+<section class="page-hero graph-page-hero">
+  <div class="shell page-hero-grid">
+    <div>
+      <p class="eyebrow">KhaiTriOS · Knowledge Graph</p>
+      <h1>Connected knowledge should be <span class="gradient-text">inspectable and navigable.</span></h1>
+      <p class="hero-lead">The graph makes relationships visible across principles, projects, playbooks, decisions and lessons without requiring a database or exposing the private memory layer.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#explorer">Open graph explorer <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="button" href="/os/assets/data/knowledge-graph.json">View graph JSON</a>
+        <a class="button" href="#contract">Graph contract</a>
+      </div>
+    </div>
+    <aside class="page-summary"><strong>11 nodes · 18 connections</strong><span>Five record types now share typed relationships and direct links back to their public source pages.</span></aside>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="shell record-two-column">
+    <div class="record-main-copy">
+      <p class="section-kicker">Why a graph layer</p>
+      <h2 class="section-title">A library answers “what exists.” A graph also answers “what is related.”</h2>
+      <p class="record-lead">KhaiTriOS already had structured records, but their relationships were distributed across page copy. The graph turns those relationships into explicit public metadata that can be explored by people and reused later by AI systems.</p>
+      <p>The implementation remains intentionally lightweight: one JSON dataset, one small enhancement script and direct links to canonical records. The graph does not replace the source pages and does not infer hidden relationships automatically.</p>
+    </div>
+    <aside class="record-side-panel graph-side-panel">
+      <span class="mini-label">Graph principles</span>
+      <ul class="record-question-list">
+        <li>Every node links to a canonical public record.</li>
+        <li>Every edge uses an explicit relationship type.</li>
+        <li>Public metadata never embeds private source context.</li>
+        <li>The graph remains usable without JavaScript.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="explorer">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">Interactive explorer</p>
+        <h2 class="section-title">Filter the system, select a node and inspect direct relationships.</h2>
+        <p class="section-copy">The explorer is rendered from the same JSON dataset available as a public artifact.</p>
+      </div>
+      <div class="graph-stat-row"><span><strong data-node-count>11</strong> nodes</span><span><strong data-edge-count>18</strong> edges</span><span><strong>5</strong> types</span></div>
+    </div>
+
+    <div class="knowledge-graph-shell" data-knowledge-graph data-source="/os/assets/data/knowledge-graph.json">
+      <div class="graph-controls">
+        <label class="graph-search"><span>Search records</span><input type="search" data-graph-search placeholder="Search title, type or tag…" autocomplete="off"></label>
+        <div class="graph-filter-row" aria-label="Filter graph by record type">
+          <button class="graph-filter is-active" type="button" data-graph-filter="all">All</button>
+          <button class="graph-filter" type="button" data-graph-filter="principle">Principles</button>
+          <button class="graph-filter" type="button" data-graph-filter="project">Projects</button>
+          <button class="graph-filter" type="button" data-graph-filter="playbook">Playbooks</button>
+          <button class="graph-filter" type="button" data-graph-filter="decision">Decisions</button>
+          <button class="graph-filter" type="button" data-graph-filter="lesson">Lessons</button>
+          <button class="graph-filter reset" type="button" data-graph-reset>Reset</button>
+        </div>
+      </div>
+
+      <p class="graph-status" data-graph-status aria-live="polite">Loading public graph data…</p>
+
+      <div class="graph-explorer-grid">
+        <div class="graph-canvas" aria-label="Interactive KhaiTriOS knowledge graph">
+          <svg data-graph-svg viewBox="0 0 1200 700" role="img" aria-labelledby="graph-title graph-description">
+            <title id="graph-title">KhaiTriOS public knowledge graph</title>
+            <desc id="graph-description">Connections across principles, projects, playbooks, Decision Record 001 and Lesson Record 001.</desc>
+          </svg>
+        </div>
+        <aside class="graph-detail" data-graph-detail>
+          <span class="graph-detail-kicker">Select a node</span>
+          <h3>Inspect a record and its connections.</h3>
+          <p>Choose any visible node to highlight its direct relationships and open the source record.</p>
+        </aside>
+      </div>
+
+      <div class="graph-fallback">
+        <h3>Static connection index</h3>
+        <p>The source records remain available when the interactive enhancement cannot load.</p>
+        <div class="graph-fallback-grid">
+          <a href="/os/principles/"><span>Principle</span><strong>Operating Principles</strong></a>
+          <a href="/os/projects/scent-os/"><span>Project</span><strong>Scent OS</strong></a>
+          <a href="/os/projects/agvn/"><span>Project</span><strong>AGVN</strong></a>
+          <a href="/os/projects/airbnb-operations/"><span>Project</span><strong>Airbnb Operations</strong></a>
+          <a href="/os/projects/advertising-intelligence/"><span>Project</span><strong>Advertising Intelligence</strong></a>
+          <a href="/os/playbooks/website-delivery/"><span>Playbook</span><strong>Website Delivery</strong></a>
+          <a href="/os/playbooks/growth-measurement/"><span>Playbook</span><strong>Growth &amp; Measurement</strong></a>
+          <a href="/os/playbooks/automation-ai/"><span>Playbook</span><strong>Automation &amp; AI</strong></a>
+          <a href="/os/playbooks/freelance-delivery/"><span>Playbook</span><strong>Freelance Delivery</strong></a>
+          <a href="/os/decisions/public-private-boundary/"><span>Decision</span><strong>DR-001</strong></a>
+          <a href="/os/lessons/operational-privacy-boundary/"><span>Lesson</span><strong>LSN-001</strong></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="relations">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">Relationship vocabulary</p>
+      <h2 class="section-title">Edges describe why two records belong together.</h2>
+    </div>
+    <div class="relation-type-grid">
+      <article><span>GUIDES</span><h3>A principle or lesson changes future behavior</h3><p>Used when a record provides a rule or standard for another record.</p></article>
+      <article><span>INFORMED</span><h3>Project experience shaped a reusable playbook</h3><p>Used when implementation evidence contributed to a method.</p></article>
+      <article><span>SUPPORTS</span><h3>A record provides evidence for a decision or system</h3><p>Used for direct structural or outcome support.</p></article>
+      <article><span>APPLIES</span><h3>A playbook operationalizes a decision</h3><p>Used when a method turns a decision into repeatable behavior.</p></article>
+      <article><span>PRODUCED</span><h3>A decision and its outcomes generated a lesson</h3><p>Used for the decision → lesson evidence chain.</p></article>
+      <article><span>EVIDENCE</span><h3>A project record supports a lesson claim</h3><p>Used when the project is an inspectable evidence source.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="contract">
+  <div class="shell record-two-column">
+    <div>
+      <p class="section-kicker">Graph data contract</p>
+      <h2 class="section-title">Keep graph metadata small, explicit and source-linked.</h2>
+      <div class="graph-contract-grid">
+        <article><span>NODE</span><h3>One canonical record</h3><p>ID, type, title, short label, URL, summary, tags and visual coordinates.</p></article>
+        <article><span>EDGE</span><h3>One typed connection</h3><p>Source ID, target ID, relationship type and a human-readable label.</p></article>
+        <article><span>VALIDATION</span><h3>No broken references</h3><p>Every edge endpoint must exist and every node URL must resolve to a public record.</p></article>
+        <article><span>OWNERSHIP</span><h3>Source pages remain authoritative</h3><p>The graph summarizes relationships; it never replaces record-level evidence or rationale.</p></article>
+      </div>
+    </div>
+    <aside class="record-side-panel graph-side-panel">
+      <span class="mini-label">Public boundary</span>
+      <h3>The graph contains only public-safe summaries.</h3>
+      <p class="side-note">Private memory, credentials, account details, client information and unpublished decision context are excluded rather than obscured inside graph metadata.</p>
+      <a class="text-link" href="/os/assets/data/knowledge-graph.json">Open raw JSON <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="connections">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">Connection examples</p>
+      <h2 class="section-title">The graph now exposes relationships already supported by the records.</h2>
+    </div>
+    <div class="graph-example-grid">
+      <article><span>PROJECT → PLAYBOOK</span><h3>Advertising Intelligence informed Growth &amp; Measurement</h3><p>Dashboard, tracking and pacing problems were translated into a reusable review system.</p></article>
+      <article><span>PROJECT → DECISION</span><h3>Airbnb Operations supports DR-001</h3><p>The public record preserves architecture while excluding private apartment and guest data.</p></article>
+      <article><span>DECISION → LESSON</span><h3>DR-001 produced LSN-001</h3><p>Later evidence converted the architecture choice into a five-stage publishing rule.</p></article>
+      <article><span>LESSON → PLAYBOOK</span><h3>LSN-001 guides Automation &amp; AI</h3><p>Private context must be classified, minimized, validated and human-approved before use.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout">
+    <div class="callout-grid">
+      <div>
+        <p class="section-kicker">Phase status</p>
+        <h2>Decision Graph &amp; Memory is complete.</h2>
+        <p>The public KhaiTriOS foundation now includes structured records, evidence-backed lessons and a lightweight relationship graph. The next layer belongs in the protected private vault.</p>
+      </div>
+      <a class="button primary" href="/os/roadmap/">View completed public roadmap <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/knowledge-graph.js" defer></script>
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
