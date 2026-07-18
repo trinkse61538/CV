@@ -1,1 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hihie&#x27;s Scent OS — Project Encyclopedia | KhaiTriOS</title>
+  <meta name="description" content="A detailed project record of Hihie&#x27;s Scent OS: product purpose, architecture, recommendation system, decisions, lessons and next development priorities.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/projects/scent-os/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="Hihie&#x27;s Scent OS — Project Encyclopedia | KhaiTriOS">
+  <meta property="og:description" content="A detailed project record of Hihie&#x27;s Scent OS: product purpose, architecture, recommendation system, decisions, lessons and next development priorities.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/projects/scent-os/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/scent-os-project-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hihie’s Scent OS project architecture and fragrance operating system">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hihie&#x27;s Scent OS — Project Encyclopedia | KhaiTriOS">
+  <meta name="twitter:description" content="A detailed project record of Hihie&#x27;s Scent OS: product purpose, architecture, recommendation system, decisions, lessons and next development priorities.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/scent-os-project-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/os/projects/scent-os/#webpage","url":"https://khaitringuyen.com/os/projects/scent-os/","name":"Hihie's Scent OS — Project Encyclopedia | KhaiTriOS","description":"A detailed project record of Hihie's Scent OS: product purpose, architecture, recommendation system, decisions, lessons and next development priorities.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/os/projects/scent-os/#software"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/scent-os-project-og.png","width":1200,"height":630}},{"@type":"SoftwareApplication","@id":"https://khaitringuyen.com/os/projects/scent-os/#software","name":"Hihie's Scent OS","url":"https://perfume.khaitringuyen.com/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","description":"A personal fragrance operating system that organizes a collection and uses weather, time, location, mood and layering logic to support fragrance choice.","creator":{"@id":"https://khaitringuyen.com/#person"},"isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Projects","item":"https://khaitringuyen.com/os/projects/"},{"@type":"ListItem","position":4,"name":"Scent OS","item":"https://khaitringuyen.com/os/projects/scent-os/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
 
+  <main id="main-content">
+    
+
+<section class="project-record-hero">
+  <div class="shell">
+    <nav class="record-breadcrumb" aria-label="Breadcrumb">
+      <a href="/os/">KhaiTriOS</a><span>/</span><a href="/os/projects/">Projects</a><span>/</span><span aria-current="page">Scent OS</span>
+    </nav>
+    <div class="record-hero-grid">
+      <div>
+        <div class="record-kicker-row">
+          <span class="tag live">Live product</span>
+          <span class="mini-label">Project record 01</span>
+          <span class="mini-label">Updated 18 Jul 2026</span>
+        </div>
+        <p class="eyebrow">Personal product · Data, recommendation &amp; web systems</p>
+        <h1>Hihie's <span class="gradient-text">Scent OS</span></h1>
+        <p class="hero-lead">A personal fragrance operating system that turns a large collection into a usable daily decision tool—combining structured data, weather and location context, mood, discovery and layering ideas.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://perfume.khaitringuyen.com/" target="_blank" rel="noopener">Open live product <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <a class="button" href="/projects/scent-os.html">Read portfolio story</a>
+          <a class="button" href="#architecture">View architecture</a>
+        </div>
+      </div>
+      <aside class="record-summary" aria-label="Project summary">
+        <div class="record-summary-head">
+          <span>System snapshot</span>
+          <strong>Active</strong>
+        </div>
+        <dl class="record-facts">
+          <div><dt>Product type</dt><dd>Personal web application</dd></div>
+          <div><dt>Collection scale</dt><dd>Nearly 100 fragrances</dd></div>
+          <div><dt>Primary data source</dt><dd>Google Sheets</dd></div>
+          <div><dt>Context signals</dt><dd>Weather, time, location, mood</dd></div>
+          <div><dt>Delivery</dt><dd>Static web + GitHub Pages</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="record-nav-section">
+  <div class="shell">
+    <nav class="record-nav" aria-label="Project record sections">
+      <a href="#overview">Overview</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#next">Next</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="shell record-two-column">
+    <div class="record-main-copy">
+      <p class="section-kicker">01 · Overview</p>
+      <h2 class="section-title">The collection was growing. The decision process was not.</h2>
+      <p class="record-lead">The project began with a simple personal friction: owning many fragrances created more choice, but not necessarily better or faster decisions each morning.</p>
+      <p>Scent OS reframes a fragrance collection as a structured system. Instead of browsing bottles randomly, the product connects fragrance attributes with the surrounding context and returns suggestions that can be understood, explored and improved.</p>
+      <p>It is also a long-running product laboratory: a place to combine fragrance knowledge, data modeling, recommendation logic, interface design, SEO and automation in one coherent project.</p>
+    </div>
+    <aside class="record-side-panel">
+      <span class="mini-label">Product intent</span>
+      <blockquote>Make a personal collection easier to use, easier to understand and more interesting to rediscover.</blockquote>
+      <div class="record-objectives">
+        <div><strong>Reduce</strong><span>daily choice friction</span></div>
+        <div><strong>Reveal</strong><span>forgotten bottles and patterns</span></div>
+        <div><strong>Connect</strong><span>context with scent character</span></div>
+        <div><strong>Learn</strong><span>from every iteration</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="capabilities">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">02 · Capability map</p>
+      <h2 class="section-title">The product is more than a digital shelf.</h2>
+      <p class="section-copy">Each capability converts collection data into a different form of practical value.</p>
+    </div>
+    <div class="capability-grid">
+      <article class="capability-card">
+        <span class="capability-index">01</span>
+        <h3>Collection Explorer</h3>
+        <p>Browse and filter fragrances by brand, perfumer, season, time, mood and scent characteristics.</p>
+        <div class="card-tags"><span class="mini-label">Search</span><span class="mini-label">Filters</span><span class="mini-label">Discovery</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">02</span>
+        <h3>Context Advisor</h3>
+        <p>Use weather, location and day/night context to narrow the collection toward more suitable choices.</p>
+        <div class="card-tags"><span class="mini-label">Open-Meteo</span><span class="mini-label">Location</span><span class="mini-label">Time</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">03</span>
+        <h3>Mood &amp; Ritual Picks</h3>
+        <p>Translate an intended mood or ritual into a recommendation rather than relying only on note families.</p>
+        <div class="card-tags"><span class="mini-label">Mood</span><span class="mini-label">Occasion</span><span class="mini-label">Personalization</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">04</span>
+        <h3>Layering System</h3>
+        <p>Suggest two-fragrance combinations and explain the intended contrast, bridge or supporting role.</p>
+        <div class="card-tags"><span class="mini-label">Pairing</span><span class="mini-label">Contrast</span><span class="mini-label">Experiment</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">05</span>
+        <h3>Fragrance Detail Model</h3>
+        <p>Present notes, perfumer, year, longevity, projection, temperature fit and contextual attributes in one view.</p>
+        <div class="card-tags"><span class="mini-label">Metadata</span><span class="mini-label">Presence</span><span class="mini-label">Explainability</span></div>
+      </article>
+      <article class="capability-card">
+        <span class="capability-index">06</span>
+        <h3>Search &amp; Knowledge Layer</h3>
+        <p>Connect the product to public project pages, structured metadata, sitemap coverage and AI-readable context.</p>
+        <div class="card-tags"><span class="mini-label">SEO</span><span class="mini-label">GEO</span><span class="mini-label">Structured data</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="architecture">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">03 · System architecture</p>
+        <h2 class="section-title">A lightweight stack with an editable source of truth.</h2>
+        <p class="section-copy">The architecture stays intentionally simple: structured data can change without requiring a heavy application backend.</p>
+      </div>
+      <span class="status-pill"><i class="status-dot"></i> Static-first architecture</span>
+    </div>
+    <div class="system-architecture">
+      <article class="architecture-node">
+        <span>01 · CONTENT</span>
+        <h3>Google Sheets</h3>
+        <p>Editable fragrance records, attributes and image references act as the operational content source.</p>
+        <div class="node-output">Structured rows</div>
+      </article>
+      <article class="architecture-node">
+        <span>02 · NORMALIZE</span>
+        <h3>Data Layer</h3>
+        <p>Values are cleaned, mapped and converted into a consistent model for filtering and recommendations.</p>
+        <div class="node-output">Usable dataset</div>
+      </article>
+      <article class="architecture-node">
+        <span>03 · CONTEXT</span>
+        <h3>Weather &amp; Location</h3>
+        <p>Open-Meteo and location selection add temperature, rain, local time and season context.</p>
+        <div class="node-output">Context signals</div>
+      </article>
+      <article class="architecture-node">
+        <span>04 · LOGIC</span>
+        <h3>Recommendation Engine</h3>
+        <p>Rules connect fragrance properties, user intent and context while preserving enough variety for discovery.</p>
+        <div class="node-output">Ranked suggestions</div>
+      </article>
+      <article class="architecture-node">
+        <span>05 · EXPERIENCE</span>
+        <h3>Static Web Product</h3>
+        <p>Responsive HTML, CSS and JavaScript deliver the product through GitHub Pages and optimized assets.</p>
+        <div class="node-output">Usable interface</div>
+      </article>
+    </div>
+    <div class="architecture-note">
+      <strong>Operating principle:</strong>
+      <span>Keep editing simple, keep delivery fast, and add infrastructure only when the product genuinely needs it.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="decisions">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">04 · Key decisions</p>
+      <h2 class="section-title">The strongest project knowledge is stored in the trade-offs.</h2>
+    </div>
+    <div class="decision-record-grid">
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-01</span><strong>Accepted</strong></div>
+        <h3>Use Google Sheets as the editable content layer</h3>
+        <p class="decision-context">A personal collection changes frequently and should not require editing large HTML or JSON files manually.</p>
+        <dl><div><dt>Why</dt><dd>Fast editing, familiar workflow and a single visible source of truth.</dd></div><div><dt>Trade-off</dt><dd>Schema discipline and validation become essential as the sheet grows.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-02</span><strong>Accepted</strong></div>
+        <h3>Keep the experience static-first</h3>
+        <p class="decision-context">The product needs speed, reliability and inexpensive hosting more than a complex application framework.</p>
+        <dl><div><dt>Why</dt><dd>Lower maintenance, strong performance and straightforward GitHub deployment.</dd></div><div><dt>Trade-off</dt><dd>Advanced personalization must be designed carefully on the client side or added later.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-03</span><strong>Revised</strong></div>
+        <h3>Move image delivery away from fragile raw URLs</h3>
+        <p class="decision-context">A growing image collection created rate-limit and reliability issues when loaded directly from GitHub raw paths.</p>
+        <dl><div><dt>Why</dt><dd>CDN delivery, WebP assets and lazy loading improve stability and page speed.</dd></div><div><dt>Trade-off</dt><dd>Image naming and mapping need stronger operational control.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-04</span><strong>Removed</strong></div>
+        <h3>Remove Scent Quiz from the main experience</h3>
+        <p class="decision-context">The quiz made the page longer without creating enough value for a personal collection-focused product.</p>
+        <dl><div><dt>Why</dt><dd>Prioritize direct discovery, recommendations and useful collection interactions.</dd></div><div><dt>Lesson</dt><dd>A feature can be attractive but still dilute the product's real job.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-05</span><strong>Expanded</strong></div>
+        <h3>Use selectable global location instead of a fixed city</h3>
+        <p class="decision-context">A fixed weather location becomes inaccurate when traveling and weakens trust in recommendations.</p>
+        <dl><div><dt>Why</dt><dd>Local weather and day/night context should follow the user's actual or selected destination.</dd></div><div><dt>Trade-off</dt><dd>Location UX and timezone handling require additional care.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-06</span><strong>Ongoing</strong></div>
+        <h3>Explain recommendations instead of returning names only</h3>
+        <p class="decision-context">Repeated or surprising suggestions feel arbitrary when the product does not expose its reasoning.</p>
+        <dl><div><dt>Why</dt><dd>Explainability improves trust and makes discovery educational.</dd></div><div><dt>Next</dt><dd>Strengthen scoring transparency and variety controls.</dd></div></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="evolution">
+  <div class="shell record-two-column">
+    <div>
+      <p class="section-kicker">05 · Product evolution</p>
+      <h2 class="section-title">Each version solved a different layer of the problem.</h2>
+      <div class="project-timeline">
+        <article><span>01</span><div><h3>Collection interface</h3><p>Turn the fragrance list into a visual, searchable personal library.</p></div></article>
+        <article><span>02</span><div><h3>Context-aware advisor</h3><p>Add weather, season, day/night and mood to move from browsing toward decisions.</p></div></article>
+        <article><span>03</span><div><h3>Editable data system</h3><p>Shift collection maintenance to Google Sheets and improve image delivery.</p></div></article>
+        <article><span>04</span><div><h3>Knowledge and discovery</h3><p>Add perfumer views, richer details, SEO pages and clearer product explanation.</p></div></article>
+        <article><span>05</span><div><h3>Product refinement</h3><p>Remove weak features, improve mobile behavior and focus recommendations on trust and variety.</p></div></article>
+      </div>
+    </div>
+    <aside class="record-side-panel evolution-panel">
+      <span class="mini-label">Current product questions</span>
+      <h3>What still needs better answers?</h3>
+      <ul class="record-question-list">
+        <li>How should recommendation variety be controlled without becoming random?</li>
+        <li>Which fragrance attributes create the strongest real-world fit?</li>
+        <li>How can layering advice become more explainable and repeatable?</li>
+        <li>How much preference memory improves the product before it becomes too complex?</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="lessons">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">06 · Lessons learned</p>
+      <h2 class="section-title">The product improved when the data model improved.</h2>
+    </div>
+    <div class="lesson-grid">
+      <article class="lesson-card"><span>01</span><h3>Recommendation quality begins in the dataset</h3><p>Rules cannot compensate for inconsistent attributes, vague categories or missing context.</p></article>
+      <article class="lesson-card"><span>02</span><h3>Personalization needs an explanation layer</h3><p>A suggestion is more useful when the user understands why it fits and how it differs from alternatives.</p></article>
+      <article class="lesson-card"><span>03</span><h3>A spreadsheet can be a serious CMS</h3><p>For a focused personal product, familiar editing and disciplined structure can outperform unnecessary backend complexity.</p></article>
+      <article class="lesson-card"><span>04</span><h3>Performance is part of product design</h3><p>Image delivery, lazy loading, mobile layout and dependency choices directly shape the experience.</p></article>
+      <article class="lesson-card"><span>05</span><h3>Removing features is product progress</h3><p>Eliminating low-value sections can make the core product more coherent than adding another function.</p></article>
+      <article class="lesson-card"><span>06</span><h3>A personal project can still use operating discipline</h3><p>Decision records, version history and measurable quality prevent experimentation from becoming disorder.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="next">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">07 · Next development priorities</p>
+        <h2 class="section-title">Move from recommendation features to recommendation quality.</h2>
+        <p class="section-copy">The next phase focuses on stronger data semantics, more transparent scoring and better control over repeated suggestions.</p>
+      </div>
+      <a class="button" href="/os/roadmap/">KhaiTriOS roadmap</a>
+    </div>
+    <div class="priority-board">
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Normalize recommendation attributes</h3><p>Create clearer scales for freshness, temperature fit, projection, formality, mood and artistic character.</p></div><strong>Data</strong></article>
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Add diversity and repetition controls</h3><p>Prevent a few strong candidates from dominating every context while preserving relevance.</p></div><strong>Logic</strong></article>
+      <article class="priority-item"><span class="priority-rank">P2</span><div><h3>Explain the scoring path</h3><p>Show the most important reasons a fragrance was selected and the factors that reduced its score.</p></div><strong>Trust</strong></article>
+      <article class="priority-item"><span class="priority-rank">P2</span><div><h3>Build a lightweight preference memory</h3><p>Use recent wear, skips and favorites to adjust suggestions without requiring account infrastructure.</p></div><strong>Personalization</strong></article>
+      <article class="priority-item"><span class="priority-rank">P3</span><div><h3>Formalize product analytics</h3><p>Measure which discovery paths, filters and recommendations create meaningful interaction.</p></div><strong>Measurement</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout">
+    <div class="callout-grid">
+      <div>
+        <p class="section-kicker">Project record status</p>
+        <h2>First encyclopedia record complete.</h2>
+        <p>Scent OS now has a durable public record covering its purpose, architecture, decisions, evolution, lessons and priorities.</p>
+      </div>
+      <a class="button primary" href="/os/projects/">Back to all projects <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
