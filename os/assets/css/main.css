@@ -2759,3 +2759,304 @@ h1 .gradient-text,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Step 08 — Growth & Measurement Playbook */
+.growth-card-featured {
+  border-color: rgba(167, 139, 250, .36);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(167, 139, 250, .15), transparent 18rem),
+    radial-gradient(circle at 8% 92%, rgba(245, 158, 11, .09), transparent 22rem),
+    var(--surface);
+}
+
+.growth-playbook-record .gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 52%, #f59e0b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.growth-side-panel {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(167, 139, 250, .14), transparent 20rem),
+    radial-gradient(circle at 8% 92%, rgba(245, 158, 11, .08), transparent 22rem),
+    var(--surface);
+}
+
+.kpi-pyramid {
+  display: grid;
+  gap: 12px;
+}
+
+.kpi-level {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 120px;
+  padding: 23px 26px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi-level > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.kpi-level h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.kpi-level p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.kpi-level > strong {
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.kpi-level.business {
+  width: 72%;
+  border-color: rgba(16, 185, 129, .32);
+}
+
+.kpi-level.business > strong {
+  color: var(--green);
+}
+
+.kpi-level.funnel {
+  width: 81%;
+  border-color: rgba(59, 130, 246, .30);
+}
+
+.kpi-level.funnel > strong {
+  color: var(--blue);
+}
+
+.kpi-level.channel {
+  width: 90%;
+  border-color: rgba(167, 139, 250, .30);
+}
+
+.kpi-level.channel > strong {
+  color: var(--purple);
+}
+
+.kpi-level.diagnostic {
+  width: 100%;
+  border-color: rgba(245, 158, 11, .26);
+}
+
+.kpi-level.diagnostic > strong {
+  color: var(--amber);
+}
+
+.growth-input-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.growth-workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.growth-stage {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.growth-stage > span {
+  color: var(--purple);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.growth-stage h3 {
+  margin: 42px 0 10px;
+  font-size: 18px;
+}
+
+.growth-stage p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.growth-stage > strong {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--amber);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tracking-checks,
+.anomaly-grid,
+.optimization-matrix,
+.review-template {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.tracking-checks article,
+.anomaly-card,
+.optimization-matrix article,
+.review-template article {
+  min-height: 205px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.tracking-checks span,
+.anomaly-card > span,
+.optimization-matrix article > span,
+.review-template article > span {
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.tracking-checks h3,
+.anomaly-card h3,
+.optimization-matrix h3,
+.review-template h3 {
+  margin: 26px 0 9px;
+  font-size: 16px;
+}
+
+.tracking-checks p,
+.anomaly-card p,
+.optimization-matrix p,
+.review-template p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.anomaly-card > strong {
+  display: block;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--amber);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.confidence-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.confidence-list div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface-soft) 88%, transparent);
+}
+
+.confidence-list strong,
+.confidence-list span {
+  display: block;
+}
+
+.confidence-list strong {
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+}
+
+.confidence-list span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.review-output {
+  margin-top: 18px;
+  padding: 24px;
+  border: 1px solid rgba(167, 139, 250, .28);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 95% 5%, rgba(167, 139, 250, .12), transparent 18rem),
+    var(--surface);
+}
+
+.review-output p {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.review-output p + p {
+  margin-top: 12px;
+}
+
+@media (max-width: 1040px) {
+  .growth-input-grid,
+  .growth-workflow,
+  .tracking-checks,
+  .anomaly-grid,
+  .optimization-matrix,
+  .review-template {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kpi-level.business,
+  .kpi-level.funnel,
+  .kpi-level.channel,
+  .kpi-level.diagnostic {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .kpi-level {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .kpi-level > strong {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .growth-input-grid,
+  .growth-workflow,
+  .tracking-checks,
+  .anomaly-grid,
+  .optimization-matrix,
+  .review-template {
+    grid-template-columns: 1fr;
+  }
+}
