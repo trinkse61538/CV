@@ -2459,3 +2459,170 @@ h1 .gradient-text,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Step 06 — Advertising Dashboards Project Record */
+.project-card-dashboards {
+  border-color: rgba(59, 130, 246, .34);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(251, 191, 36, .16), transparent 18rem),
+    radial-gradient(circle at 8% 92%, rgba(59, 130, 246, .12), transparent 22rem),
+    var(--surface);
+}
+
+.dashboards-record .gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 55%, #f59e0b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.dashboards-side-panel {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(59, 130, 246, .14), transparent 20rem),
+    radial-gradient(circle at 8% 92%, rgba(251, 191, 36, .08), transparent 22rem),
+    var(--surface);
+}
+
+.dash-workflow,
+.dash-architecture {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dash-stage,
+.dash-node {
+  min-height: 248px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-stage > span,
+.dash-node > span {
+  color: var(--blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.dash-stage h3,
+.dash-node h3 {
+  margin: 42px 0 10px;
+  font-size: 18px;
+}
+
+.dash-stage p,
+.dash-node p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dash-stage > strong,
+.dash-node > strong {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--amber);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.dash-node {
+  min-height: 270px;
+}
+
+.dash-data-map {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  overflow-x: auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+  scrollbar-width: none;
+}
+
+.dash-data-map::-webkit-scrollbar {
+  display: none;
+}
+
+.dash-data-map span {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.dash-data-map i {
+  flex: 0 0 auto;
+  color: var(--amber);
+  font-style: normal;
+  font-weight: 800;
+}
+
+.warning-ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.warning-ledger article {
+  min-height: 188px;
+  padding: 21px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.warning-ledger span {
+  color: var(--amber);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.warning-ledger h3 {
+  margin: 25px 0 8px;
+  font-size: 16px;
+}
+
+.warning-ledger p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 1040px) {
+  .dash-workflow,
+  .dash-architecture {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .dash-workflow,
+  .dash-architecture,
+  .warning-ledger {
+    grid-template-columns: 1fr;
+  }
+}
