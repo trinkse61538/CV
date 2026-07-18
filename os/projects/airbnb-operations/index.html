@@ -1,1 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Airbnb Operations Assistant — Project Encyclopedia | KhaiTriOS</title>
+  <meta name="description" content="A detailed project record of the Airbnb Operations Assistant: bilingual apartment data, Firebase architecture, check-in content, clipboard workflows, privacy decisions and operational lessons.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/projects/airbnb-operations/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="Airbnb Operations Assistant — Project Encyclopedia | KhaiTriOS">
+  <meta property="og:description" content="A detailed project record of the Airbnb Operations Assistant: bilingual apartment data, Firebase architecture, check-in content, clipboard workflows, privacy decisions and operational lessons.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/projects/airbnb-operations/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/airbnb-operations-project-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Airbnb Operations Assistant architecture for apartment data, Firebase and guest-message clipboard workflows">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airbnb Operations Assistant — Project Encyclopedia | KhaiTriOS">
+  <meta name="twitter:description" content="A detailed project record of the Airbnb Operations Assistant: bilingual apartment data, Firebase architecture, check-in content, clipboard workflows, privacy decisions and operational lessons.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/airbnb-operations-project-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/os/projects/airbnb-operations/#webpage","url":"https://khaitringuyen.com/os/projects/airbnb-operations/","name":"Airbnb Operations Assistant — Project Encyclopedia | KhaiTriOS","description":"A detailed project record of the Airbnb Operations Assistant: bilingual apartment data, Firebase architecture, check-in content, clipboard workflows, privacy decisions and operational lessons.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/os/projects/airbnb-operations/#software"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/airbnb-operations-project-og.png","width":1200,"height":630}},{"@type":"SoftwareApplication","@id":"https://khaitringuyen.com/os/projects/airbnb-operations/#software","name":"Airbnb Operations Assistant","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A private bilingual operations application for managing apartment information, check-in instructions, guest message blocks and reusable copy workflows.","creator":{"@id":"https://khaitringuyen.com/#person"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Projects","item":"https://khaitringuyen.com/os/projects/"},{"@type":"ListItem","position":4,"name":"Airbnb Operations Assistant","item":"https://khaitringuyen.com/os/projects/airbnb-operations/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
 
+  <main id="main-content">
+    
+
+
+
+<section class="project-record-hero airbnb-record">
+  <div class="shell">
+    <nav class="record-breadcrumb" aria-label="Breadcrumb">
+      <a href="/os/">KhaiTriOS</a><span>/</span><a href="/os/projects/">Projects</a><span>/</span><span aria-current="page">Airbnb Operations</span>
+    </nav>
+
+    <div class="record-hero-grid">
+      <div>
+        <div class="record-kicker-row">
+          <span class="tag private">Private operational tool</span>
+          <span class="mini-label">Project record 03</span>
+          <span class="mini-label">Updated 18 Jul 2026</span>
+        </div>
+
+        <p class="eyebrow">Hospitality operations · Firebase &amp; bilingual UX</p>
+        <h1>Airbnb Operations <span class="gradient-text">Assistant</span></h1>
+        <p class="hero-lead">A private web application that centralizes apartment information, check-in instructions, Wi-Fi guidance, images and reusable guest-message blocks for faster, more consistent co-host operations.</p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="/projects/airbnb-cohosting.html">Read public co-hosting case study <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="button" href="#architecture">View architecture</a>
+          <a class="button" href="#privacy">Privacy boundary</a>
+        </div>
+
+        <p class="hero-note">The operational application is intentionally not linked publicly. Apartment addresses, credentials, Wi-Fi details, user accounts and guest information are excluded from this record.</p>
+      </div>
+
+      <aside class="record-summary" aria-label="Project summary">
+        <div class="record-summary-head">
+          <span>System snapshot</span>
+          <strong>Private deployment</strong>
+        </div>
+        <dl class="record-facts">
+          <div><dt>Product type</dt><dd>Private operations web app</dd></div>
+          <div><dt>Primary users</dt><dd>Admin and co-host workflow</dd></div>
+          <div><dt>Data layer</dt><dd>Cloud Firestore + Storage</dd></div>
+          <div><dt>Access</dt><dd>Firebase Authentication</dd></div>
+          <div><dt>Experience</dt><dd>Vietnamese / English</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="record-nav-section">
+  <div class="shell">
+    <nav class="record-nav" aria-label="Project record sections">
+      <a href="#overview">Overview</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#issues">Issues</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#next">Next</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="shell record-two-column">
+    <div class="record-main-copy">
+      <p class="section-kicker">01 · Overview</p>
+      <h2 class="section-title">Guest information becomes operational infrastructure when it can be reused reliably.</h2>
+      <p class="record-lead">Apartment instructions were distributed across messages, images and individual property pages. Repeating them manually created inconsistent wording, slower responses and a higher risk of sending the wrong detail.</p>
+      <p>The Operations Assistant brings those fragments into one controlled system. Each apartment can carry its own Wi-Fi guidance, check-in sequence, images and message blocks, while admins use search, copy and language controls to respond faster.</p>
+      <p>The product is deliberately small and task-focused. It does not try to replace Airbnb or become a full property-management platform; it removes friction from the recurring communication work surrounding check-in.</p>
+    </div>
+
+    <aside class="record-side-panel airbnb-side-panel">
+      <span class="mini-label">Operational objective</span>
+      <blockquote>Find the right apartment, copy the right instruction, and send it without reconstructing the message.</blockquote>
+
+      <div class="record-objectives">
+        <div><strong>Centralize</strong><span>apartment information</span></div>
+        <div><strong>Standardize</strong><span>guest guidance</span></div>
+        <div><strong>Reduce</strong><span>manual copy errors</span></div>
+        <div><strong>Support</strong><span>bilingual operations</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="workflow">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">02 · Operating workflow</p>
+      <h2 class="section-title">The interface follows the real support sequence.</h2>
+      <p class="section-copy">The app is organized around how a co-host actually answers a guest, not around database administration.</p>
+    </div>
+
+    <div class="ops-workflow">
+      <article class="ops-stage">
+        <span>01</span>
+        <h3>Find the apartment</h3>
+        <p>Search the Apartment List by property name instead of scanning a long management table.</p>
+        <strong>Manage Data</strong>
+      </article>
+
+      <article class="ops-stage">
+        <span>02</span>
+        <h3>Open the check-in view</h3>
+        <p>Load the apartment's operational information and step-by-step guest-message structure.</p>
+        <strong>Apartment Check-in</strong>
+      </article>
+
+      <article class="ops-stage">
+        <span>03</span>
+        <h3>Choose the language</h3>
+        <p>Switch between Vietnamese and English using a visible flag-based language control.</p>
+        <strong>Bilingual UX</strong>
+      </article>
+
+      <article class="ops-stage">
+        <span>04</span>
+        <h3>Copy the right artifact</h3>
+        <p>Copy one message, all message steps or a prepared image directly into the communication workflow.</p>
+        <strong>Clipboard tools</strong>
+      </article>
+
+      <article class="ops-stage">
+        <span>05</span>
+        <h3>Send consistently</h3>
+        <p>Reuse approved content while still allowing human review before sending it to the guest.</p>
+        <strong>Human controlled</strong>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="architecture">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">03 · System architecture</p>
+        <h2 class="section-title">A static client with managed cloud data.</h2>
+        <p class="section-copy">The user interface remains lightweight while Firebase handles identity, structured records and uploaded media.</p>
+      </div>
+      <span class="status-pill"><i class="status-dot"></i> Firebase-backed web app</span>
+    </div>
+
+    <div class="airbnb-architecture">
+      <article class="airbnb-node">
+        <span>01 · ACCESS</span>
+        <h3>Firebase Authentication</h3>
+        <p>Email-based access limits the operational interface to approved users.</p>
+        <strong>Identity gate</strong>
+      </article>
+
+      <article class="airbnb-node">
+        <span>02 · STRUCTURE</span>
+        <h3>Cloud Firestore</h3>
+        <p>Apartment records, language content and message steps live in a synchronized structured data layer.</p>
+        <strong>Source of truth</strong>
+      </article>
+
+      <article class="airbnb-node">
+        <span>03 · MEDIA</span>
+        <h3>Cloud Storage</h3>
+        <p>Operational images are stored separately from text content and referenced by apartment records.</p>
+        <strong>Managed assets</strong>
+      </article>
+
+      <article class="airbnb-node">
+        <span>04 · EXPERIENCE</span>
+        <h3>Static HTML, CSS &amp; JavaScript</h3>
+        <p>The web client provides admin management, check-in views, theme controls and clipboard actions.</p>
+        <strong>Fast interface</strong>
+      </article>
+
+      <article class="airbnb-node">
+        <span>05 · DELIVERY</span>
+        <h3>Custom subdomain</h3>
+        <p>The private operations app is served separately from the public portfolio while remaining inside the same personal ecosystem.</p>
+        <strong>Operational endpoint</strong>
+      </article>
+    </div>
+
+    <div class="airbnb-data-map">
+      <span>Authenticated admin</span><i>→</i><span>Apartment search</span><i>→</i><span>Firestore record</span><i>→</i><span>Message / image preparation</span><i>→</i><span>Clipboard</span><i>→</i><span>Guest channel</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="decisions">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">04 · Key decisions</p>
+      <h2 class="section-title">Operational convenience cannot come at the cost of sending the wrong information.</h2>
+    </div>
+
+    <div class="decision-record-grid">
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-01</span><strong>Accepted</strong></div>
+        <h3>Use one apartment record as the source of truth</h3>
+        <p class="decision-context">Repeated details spread across pages and messages become difficult to update consistently.</p>
+        <dl>
+          <div><dt>Why</dt><dd>One structured record keeps names, instructions, images and language versions connected.</dd></div>
+          <div><dt>Trade-off</dt><dd>The data model must stay understandable as apartment content grows.</dd></div>
+        </dl>
+      </article>
+
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-02</span><strong>Accepted</strong></div>
+        <h3>Keep human review before guest delivery</h3>
+        <p class="decision-context">Automated sending could distribute outdated or property-specific information without a final check.</p>
+        <dl>
+          <div><dt>Why</dt><dd>The app prepares content and images, but the co-host still decides what to send.</dd></div>
+          <div><dt>Trade-off</dt><dd>The workflow is assisted rather than fully automated.</dd></div>
+        </dl>
+      </article>
+
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-03</span><strong>Refined</strong></div>
+        <h3>Use flag-based language switching near theme controls</h3>
+        <p class="decision-context">Language selection should be immediately visible during fast guest-support work.</p>
+        <dl>
+          <div><dt>Why</dt><dd>Flags reduce navigation friction and keep the control close to other global interface settings.</dd></div>
+          <div><dt>Trade-off</dt><dd>Content pairing must remain structurally consistent across both languages.</dd></div>
+        </dl>
+      </article>
+
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-04</span><strong>Accepted</strong></div>
+        <h3>Add copy-all for step-by-step guest messages</h3>
+        <p class="decision-context">Copying individual sub-items repeatedly slowed down check-in communication.</p>
+        <dl>
+          <div><dt>Why</dt><dd>A combined clipboard output supports fast sending while preserving the intended message order.</dd></div>
+          <div><dt>Trade-off</dt><dd>Formatting and line breaks must remain readable across guest channels.</dd></div>
+        </dl>
+      </article>
+
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-05</span><strong>Reworked</strong></div>
+        <h3>Replace Share Image with Copy Image</h3>
+        <p class="decision-context">The operational need was not social sharing; it was pasting a prepared image directly into the next message.</p>
+        <dl>
+          <div><dt>Why</dt><dd>Clipboard output reduces extra downloads, file selection and device-specific share flows.</dd></div>
+          <div><dt>Trade-off</dt><dd>Browser clipboard support and image-format conversion require defensive handling.</dd></div>
+        </dl>
+      </article>
+
+      <article class="decision-record">
+        <div class="decision-record-head"><span>DR-06</span><strong>Removed</strong></div>
+        <h3>Remove Install &amp; Phone Automation from the core screen</h3>
+        <p class="decision-context">The section increased interface length without helping the primary apartment-to-message workflow.</p>
+        <dl>
+          <div><dt>Why</dt><dd>Keep the product focused on finding, preparing and copying operational information.</dd></div>
+          <div><dt>Lesson</dt><dd>A technically interesting feature can still weaken a task-focused tool.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="issues">
+  <div class="shell record-two-column">
+    <div>
+      <p class="section-kicker">05 · Reliability issues addressed</p>
+      <h2 class="section-title">The most important bugs were workflow blockers, not cosmetic defects.</h2>
+
+      <div class="issue-ledger">
+        <article>
+          <span>Clipboard</span>
+          <h3>Copy Image remained at “Preparing image…”</h3>
+          <p>Remote formats and browser clipboard restrictions required the image to be loaded, rendered and converted into a clipboard-compatible PNG blob.</p>
+        </article>
+
+        <article>
+          <span>Dark mode</span>
+          <h3>Search input text became invisible</h3>
+          <p>Input text, placeholder, selection and autofill colors needed explicit theme-safe values rather than relying on inherited styles.</p>
+        </article>
+
+        <article>
+          <span>Discovery</span>
+          <h3>Apartment lists became slow to scan</h3>
+          <p>A direct search field was added to Manage Data so admins can locate properties by name.</p>
+        </article>
+
+        <article>
+          <span>Messaging</span>
+          <h3>Step-by-step content required repetitive copying</h3>
+          <p>A copy-all workflow now combines child items in the correct order and preserves deliberate spacing.</p>
+        </article>
+
+        <article>
+          <span>Media</span>
+          <h3>Images returned “unavailable”</h3>
+          <p>Storage references, cross-origin loading and fallback states needed clearer separation from the apartment content itself.</p>
+        </article>
+
+        <article>
+          <span>Mobile</span>
+          <h3>Operational controls competed for space</h3>
+          <p>Language, dark mode, search and copy actions had to remain reachable without turning the header into a crowded control panel.</p>
+        </article>
+      </div>
+    </div>
+
+    <aside class="record-side-panel airbnb-side-panel">
+      <span class="mini-label">Clipboard implementation pattern</span>
+      <h3>Prepare before writing.</h3>
+      <ol class="clipboard-steps">
+        <li>Fetch or load the selected image.</li>
+        <li>Draw it to a canvas.</li>
+        <li>Convert the result into a PNG blob.</li>
+        <li>Write a <code>ClipboardItem</code> in a secure browser context.</li>
+        <li>Show a clear success or actionable failure state.</li>
+      </ol>
+      <p class="side-note">The core lesson: a button label should describe the user's completed outcome, not the internal preparation step.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="privacy">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">06 · Public / private boundary</p>
+      <h2 class="section-title">Document the system without publishing the apartments.</h2>
+      <p class="section-copy">This project record explains product architecture and operational decisions while deliberately excluding the information that makes the private app useful.</p>
+    </div>
+
+    <div class="privacy-boundary-grid">
+      <article class="privacy-card public">
+        <span>Public record</span>
+        <h3>Safe to document</h3>
+        <ul>
+          <li>Product purpose and operational workflow.</li>
+          <li>Firebase service architecture at a high level.</li>
+          <li>Bilingual UX and clipboard design decisions.</li>
+          <li>General reliability lessons and public case-study outcomes.</li>
+          <li>Non-sensitive feature evolution and roadmap.</li>
+        </ul>
+      </article>
+
+      <article class="privacy-card protected">
+        <span>Protected application</span>
+        <h3>Never publish</h3>
+        <ul>
+          <li>Exact apartment addresses and access instructions.</li>
+          <li>Wi-Fi names, passwords and property credentials.</li>
+          <li>Approved admin email addresses or authentication details.</li>
+          <li>Guest names, conversations or booking information.</li>
+          <li>Firebase credentials, internal collection paths or security-sensitive configuration.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lessons">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">07 · Lessons learned</p>
+      <h2 class="section-title">Operations software is successful when it disappears into the task.</h2>
+    </div>
+
+    <div class="lesson-grid">
+      <article class="lesson-card">
+        <span>01</span>
+        <h3>Model the repeated decision, not only the data</h3>
+        <p>An apartment database becomes useful when it mirrors the sequence of finding, reviewing, copying and sending.</p>
+      </article>
+
+      <article class="lesson-card">
+        <span>02</span>
+        <h3>Clipboard behavior is a product feature</h3>
+        <p>Copying text and images reliably can create more operational value than adding another dashboard or screen.</p>
+      </article>
+
+      <article class="lesson-card">
+        <span>03</span>
+        <h3>Bilingual content needs structural pairing</h3>
+        <p>Language switching stays reliable when matching sections share the same content order and data model.</p>
+      </article>
+
+      <article class="lesson-card">
+        <span>04</span>
+        <h3>Dark mode must include form controls</h3>
+        <p>Buttons and panels are not enough; inputs, placeholders, autofill and selection states require explicit testing.</p>
+      </article>
+
+      <article class="lesson-card">
+        <span>05</span>
+        <h3>Personal tools still need privacy architecture</h3>
+        <p>A small user group does not remove the need to separate public proof from operational secrets.</p>
+      </article>
+
+      <article class="lesson-card">
+        <span>06</span>
+        <h3>Remove features that interrupt the main path</h3>
+        <p>The best iteration may be shortening the interface and strengthening the action users repeat every day.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="next">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">08 · Next priorities</p>
+        <h2 class="section-title">Improve validation, auditability and content confidence.</h2>
+        <p class="section-copy">The next phase should make content changes safer without turning the tool into a large property-management system.</p>
+      </div>
+      <a class="button" href="/os/roadmap/">KhaiTriOS roadmap</a>
+    </div>
+
+    <div class="priority-board">
+      <article class="priority-item">
+        <span class="priority-rank">P1</span>
+        <div><h3>Add apartment content validation</h3><p>Warn when required language blocks, Wi-Fi fields, images or step order are incomplete before publishing changes.</p></div>
+        <strong>Data quality</strong>
+      </article>
+
+      <article class="priority-item">
+        <span class="priority-rank">P1</span>
+        <div><h3>Add a safe content preview</h3><p>Show the exact guest-facing text and image output before it reaches the clipboard.</p></div>
+        <strong>Reliability</strong>
+      </article>
+
+      <article class="priority-item">
+        <span class="priority-rank">P2</span>
+        <div><h3>Track content freshness</h3><p>Display when apartment information was last reviewed so stale instructions can be identified deliberately.</p></div>
+        <strong>Operations</strong>
+      </article>
+
+      <article class="priority-item">
+        <span class="priority-rank">P2</span>
+        <div><h3>Add lightweight change history</h3><p>Record meaningful edits to apartment instructions without exposing guest activity.</p></div>
+        <strong>Auditability</strong>
+      </article>
+
+      <article class="priority-item">
+        <span class="priority-rank">P3</span>
+        <div><h3>Formalize role boundaries</h3><p>Separate content editing, operational use and administration only when the user base requires it.</p></div>
+        <strong>Access</strong>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout">
+    <div class="callout-grid">
+      <div>
+        <p class="section-kicker">Project record status</p>
+        <h2>Third encyclopedia record complete.</h2>
+        <p>The Airbnb Operations Assistant now has a public record of its workflow, architecture, clipboard decisions, privacy boundary and operational lessons—without exposing apartment data.</p>
+      </div>
+      <a class="button primary" href="/os/projects/">Back to all projects <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
