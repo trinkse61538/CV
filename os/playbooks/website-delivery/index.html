@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Website Delivery System — Playbook | KhaiTriOS</title>
+  <meta name="description" content="A reusable website delivery playbook for static websites: discovery, information architecture, build rules, SEO, QA, release and handover.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/playbooks/website-delivery/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="Website Delivery System — Playbook | KhaiTriOS">
+  <meta property="og:description" content="A reusable website delivery playbook for static websites: discovery, information architecture, build rules, SEO, QA, release and handover.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/playbooks/website-delivery/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/web-delivery-playbook-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Website Delivery System playbook for static websites, SEO, QA and release">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Delivery System — Playbook | KhaiTriOS">
+  <meta name="twitter:description" content="A reusable website delivery playbook for static websites: discovery, information architecture, build rules, SEO, QA, release and handover.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/web-delivery-playbook-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://khaitringuyen.com/os/playbooks/website-delivery/#webpage","url":"https://khaitringuyen.com/os/playbooks/website-delivery/","name":"Website Delivery System — Playbook | KhaiTriOS","description":"A reusable website delivery playbook for static websites: discovery, information architecture, build rules, SEO, QA, release and handover.","isPartOf":{"@id":"https://khaitringuyen.com/#website"},"about":{"@id":"https://khaitringuyen.com/os/playbooks/website-delivery/#playbook"},"inLanguage":"en","datePublished":"2026-07-18","dateModified":"2026-07-18","primaryImageOfPage":{"@type":"ImageObject","url":"https://khaitringuyen.com/os/assets/og/web-delivery-playbook-og.png","width":1200,"height":630}},{"@type":"CreativeWork","@id":"https://khaitringuyen.com/os/playbooks/website-delivery/#playbook","name":"Website Delivery System","description":"A public playbook for planning, building, optimizing, launching and handing over static websites.","creator":{"@id":"https://khaitringuyen.com/#person"},"keywords":["Static websites","Website delivery playbook","SEO checklist","Performance optimization","GitHub Pages","Website QA"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Playbooks","item":"https://khaitringuyen.com/os/playbooks/"},{"@type":"ListItem","position":4,"name":"Website Delivery System","item":"https://khaitringuyen.com/os/playbooks/website-delivery/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content">
+    
+
+
+
+
+
+<section class="project-record-hero playbook-record">
+  <div class="shell">
+    <nav class="record-breadcrumb" aria-label="Breadcrumb">
+      <a href="/os/">KhaiTriOS</a><span>/</span><a href="/os/playbooks/">Playbooks</a><span>/</span><span aria-current="page">Website Delivery System</span>
+    </nav>
+
+    <div class="record-hero-grid">
+      <div>
+        <div class="record-kicker-row">
+          <span class="tag live">Playbook live</span>
+          <span class="mini-label">Playbook 01</span>
+          <span class="mini-label">Updated 18 Jul 2026</span>
+        </div>
+
+        <p class="eyebrow">Web systems · SEO · Release operations</p>
+        <h1>Website Delivery <span class="gradient-text">System</span></h1>
+        <p class="hero-lead">A repeatable system for taking a website from vague request to finished delivery: structure, static architecture, performance, SEO, QA, release and handover—all designed for practical execution rather than theory.</p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#workflow">View workflow <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="button" href="#definition">Definition of done</a>
+          <a class="button" href="#checklist">Release checklist</a>
+        </div>
+      </div>
+
+      <aside class="record-summary" aria-label="Playbook summary">
+        <div class="record-summary-head">
+          <span>Playbook snapshot</span>
+          <strong>Reusable</strong>
+        </div>
+        <dl class="record-facts">
+          <div><dt>Scope</dt><dd>Static websites and content systems</dd></div>
+          <div><dt>Best for</dt><dd>Portfolio, brand and utility sites</dd></div>
+          <div><dt>Primary tools</dt><dd>HTML, CSS, JS, GitHub, Sheets</dd></div>
+          <div><dt>Success criteria</dt><dd>Fast, clear, maintainable, launch-ready</dd></div>
+          <div><dt>Output</dt><dd>Shippable site + handover package</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="record-nav-section">
+  <div class="shell">
+    <nav class="record-nav" aria-label="Playbook sections">
+      <a href="#when">When to use</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#rules">Rules</a>
+      <a href="#definition">Done</a>
+      <a href="#checklist">Checklist</a>
+      <a href="#failures">Failures</a>
+      <a href="#next">Next</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section" id="when">
+  <div class="shell record-two-column">
+    <div class="record-main-copy">
+      <p class="section-kicker">01 · When to use</p>
+      <h2 class="section-title">Best when speed, clarity and control matter more than a heavy CMS.</h2>
+      <p class="record-lead">This playbook is designed for brochure sites, personal sites, project microsites, operational utilities and spreadsheet-assisted content systems where the delivery speed and maintainability of a static setup create more value than a complex backend.</p>
+      <p>Use it when the scope is understandable, the content model can be made explicit, and the owner benefits from GitHub-based deployment or lightweight editing workflows. It also works well when performance, SEO and clean handover matter.</p>
+      <p>Do not force this playbook onto use cases that clearly need multi-user editorial workflows, deep backend logic or large-scale transactional functionality.</p>
+    </div>
+
+    <aside class="record-side-panel playbook-side-panel">
+      <span class="mini-label">Use this playbook when…</span>
+      <ul class="record-question-list">
+        <li>The site can run as a static or mostly static product.</li>
+        <li>Speed and SEO matter early.</li>
+        <li>The owner can manage content through files or structured sheets.</li>
+        <li>The project needs a practical release path and clean handover.</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="inputs">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">02 · Required inputs</p>
+      <h2 class="section-title">Good websites are easier to build when the operating assumptions are explicit.</h2>
+      <p class="section-copy">The playbook starts by collecting enough clarity to avoid endless redesign or patchwork implementation.</p>
+    </div>
+
+    <div class="capability-grid playbook-input-grid">
+      <article class="capability-card"><span class="capability-index">GOAL</span><h3>Business objective</h3><p>What the site should help the owner achieve: credibility, lead capture, publishing, utility or sales support.</p></article>
+      <article class="capability-card"><span class="capability-index">CONTENT</span><h3>Core pages and assets</h3><p>Required pages, images, logos, copy blocks, structured datasets and language scope.</p></article>
+      <article class="capability-card"><span class="capability-index">TECH</span><h3>Deployment and editing model</h3><p>Domain, hosting path, repo ownership, update method and whether Sheets or files will power content updates.</p></article>
+      <article class="capability-card"><span class="capability-index">QUALITY</span><h3>Success constraints</h3><p>Performance thresholds, SEO expectations, device priorities and handover requirements.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="workflow">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">03 · Delivery workflow</p>
+      <h2 class="section-title">Move from structure to release in seven visible stages.</h2>
+    </div>
+
+    <div class="playbook-workflow">
+      <article class="playbook-stage"><span>01</span><h3>Frame the scope</h3><p>Define audience, goals, site map, page list and update responsibilities before any design choices harden.</p><strong>Clarity first</strong></article>
+      <article class="playbook-stage"><span>02</span><h3>Choose the architecture</h3><p>Select static files, sheet-driven generation or hybrid patterns based on content complexity and maintenance needs.</p><strong>Right-fit system</strong></article>
+      <article class="playbook-stage"><span>03</span><h3>Build the design system</h3><p>Create shared layout rules, spacing, components, typography hierarchy and reusable UI blocks.</p><strong>Consistency</strong></article>
+      <article class="playbook-stage"><span>04</span><h3>Implement content and SEO</h3><p>Write semantic HTML, metadata, schema, internal links and clear content structure from the start.</p><strong>Search readiness</strong></article>
+      <article class="playbook-stage"><span>05</span><h3>Optimize performance</h3><p>Reduce blocking assets, improve image handling, preserve mobile usability and verify Core Web Vitals directionally.</p><strong>Speed matters</strong></article>
+      <article class="playbook-stage"><span>06</span><h3>Run QA and release</h3><p>Test links, forms, responsive states, dark mode, indexability and domain setup before launch.</p><strong>Launch confidence</strong></article>
+      <article class="playbook-stage"><span>07</span><h3>Handover cleanly</h3><p>Deliver only the changed files, note hidden files, explain the update workflow and define what is safe to edit.</p><strong>Maintainability</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="rules">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">04 · Decision rules</p>
+      <h2 class="section-title">Use the simplest architecture that protects future maintenance.</h2>
+    </div>
+
+    <div class="decision-record-grid">
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-01</span><strong>Always</strong></div>
+        <h3>Make the content model visible early</h3>
+        <p class="decision-context">Hidden assumptions about pages, sections, fields or update ownership create rebuild work later.</p>
+        <dl><div><dt>Rule</dt><dd>Before building, define what can change, who changes it and where that source lives.</dd></div><div><dt>Why</dt><dd>Architecture follows the update model, not only the visual design.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-02</span><strong>Prefer</strong></div>
+        <h3>Static first, complexity only when justified</h3>
+        <p class="decision-context">Many business sites overpay in complexity for problems they do not actually have.</p>
+        <dl><div><dt>Rule</dt><dd>Default to static delivery unless dynamic behavior clearly changes business value.</dd></div><div><dt>Why</dt><dd>Static systems are fast, stable and easy to inspect.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-03</span><strong>Protect</strong></div>
+        <h3>Generated files should not become manual editing targets</h3>
+        <p class="decision-context">When outputs are generated, editing them directly creates future overwrites and confusion.</p>
+        <dl><div><dt>Rule</dt><dd>Document the true editable source: template, sheet, data file or component.</dd></div><div><dt>Why</dt><dd>Durable systems preserve source-of-truth discipline.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-04</span><strong>Require</strong></div>
+        <h3>SEO and performance are part of delivery, not post-launch decoration</h3>
+        <p class="decision-context">Retrofitting fundamentals later usually costs more and leaves inconsistent implementation.</p>
+        <dl><div><dt>Rule</dt><dd>Ship with metadata, schema, sitemap, robots and responsive checks.</dd></div><div><dt>Why</dt><dd>Launch-ready means technically ready, not only visually complete.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-05</span><strong>Prefer</strong></div>
+        <h3>Patch-based updates for ongoing improvements</h3>
+        <p class="decision-context">Most maintenance cycles only change a subset of files and should be communicated that way.</p>
+        <dl><div><dt>Rule</dt><dd>Deliver changed files only, and call out hidden files explicitly.</dd></div><div><dt>Why</dt><dd>This reduces confusion during manual GitHub uploads and keeps updates clear.</dd></div></dl>
+      </article>
+      <article class="decision-record">
+        <div class="decision-record-head"><span>R-06</span><strong>Keep</strong></div>
+        <h3>The handover process as lightweight as the build</h3>
+        <p class="decision-context">A technically good site still fails operationally if the owner cannot update it.</p>
+        <dl><div><dt>Rule</dt><dd>Explain repo structure, update flow, content boundaries and post-launch care in plain language.</dd></div><div><dt>Why</dt><dd>Delivery is complete only when the system remains usable after handoff.</dd></div></dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="definition">
+  <div class="shell record-two-column">
+    <div>
+      <p class="section-kicker">05 · Definition of done</p>
+      <h2 class="section-title">A website is done when it is clear, stable, searchable and handover-ready.</h2>
+      <div class="performance-ledger">
+        <article><span>Structure</span><h3>Page system complete</h3><p>Core pages, navigation and information architecture are final enough to support the intended user journey.</p></article>
+        <article><span>UX</span><h3>Responsive and usable</h3><p>Important screens work across desktop and mobile, including dark-mode or input states if present.</p></article>
+        <article><span>SEO</span><h3>Search foundation shipped</h3><p>Titles, descriptions, canonical tags, sitemap, robots and essential schema are present.</p></article>
+        <article><span>Performance</span><h3>Critical bottlenecks addressed</h3><p>Obvious render-blocking, heavy media and broken image behavior have been reduced or fixed.</p></article>
+        <article><span>Release</span><h3>Domain and deployment verified</h3><p>Live URLs, custom domain setup and indexability basics have been checked.</p></article>
+        <article><span>Handover</span><h3>Owner can maintain it</h3><p>The owner understands what files matter, how to update them and which parts should not be edited directly.</p></article>
+      </div>
+    </div>
+
+    <aside class="record-side-panel playbook-side-panel">
+      <span class="mini-label">Definition of done test</span>
+      <h3>Ask these three questions.</h3>
+      <ul class="record-question-list">
+        <li>Would the owner know how to update the site after handover?</li>
+        <li>Would a new visitor understand the site quickly on mobile?</li>
+        <li>Would a search engine understand what the site is and how its pages connect?</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint" id="checklist">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">06 · Release checklist</p>
+      <h2 class="section-title">The final release should be procedural, not improvised.</h2>
+    </div>
+
+    <div class="checklist-board">
+      <article class="checklist-card"><span>01</span><h3>Repository</h3><ul><li>Confirm final folder structure.</li><li>Only changed files in patch updates.</li><li>Call out hidden files explicitly.</li></ul></article>
+      <article class="checklist-card"><span>02</span><h3>SEO</h3><ul><li>Title and description per page.</li><li>Canonical URL correct.</li><li>Sitemap and robots updated.</li></ul></article>
+      <article class="checklist-card"><span>03</span><h3>Experience</h3><ul><li>Responsive states checked.</li><li>Broken links resolved.</li><li>Form, search and theme states verified.</li></ul></article>
+      <article class="checklist-card"><span>04</span><h3>Performance</h3><ul><li>Large images optimized.</li><li>Blocking libraries reviewed.</li><li>Mobile bottlenecks addressed first.</li></ul></article>
+      <article class="checklist-card"><span>05</span><h3>Deployment</h3><ul><li>Domain points correctly.</li><li>HTTPS works.</li><li>Public pages are reachable.</li></ul></article>
+      <article class="checklist-card"><span>06</span><h3>Handover</h3><ul><li>Owner knows editable sources.</li><li>Generated files are identified.</li><li>Next-step maintenance advice included.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="failures">
+  <div class="shell">
+    <div class="section-head">
+      <p class="section-kicker">07 · Common failure modes</p>
+      <h2 class="section-title">Most problems repeat. A playbook exists to catch them sooner.</h2>
+    </div>
+
+    <div class="lesson-grid">
+      <article class="lesson-card"><span>01</span><h3>Editing the wrong source</h3><p>Manual edits go into generated pages instead of templates or data, then disappear on the next sync.</p></article>
+      <article class="lesson-card"><span>02</span><h3>SEO added too late</h3><p>Metadata, schema and internal linking are postponed until the site is already considered “finished.”</p></article>
+      <article class="lesson-card"><span>03</span><h3>Performance fixes break the content</h3><p>Heavy assets are removed correctly, but key banners, product images or proof elements disappear too.</p></article>
+      <article class="lesson-card"><span>04</span><h3>Handover is too technical</h3><p>The implementation works, but the owner receives instructions they cannot actually follow in practice.</p></article>
+      <article class="lesson-card"><span>05</span><h3>Patch updates are unclear</h3><p>Too many unchanged files are re-sent, or hidden files are omitted without explanation.</p></article>
+      <article class="lesson-card"><span>06</span><h3>Scope grows without architecture review</h3><p>A simple site accumulates features until the original update model no longer fits cleanly.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="next">
+  <div class="shell">
+    <div class="section-head split">
+      <div>
+        <p class="section-kicker">08 · Next playbooks</p>
+        <h2 class="section-title">This is the first reusable operating document in the library.</h2>
+        <p class="section-copy">The next playbooks should capture the same level of rigor for growth measurement, automation and freelance delivery.</p>
+      </div>
+      <a class="button" href="/os/playbooks/">All playbooks</a>
+    </div>
+
+    <div class="priority-board">
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Growth &amp; Measurement playbook</h3><p>Turn campaign review, KPI hierarchy and anomaly response into a reusable operating method.</p></div><strong>Next</strong></article>
+      <article class="priority-item"><span class="priority-rank">P1</span><div><h3>Automation &amp; AI playbook</h3><p>Document Apps Script pipelines, GitHub Actions and shared AI working structures.</p></div><strong>Next</strong></article>
+      <article class="priority-item"><span class="priority-rank">P2</span><div><h3>Freelance Delivery playbook</h3><p>Extract discovery, pricing, scope control and handover rules into a public-safe system.</p></div><strong>Queued</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="shell callout">
+    <div class="callout-grid">
+      <div>
+        <p class="section-kicker">Playbook status</p>
+        <h2>First playbook complete.</h2>
+        <p>The Website Delivery System is now the first public playbook in KhaiTriOS, capturing a reusable method instead of only describing finished projects.</p>
+      </div>
+      <a class="button primary" href="/os/playbooks/">Back to playbooks <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
