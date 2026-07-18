@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DR-001: Public Knowledge, Private Memory — KhaiTriOS</title>
+  <meta name="description" content="Decision record explaining why KhaiTriOS publishes reusable knowledge while keeping personal memory, credentials, client data and sensitive AI context in a protected layer.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="Nguyen Khai Tri">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="canonical" href="https://khaitringuyen.com/os/decisions/public-private-boundary/">
+  <link rel="icon" href="/favico.png">
+  <link rel="apple-touch-icon" href="/favico.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/os/assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nguyen Khai Tri Portfolio">
+  <meta property="og:title" content="DR-001: Public Knowledge, Private Memory — KhaiTriOS">
+  <meta property="og:description" content="Decision record explaining why KhaiTriOS publishes reusable knowledge while keeping personal memory, credentials, client data and sensitive AI context in a protected layer.">
+  <meta property="og:url" content="https://khaitringuyen.com/os/decisions/public-private-boundary/">
+  <meta property="og:image" content="https://khaitringuyen.com/os/assets/og/decision-record-foundation-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Decision record separating public knowledge from private memory in KhaiTriOS">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DR-001: Public Knowledge, Private Memory — KhaiTriOS">
+  <meta name="twitter:description" content="Decision record explaining why KhaiTriOS publishes reusable knowledge while keeping personal memory, credentials, client data and sensitive AI context in a protected layer.">
+  <meta name="twitter:image" content="https://khaitringuyen.com/os/assets/og/decision-record-foundation-og.png">
+  <script>
+    try {
+      const saved = localStorage.getItem("khaitrios-theme");
+      document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (_) {}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://khaitringuyen.com/os/decisions/public-private-boundary/#article","url":"https://khaitringuyen.com/os/decisions/public-private-boundary/","headline":"Separate public knowledge from private memory","description":"Decision record explaining why KhaiTriOS publishes reusable knowledge while keeping personal memory, credentials, client data and sensitive AI context in a protected layer.","datePublished":"2026-07-18","dateModified":"2026-07-18","author":{"@id":"https://khaitringuyen.com/#person"},"publisher":{"@id":"https://khaitringuyen.com/#person"},"isPartOf":{"@id":"https://khaitringuyen.com/os/decisions/#webpage"},"image":"https://khaitringuyen.com/os/assets/og/decision-record-foundation-og.png","articleSection":"Decision Record","keywords":["Public knowledge","Private memory","Privacy architecture","AI context","Personal operating system"],"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khaitringuyen.com/"},{"@type":"ListItem","position":2,"name":"KhaiTriOS","item":"https://khaitringuyen.com/os/"},{"@type":"ListItem","position":3,"name":"Decisions","item":"https://khaitringuyen.com/os/decisions/"},{"@type":"ListItem","position":4,"name":"Public Knowledge, Private Memory","item":"https://khaitringuyen.com/os/decisions/public-private-boundary/"}]}]}</script>
+</head>
+<body>
+  
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="/os/" aria-label="KhaiTriOS home">
+      <span class="brand-mark">KT</span>
+      <span class="brand-copy"><strong>KhaiTriOS</strong><small>Personal operating system</small></span>
+    </a>
+    <nav class="nav-links" data-nav aria-label="KhaiTriOS navigation">
+      <a href="/os/">Overview</a>
+<a href="/os/principles/">Principles</a>
+<a href="/os/projects/" aria-current="page">Projects</a>
+<a href="/os/playbooks/">Playbooks</a>
+<a href="/os/decisions/" aria-current="page">Decisions</a>
+<a href="/os/roadmap/">Roadmap</a>
+<a href="/os/changelog/">Changelog</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></svg></button>
+      <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-label="Open navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content">
+    
+
+
+
+
+
+
+
+
+
+<section class="project-record-hero decision-record-hero">
+  <div class="shell">
+    <nav class="record-breadcrumb" aria-label="Breadcrumb"><a href="/os/">KhaiTriOS</a><span>/</span><a href="/os/decisions/">Decisions</a><span>/</span><span aria-current="page">DR-001</span></nav>
+    <div class="record-hero-grid">
+      <div>
+        <div class="record-kicker-row"><span class="decision-status accepted">Accepted</span><span class="mini-label">DR-001</span><span class="mini-label">18 Jul 2026</span></div>
+        <p class="eyebrow">System architecture · Privacy · Knowledge design</p>
+        <h1>Separate public knowledge from <span class="gradient-text">private memory.</span></h1>
+        <p class="hero-lead">KhaiTriOS will publish reusable proof, principles, playbooks and public-safe decisions while credentials, personal memory, client-sensitive information and private AI context remain in a separately protected layer.</p>
+        <div class="hero-actions"><a class="button primary" href="#decision">Read the decision <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button" href="#options">Compare options</a><a class="button" href="#review">Review triggers</a></div>
+      </div>
+      <aside class="record-summary" aria-label="Decision summary"><div class="record-summary-head"><span>Decision snapshot</span><strong>Current</strong></div><dl class="record-facts"><div><dt>Owner</dt><dd>Nguyen Khai Tri</dd></div><div><dt>Scope</dt><dd>KhaiTriOS architecture</dd></div><div><dt>Reversibility</dt><dd>Medium</dd></div><div><dt>Review trigger</dt><dd>Before Phase 05</dd></div><div><dt>Supersedes</dt><dd>None</dd></div></dl></aside>
+    </div>
+  </div>
+</section>
+
+<section class="record-nav-section"><div class="shell"><nav class="record-nav" aria-label="Decision record sections"><a href="#context">Context</a><a href="#criteria">Criteria</a><a href="#options">Options</a><a href="#decision">Decision</a><a href="#consequences">Consequences</a><a href="#guardrails">Guardrails</a><a href="#evidence">Evidence</a><a href="#review">Review</a></nav></div></section>
+
+<section class="section" id="context"><div class="shell record-two-column"><div class="record-main-copy"><p class="section-kicker">01 · Context</p><h2 class="section-title">The system needs to be discoverable without making sensitive context discoverable.</h2><p class="record-lead">KhaiTriOS has two different jobs. It should publicly demonstrate how projects are built and how decisions are made, while eventually giving AI assistants richer personal and operational context.</p><p>Those jobs require different trust boundaries. Public pages benefit from indexing, links and reusable explanations. Private context may contain credentials, personal memory, client details, account identifiers, raw conversations and assumptions that should never be published.</p><p>The architectural decision was required before expanding the public system or building the private AI layer, because mixing both types of knowledge in one location would make every future publication riskier.</p></div><aside class="record-side-panel decision-side-panel"><span class="mini-label">Decision trigger</span><blockquote>How can KhaiTriOS be useful publicly and useful to AI without forcing the same privacy model onto both?</blockquote><div class="decision-meta-list"><div><strong>Public need</strong><span>Proof, learning and discoverability</span></div><div><strong>Private need</strong><span>Context, memory and credentials</span></div><div><strong>Risk</strong><span>Accidental disclosure or self-censorship</span></div></div></aside></div></section>
+
+<section class="section section-tint" id="criteria"><div class="shell"><div class="section-head"><p class="section-kicker">02 · Decision criteria</p><h2 class="section-title">The architecture must maximize usefulness without weakening trust.</h2></div><div class="decision-criteria-grid"><article><span>01</span><h3>Public usefulness</h3><p>Can projects, methods and decisions be shared, indexed and understood independently?</p></article><article><span>02</span><h3>Privacy safety</h3><p>Can credentials, personal data and sensitive operating context remain protected by default?</p></article><article><span>03</span><h3>AI portability</h3><p>Can approved context later be packaged for multiple assistants without publishing it?</p></article><article><span>04</span><h3>Maintenance clarity</h3><p>Can a contributor tell where information belongs and which layer is authoritative?</p></article><article><span>05</span><h3>Reversibility</h3><p>Can the boundary evolve without rewriting or deleting public history?</p></article><article><span>06</span><h3>Trust</h3><p>Can visitors and collaborators understand what is deliberately excluded?</p></article></div></div></section>
+
+<section class="section" id="options"><div class="shell"><div class="section-head"><p class="section-kicker">03 · Options considered</p><h2 class="section-title">Three architectures were available.</h2></div><div class="decision-option-grid"><article class="decision-option rejected"><div><span>OPTION A</span><strong>Rejected</strong></div><h3>Publish the complete operating system</h3><p>Place public knowledge, personal memory, credentials and AI context in one repository or website.</p><ul><li>Maximum transparency and one source location.</li><li>Unacceptable disclosure risk.</li><li>Private detail would limit what could safely be recorded.</li></ul></article><article class="decision-option rejected"><div><span>OPTION B</span><strong>Rejected</strong></div><h3>Keep the complete operating system private</h3><p>Use one protected vault and publish only the conventional portfolio.</p><ul><li>Strong privacy and low boundary complexity.</li><li>No public knowledge system or reusable proof.</li><li>Projects and lessons remain fragmented for visitors.</li></ul></article><article class="decision-option selected"><div><span>OPTION C</span><strong>Selected</strong></div><h3>Separate public knowledge and private memory</h3><p>Maintain a public OS for reusable records and a private vault for sensitive context.</p><ul><li>Public usefulness and private depth can grow independently.</li><li>Requires explicit publishing rules and occasional summarization.</li><li>Creates a safe foundation for later AI context packs.</li></ul></article></div></div></section>
+
+<section class="section section-tint" id="decision"><div class="shell"><div class="decision-statement"><span>Decision</span><h2>Use a two-layer architecture with a public knowledge system and a separately protected private memory layer.</h2><p>The public layer contains only information that can be intentionally shared: operating principles, project records, playbooks, decision records, roadmap and changelog. The private layer will later contain identity context, raw memory, credentials, sensitive decisions, client data and assistant-specific context packs.</p></div><div class="decision-rationale-grid"><article><span>RATIONALE 01</span><h3>Different information needs different defaults</h3><p>Public knowledge should default to shareable. Private memory should default to protected.</p></article><article><span>RATIONALE 02</span><h3>Separation improves honesty</h3><p>The private layer can preserve useful detail without forcing every note through a public-writing filter.</p></article><article><span>RATIONALE 03</span><h3>Public proof remains inspectable</h3><p>Visitors can evaluate real architecture and reasoning without needing access to private records.</p></article><article><span>RATIONALE 04</span><h3>AI context can remain portable</h3><p>Approved private context can later be packaged for different assistants while the public URLs remain stable.</p></article></div></div></section>
+
+<section class="section" id="consequences"><div class="shell"><div class="section-head"><p class="section-kicker">05 · Consequences</p><h2 class="section-title">The boundary creates both benefits and operating obligations.</h2></div><div class="decision-consequence-grid"><article class="positive"><span>POSITIVE</span><h3>Public work becomes easier to discover</h3><p>Projects, playbooks and decisions can be indexed, linked and evaluated independently.</p></article><article class="positive"><span>POSITIVE</span><h3>Private context can be more complete</h3><p>Sensitive memory does not need to be weakened into vague public language.</p></article><article class="positive"><span>POSITIVE</span><h3>Future AI assistants receive intentional context</h3><p>Context packs can be assembled by task and tool instead of exposing the complete vault.</p></article><article class="tradeoff"><span>TRADE-OFF</span><h3>Some information needs two representations</h3><p>A private source may require a public-safe summary before it becomes publishable.</p></article><article class="tradeoff"><span>TRADE-OFF</span><h3>The boundary requires review discipline</h3><p>New records must be checked for personal data, credentials and commercially sensitive context.</p></article><article class="tradeoff"><span>TRADE-OFF</span><h3>Two repositories increase maintenance</h3><p>The private vault will need its own structure, history and access controls when implementation begins.</p></article></div></div></section>
+
+<section class="section section-tint" id="guardrails"><div class="shell"><div class="section-head"><p class="section-kicker">06 · Publishing guardrails</p><h2 class="section-title">Information crosses the boundary only through explicit transformation.</h2></div><div class="boundary-map"><article class="public-layer"><span>PUBLIC LAYER</span><h3>Shareable by design</h3><ul><li>Operating principles and quality standards.</li><li>Project architecture and public-safe outcomes.</li><li>Reusable playbooks and checklists.</li><li>Decision rationale without sensitive inputs.</li><li>Roadmap, changelog and public evidence.</li></ul></article><article class="boundary-gate"><span>BOUNDARY GATE</span><h3>Review before transfer</h3><ul><li>Remove credentials and account identifiers.</li><li>Remove personal, guest, lead and client-level data.</li><li>Generalize commercially sensitive detail.</li><li>Confirm the public record remains useful.</li><li>Record what was intentionally excluded.</li></ul></article><article class="private-layer"><span>PRIVATE LAYER</span><h3>Protected by default</h3><ul><li>Personal identity and long-term memory.</li><li>Credentials, tokens and access details.</li><li>Raw client information and communications.</li><li>Private goals, finances and sensitive decisions.</li><li>Assistant-specific context and internal prompts.</li></ul></article></div></div></section>
+
+<section class="section" id="evidence"><div class="shell"><div class="section-head"><p class="section-kicker">07 · Evidence to date</p><h2 class="section-title">The public layer has already tested the decision at increasing depth.</h2></div><div class="evidence-timeline"><article><time>Phase 01</time><div><h3>Public foundation established</h3><p>Principles, roadmap, changelog and privacy language were published without private credentials or personal memory.</p></div><strong>Supported</strong></article><article><time>Phase 02</time><div><h3>Four project records published</h3><p>Scent OS, AGVN, Airbnb Operations and Advertising Dashboards preserve architecture and lessons while excluding sensitive operating data.</p></div><strong>Supported</strong></article><article><time>Phase 03</time><div><h3>Four playbooks published</h3><p>Reusable methods became public without publishing client identities, private pricing, raw prompts or account details.</p></div><strong>Supported</strong></article><article><time>Phase 04</time><div><h3>The boundary itself becomes traceable</h3><p>This decision record documents the choice and defines how future evidence can challenge it.</p></div><strong>Active</strong></article></div></div></section>
+
+<section class="section section-tint" id="review"><div class="shell record-two-column"><div><p class="section-kicker">08 · Review plan</p><h2 class="section-title">Review the boundary when AI context begins moving between systems.</h2><div class="review-trigger-grid"><article><span>TRIGGER 01</span><h3>Before Phase 05 begins</h3><p>Confirm the private vault architecture and access model before creating AI context packs.</p></article><article><span>TRIGGER 02</span><h3>When a public record needs sensitive context</h3><p>Test whether summarization preserves enough value or whether the record should remain private.</p></article><article><span>TRIGGER 03</span><h3>When multiple assistants use private context</h3><p>Review permissions, context minimization and update ownership.</p></article><article><span>TRIGGER 04</span><h3>When maintenance becomes excessive</h3><p>Consider tooling or metadata links without merging the trust boundaries.</p></article></div></div><aside class="record-side-panel decision-side-panel"><span class="mini-label">Current assessment</span><h3>Accepted and working as intended.</h3><p class="side-note">No evidence currently justifies merging the layers. The next material review occurs before the AI Operating Layer is implemented.</p><div class="decision-review-status"><span>Last assessed</span><strong>18 Jul 2026</strong><span>Next review</span><strong>Before Phase 05</strong></div></aside></div></section>
+
+<section class="section compact"><div class="shell callout"><div class="callout-grid"><div><p class="section-kicker">Decision status</p><h2>Accepted. Evidence collection continues.</h2><p>This record remains active until a later decision reverses or supersedes the public/private architecture.</p></div><a class="button primary" href="/os/decisions/">Back to decisions <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
+
+
+
+
+
+
+
+
+
+
+  </main>
+  
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <strong>KhaiTriOS</strong>
+      <p>A public knowledge layer by Nguyen Khai Tri. Private memory, credentials and client data are never published here.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/">Portfolio</a>
+      <a href="/projects/">Projects</a>
+      <a href="/knowledge/">Knowledge</a>
+      <a href="/contact.html">Contact</a>
+      <span>© <span data-current-year>2026</span></span>
+    </div>
+  </div>
+</footer>
+
+  <script src="/os/assets/js/main.js" defer></script>
+</body>
+</html>
