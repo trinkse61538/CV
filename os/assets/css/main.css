@@ -1428,3 +1428,600 @@ h1 .gradient-text,
     height: 40px;
   }
 }
+
+
+/* Step 03 — Project Encyclopedia */
+.project-card-featured {
+  border-color: rgba(5, 150, 105, .32);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(5, 150, 105, .12), transparent 18rem),
+    radial-gradient(circle at 8% 92%, rgba(37, 99, 235, .10), transparent 22rem),
+    var(--surface);
+}
+
+.project-record-hero {
+  padding: 54px 0 70px;
+}
+
+.record-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 42px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.record-breadcrumb a {
+  text-decoration: none;
+}
+
+.record-breadcrumb a:hover {
+  color: var(--blue);
+}
+
+.record-hero-grid,
+.record-two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, .68fr);
+  align-items: start;
+  gap: clamp(38px, 7vw, 86px);
+}
+
+.record-kicker-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.record-summary,
+.record-side-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(124, 58, 237, .12), transparent 20rem),
+    var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.record-summary {
+  padding: 25px;
+}
+
+.record-summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.record-summary-head span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.record-summary-head strong {
+  color: var(--green);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.record-facts {
+  margin: 0;
+}
+
+.record-facts div {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.record-facts div:last-child {
+  border-bottom: 0;
+}
+
+.record-facts dt {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.record-facts dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.record-nav-section {
+  position: sticky;
+  top: calc(74px + env(safe-area-inset-top));
+  z-index: 55;
+  border-block: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+.record-nav {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.record-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.record-nav a {
+  flex: 0 0 auto;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 11px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.record-nav a:hover {
+  background: var(--surface-alt);
+  color: var(--blue);
+}
+
+.record-main-copy p {
+  max-width: 760px;
+  margin: 0 0 18px;
+}
+
+.record-lead {
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.record-side-panel {
+  padding: 28px;
+}
+
+.record-side-panel blockquote {
+  margin: 30px 0;
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -.025em;
+}
+
+.record-objectives {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.record-objectives div {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface-soft) 86%, transparent);
+}
+
+.record-objectives strong,
+.record-objectives span {
+  display: block;
+}
+
+.record-objectives strong {
+  color: var(--blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+}
+
+.record-objectives span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.capability-grid,
+.decision-record-grid,
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.capability-card,
+.decision-record,
+.lesson-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.capability-card {
+  min-height: 285px;
+  padding: 25px;
+}
+
+.capability-index,
+.lesson-card > span {
+  color: var(--blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.capability-card h3,
+.lesson-card h3 {
+  margin: 42px 0 10px;
+  font-size: 20px;
+}
+
+.capability-card p,
+.lesson-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.system-architecture {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.architecture-node {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.architecture-node:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--blue);
+  font-weight: 800;
+  transform: translateY(-50%);
+}
+
+.architecture-node > span {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.architecture-node h3 {
+  margin: 44px 0 10px;
+  font-size: 17px;
+}
+
+.architecture-node p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.node-output {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.architecture-note {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+  font-size: 13px;
+}
+
+.architecture-note strong {
+  flex: 0 0 auto;
+  color: var(--ink);
+}
+
+.decision-record {
+  min-height: 380px;
+  padding: 25px;
+}
+
+.decision-record-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.decision-record-head span,
+.decision-record-head strong {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.decision-record-head span {
+  color: var(--muted);
+}
+
+.decision-record-head strong {
+  color: var(--green);
+}
+
+.decision-record h3 {
+  margin: 34px 0 12px;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.decision-context {
+  min-height: 76px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.decision-record dl {
+  margin: 22px 0 0;
+}
+
+.decision-record dl div {
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+
+.decision-record dt {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.decision-record dd {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-size: 12px;
+}
+
+.project-timeline {
+  position: relative;
+  display: grid;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.project-timeline::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 22px;
+  bottom: 22px;
+  width: 2px;
+  background: linear-gradient(var(--blue), var(--green));
+}
+
+.project-timeline article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 18px;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.project-timeline article > span {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 5px solid var(--surface);
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.project-timeline h3 {
+  margin: 1px 0 5px;
+  font-size: 16px;
+}
+
+.project-timeline p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.evolution-panel h3 {
+  margin: 28px 0 15px;
+  font-size: 22px;
+}
+
+.record-question-list {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.record-question-list li {
+  margin: 13px 0;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.lesson-card {
+  min-height: 250px;
+  padding: 24px;
+}
+
+.priority-board {
+  display: grid;
+  gap: 12px;
+}
+
+.priority-item {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 21px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.priority-rank {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: var(--surface-alt);
+  color: var(--blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.priority-item h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.priority-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.priority-item > strong {
+  color: var(--green);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1040px) {
+  .system-architecture {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .architecture-node:not(:last-child)::after {
+    display: none;
+  }
+
+  .capability-grid,
+  .decision-record-grid,
+  .lesson-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .record-hero-grid,
+  .record-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .record-nav-section {
+    top: calc(74px + env(safe-area-inset-top));
+  }
+
+  .record-summary,
+  .record-side-panel {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 620px) {
+  .project-record-hero {
+    padding-top: 38px;
+  }
+
+  .record-breadcrumb {
+    margin-bottom: 30px;
+  }
+
+  .record-facts div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .record-facts dd {
+    text-align: left;
+  }
+
+  .record-objectives,
+  .capability-grid,
+  .decision-record-grid,
+  .lesson-grid,
+  .system-architecture {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-note {
+    display: grid;
+  }
+
+  .priority-item {
+    grid-template-columns: 46px 1fr;
+    gap: 14px;
+  }
+
+  .priority-item > strong {
+    grid-column: 2;
+  }
+}
