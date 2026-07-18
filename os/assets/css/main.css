@@ -2626,3 +2626,136 @@ h1 .gradient-text,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Step 07 — Website Delivery Playbook */
+.playbook-card-featured {
+  border-color: rgba(34, 211, 238, .32);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(34, 211, 238, .12), transparent 18rem),
+    radial-gradient(circle at 8% 92%, rgba(16, 185, 129, .10), transparent 22rem),
+    var(--surface);
+}
+
+.playbook-record .gradient-text {
+  background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 48%, #10b981 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.playbook-side-panel {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(34, 211, 238, .12), transparent 20rem),
+    radial-gradient(circle at 8% 92%, rgba(16, 185, 129, .09), transparent 22rem),
+    var(--surface);
+}
+
+.playbook-input-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.playbook-workflow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.playbook-stage {
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.playbook-stage > span {
+  color: var(--cyan);
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.playbook-stage h3 {
+  margin: 42px 0 10px;
+  font-size: 18px;
+}
+
+.playbook-stage p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.playbook-stage > strong {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.checklist-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.checklist-card {
+  min-height: 210px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.checklist-card > span {
+  color: var(--cyan);
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.checklist-card h3 {
+  margin: 18px 0 12px;
+  font-size: 18px;
+}
+
+.checklist-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.checklist-card li {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.playbook-callout {
+  margin-top: 0;
+}
+
+@media (max-width: 1040px) {
+  .playbook-input-grid,
+  .playbook-workflow,
+  .checklist-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .playbook-input-grid,
+  .playbook-workflow,
+  .checklist-board {
+    grid-template-columns: 1fr;
+  }
+}
